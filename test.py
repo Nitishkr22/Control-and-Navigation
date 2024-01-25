@@ -11,6 +11,7 @@ import time
 from geopy.distance import geodesic
 import controller
 import controller2
+import csv
 
 
 #TCP connection
@@ -666,21 +667,7 @@ obj.send_data(message)
 feed = obj.receive_data()
 print(feed)
 
-zeta= 0.5
-# def acclerate(acc, desired_vel, curr_vel):
-#     global zeta
-#     if curr_vel < desired_vel:
-#         acc = acc + zeta
-#         #curr_vel = curr_vel + 0.2
-#     else:
-#         acc = acc - zeta
-#         #curr_vel = curr_vel - 0.2
-#     if (curr_vel > desired_vel-0.5) and (curr_vel < desired_vel + 0.5):
-#         zeta = zeta / 2 
-#     ###print("acc : ",acc)
-#     #print("curr_vel : ",curr_vel)
-#     return acc
-# cap = 10
+
 def accn(kp, acc):
     return acc+kp
 def dccn(kp, acc):
@@ -689,8 +676,23 @@ def dccn(kp, acc):
 def damping(error):
     kp = 1-np.exp(-0.0006*abs(error))
     return kp
-desired_vel = 6.0
-acc = 1
+
+def current_time_in_nanoseconds():
+        # Get current epoch time in seconds
+    epoch_time_seconds = time.time()
+
+    # Convert seconds to nanoseconds
+    epoch_time_nanoseconds = int(epoch_time_seconds * 1e3)
+
+    return epoch_time_nanoseconds
+
+def write_to_csv(data, filename, headers):
+    with open(filename, 'a', newline='') as csvfile:
+        writer = csv.DictWriter(csvfile, fieldnames=headers)
+        if csvfile.tell() == 0:
+            writer.writeheader()  # Write headers if the file is empty
+        writer.writerow(data)
+
 cont = controller.Controller2D()
 obj.send_data("A1,D,1,0,0,0,0,0,0,0,0\r\n")
 time.sleep(1)
@@ -700,50 +702,45 @@ ki = 0.0006
 kd = 0.28
 
 pid_controller = controller2.PIDControllervel(kp, ki, kd)
-setpoint = 30.0
+setpoint = 35.0
 # while not rospy.is_shutdown():
-while(True):
-    try:
-        velocity_feedback = float(obj.receive_data().split(',')[3])
 
-        control_signal = pid_controller.compute(setpoint, velocity_feedback)
+if __name__=="__main__":
 
-            # Assuming a simple linear relationship between throttle and velocity
-        throttle_input = np.clip(control_signal, 0, 100)
-        print(throttle_input)
-        print("velocity: ",velocity_feedback)
-        # velocity_feedback = float(obj.receive_data().split(',')[3])
-        # cont.update_values(velocity_feedback)
-        # throttle = cont.update_controls()
-        # print("throttle: ",(str(throttle)))
-        # # time.sleep(1)
-        # # "+str(throttle)+"
-        
-        if(float(velocity_feedback)>setpoint):
-            obj.send_data("A1,D,2,0,0,0,0,0,0,0,0\r\n")
-        else:
-            obj.send_data("A1,D,"+str(throttle_input)+",0,0,0,0,0,0,0,0\r\n")
-        # velocity_feedback = float(obj.receive_data().split(',')[3])
+    data = {
+        'timestamp': 1643138325,  # Example timestamp
+        'velocity': 50,            # Example velocity
+        'acceleration': 2,        # Example acceleration
+    }
+    headers = ['timestamp', 'velocity', 'acceleration']
 
-        # error = desired_vel - velocity_feedback
-        # kp = damping(error)
+    while(True):
+        try:
+            velocity_feedback = float(obj.receive_data().split(',')[3])
 
-        # if desired_vel > velocity_feedback:
-        #     acc = acc + kp
-        #     obj.send_data("A1,D,0,0,0,0,0,0,0,0,0\r\n")
-        # else:
-        #     acc = acc - 2 * kp
-        #     obj.send_data("A1,D,0,1,30,0,0,0,0,0,0\r\n")
+            control_signal = pid_controller.compute(setpoint, velocity_feedback)
 
-        # print("acc: ", acc)
-        # print("current_vel: ", velocity_feedback)
-        # print("damping: ", kp)
-        # feed = obj.receive_data()
-        # print(feed) 
+                # Assuming a simple linear relationship between throttle and velocity
+            throttle_input = np.clip(control_signal, 0, 100)
+            print(throttle_input)
+            print("velocity: ",velocity_feedback)
+            
+            # if(float(velocity_feedback)>setpoint):
+            #     obj.send_data("A1,D,2,0,0,0,0,0,0,0,0\r\n")
+            # else:
+            obj.send_data("A1,D,60,0,0,0,0,0,0,0,0\r\n")
+            print("throttle feedback: ",obj.receive_data())
+            data['timestamp'] = current_time_in_nanoseconds()  # Update timestamp with current time
+            # Simulated data (replace with actual data collection logic)
+            data['velocity'] = velocity_feedback
+            data['acceleration'] = throttle_input
+            
+            # Write data to CSV
+            # write_to_csv(data, 'velocity_40.csv', headers)
+            
 
-        # # Add condition to break out of the loop if desired velocity is achieved
-        # if abs(velocity_feedback - desired_vel) < 0.1:
-        #     break
+            
 
-    except Exception as e:
-        print("Error:", e)
+
+        except Exception as e:
+            print("Error:", e)

@@ -63,6 +63,7 @@ class Controller2D(object):
         ki = 0.00007
         kd = 1.710
 
+
         throttle_output = 0
         st = (t - self.vars.t_previous)/(1e9)
         print("current_time: ",t)
@@ -92,7 +93,7 @@ class Controller2D(object):
         print("dddddd: ",throttle_output)
 
 
-        
+
         ######################################################
         # SET CONTROLS OUTPUT
         ######################################################
@@ -106,4 +107,4 @@ class Controller2D(object):
         self.vars.error_previous = e_v
         self.vars.integral_error_previous = inte_v
 
-        return th
+        return th 
