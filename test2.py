@@ -682,21 +682,6 @@ obj.send_data(message)
 feed = obj.receive_data()
 print(feed)
 
-zeta= 0.5
-# def acclerate(acc, desired_vel, curr_vel):
-#     global zeta
-#     if curr_vel < desired_vel:
-#         acc = acc + zeta
-#         #curr_vel = curr_vel + 0.2
-#     else:
-#         acc = acc - zeta
-#         #curr_vel = curr_vel - 0.2
-#     if (curr_vel > desired_vel-0.5) and (curr_vel < desired_vel + 0.5):
-#         zeta = zeta / 2 
-#     ###print("acc : ",acc)
-#     #print("curr_vel : ",curr_vel)
-#     return acc
-# cap = 10
 def accn(kp, acc):
     return acc+kp
 def dccn(kp, acc):
@@ -707,7 +692,7 @@ def damping(error):
     return kp
 desired_vel = 6.0
 acc = 1
-cont = controller.Controller2D()
+# cont = controller.Controller2D()
 obj.send_data("A1,D,1,0,0,0,0,0,0,0,0\r\n")
 time.sleep(1)
 
@@ -716,29 +701,36 @@ ki = 0.0006
 kd = 0.28
 
 pid_controller = controller2.PIDControllervel(kp, ki, kd)
+
+max_dist = 20.0
+min_dist = 8.0
+ego_speed = 10.0
+acc_switch = False
 # setpoint = 10.0
 # while not rospy.is_shutdown():
 while not rospy.is_shutdown():
     try:
-        velocity_feedback = float(obj.receive_data().split(',')[3])
+        velocity_feedback = float(obj.receive_data().split(',')[3]) #velocity feedback from controller
         # velocity_feedback =  np.clip(1, 0, 100)
-        print("velllllll: ",velg*(18/5))
+        print("velllllll: ",velg*(18/5))  # velg is the velocity from gnss 
         vel_gnss = velg*(18/5)
-        print("adfd: ",vsub)
+        print("adfd: ",vsub)   # vsub is the desired velocity
         setpoint = vsub
-        control_signal = pid_controller.compute(setpoint, vel_gnss)
+        control_signal = pid_controller.compute(setpoint, vel_gnss)  # (desired_vel, feedback)
 
-            # Assuming a simple linear relationship between throttle and velocity
         throttle_input1 = np.clip(control_signal, 0, 100)
         print(throttle_input1)
-        # print("velocity: ",velocity_feedback)
-        # velocity_feedback = float(obj.receive_data().split(',')[3])
-        # cont.update_values(velocity_feedback)
-        # throttle = cont.update_controls()
-        # print("throttle: ",(str(throttle)))
-        # # time.sleep(1)
-        # # "+str(throttle)+"
-        # print("gnss_velocity: ",velg*(18/5))
+
+        if acc_switch:
+            if(vel_gnss>v_abs):
+                # obj.send_data("A1,D,2,0,0,0,0,0,0,0,0\r\n")
+                throttle_input = 1
+                if brake:
+                    brake_rate = 10
+            else:
+                throttle_input = throttle_input1
+            
+        
         if(vel_gnss>setpoint):
             # obj.send_data("A1,D,2,0,0,0,0,0,0,0,0\r\n")
             throttle_input = 2
@@ -748,27 +740,7 @@ while not rospy.is_shutdown():
             # obj.send_data("A1,D,"+str(throttle_input)+",0,0,0,0,0,0,0,0\r\n")
 
         obj.send_data("A1,D,"+str(throttle_input)+",0,0,0,0,0,0,0,0\r\n")
-        # velocity_feedback = float(obj.receive_data().split(',')[3])
-
-        # error = desired_vel - velocity_feedback
-        # kp = damping(error)
-
-        # if desired_vel > velocity_feedback:
-        #     acc = acc + kp
-        #     obj.send_data("A1,D,0,0,0,0,0,0,0,0,0\r\n")
-        # else:
-        #     acc = acc - 2 * kp
-        #     obj.send_data("A1,D,0,1,30,0,0,0,0,0,0\r\n")
-
-        # print("acc: ", acc)
-        # print("current_vel: ", velocity_feedback)
-        # print("damping: ", kp)
-        # feed = obj.receive_data()
-        # print(feed) 
-
-        # # Add condition to break out of the loop if desired velocity is achieved
-        # if abs(velocity_feedback - desired_vel) < 0.1:
-        #     break
+        
 
     except Exception as e:
         print("Error:", e)
