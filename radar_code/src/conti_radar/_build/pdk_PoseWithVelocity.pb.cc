@@ -5,124 +5,139 @@
 
 #include <algorithm>
 
+#include <google/protobuf/stubs/common.h>
+#include <google/protobuf/stubs/port.h>
 #include <google/protobuf/io/coded_stream.h>
-#include <google/protobuf/extension_set.h>
-#include <google/protobuf/wire_format_lite.h>
+#include <google/protobuf/wire_format_lite_inl.h>
 #include <google/protobuf/descriptor.h>
 #include <google/protobuf/generated_message_reflection.h>
 #include <google/protobuf/reflection_ops.h>
 #include <google/protobuf/wire_format.h>
+// This is a temporary google only hack
+#ifdef GOOGLE_PROTOBUF_ENFORCE_UNIQUENESS
+#include "third_party/protobuf/version.h"
+#endif
 // @@protoc_insertion_point(includes)
-#include <google/protobuf/port_def.inc>
 
-PROTOBUF_PRAGMA_INIT_SEG
-
-namespace _pb = ::PROTOBUF_NAMESPACE_ID;
-namespace _pbi = _pb::internal;
-
+namespace protobuf_pdk_5fMsgHeader_2eproto {
+extern PROTOBUF_INTERNAL_EXPORT_protobuf_pdk_5fMsgHeader_2eproto ::google::protobuf::internal::SCCInfo<1> scc_info_MsgHeader;
+}  // namespace protobuf_pdk_5fMsgHeader_2eproto
+namespace protobuf_pdk_5fPoseWithVelocity_2eproto {
+extern PROTOBUF_INTERNAL_EXPORT_protobuf_pdk_5fPoseWithVelocity_2eproto ::google::protobuf::internal::SCCInfo<0> scc_info_PoseWithVelocity_PoseCartesian;
+extern PROTOBUF_INTERNAL_EXPORT_protobuf_pdk_5fPoseWithVelocity_2eproto ::google::protobuf::internal::SCCInfo<0> scc_info_PoseWithVelocity_PoseWGS84;
+extern PROTOBUF_INTERNAL_EXPORT_protobuf_pdk_5fPoseWithVelocity_2eproto ::google::protobuf::internal::SCCInfo<0> scc_info_PoseWithVelocity_Velocity;
+}  // namespace protobuf_pdk_5fPoseWithVelocity_2eproto
 namespace pb {
 namespace PDK {
-PROTOBUF_CONSTEXPR PoseWithVelocity_PoseWGS84::PoseWithVelocity_PoseWGS84(
-    ::_pbi::ConstantInitialized)
-  : latitude_(0)
-  , longitude_(0)
-  , altitude_(0)
-  , heading_(0)
-  , varlat_(0)
-  , varlong_(0)
-  , covlatlong_(0)
-  , varaltitude_(0)
-  , varheading_(0)
-  , valid_(false){}
-struct PoseWithVelocity_PoseWGS84DefaultTypeInternal {
-  PROTOBUF_CONSTEXPR PoseWithVelocity_PoseWGS84DefaultTypeInternal()
-      : _instance(::_pbi::ConstantInitialized{}) {}
-  ~PoseWithVelocity_PoseWGS84DefaultTypeInternal() {}
-  union {
-    PoseWithVelocity_PoseWGS84 _instance;
-  };
-};
-PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 PoseWithVelocity_PoseWGS84DefaultTypeInternal _PoseWithVelocity_PoseWGS84_default_instance_;
-PROTOBUF_CONSTEXPR PoseWithVelocity_PoseCartesian::PoseWithVelocity_PoseCartesian(
-    ::_pbi::ConstantInitialized)
-  : x_(0)
-  , y_(0)
-  , yaw_(0)
-  , varx_(0)
-  , vary_(0)
-  , covxy_(0)
-  , varyaw_(0)
-  , valid_(false){}
-struct PoseWithVelocity_PoseCartesianDefaultTypeInternal {
-  PROTOBUF_CONSTEXPR PoseWithVelocity_PoseCartesianDefaultTypeInternal()
-      : _instance(::_pbi::ConstantInitialized{}) {}
-  ~PoseWithVelocity_PoseCartesianDefaultTypeInternal() {}
-  union {
-    PoseWithVelocity_PoseCartesian _instance;
-  };
-};
-PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 PoseWithVelocity_PoseCartesianDefaultTypeInternal _PoseWithVelocity_PoseCartesian_default_instance_;
-PROTOBUF_CONSTEXPR PoseWithVelocity_Velocity::PoseWithVelocity_Velocity(
-    ::_pbi::ConstantInitialized)
-  : vx_(0)
-  , vy_(0)
-  , yawrate_(0)
-  , varvx_(0)
-  , varvy_(0)
-  , covvxvy_(0)
-  , varyawrate_(0)
-  , valid_(false){}
-struct PoseWithVelocity_VelocityDefaultTypeInternal {
-  PROTOBUF_CONSTEXPR PoseWithVelocity_VelocityDefaultTypeInternal()
-      : _instance(::_pbi::ConstantInitialized{}) {}
-  ~PoseWithVelocity_VelocityDefaultTypeInternal() {}
-  union {
-    PoseWithVelocity_Velocity _instance;
-  };
-};
-PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 PoseWithVelocity_VelocityDefaultTypeInternal _PoseWithVelocity_Velocity_default_instance_;
-PROTOBUF_CONSTEXPR PoseWithVelocity::PoseWithVelocity(
-    ::_pbi::ConstantInitialized)
-  : referenceframe_(&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{})
-  , header_(nullptr)
-  , posewgs84_(nullptr)
-  , posecartesian_(nullptr)
-  , velocity_(nullptr)
-  , confidence_(0)
-  , signalstatus_(0)
-{}
-struct PoseWithVelocityDefaultTypeInternal {
-  PROTOBUF_CONSTEXPR PoseWithVelocityDefaultTypeInternal()
-      : _instance(::_pbi::ConstantInitialized{}) {}
-  ~PoseWithVelocityDefaultTypeInternal() {}
-  union {
-    PoseWithVelocity _instance;
-  };
-};
-PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 PoseWithVelocityDefaultTypeInternal _PoseWithVelocity_default_instance_;
+class PoseWithVelocity_PoseWGS84DefaultTypeInternal {
+ public:
+  ::google::protobuf::internal::ExplicitlyConstructed<PoseWithVelocity_PoseWGS84>
+      _instance;
+} _PoseWithVelocity_PoseWGS84_default_instance_;
+class PoseWithVelocity_PoseCartesianDefaultTypeInternal {
+ public:
+  ::google::protobuf::internal::ExplicitlyConstructed<PoseWithVelocity_PoseCartesian>
+      _instance;
+} _PoseWithVelocity_PoseCartesian_default_instance_;
+class PoseWithVelocity_VelocityDefaultTypeInternal {
+ public:
+  ::google::protobuf::internal::ExplicitlyConstructed<PoseWithVelocity_Velocity>
+      _instance;
+} _PoseWithVelocity_Velocity_default_instance_;
+class PoseWithVelocityDefaultTypeInternal {
+ public:
+  ::google::protobuf::internal::ExplicitlyConstructed<PoseWithVelocity>
+      _instance;
+} _PoseWithVelocity_default_instance_;
 }  // namespace PDK
 }  // namespace pb
-static ::_pb::Metadata file_level_metadata_pdk_5fPoseWithVelocity_2eproto[4];
-static const ::_pb::EnumDescriptor* file_level_enum_descriptors_pdk_5fPoseWithVelocity_2eproto[1];
-static constexpr ::_pb::ServiceDescriptor const** file_level_service_descriptors_pdk_5fPoseWithVelocity_2eproto = nullptr;
+namespace protobuf_pdk_5fPoseWithVelocity_2eproto {
+static void InitDefaultsPoseWithVelocity_PoseWGS84() {
+  GOOGLE_PROTOBUF_VERIFY_VERSION;
 
-const uint32_t TableStruct_pdk_5fPoseWithVelocity_2eproto::offsets[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
-  PROTOBUF_FIELD_OFFSET(::pb::PDK::PoseWithVelocity_PoseWGS84, _has_bits_),
-  PROTOBUF_FIELD_OFFSET(::pb::PDK::PoseWithVelocity_PoseWGS84, _internal_metadata_),
+  {
+    void* ptr = &::pb::PDK::_PoseWithVelocity_PoseWGS84_default_instance_;
+    new (ptr) ::pb::PDK::PoseWithVelocity_PoseWGS84();
+    ::google::protobuf::internal::OnShutdownDestroyMessage(ptr);
+  }
+  ::pb::PDK::PoseWithVelocity_PoseWGS84::InitAsDefaultInstance();
+}
+
+::google::protobuf::internal::SCCInfo<0> scc_info_PoseWithVelocity_PoseWGS84 =
+    {{ATOMIC_VAR_INIT(::google::protobuf::internal::SCCInfoBase::kUninitialized), 0, InitDefaultsPoseWithVelocity_PoseWGS84}, {}};
+
+static void InitDefaultsPoseWithVelocity_PoseCartesian() {
+  GOOGLE_PROTOBUF_VERIFY_VERSION;
+
+  {
+    void* ptr = &::pb::PDK::_PoseWithVelocity_PoseCartesian_default_instance_;
+    new (ptr) ::pb::PDK::PoseWithVelocity_PoseCartesian();
+    ::google::protobuf::internal::OnShutdownDestroyMessage(ptr);
+  }
+  ::pb::PDK::PoseWithVelocity_PoseCartesian::InitAsDefaultInstance();
+}
+
+::google::protobuf::internal::SCCInfo<0> scc_info_PoseWithVelocity_PoseCartesian =
+    {{ATOMIC_VAR_INIT(::google::protobuf::internal::SCCInfoBase::kUninitialized), 0, InitDefaultsPoseWithVelocity_PoseCartesian}, {}};
+
+static void InitDefaultsPoseWithVelocity_Velocity() {
+  GOOGLE_PROTOBUF_VERIFY_VERSION;
+
+  {
+    void* ptr = &::pb::PDK::_PoseWithVelocity_Velocity_default_instance_;
+    new (ptr) ::pb::PDK::PoseWithVelocity_Velocity();
+    ::google::protobuf::internal::OnShutdownDestroyMessage(ptr);
+  }
+  ::pb::PDK::PoseWithVelocity_Velocity::InitAsDefaultInstance();
+}
+
+::google::protobuf::internal::SCCInfo<0> scc_info_PoseWithVelocity_Velocity =
+    {{ATOMIC_VAR_INIT(::google::protobuf::internal::SCCInfoBase::kUninitialized), 0, InitDefaultsPoseWithVelocity_Velocity}, {}};
+
+static void InitDefaultsPoseWithVelocity() {
+  GOOGLE_PROTOBUF_VERIFY_VERSION;
+
+  {
+    void* ptr = &::pb::PDK::_PoseWithVelocity_default_instance_;
+    new (ptr) ::pb::PDK::PoseWithVelocity();
+    ::google::protobuf::internal::OnShutdownDestroyMessage(ptr);
+  }
+  ::pb::PDK::PoseWithVelocity::InitAsDefaultInstance();
+}
+
+::google::protobuf::internal::SCCInfo<4> scc_info_PoseWithVelocity =
+    {{ATOMIC_VAR_INIT(::google::protobuf::internal::SCCInfoBase::kUninitialized), 4, InitDefaultsPoseWithVelocity}, {
+      &protobuf_pdk_5fMsgHeader_2eproto::scc_info_MsgHeader.base,
+      &protobuf_pdk_5fPoseWithVelocity_2eproto::scc_info_PoseWithVelocity_PoseWGS84.base,
+      &protobuf_pdk_5fPoseWithVelocity_2eproto::scc_info_PoseWithVelocity_PoseCartesian.base,
+      &protobuf_pdk_5fPoseWithVelocity_2eproto::scc_info_PoseWithVelocity_Velocity.base,}};
+
+void InitDefaults() {
+  ::google::protobuf::internal::InitSCC(&scc_info_PoseWithVelocity_PoseWGS84.base);
+  ::google::protobuf::internal::InitSCC(&scc_info_PoseWithVelocity_PoseCartesian.base);
+  ::google::protobuf::internal::InitSCC(&scc_info_PoseWithVelocity_Velocity.base);
+  ::google::protobuf::internal::InitSCC(&scc_info_PoseWithVelocity.base);
+}
+
+::google::protobuf::Metadata file_level_metadata[4];
+const ::google::protobuf::EnumDescriptor* file_level_enum_descriptors[1];
+
+const ::google::protobuf::uint32 TableStruct::offsets[] GOOGLE_PROTOBUF_ATTRIBUTE_SECTION_VARIABLE(protodesc_cold) = {
+  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::pb::PDK::PoseWithVelocity_PoseWGS84, _has_bits_),
+  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::pb::PDK::PoseWithVelocity_PoseWGS84, _internal_metadata_),
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
-  ~0u,  // no _inlined_string_donated_
-  PROTOBUF_FIELD_OFFSET(::pb::PDK::PoseWithVelocity_PoseWGS84, latitude_),
-  PROTOBUF_FIELD_OFFSET(::pb::PDK::PoseWithVelocity_PoseWGS84, longitude_),
-  PROTOBUF_FIELD_OFFSET(::pb::PDK::PoseWithVelocity_PoseWGS84, altitude_),
-  PROTOBUF_FIELD_OFFSET(::pb::PDK::PoseWithVelocity_PoseWGS84, heading_),
-  PROTOBUF_FIELD_OFFSET(::pb::PDK::PoseWithVelocity_PoseWGS84, varlat_),
-  PROTOBUF_FIELD_OFFSET(::pb::PDK::PoseWithVelocity_PoseWGS84, varlong_),
-  PROTOBUF_FIELD_OFFSET(::pb::PDK::PoseWithVelocity_PoseWGS84, covlatlong_),
-  PROTOBUF_FIELD_OFFSET(::pb::PDK::PoseWithVelocity_PoseWGS84, varaltitude_),
-  PROTOBUF_FIELD_OFFSET(::pb::PDK::PoseWithVelocity_PoseWGS84, varheading_),
-  PROTOBUF_FIELD_OFFSET(::pb::PDK::PoseWithVelocity_PoseWGS84, valid_),
+  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::pb::PDK::PoseWithVelocity_PoseWGS84, latitude_),
+  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::pb::PDK::PoseWithVelocity_PoseWGS84, longitude_),
+  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::pb::PDK::PoseWithVelocity_PoseWGS84, altitude_),
+  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::pb::PDK::PoseWithVelocity_PoseWGS84, heading_),
+  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::pb::PDK::PoseWithVelocity_PoseWGS84, varlat_),
+  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::pb::PDK::PoseWithVelocity_PoseWGS84, varlong_),
+  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::pb::PDK::PoseWithVelocity_PoseWGS84, covlatlong_),
+  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::pb::PDK::PoseWithVelocity_PoseWGS84, varaltitude_),
+  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::pb::PDK::PoseWithVelocity_PoseWGS84, varheading_),
+  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::pb::PDK::PoseWithVelocity_PoseWGS84, valid_),
   0,
   1,
   2,
@@ -133,20 +148,19 @@ const uint32_t TableStruct_pdk_5fPoseWithVelocity_2eproto::offsets[] PROTOBUF_SE
   7,
   8,
   9,
-  PROTOBUF_FIELD_OFFSET(::pb::PDK::PoseWithVelocity_PoseCartesian, _has_bits_),
-  PROTOBUF_FIELD_OFFSET(::pb::PDK::PoseWithVelocity_PoseCartesian, _internal_metadata_),
+  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::pb::PDK::PoseWithVelocity_PoseCartesian, _has_bits_),
+  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::pb::PDK::PoseWithVelocity_PoseCartesian, _internal_metadata_),
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
-  ~0u,  // no _inlined_string_donated_
-  PROTOBUF_FIELD_OFFSET(::pb::PDK::PoseWithVelocity_PoseCartesian, x_),
-  PROTOBUF_FIELD_OFFSET(::pb::PDK::PoseWithVelocity_PoseCartesian, y_),
-  PROTOBUF_FIELD_OFFSET(::pb::PDK::PoseWithVelocity_PoseCartesian, yaw_),
-  PROTOBUF_FIELD_OFFSET(::pb::PDK::PoseWithVelocity_PoseCartesian, varx_),
-  PROTOBUF_FIELD_OFFSET(::pb::PDK::PoseWithVelocity_PoseCartesian, vary_),
-  PROTOBUF_FIELD_OFFSET(::pb::PDK::PoseWithVelocity_PoseCartesian, covxy_),
-  PROTOBUF_FIELD_OFFSET(::pb::PDK::PoseWithVelocity_PoseCartesian, varyaw_),
-  PROTOBUF_FIELD_OFFSET(::pb::PDK::PoseWithVelocity_PoseCartesian, valid_),
+  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::pb::PDK::PoseWithVelocity_PoseCartesian, x_),
+  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::pb::PDK::PoseWithVelocity_PoseCartesian, y_),
+  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::pb::PDK::PoseWithVelocity_PoseCartesian, yaw_),
+  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::pb::PDK::PoseWithVelocity_PoseCartesian, varx_),
+  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::pb::PDK::PoseWithVelocity_PoseCartesian, vary_),
+  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::pb::PDK::PoseWithVelocity_PoseCartesian, covxy_),
+  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::pb::PDK::PoseWithVelocity_PoseCartesian, varyaw_),
+  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::pb::PDK::PoseWithVelocity_PoseCartesian, valid_),
   0,
   1,
   2,
@@ -155,20 +169,19 @@ const uint32_t TableStruct_pdk_5fPoseWithVelocity_2eproto::offsets[] PROTOBUF_SE
   5,
   6,
   7,
-  PROTOBUF_FIELD_OFFSET(::pb::PDK::PoseWithVelocity_Velocity, _has_bits_),
-  PROTOBUF_FIELD_OFFSET(::pb::PDK::PoseWithVelocity_Velocity, _internal_metadata_),
+  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::pb::PDK::PoseWithVelocity_Velocity, _has_bits_),
+  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::pb::PDK::PoseWithVelocity_Velocity, _internal_metadata_),
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
-  ~0u,  // no _inlined_string_donated_
-  PROTOBUF_FIELD_OFFSET(::pb::PDK::PoseWithVelocity_Velocity, vx_),
-  PROTOBUF_FIELD_OFFSET(::pb::PDK::PoseWithVelocity_Velocity, vy_),
-  PROTOBUF_FIELD_OFFSET(::pb::PDK::PoseWithVelocity_Velocity, yawrate_),
-  PROTOBUF_FIELD_OFFSET(::pb::PDK::PoseWithVelocity_Velocity, varvx_),
-  PROTOBUF_FIELD_OFFSET(::pb::PDK::PoseWithVelocity_Velocity, varvy_),
-  PROTOBUF_FIELD_OFFSET(::pb::PDK::PoseWithVelocity_Velocity, covvxvy_),
-  PROTOBUF_FIELD_OFFSET(::pb::PDK::PoseWithVelocity_Velocity, varyawrate_),
-  PROTOBUF_FIELD_OFFSET(::pb::PDK::PoseWithVelocity_Velocity, valid_),
+  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::pb::PDK::PoseWithVelocity_Velocity, vx_),
+  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::pb::PDK::PoseWithVelocity_Velocity, vy_),
+  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::pb::PDK::PoseWithVelocity_Velocity, yawrate_),
+  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::pb::PDK::PoseWithVelocity_Velocity, varvx_),
+  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::pb::PDK::PoseWithVelocity_Velocity, varvy_),
+  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::pb::PDK::PoseWithVelocity_Velocity, covvxvy_),
+  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::pb::PDK::PoseWithVelocity_Velocity, varyawrate_),
+  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::pb::PDK::PoseWithVelocity_Velocity, valid_),
   0,
   1,
   2,
@@ -177,19 +190,18 @@ const uint32_t TableStruct_pdk_5fPoseWithVelocity_2eproto::offsets[] PROTOBUF_SE
   5,
   6,
   7,
-  PROTOBUF_FIELD_OFFSET(::pb::PDK::PoseWithVelocity, _has_bits_),
-  PROTOBUF_FIELD_OFFSET(::pb::PDK::PoseWithVelocity, _internal_metadata_),
+  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::pb::PDK::PoseWithVelocity, _has_bits_),
+  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::pb::PDK::PoseWithVelocity, _internal_metadata_),
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
-  ~0u,  // no _inlined_string_donated_
-  PROTOBUF_FIELD_OFFSET(::pb::PDK::PoseWithVelocity, header_),
-  PROTOBUF_FIELD_OFFSET(::pb::PDK::PoseWithVelocity, referenceframe_),
-  PROTOBUF_FIELD_OFFSET(::pb::PDK::PoseWithVelocity, posewgs84_),
-  PROTOBUF_FIELD_OFFSET(::pb::PDK::PoseWithVelocity, posecartesian_),
-  PROTOBUF_FIELD_OFFSET(::pb::PDK::PoseWithVelocity, velocity_),
-  PROTOBUF_FIELD_OFFSET(::pb::PDK::PoseWithVelocity, confidence_),
-  PROTOBUF_FIELD_OFFSET(::pb::PDK::PoseWithVelocity, signalstatus_),
+  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::pb::PDK::PoseWithVelocity, header_),
+  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::pb::PDK::PoseWithVelocity, referenceframe_),
+  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::pb::PDK::PoseWithVelocity, posewgs84_),
+  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::pb::PDK::PoseWithVelocity, posecartesian_),
+  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::pb::PDK::PoseWithVelocity, velocity_),
+  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::pb::PDK::PoseWithVelocity, confidence_),
+  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::pb::PDK::PoseWithVelocity, signalstatus_),
   1,
   0,
   2,
@@ -198,69 +210,89 @@ const uint32_t TableStruct_pdk_5fPoseWithVelocity_2eproto::offsets[] PROTOBUF_SE
   5,
   6,
 };
-static const ::_pbi::MigrationSchema schemas[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
-  { 0, 16, -1, sizeof(::pb::PDK::PoseWithVelocity_PoseWGS84)},
-  { 26, 40, -1, sizeof(::pb::PDK::PoseWithVelocity_PoseCartesian)},
-  { 48, 62, -1, sizeof(::pb::PDK::PoseWithVelocity_Velocity)},
-  { 70, 83, -1, sizeof(::pb::PDK::PoseWithVelocity)},
+static const ::google::protobuf::internal::MigrationSchema schemas[] GOOGLE_PROTOBUF_ATTRIBUTE_SECTION_VARIABLE(protodesc_cold) = {
+  { 0, 15, sizeof(::pb::PDK::PoseWithVelocity_PoseWGS84)},
+  { 25, 38, sizeof(::pb::PDK::PoseWithVelocity_PoseCartesian)},
+  { 46, 59, sizeof(::pb::PDK::PoseWithVelocity_Velocity)},
+  { 67, 79, sizeof(::pb::PDK::PoseWithVelocity)},
 };
 
-static const ::_pb::Message* const file_default_instances[] = {
-  &::pb::PDK::_PoseWithVelocity_PoseWGS84_default_instance_._instance,
-  &::pb::PDK::_PoseWithVelocity_PoseCartesian_default_instance_._instance,
-  &::pb::PDK::_PoseWithVelocity_Velocity_default_instance_._instance,
-  &::pb::PDK::_PoseWithVelocity_default_instance_._instance,
+static ::google::protobuf::Message const * const file_default_instances[] = {
+  reinterpret_cast<const ::google::protobuf::Message*>(&::pb::PDK::_PoseWithVelocity_PoseWGS84_default_instance_),
+  reinterpret_cast<const ::google::protobuf::Message*>(&::pb::PDK::_PoseWithVelocity_PoseCartesian_default_instance_),
+  reinterpret_cast<const ::google::protobuf::Message*>(&::pb::PDK::_PoseWithVelocity_Velocity_default_instance_),
+  reinterpret_cast<const ::google::protobuf::Message*>(&::pb::PDK::_PoseWithVelocity_default_instance_),
 };
 
-const char descriptor_table_protodef_pdk_5fPoseWithVelocity_2eproto[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) =
-  "\n\032pdk_PoseWithVelocity.proto\022\006pb.PDK\032\023pd"
-  "k_MsgHeader.proto\"\377\006\n\020PoseWithVelocity\022!"
-  "\n\006header\030\001 \001(\0132\021.pb.PDK.MsgHeader\022\026\n\016ref"
-  "erenceFrame\030\002 \001(\t\0225\n\tposeWGS84\030\003 \001(\0132\".p"
-  "b.PDK.PoseWithVelocity.PoseWGS84\022=\n\rpose"
-  "Cartesian\030\004 \001(\0132&.pb.PDK.PoseWithVelocit"
-  "y.PoseCartesian\0223\n\010velocity\030\005 \001(\0132!.pb.P"
-  "DK.PoseWithVelocity.Velocity\022\022\n\nconfiden"
-  "ce\030\006 \001(\002\022;\n\014signalStatus\030\007 \001(\0162%.pb.PDK."
-  "PoseWithVelocity.SignalStatus\032\300\001\n\tPoseWG"
-  "S84\022\020\n\010latitude\030\001 \001(\001\022\021\n\tlongitude\030\002 \001(\001"
-  "\022\020\n\010altitude\030\003 \001(\002\022\017\n\007heading\030\004 \001(\002\022\016\n\006v"
-  "arLat\030\005 \001(\002\022\017\n\007varLong\030\006 \001(\002\022\022\n\ncovLatLo"
-  "ng\030\007 \001(\002\022\023\n\013varAltitude\030\010 \001(\002\022\022\n\nvarHead"
-  "ing\030\t \001(\002\022\r\n\005valid\030\n \001(\010\032|\n\rPoseCartesia"
-  "n\022\t\n\001x\030\001 \001(\001\022\t\n\001y\030\002 \001(\001\022\013\n\003yaw\030\003 \001(\002\022\014\n\004"
-  "varX\030\005 \001(\002\022\014\n\004varY\030\006 \001(\002\022\r\n\005covXY\030\007 \001(\002\022"
-  "\016\n\006varYaw\030\t \001(\002\022\r\n\005valid\030\n \001(\010\032\205\001\n\010Veloc"
-  "ity\022\n\n\002vx\030\001 \001(\002\022\n\n\002vy\030\002 \001(\002\022\017\n\007yawRate\030\003"
-  " \001(\002\022\r\n\005varVx\030\004 \001(\002\022\r\n\005varVy\030\005 \001(\002\022\017\n\007co"
-  "vVxVy\030\006 \001(\002\022\022\n\nvarYawRate\030\007 \001(\002\022\r\n\005valid"
-  "\030\010 \001(\010\"k\n\014SignalStatus\022\022\n\016STATUS_UNKNOWN"
-  "\020\000\022\017\n\013STATUS_INIT\020\001\022\r\n\tSTATUS_OK\020\002\022\023\n\017ST"
-  "ATUS_FALLBACK\020\003\022\022\n\016STATUS_INVALID\020\004"
-  ;
-static const ::_pbi::DescriptorTable* const descriptor_table_pdk_5fPoseWithVelocity_2eproto_deps[1] = {
-  &::descriptor_table_pdk_5fMsgHeader_2eproto,
-};
-static ::_pbi::once_flag descriptor_table_pdk_5fPoseWithVelocity_2eproto_once;
-const ::_pbi::DescriptorTable descriptor_table_pdk_5fPoseWithVelocity_2eproto = {
-    false, false, 955, descriptor_table_protodef_pdk_5fPoseWithVelocity_2eproto,
-    "pdk_PoseWithVelocity.proto",
-    &descriptor_table_pdk_5fPoseWithVelocity_2eproto_once, descriptor_table_pdk_5fPoseWithVelocity_2eproto_deps, 1, 4,
-    schemas, file_default_instances, TableStruct_pdk_5fPoseWithVelocity_2eproto::offsets,
-    file_level_metadata_pdk_5fPoseWithVelocity_2eproto, file_level_enum_descriptors_pdk_5fPoseWithVelocity_2eproto,
-    file_level_service_descriptors_pdk_5fPoseWithVelocity_2eproto,
-};
-PROTOBUF_ATTRIBUTE_WEAK const ::_pbi::DescriptorTable* descriptor_table_pdk_5fPoseWithVelocity_2eproto_getter() {
-  return &descriptor_table_pdk_5fPoseWithVelocity_2eproto;
+void protobuf_AssignDescriptors() {
+  AddDescriptors();
+  AssignDescriptors(
+      "pdk_PoseWithVelocity.proto", schemas, file_default_instances, TableStruct::offsets,
+      file_level_metadata, file_level_enum_descriptors, NULL);
 }
 
-// Force running AddDescriptors() at dynamic initialization time.
-PROTOBUF_ATTRIBUTE_INIT_PRIORITY2 static ::_pbi::AddDescriptorsRunner dynamic_init_dummy_pdk_5fPoseWithVelocity_2eproto(&descriptor_table_pdk_5fPoseWithVelocity_2eproto);
+void protobuf_AssignDescriptorsOnce() {
+  static ::google::protobuf::internal::once_flag once;
+  ::google::protobuf::internal::call_once(once, protobuf_AssignDescriptors);
+}
+
+void protobuf_RegisterTypes(const ::std::string&) GOOGLE_PROTOBUF_ATTRIBUTE_COLD;
+void protobuf_RegisterTypes(const ::std::string&) {
+  protobuf_AssignDescriptorsOnce();
+  ::google::protobuf::internal::RegisterAllTypes(file_level_metadata, 4);
+}
+
+void AddDescriptorsImpl() {
+  InitDefaults();
+  static const char descriptor[] GOOGLE_PROTOBUF_ATTRIBUTE_SECTION_VARIABLE(protodesc_cold) = {
+      "\n\032pdk_PoseWithVelocity.proto\022\006pb.PDK\032\023pd"
+      "k_MsgHeader.proto\"\377\006\n\020PoseWithVelocity\022!"
+      "\n\006header\030\001 \001(\0132\021.pb.PDK.MsgHeader\022\026\n\016ref"
+      "erenceFrame\030\002 \001(\t\0225\n\tposeWGS84\030\003 \001(\0132\".p"
+      "b.PDK.PoseWithVelocity.PoseWGS84\022=\n\rpose"
+      "Cartesian\030\004 \001(\0132&.pb.PDK.PoseWithVelocit"
+      "y.PoseCartesian\0223\n\010velocity\030\005 \001(\0132!.pb.P"
+      "DK.PoseWithVelocity.Velocity\022\022\n\nconfiden"
+      "ce\030\006 \001(\002\022;\n\014signalStatus\030\007 \001(\0162%.pb.PDK."
+      "PoseWithVelocity.SignalStatus\032\300\001\n\tPoseWG"
+      "S84\022\020\n\010latitude\030\001 \001(\001\022\021\n\tlongitude\030\002 \001(\001"
+      "\022\020\n\010altitude\030\003 \001(\002\022\017\n\007heading\030\004 \001(\002\022\016\n\006v"
+      "arLat\030\005 \001(\002\022\017\n\007varLong\030\006 \001(\002\022\022\n\ncovLatLo"
+      "ng\030\007 \001(\002\022\023\n\013varAltitude\030\010 \001(\002\022\022\n\nvarHead"
+      "ing\030\t \001(\002\022\r\n\005valid\030\n \001(\010\032|\n\rPoseCartesia"
+      "n\022\t\n\001x\030\001 \001(\001\022\t\n\001y\030\002 \001(\001\022\013\n\003yaw\030\003 \001(\002\022\014\n\004"
+      "varX\030\005 \001(\002\022\014\n\004varY\030\006 \001(\002\022\r\n\005covXY\030\007 \001(\002\022"
+      "\016\n\006varYaw\030\t \001(\002\022\r\n\005valid\030\n \001(\010\032\205\001\n\010Veloc"
+      "ity\022\n\n\002vx\030\001 \001(\002\022\n\n\002vy\030\002 \001(\002\022\017\n\007yawRate\030\003"
+      " \001(\002\022\r\n\005varVx\030\004 \001(\002\022\r\n\005varVy\030\005 \001(\002\022\017\n\007co"
+      "vVxVy\030\006 \001(\002\022\022\n\nvarYawRate\030\007 \001(\002\022\r\n\005valid"
+      "\030\010 \001(\010\"k\n\014SignalStatus\022\022\n\016STATUS_UNKNOWN"
+      "\020\000\022\017\n\013STATUS_INIT\020\001\022\r\n\tSTATUS_OK\020\002\022\023\n\017ST"
+      "ATUS_FALLBACK\020\003\022\022\n\016STATUS_INVALID\020\004"
+  };
+  ::google::protobuf::DescriptorPool::InternalAddGeneratedFile(
+      descriptor, 955);
+  ::google::protobuf::MessageFactory::InternalRegisterGeneratedFile(
+    "pdk_PoseWithVelocity.proto", &protobuf_RegisterTypes);
+  ::protobuf_pdk_5fMsgHeader_2eproto::AddDescriptors();
+}
+
+void AddDescriptors() {
+  static ::google::protobuf::internal::once_flag once;
+  ::google::protobuf::internal::call_once(once, AddDescriptorsImpl);
+}
+// Force AddDescriptors() to be called at dynamic initialization time.
+struct StaticDescriptorInitializer {
+  StaticDescriptorInitializer() {
+    AddDescriptors();
+  }
+} static_descriptor_initializer;
+}  // namespace protobuf_pdk_5fPoseWithVelocity_2eproto
 namespace pb {
 namespace PDK {
-const ::PROTOBUF_NAMESPACE_ID::EnumDescriptor* PoseWithVelocity_SignalStatus_descriptor() {
-  ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(&descriptor_table_pdk_5fPoseWithVelocity_2eproto);
-  return file_level_enum_descriptors_pdk_5fPoseWithVelocity_2eproto[0];
+const ::google::protobuf::EnumDescriptor* PoseWithVelocity_SignalStatus_descriptor() {
+  protobuf_pdk_5fPoseWithVelocity_2eproto::protobuf_AssignDescriptorsOnce();
+  return protobuf_pdk_5fPoseWithVelocity_2eproto::file_level_enum_descriptors[0];
 }
 bool PoseWithVelocity_SignalStatus_IsValid(int value) {
   switch (value) {
@@ -275,306 +307,396 @@ bool PoseWithVelocity_SignalStatus_IsValid(int value) {
   }
 }
 
-#if (__cplusplus < 201703) && (!defined(_MSC_VER) || (_MSC_VER >= 1900 && _MSC_VER < 1912))
-constexpr PoseWithVelocity_SignalStatus PoseWithVelocity::STATUS_UNKNOWN;
-constexpr PoseWithVelocity_SignalStatus PoseWithVelocity::STATUS_INIT;
-constexpr PoseWithVelocity_SignalStatus PoseWithVelocity::STATUS_OK;
-constexpr PoseWithVelocity_SignalStatus PoseWithVelocity::STATUS_FALLBACK;
-constexpr PoseWithVelocity_SignalStatus PoseWithVelocity::STATUS_INVALID;
-constexpr PoseWithVelocity_SignalStatus PoseWithVelocity::SignalStatus_MIN;
-constexpr PoseWithVelocity_SignalStatus PoseWithVelocity::SignalStatus_MAX;
-constexpr int PoseWithVelocity::SignalStatus_ARRAYSIZE;
-#endif  // (__cplusplus < 201703) && (!defined(_MSC_VER) || (_MSC_VER >= 1900 && _MSC_VER < 1912))
+#if !defined(_MSC_VER) || _MSC_VER >= 1900
+const PoseWithVelocity_SignalStatus PoseWithVelocity::STATUS_UNKNOWN;
+const PoseWithVelocity_SignalStatus PoseWithVelocity::STATUS_INIT;
+const PoseWithVelocity_SignalStatus PoseWithVelocity::STATUS_OK;
+const PoseWithVelocity_SignalStatus PoseWithVelocity::STATUS_FALLBACK;
+const PoseWithVelocity_SignalStatus PoseWithVelocity::STATUS_INVALID;
+const PoseWithVelocity_SignalStatus PoseWithVelocity::SignalStatus_MIN;
+const PoseWithVelocity_SignalStatus PoseWithVelocity::SignalStatus_MAX;
+const int PoseWithVelocity::SignalStatus_ARRAYSIZE;
+#endif  // !defined(_MSC_VER) || _MSC_VER >= 1900
 
 // ===================================================================
 
-class PoseWithVelocity_PoseWGS84::_Internal {
- public:
-  using HasBits = decltype(std::declval<PoseWithVelocity_PoseWGS84>()._has_bits_);
-  static void set_has_latitude(HasBits* has_bits) {
-    (*has_bits)[0] |= 1u;
-  }
-  static void set_has_longitude(HasBits* has_bits) {
-    (*has_bits)[0] |= 2u;
-  }
-  static void set_has_altitude(HasBits* has_bits) {
-    (*has_bits)[0] |= 4u;
-  }
-  static void set_has_heading(HasBits* has_bits) {
-    (*has_bits)[0] |= 8u;
-  }
-  static void set_has_varlat(HasBits* has_bits) {
-    (*has_bits)[0] |= 16u;
-  }
-  static void set_has_varlong(HasBits* has_bits) {
-    (*has_bits)[0] |= 32u;
-  }
-  static void set_has_covlatlong(HasBits* has_bits) {
-    (*has_bits)[0] |= 64u;
-  }
-  static void set_has_varaltitude(HasBits* has_bits) {
-    (*has_bits)[0] |= 128u;
-  }
-  static void set_has_varheading(HasBits* has_bits) {
-    (*has_bits)[0] |= 256u;
-  }
-  static void set_has_valid(HasBits* has_bits) {
-    (*has_bits)[0] |= 512u;
-  }
-};
+void PoseWithVelocity_PoseWGS84::InitAsDefaultInstance() {
+}
+#if !defined(_MSC_VER) || _MSC_VER >= 1900
+const int PoseWithVelocity_PoseWGS84::kLatitudeFieldNumber;
+const int PoseWithVelocity_PoseWGS84::kLongitudeFieldNumber;
+const int PoseWithVelocity_PoseWGS84::kAltitudeFieldNumber;
+const int PoseWithVelocity_PoseWGS84::kHeadingFieldNumber;
+const int PoseWithVelocity_PoseWGS84::kVarLatFieldNumber;
+const int PoseWithVelocity_PoseWGS84::kVarLongFieldNumber;
+const int PoseWithVelocity_PoseWGS84::kCovLatLongFieldNumber;
+const int PoseWithVelocity_PoseWGS84::kVarAltitudeFieldNumber;
+const int PoseWithVelocity_PoseWGS84::kVarHeadingFieldNumber;
+const int PoseWithVelocity_PoseWGS84::kValidFieldNumber;
+#endif  // !defined(_MSC_VER) || _MSC_VER >= 1900
 
-PoseWithVelocity_PoseWGS84::PoseWithVelocity_PoseWGS84(::PROTOBUF_NAMESPACE_ID::Arena* arena,
-                         bool is_message_owned)
-  : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
+PoseWithVelocity_PoseWGS84::PoseWithVelocity_PoseWGS84()
+  : ::google::protobuf::Message(), _internal_metadata_(NULL) {
+  ::google::protobuf::internal::InitSCC(
+      &protobuf_pdk_5fPoseWithVelocity_2eproto::scc_info_PoseWithVelocity_PoseWGS84.base);
   SharedCtor();
-  // @@protoc_insertion_point(arena_constructor:pb.PDK.PoseWithVelocity.PoseWGS84)
+  // @@protoc_insertion_point(constructor:pb.PDK.PoseWithVelocity.PoseWGS84)
 }
 PoseWithVelocity_PoseWGS84::PoseWithVelocity_PoseWGS84(const PoseWithVelocity_PoseWGS84& from)
-  : ::PROTOBUF_NAMESPACE_ID::Message(),
+  : ::google::protobuf::Message(),
+      _internal_metadata_(NULL),
       _has_bits_(from._has_bits_) {
-  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  _internal_metadata_.MergeFrom(from._internal_metadata_);
   ::memcpy(&latitude_, &from.latitude_,
     static_cast<size_t>(reinterpret_cast<char*>(&valid_) -
     reinterpret_cast<char*>(&latitude_)) + sizeof(valid_));
   // @@protoc_insertion_point(copy_constructor:pb.PDK.PoseWithVelocity.PoseWGS84)
 }
 
-inline void PoseWithVelocity_PoseWGS84::SharedCtor() {
-::memset(reinterpret_cast<char*>(this) + static_cast<size_t>(
-    reinterpret_cast<char*>(&latitude_) - reinterpret_cast<char*>(this)),
-    0, static_cast<size_t>(reinterpret_cast<char*>(&valid_) -
-    reinterpret_cast<char*>(&latitude_)) + sizeof(valid_));
+void PoseWithVelocity_PoseWGS84::SharedCtor() {
+  ::memset(&latitude_, 0, static_cast<size_t>(
+      reinterpret_cast<char*>(&valid_) -
+      reinterpret_cast<char*>(&latitude_)) + sizeof(valid_));
 }
 
 PoseWithVelocity_PoseWGS84::~PoseWithVelocity_PoseWGS84() {
   // @@protoc_insertion_point(destructor:pb.PDK.PoseWithVelocity.PoseWGS84)
-  if (auto *arena = _internal_metadata_.DeleteReturnArena<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>()) {
-  (void)arena;
-    return;
-  }
   SharedDtor();
 }
 
-inline void PoseWithVelocity_PoseWGS84::SharedDtor() {
-  GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
+void PoseWithVelocity_PoseWGS84::SharedDtor() {
 }
 
 void PoseWithVelocity_PoseWGS84::SetCachedSize(int size) const {
   _cached_size_.Set(size);
 }
+const ::google::protobuf::Descriptor* PoseWithVelocity_PoseWGS84::descriptor() {
+  ::protobuf_pdk_5fPoseWithVelocity_2eproto::protobuf_AssignDescriptorsOnce();
+  return ::protobuf_pdk_5fPoseWithVelocity_2eproto::file_level_metadata[kIndexInFileMessages].descriptor;
+}
+
+const PoseWithVelocity_PoseWGS84& PoseWithVelocity_PoseWGS84::default_instance() {
+  ::google::protobuf::internal::InitSCC(&protobuf_pdk_5fPoseWithVelocity_2eproto::scc_info_PoseWithVelocity_PoseWGS84.base);
+  return *internal_default_instance();
+}
+
 
 void PoseWithVelocity_PoseWGS84::Clear() {
 // @@protoc_insertion_point(message_clear_start:pb.PDK.PoseWithVelocity.PoseWGS84)
-  uint32_t cached_has_bits = 0;
+  ::google::protobuf::uint32 cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
   cached_has_bits = _has_bits_[0];
-  if (cached_has_bits & 0x000000ffu) {
+  if (cached_has_bits & 255u) {
     ::memset(&latitude_, 0, static_cast<size_t>(
         reinterpret_cast<char*>(&varaltitude_) -
         reinterpret_cast<char*>(&latitude_)) + sizeof(varaltitude_));
   }
-  if (cached_has_bits & 0x00000300u) {
+  if (cached_has_bits & 768u) {
     ::memset(&varheading_, 0, static_cast<size_t>(
         reinterpret_cast<char*>(&valid_) -
         reinterpret_cast<char*>(&varheading_)) + sizeof(valid_));
   }
   _has_bits_.Clear();
-  _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
+  _internal_metadata_.Clear();
 }
 
-const char* PoseWithVelocity_PoseWGS84::_InternalParse(const char* ptr, ::_pbi::ParseContext* ctx) {
-#define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
-  _Internal::HasBits has_bits{};
-  while (!ctx->Done(&ptr)) {
-    uint32_t tag;
-    ptr = ::_pbi::ReadTag(ptr, &tag);
-    switch (tag >> 3) {
+bool PoseWithVelocity_PoseWGS84::MergePartialFromCodedStream(
+    ::google::protobuf::io::CodedInputStream* input) {
+#define DO_(EXPRESSION) if (!GOOGLE_PREDICT_TRUE(EXPRESSION)) goto failure
+  ::google::protobuf::uint32 tag;
+  // @@protoc_insertion_point(parse_start:pb.PDK.PoseWithVelocity.PoseWGS84)
+  for (;;) {
+    ::std::pair<::google::protobuf::uint32, bool> p = input->ReadTagWithCutoffNoLastTag(127u);
+    tag = p.first;
+    if (!p.second) goto handle_unusual;
+    switch (::google::protobuf::internal::WireFormatLite::GetTagFieldNumber(tag)) {
       // optional double latitude = 1;
-      case 1:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 9)) {
-          _Internal::set_has_latitude(&has_bits);
-          latitude_ = ::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<double>(ptr);
-          ptr += sizeof(double);
-        } else
+      case 1: {
+        if (static_cast< ::google::protobuf::uint8>(tag) ==
+            static_cast< ::google::protobuf::uint8>(9u /* 9 & 0xFF */)) {
+          set_has_latitude();
+          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
+                   double, ::google::protobuf::internal::WireFormatLite::TYPE_DOUBLE>(
+                 input, &latitude_)));
+        } else {
           goto handle_unusual;
-        continue;
+        }
+        break;
+      }
+
       // optional double longitude = 2;
-      case 2:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 17)) {
-          _Internal::set_has_longitude(&has_bits);
-          longitude_ = ::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<double>(ptr);
-          ptr += sizeof(double);
-        } else
+      case 2: {
+        if (static_cast< ::google::protobuf::uint8>(tag) ==
+            static_cast< ::google::protobuf::uint8>(17u /* 17 & 0xFF */)) {
+          set_has_longitude();
+          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
+                   double, ::google::protobuf::internal::WireFormatLite::TYPE_DOUBLE>(
+                 input, &longitude_)));
+        } else {
           goto handle_unusual;
-        continue;
+        }
+        break;
+      }
+
       // optional float altitude = 3;
-      case 3:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 29)) {
-          _Internal::set_has_altitude(&has_bits);
-          altitude_ = ::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<float>(ptr);
-          ptr += sizeof(float);
-        } else
+      case 3: {
+        if (static_cast< ::google::protobuf::uint8>(tag) ==
+            static_cast< ::google::protobuf::uint8>(29u /* 29 & 0xFF */)) {
+          set_has_altitude();
+          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
+                   float, ::google::protobuf::internal::WireFormatLite::TYPE_FLOAT>(
+                 input, &altitude_)));
+        } else {
           goto handle_unusual;
-        continue;
+        }
+        break;
+      }
+
       // optional float heading = 4;
-      case 4:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 37)) {
-          _Internal::set_has_heading(&has_bits);
-          heading_ = ::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<float>(ptr);
-          ptr += sizeof(float);
-        } else
+      case 4: {
+        if (static_cast< ::google::protobuf::uint8>(tag) ==
+            static_cast< ::google::protobuf::uint8>(37u /* 37 & 0xFF */)) {
+          set_has_heading();
+          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
+                   float, ::google::protobuf::internal::WireFormatLite::TYPE_FLOAT>(
+                 input, &heading_)));
+        } else {
           goto handle_unusual;
-        continue;
+        }
+        break;
+      }
+
       // optional float varLat = 5;
-      case 5:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 45)) {
-          _Internal::set_has_varlat(&has_bits);
-          varlat_ = ::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<float>(ptr);
-          ptr += sizeof(float);
-        } else
+      case 5: {
+        if (static_cast< ::google::protobuf::uint8>(tag) ==
+            static_cast< ::google::protobuf::uint8>(45u /* 45 & 0xFF */)) {
+          set_has_varlat();
+          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
+                   float, ::google::protobuf::internal::WireFormatLite::TYPE_FLOAT>(
+                 input, &varlat_)));
+        } else {
           goto handle_unusual;
-        continue;
+        }
+        break;
+      }
+
       // optional float varLong = 6;
-      case 6:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 53)) {
-          _Internal::set_has_varlong(&has_bits);
-          varlong_ = ::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<float>(ptr);
-          ptr += sizeof(float);
-        } else
+      case 6: {
+        if (static_cast< ::google::protobuf::uint8>(tag) ==
+            static_cast< ::google::protobuf::uint8>(53u /* 53 & 0xFF */)) {
+          set_has_varlong();
+          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
+                   float, ::google::protobuf::internal::WireFormatLite::TYPE_FLOAT>(
+                 input, &varlong_)));
+        } else {
           goto handle_unusual;
-        continue;
+        }
+        break;
+      }
+
       // optional float covLatLong = 7;
-      case 7:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 61)) {
-          _Internal::set_has_covlatlong(&has_bits);
-          covlatlong_ = ::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<float>(ptr);
-          ptr += sizeof(float);
-        } else
+      case 7: {
+        if (static_cast< ::google::protobuf::uint8>(tag) ==
+            static_cast< ::google::protobuf::uint8>(61u /* 61 & 0xFF */)) {
+          set_has_covlatlong();
+          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
+                   float, ::google::protobuf::internal::WireFormatLite::TYPE_FLOAT>(
+                 input, &covlatlong_)));
+        } else {
           goto handle_unusual;
-        continue;
+        }
+        break;
+      }
+
       // optional float varAltitude = 8;
-      case 8:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 69)) {
-          _Internal::set_has_varaltitude(&has_bits);
-          varaltitude_ = ::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<float>(ptr);
-          ptr += sizeof(float);
-        } else
+      case 8: {
+        if (static_cast< ::google::protobuf::uint8>(tag) ==
+            static_cast< ::google::protobuf::uint8>(69u /* 69 & 0xFF */)) {
+          set_has_varaltitude();
+          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
+                   float, ::google::protobuf::internal::WireFormatLite::TYPE_FLOAT>(
+                 input, &varaltitude_)));
+        } else {
           goto handle_unusual;
-        continue;
+        }
+        break;
+      }
+
       // optional float varHeading = 9;
-      case 9:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 77)) {
-          _Internal::set_has_varheading(&has_bits);
-          varheading_ = ::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<float>(ptr);
-          ptr += sizeof(float);
-        } else
+      case 9: {
+        if (static_cast< ::google::protobuf::uint8>(tag) ==
+            static_cast< ::google::protobuf::uint8>(77u /* 77 & 0xFF */)) {
+          set_has_varheading();
+          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
+                   float, ::google::protobuf::internal::WireFormatLite::TYPE_FLOAT>(
+                 input, &varheading_)));
+        } else {
           goto handle_unusual;
-        continue;
+        }
+        break;
+      }
+
       // optional bool valid = 10;
-      case 10:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 80)) {
-          _Internal::set_has_valid(&has_bits);
-          valid_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
-          CHK_(ptr);
-        } else
+      case 10: {
+        if (static_cast< ::google::protobuf::uint8>(tag) ==
+            static_cast< ::google::protobuf::uint8>(80u /* 80 & 0xFF */)) {
+          set_has_valid();
+          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
+                   bool, ::google::protobuf::internal::WireFormatLite::TYPE_BOOL>(
+                 input, &valid_)));
+        } else {
           goto handle_unusual;
-        continue;
-      default:
-        goto handle_unusual;
-    }  // switch
-  handle_unusual:
-    if ((tag == 0) || ((tag & 7) == 4)) {
-      CHK_(ptr);
-      ctx->SetLastTag(tag);
-      goto message_done;
+        }
+        break;
+      }
+
+      default: {
+      handle_unusual:
+        if (tag == 0) {
+          goto success;
+        }
+        DO_(::google::protobuf::internal::WireFormat::SkipField(
+              input, tag, _internal_metadata_.mutable_unknown_fields()));
+        break;
+      }
     }
-    ptr = UnknownFieldParse(
-        tag,
-        _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
-        ptr, ctx);
-    CHK_(ptr != nullptr);
-  }  // while
-message_done:
-  _has_bits_.Or(has_bits);
-  return ptr;
+  }
+success:
+  // @@protoc_insertion_point(parse_success:pb.PDK.PoseWithVelocity.PoseWGS84)
+  return true;
 failure:
-  ptr = nullptr;
-  goto message_done;
-#undef CHK_
+  // @@protoc_insertion_point(parse_failure:pb.PDK.PoseWithVelocity.PoseWGS84)
+  return false;
+#undef DO_
 }
 
-uint8_t* PoseWithVelocity_PoseWGS84::_InternalSerialize(
-    uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
-  // @@protoc_insertion_point(serialize_to_array_start:pb.PDK.PoseWithVelocity.PoseWGS84)
-  uint32_t cached_has_bits = 0;
+void PoseWithVelocity_PoseWGS84::SerializeWithCachedSizes(
+    ::google::protobuf::io::CodedOutputStream* output) const {
+  // @@protoc_insertion_point(serialize_start:pb.PDK.PoseWithVelocity.PoseWGS84)
+  ::google::protobuf::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
   cached_has_bits = _has_bits_[0];
   // optional double latitude = 1;
   if (cached_has_bits & 0x00000001u) {
-    target = stream->EnsureSpace(target);
-    target = ::_pbi::WireFormatLite::WriteDoubleToArray(1, this->_internal_latitude(), target);
+    ::google::protobuf::internal::WireFormatLite::WriteDouble(1, this->latitude(), output);
   }
 
   // optional double longitude = 2;
   if (cached_has_bits & 0x00000002u) {
-    target = stream->EnsureSpace(target);
-    target = ::_pbi::WireFormatLite::WriteDoubleToArray(2, this->_internal_longitude(), target);
+    ::google::protobuf::internal::WireFormatLite::WriteDouble(2, this->longitude(), output);
   }
 
   // optional float altitude = 3;
   if (cached_has_bits & 0x00000004u) {
-    target = stream->EnsureSpace(target);
-    target = ::_pbi::WireFormatLite::WriteFloatToArray(3, this->_internal_altitude(), target);
+    ::google::protobuf::internal::WireFormatLite::WriteFloat(3, this->altitude(), output);
   }
 
   // optional float heading = 4;
   if (cached_has_bits & 0x00000008u) {
-    target = stream->EnsureSpace(target);
-    target = ::_pbi::WireFormatLite::WriteFloatToArray(4, this->_internal_heading(), target);
+    ::google::protobuf::internal::WireFormatLite::WriteFloat(4, this->heading(), output);
   }
 
   // optional float varLat = 5;
   if (cached_has_bits & 0x00000010u) {
-    target = stream->EnsureSpace(target);
-    target = ::_pbi::WireFormatLite::WriteFloatToArray(5, this->_internal_varlat(), target);
+    ::google::protobuf::internal::WireFormatLite::WriteFloat(5, this->varlat(), output);
   }
 
   // optional float varLong = 6;
   if (cached_has_bits & 0x00000020u) {
-    target = stream->EnsureSpace(target);
-    target = ::_pbi::WireFormatLite::WriteFloatToArray(6, this->_internal_varlong(), target);
+    ::google::protobuf::internal::WireFormatLite::WriteFloat(6, this->varlong(), output);
   }
 
   // optional float covLatLong = 7;
   if (cached_has_bits & 0x00000040u) {
-    target = stream->EnsureSpace(target);
-    target = ::_pbi::WireFormatLite::WriteFloatToArray(7, this->_internal_covlatlong(), target);
+    ::google::protobuf::internal::WireFormatLite::WriteFloat(7, this->covlatlong(), output);
   }
 
   // optional float varAltitude = 8;
   if (cached_has_bits & 0x00000080u) {
-    target = stream->EnsureSpace(target);
-    target = ::_pbi::WireFormatLite::WriteFloatToArray(8, this->_internal_varaltitude(), target);
+    ::google::protobuf::internal::WireFormatLite::WriteFloat(8, this->varaltitude(), output);
   }
 
   // optional float varHeading = 9;
   if (cached_has_bits & 0x00000100u) {
-    target = stream->EnsureSpace(target);
-    target = ::_pbi::WireFormatLite::WriteFloatToArray(9, this->_internal_varheading(), target);
+    ::google::protobuf::internal::WireFormatLite::WriteFloat(9, this->varheading(), output);
   }
 
   // optional bool valid = 10;
   if (cached_has_bits & 0x00000200u) {
-    target = stream->EnsureSpace(target);
-    target = ::_pbi::WireFormatLite::WriteBoolToArray(10, this->_internal_valid(), target);
+    ::google::protobuf::internal::WireFormatLite::WriteBool(10, this->valid(), output);
   }
 
-  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
-    target = ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
-        _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
+  if (_internal_metadata_.have_unknown_fields()) {
+    ::google::protobuf::internal::WireFormat::SerializeUnknownFields(
+        _internal_metadata_.unknown_fields(), output);
+  }
+  // @@protoc_insertion_point(serialize_end:pb.PDK.PoseWithVelocity.PoseWGS84)
+}
+
+::google::protobuf::uint8* PoseWithVelocity_PoseWGS84::InternalSerializeWithCachedSizesToArray(
+    bool deterministic, ::google::protobuf::uint8* target) const {
+  (void)deterministic; // Unused
+  // @@protoc_insertion_point(serialize_to_array_start:pb.PDK.PoseWithVelocity.PoseWGS84)
+  ::google::protobuf::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  cached_has_bits = _has_bits_[0];
+  // optional double latitude = 1;
+  if (cached_has_bits & 0x00000001u) {
+    target = ::google::protobuf::internal::WireFormatLite::WriteDoubleToArray(1, this->latitude(), target);
+  }
+
+  // optional double longitude = 2;
+  if (cached_has_bits & 0x00000002u) {
+    target = ::google::protobuf::internal::WireFormatLite::WriteDoubleToArray(2, this->longitude(), target);
+  }
+
+  // optional float altitude = 3;
+  if (cached_has_bits & 0x00000004u) {
+    target = ::google::protobuf::internal::WireFormatLite::WriteFloatToArray(3, this->altitude(), target);
+  }
+
+  // optional float heading = 4;
+  if (cached_has_bits & 0x00000008u) {
+    target = ::google::protobuf::internal::WireFormatLite::WriteFloatToArray(4, this->heading(), target);
+  }
+
+  // optional float varLat = 5;
+  if (cached_has_bits & 0x00000010u) {
+    target = ::google::protobuf::internal::WireFormatLite::WriteFloatToArray(5, this->varlat(), target);
+  }
+
+  // optional float varLong = 6;
+  if (cached_has_bits & 0x00000020u) {
+    target = ::google::protobuf::internal::WireFormatLite::WriteFloatToArray(6, this->varlong(), target);
+  }
+
+  // optional float covLatLong = 7;
+  if (cached_has_bits & 0x00000040u) {
+    target = ::google::protobuf::internal::WireFormatLite::WriteFloatToArray(7, this->covlatlong(), target);
+  }
+
+  // optional float varAltitude = 8;
+  if (cached_has_bits & 0x00000080u) {
+    target = ::google::protobuf::internal::WireFormatLite::WriteFloatToArray(8, this->varaltitude(), target);
+  }
+
+  // optional float varHeading = 9;
+  if (cached_has_bits & 0x00000100u) {
+    target = ::google::protobuf::internal::WireFormatLite::WriteFloatToArray(9, this->varheading(), target);
+  }
+
+  // optional bool valid = 10;
+  if (cached_has_bits & 0x00000200u) {
+    target = ::google::protobuf::internal::WireFormatLite::WriteBoolToArray(10, this->valid(), target);
+  }
+
+  if (_internal_metadata_.have_unknown_fields()) {
+    target = ::google::protobuf::internal::WireFormat::SerializeUnknownFieldsToArray(
+        _internal_metadata_.unknown_fields(), target);
   }
   // @@protoc_insertion_point(serialize_to_array_end:pb.PDK.PoseWithVelocity.PoseWGS84)
   return target;
@@ -584,89 +706,94 @@ size_t PoseWithVelocity_PoseWGS84::ByteSizeLong() const {
 // @@protoc_insertion_point(message_byte_size_start:pb.PDK.PoseWithVelocity.PoseWGS84)
   size_t total_size = 0;
 
-  uint32_t cached_has_bits = 0;
-  // Prevent compiler warnings about cached_has_bits being unused
-  (void) cached_has_bits;
-
-  cached_has_bits = _has_bits_[0];
-  if (cached_has_bits & 0x000000ffu) {
+  if (_internal_metadata_.have_unknown_fields()) {
+    total_size +=
+      ::google::protobuf::internal::WireFormat::ComputeUnknownFieldsSize(
+        _internal_metadata_.unknown_fields());
+  }
+  if (_has_bits_[0 / 32] & 255u) {
     // optional double latitude = 1;
-    if (cached_has_bits & 0x00000001u) {
+    if (has_latitude()) {
       total_size += 1 + 8;
     }
 
     // optional double longitude = 2;
-    if (cached_has_bits & 0x00000002u) {
+    if (has_longitude()) {
       total_size += 1 + 8;
     }
 
     // optional float altitude = 3;
-    if (cached_has_bits & 0x00000004u) {
+    if (has_altitude()) {
       total_size += 1 + 4;
     }
 
     // optional float heading = 4;
-    if (cached_has_bits & 0x00000008u) {
+    if (has_heading()) {
       total_size += 1 + 4;
     }
 
     // optional float varLat = 5;
-    if (cached_has_bits & 0x00000010u) {
+    if (has_varlat()) {
       total_size += 1 + 4;
     }
 
     // optional float varLong = 6;
-    if (cached_has_bits & 0x00000020u) {
+    if (has_varlong()) {
       total_size += 1 + 4;
     }
 
     // optional float covLatLong = 7;
-    if (cached_has_bits & 0x00000040u) {
+    if (has_covlatlong()) {
       total_size += 1 + 4;
     }
 
     // optional float varAltitude = 8;
-    if (cached_has_bits & 0x00000080u) {
+    if (has_varaltitude()) {
       total_size += 1 + 4;
     }
 
   }
-  if (cached_has_bits & 0x00000300u) {
+  if (_has_bits_[8 / 32] & 768u) {
     // optional float varHeading = 9;
-    if (cached_has_bits & 0x00000100u) {
+    if (has_varheading()) {
       total_size += 1 + 4;
     }
 
     // optional bool valid = 10;
-    if (cached_has_bits & 0x00000200u) {
+    if (has_valid()) {
       total_size += 1 + 1;
     }
 
   }
-  return MaybeComputeUnknownFieldsSize(total_size, &_cached_size_);
+  int cached_size = ::google::protobuf::internal::ToCachedSize(total_size);
+  SetCachedSize(cached_size);
+  return total_size;
 }
 
-const ::PROTOBUF_NAMESPACE_ID::Message::ClassData PoseWithVelocity_PoseWGS84::_class_data_ = {
-    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSizeCheck,
-    PoseWithVelocity_PoseWGS84::MergeImpl
-};
-const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*PoseWithVelocity_PoseWGS84::GetClassData() const { return &_class_data_; }
-
-void PoseWithVelocity_PoseWGS84::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message* to,
-                      const ::PROTOBUF_NAMESPACE_ID::Message& from) {
-  static_cast<PoseWithVelocity_PoseWGS84 *>(to)->MergeFrom(
-      static_cast<const PoseWithVelocity_PoseWGS84 &>(from));
+void PoseWithVelocity_PoseWGS84::MergeFrom(const ::google::protobuf::Message& from) {
+// @@protoc_insertion_point(generalized_merge_from_start:pb.PDK.PoseWithVelocity.PoseWGS84)
+  GOOGLE_DCHECK_NE(&from, this);
+  const PoseWithVelocity_PoseWGS84* source =
+      ::google::protobuf::internal::DynamicCastToGenerated<const PoseWithVelocity_PoseWGS84>(
+          &from);
+  if (source == NULL) {
+  // @@protoc_insertion_point(generalized_merge_from_cast_fail:pb.PDK.PoseWithVelocity.PoseWGS84)
+    ::google::protobuf::internal::ReflectionOps::Merge(from, this);
+  } else {
+  // @@protoc_insertion_point(generalized_merge_from_cast_success:pb.PDK.PoseWithVelocity.PoseWGS84)
+    MergeFrom(*source);
+  }
 }
-
 
 void PoseWithVelocity_PoseWGS84::MergeFrom(const PoseWithVelocity_PoseWGS84& from) {
 // @@protoc_insertion_point(class_specific_merge_from_start:pb.PDK.PoseWithVelocity.PoseWGS84)
   GOOGLE_DCHECK_NE(&from, this);
-  uint32_t cached_has_bits = 0;
+  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  ::google::protobuf::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
   cached_has_bits = from._has_bits_[0];
-  if (cached_has_bits & 0x000000ffu) {
+  if (cached_has_bits & 255u) {
     if (cached_has_bits & 0x00000001u) {
       latitude_ = from.latitude_;
     }
@@ -693,7 +820,7 @@ void PoseWithVelocity_PoseWGS84::MergeFrom(const PoseWithVelocity_PoseWGS84& fro
     }
     _has_bits_[0] |= cached_has_bits;
   }
-  if (cached_has_bits & 0x00000300u) {
+  if (cached_has_bits & 768u) {
     if (cached_has_bits & 0x00000100u) {
       varheading_ = from.varheading_;
     }
@@ -702,7 +829,13 @@ void PoseWithVelocity_PoseWGS84::MergeFrom(const PoseWithVelocity_PoseWGS84& fro
     }
     _has_bits_[0] |= cached_has_bits;
   }
-  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+}
+
+void PoseWithVelocity_PoseWGS84::CopyFrom(const ::google::protobuf::Message& from) {
+// @@protoc_insertion_point(generalized_copy_from_start:pb.PDK.PoseWithVelocity.PoseWGS84)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
 }
 
 void PoseWithVelocity_PoseWGS84::CopyFrom(const PoseWithVelocity_PoseWGS84& from) {
@@ -716,272 +849,356 @@ bool PoseWithVelocity_PoseWGS84::IsInitialized() const {
   return true;
 }
 
+void PoseWithVelocity_PoseWGS84::Swap(PoseWithVelocity_PoseWGS84* other) {
+  if (other == this) return;
+  InternalSwap(other);
+}
 void PoseWithVelocity_PoseWGS84::InternalSwap(PoseWithVelocity_PoseWGS84* other) {
   using std::swap;
-  _internal_metadata_.InternalSwap(&other->_internal_metadata_);
+  swap(latitude_, other->latitude_);
+  swap(longitude_, other->longitude_);
+  swap(altitude_, other->altitude_);
+  swap(heading_, other->heading_);
+  swap(varlat_, other->varlat_);
+  swap(varlong_, other->varlong_);
+  swap(covlatlong_, other->covlatlong_);
+  swap(varaltitude_, other->varaltitude_);
+  swap(varheading_, other->varheading_);
+  swap(valid_, other->valid_);
   swap(_has_bits_[0], other->_has_bits_[0]);
-  ::PROTOBUF_NAMESPACE_ID::internal::memswap<
-      PROTOBUF_FIELD_OFFSET(PoseWithVelocity_PoseWGS84, valid_)
-      + sizeof(PoseWithVelocity_PoseWGS84::valid_)
-      - PROTOBUF_FIELD_OFFSET(PoseWithVelocity_PoseWGS84, latitude_)>(
-          reinterpret_cast<char*>(&latitude_),
-          reinterpret_cast<char*>(&other->latitude_));
+  _internal_metadata_.Swap(&other->_internal_metadata_);
 }
 
-::PROTOBUF_NAMESPACE_ID::Metadata PoseWithVelocity_PoseWGS84::GetMetadata() const {
-  return ::_pbi::AssignDescriptors(
-      &descriptor_table_pdk_5fPoseWithVelocity_2eproto_getter, &descriptor_table_pdk_5fPoseWithVelocity_2eproto_once,
-      file_level_metadata_pdk_5fPoseWithVelocity_2eproto[0]);
+::google::protobuf::Metadata PoseWithVelocity_PoseWGS84::GetMetadata() const {
+  protobuf_pdk_5fPoseWithVelocity_2eproto::protobuf_AssignDescriptorsOnce();
+  return ::protobuf_pdk_5fPoseWithVelocity_2eproto::file_level_metadata[kIndexInFileMessages];
 }
+
 
 // ===================================================================
 
-class PoseWithVelocity_PoseCartesian::_Internal {
- public:
-  using HasBits = decltype(std::declval<PoseWithVelocity_PoseCartesian>()._has_bits_);
-  static void set_has_x(HasBits* has_bits) {
-    (*has_bits)[0] |= 1u;
-  }
-  static void set_has_y(HasBits* has_bits) {
-    (*has_bits)[0] |= 2u;
-  }
-  static void set_has_yaw(HasBits* has_bits) {
-    (*has_bits)[0] |= 4u;
-  }
-  static void set_has_varx(HasBits* has_bits) {
-    (*has_bits)[0] |= 8u;
-  }
-  static void set_has_vary(HasBits* has_bits) {
-    (*has_bits)[0] |= 16u;
-  }
-  static void set_has_covxy(HasBits* has_bits) {
-    (*has_bits)[0] |= 32u;
-  }
-  static void set_has_varyaw(HasBits* has_bits) {
-    (*has_bits)[0] |= 64u;
-  }
-  static void set_has_valid(HasBits* has_bits) {
-    (*has_bits)[0] |= 128u;
-  }
-};
+void PoseWithVelocity_PoseCartesian::InitAsDefaultInstance() {
+}
+#if !defined(_MSC_VER) || _MSC_VER >= 1900
+const int PoseWithVelocity_PoseCartesian::kXFieldNumber;
+const int PoseWithVelocity_PoseCartesian::kYFieldNumber;
+const int PoseWithVelocity_PoseCartesian::kYawFieldNumber;
+const int PoseWithVelocity_PoseCartesian::kVarXFieldNumber;
+const int PoseWithVelocity_PoseCartesian::kVarYFieldNumber;
+const int PoseWithVelocity_PoseCartesian::kCovXYFieldNumber;
+const int PoseWithVelocity_PoseCartesian::kVarYawFieldNumber;
+const int PoseWithVelocity_PoseCartesian::kValidFieldNumber;
+#endif  // !defined(_MSC_VER) || _MSC_VER >= 1900
 
-PoseWithVelocity_PoseCartesian::PoseWithVelocity_PoseCartesian(::PROTOBUF_NAMESPACE_ID::Arena* arena,
-                         bool is_message_owned)
-  : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
+PoseWithVelocity_PoseCartesian::PoseWithVelocity_PoseCartesian()
+  : ::google::protobuf::Message(), _internal_metadata_(NULL) {
+  ::google::protobuf::internal::InitSCC(
+      &protobuf_pdk_5fPoseWithVelocity_2eproto::scc_info_PoseWithVelocity_PoseCartesian.base);
   SharedCtor();
-  // @@protoc_insertion_point(arena_constructor:pb.PDK.PoseWithVelocity.PoseCartesian)
+  // @@protoc_insertion_point(constructor:pb.PDK.PoseWithVelocity.PoseCartesian)
 }
 PoseWithVelocity_PoseCartesian::PoseWithVelocity_PoseCartesian(const PoseWithVelocity_PoseCartesian& from)
-  : ::PROTOBUF_NAMESPACE_ID::Message(),
+  : ::google::protobuf::Message(),
+      _internal_metadata_(NULL),
       _has_bits_(from._has_bits_) {
-  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  _internal_metadata_.MergeFrom(from._internal_metadata_);
   ::memcpy(&x_, &from.x_,
     static_cast<size_t>(reinterpret_cast<char*>(&valid_) -
     reinterpret_cast<char*>(&x_)) + sizeof(valid_));
   // @@protoc_insertion_point(copy_constructor:pb.PDK.PoseWithVelocity.PoseCartesian)
 }
 
-inline void PoseWithVelocity_PoseCartesian::SharedCtor() {
-::memset(reinterpret_cast<char*>(this) + static_cast<size_t>(
-    reinterpret_cast<char*>(&x_) - reinterpret_cast<char*>(this)),
-    0, static_cast<size_t>(reinterpret_cast<char*>(&valid_) -
-    reinterpret_cast<char*>(&x_)) + sizeof(valid_));
+void PoseWithVelocity_PoseCartesian::SharedCtor() {
+  ::memset(&x_, 0, static_cast<size_t>(
+      reinterpret_cast<char*>(&valid_) -
+      reinterpret_cast<char*>(&x_)) + sizeof(valid_));
 }
 
 PoseWithVelocity_PoseCartesian::~PoseWithVelocity_PoseCartesian() {
   // @@protoc_insertion_point(destructor:pb.PDK.PoseWithVelocity.PoseCartesian)
-  if (auto *arena = _internal_metadata_.DeleteReturnArena<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>()) {
-  (void)arena;
-    return;
-  }
   SharedDtor();
 }
 
-inline void PoseWithVelocity_PoseCartesian::SharedDtor() {
-  GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
+void PoseWithVelocity_PoseCartesian::SharedDtor() {
 }
 
 void PoseWithVelocity_PoseCartesian::SetCachedSize(int size) const {
   _cached_size_.Set(size);
 }
+const ::google::protobuf::Descriptor* PoseWithVelocity_PoseCartesian::descriptor() {
+  ::protobuf_pdk_5fPoseWithVelocity_2eproto::protobuf_AssignDescriptorsOnce();
+  return ::protobuf_pdk_5fPoseWithVelocity_2eproto::file_level_metadata[kIndexInFileMessages].descriptor;
+}
+
+const PoseWithVelocity_PoseCartesian& PoseWithVelocity_PoseCartesian::default_instance() {
+  ::google::protobuf::internal::InitSCC(&protobuf_pdk_5fPoseWithVelocity_2eproto::scc_info_PoseWithVelocity_PoseCartesian.base);
+  return *internal_default_instance();
+}
+
 
 void PoseWithVelocity_PoseCartesian::Clear() {
 // @@protoc_insertion_point(message_clear_start:pb.PDK.PoseWithVelocity.PoseCartesian)
-  uint32_t cached_has_bits = 0;
+  ::google::protobuf::uint32 cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
   cached_has_bits = _has_bits_[0];
-  if (cached_has_bits & 0x000000ffu) {
+  if (cached_has_bits & 255u) {
     ::memset(&x_, 0, static_cast<size_t>(
         reinterpret_cast<char*>(&valid_) -
         reinterpret_cast<char*>(&x_)) + sizeof(valid_));
   }
   _has_bits_.Clear();
-  _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
+  _internal_metadata_.Clear();
 }
 
-const char* PoseWithVelocity_PoseCartesian::_InternalParse(const char* ptr, ::_pbi::ParseContext* ctx) {
-#define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
-  _Internal::HasBits has_bits{};
-  while (!ctx->Done(&ptr)) {
-    uint32_t tag;
-    ptr = ::_pbi::ReadTag(ptr, &tag);
-    switch (tag >> 3) {
+bool PoseWithVelocity_PoseCartesian::MergePartialFromCodedStream(
+    ::google::protobuf::io::CodedInputStream* input) {
+#define DO_(EXPRESSION) if (!GOOGLE_PREDICT_TRUE(EXPRESSION)) goto failure
+  ::google::protobuf::uint32 tag;
+  // @@protoc_insertion_point(parse_start:pb.PDK.PoseWithVelocity.PoseCartesian)
+  for (;;) {
+    ::std::pair<::google::protobuf::uint32, bool> p = input->ReadTagWithCutoffNoLastTag(127u);
+    tag = p.first;
+    if (!p.second) goto handle_unusual;
+    switch (::google::protobuf::internal::WireFormatLite::GetTagFieldNumber(tag)) {
       // optional double x = 1;
-      case 1:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 9)) {
-          _Internal::set_has_x(&has_bits);
-          x_ = ::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<double>(ptr);
-          ptr += sizeof(double);
-        } else
+      case 1: {
+        if (static_cast< ::google::protobuf::uint8>(tag) ==
+            static_cast< ::google::protobuf::uint8>(9u /* 9 & 0xFF */)) {
+          set_has_x();
+          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
+                   double, ::google::protobuf::internal::WireFormatLite::TYPE_DOUBLE>(
+                 input, &x_)));
+        } else {
           goto handle_unusual;
-        continue;
+        }
+        break;
+      }
+
       // optional double y = 2;
-      case 2:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 17)) {
-          _Internal::set_has_y(&has_bits);
-          y_ = ::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<double>(ptr);
-          ptr += sizeof(double);
-        } else
+      case 2: {
+        if (static_cast< ::google::protobuf::uint8>(tag) ==
+            static_cast< ::google::protobuf::uint8>(17u /* 17 & 0xFF */)) {
+          set_has_y();
+          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
+                   double, ::google::protobuf::internal::WireFormatLite::TYPE_DOUBLE>(
+                 input, &y_)));
+        } else {
           goto handle_unusual;
-        continue;
+        }
+        break;
+      }
+
       // optional float yaw = 3;
-      case 3:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 29)) {
-          _Internal::set_has_yaw(&has_bits);
-          yaw_ = ::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<float>(ptr);
-          ptr += sizeof(float);
-        } else
+      case 3: {
+        if (static_cast< ::google::protobuf::uint8>(tag) ==
+            static_cast< ::google::protobuf::uint8>(29u /* 29 & 0xFF */)) {
+          set_has_yaw();
+          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
+                   float, ::google::protobuf::internal::WireFormatLite::TYPE_FLOAT>(
+                 input, &yaw_)));
+        } else {
           goto handle_unusual;
-        continue;
+        }
+        break;
+      }
+
       // optional float varX = 5;
-      case 5:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 45)) {
-          _Internal::set_has_varx(&has_bits);
-          varx_ = ::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<float>(ptr);
-          ptr += sizeof(float);
-        } else
+      case 5: {
+        if (static_cast< ::google::protobuf::uint8>(tag) ==
+            static_cast< ::google::protobuf::uint8>(45u /* 45 & 0xFF */)) {
+          set_has_varx();
+          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
+                   float, ::google::protobuf::internal::WireFormatLite::TYPE_FLOAT>(
+                 input, &varx_)));
+        } else {
           goto handle_unusual;
-        continue;
+        }
+        break;
+      }
+
       // optional float varY = 6;
-      case 6:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 53)) {
-          _Internal::set_has_vary(&has_bits);
-          vary_ = ::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<float>(ptr);
-          ptr += sizeof(float);
-        } else
+      case 6: {
+        if (static_cast< ::google::protobuf::uint8>(tag) ==
+            static_cast< ::google::protobuf::uint8>(53u /* 53 & 0xFF */)) {
+          set_has_vary();
+          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
+                   float, ::google::protobuf::internal::WireFormatLite::TYPE_FLOAT>(
+                 input, &vary_)));
+        } else {
           goto handle_unusual;
-        continue;
+        }
+        break;
+      }
+
       // optional float covXY = 7;
-      case 7:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 61)) {
-          _Internal::set_has_covxy(&has_bits);
-          covxy_ = ::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<float>(ptr);
-          ptr += sizeof(float);
-        } else
+      case 7: {
+        if (static_cast< ::google::protobuf::uint8>(tag) ==
+            static_cast< ::google::protobuf::uint8>(61u /* 61 & 0xFF */)) {
+          set_has_covxy();
+          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
+                   float, ::google::protobuf::internal::WireFormatLite::TYPE_FLOAT>(
+                 input, &covxy_)));
+        } else {
           goto handle_unusual;
-        continue;
+        }
+        break;
+      }
+
       // optional float varYaw = 9;
-      case 9:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 77)) {
-          _Internal::set_has_varyaw(&has_bits);
-          varyaw_ = ::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<float>(ptr);
-          ptr += sizeof(float);
-        } else
+      case 9: {
+        if (static_cast< ::google::protobuf::uint8>(tag) ==
+            static_cast< ::google::protobuf::uint8>(77u /* 77 & 0xFF */)) {
+          set_has_varyaw();
+          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
+                   float, ::google::protobuf::internal::WireFormatLite::TYPE_FLOAT>(
+                 input, &varyaw_)));
+        } else {
           goto handle_unusual;
-        continue;
+        }
+        break;
+      }
+
       // optional bool valid = 10;
-      case 10:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 80)) {
-          _Internal::set_has_valid(&has_bits);
-          valid_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
-          CHK_(ptr);
-        } else
+      case 10: {
+        if (static_cast< ::google::protobuf::uint8>(tag) ==
+            static_cast< ::google::protobuf::uint8>(80u /* 80 & 0xFF */)) {
+          set_has_valid();
+          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
+                   bool, ::google::protobuf::internal::WireFormatLite::TYPE_BOOL>(
+                 input, &valid_)));
+        } else {
           goto handle_unusual;
-        continue;
-      default:
-        goto handle_unusual;
-    }  // switch
-  handle_unusual:
-    if ((tag == 0) || ((tag & 7) == 4)) {
-      CHK_(ptr);
-      ctx->SetLastTag(tag);
-      goto message_done;
+        }
+        break;
+      }
+
+      default: {
+      handle_unusual:
+        if (tag == 0) {
+          goto success;
+        }
+        DO_(::google::protobuf::internal::WireFormat::SkipField(
+              input, tag, _internal_metadata_.mutable_unknown_fields()));
+        break;
+      }
     }
-    ptr = UnknownFieldParse(
-        tag,
-        _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
-        ptr, ctx);
-    CHK_(ptr != nullptr);
-  }  // while
-message_done:
-  _has_bits_.Or(has_bits);
-  return ptr;
+  }
+success:
+  // @@protoc_insertion_point(parse_success:pb.PDK.PoseWithVelocity.PoseCartesian)
+  return true;
 failure:
-  ptr = nullptr;
-  goto message_done;
-#undef CHK_
+  // @@protoc_insertion_point(parse_failure:pb.PDK.PoseWithVelocity.PoseCartesian)
+  return false;
+#undef DO_
 }
 
-uint8_t* PoseWithVelocity_PoseCartesian::_InternalSerialize(
-    uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
-  // @@protoc_insertion_point(serialize_to_array_start:pb.PDK.PoseWithVelocity.PoseCartesian)
-  uint32_t cached_has_bits = 0;
+void PoseWithVelocity_PoseCartesian::SerializeWithCachedSizes(
+    ::google::protobuf::io::CodedOutputStream* output) const {
+  // @@protoc_insertion_point(serialize_start:pb.PDK.PoseWithVelocity.PoseCartesian)
+  ::google::protobuf::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
   cached_has_bits = _has_bits_[0];
   // optional double x = 1;
   if (cached_has_bits & 0x00000001u) {
-    target = stream->EnsureSpace(target);
-    target = ::_pbi::WireFormatLite::WriteDoubleToArray(1, this->_internal_x(), target);
+    ::google::protobuf::internal::WireFormatLite::WriteDouble(1, this->x(), output);
   }
 
   // optional double y = 2;
   if (cached_has_bits & 0x00000002u) {
-    target = stream->EnsureSpace(target);
-    target = ::_pbi::WireFormatLite::WriteDoubleToArray(2, this->_internal_y(), target);
+    ::google::protobuf::internal::WireFormatLite::WriteDouble(2, this->y(), output);
   }
 
   // optional float yaw = 3;
   if (cached_has_bits & 0x00000004u) {
-    target = stream->EnsureSpace(target);
-    target = ::_pbi::WireFormatLite::WriteFloatToArray(3, this->_internal_yaw(), target);
+    ::google::protobuf::internal::WireFormatLite::WriteFloat(3, this->yaw(), output);
   }
 
   // optional float varX = 5;
   if (cached_has_bits & 0x00000008u) {
-    target = stream->EnsureSpace(target);
-    target = ::_pbi::WireFormatLite::WriteFloatToArray(5, this->_internal_varx(), target);
+    ::google::protobuf::internal::WireFormatLite::WriteFloat(5, this->varx(), output);
   }
 
   // optional float varY = 6;
   if (cached_has_bits & 0x00000010u) {
-    target = stream->EnsureSpace(target);
-    target = ::_pbi::WireFormatLite::WriteFloatToArray(6, this->_internal_vary(), target);
+    ::google::protobuf::internal::WireFormatLite::WriteFloat(6, this->vary(), output);
   }
 
   // optional float covXY = 7;
   if (cached_has_bits & 0x00000020u) {
-    target = stream->EnsureSpace(target);
-    target = ::_pbi::WireFormatLite::WriteFloatToArray(7, this->_internal_covxy(), target);
+    ::google::protobuf::internal::WireFormatLite::WriteFloat(7, this->covxy(), output);
   }
 
   // optional float varYaw = 9;
   if (cached_has_bits & 0x00000040u) {
-    target = stream->EnsureSpace(target);
-    target = ::_pbi::WireFormatLite::WriteFloatToArray(9, this->_internal_varyaw(), target);
+    ::google::protobuf::internal::WireFormatLite::WriteFloat(9, this->varyaw(), output);
   }
 
   // optional bool valid = 10;
   if (cached_has_bits & 0x00000080u) {
-    target = stream->EnsureSpace(target);
-    target = ::_pbi::WireFormatLite::WriteBoolToArray(10, this->_internal_valid(), target);
+    ::google::protobuf::internal::WireFormatLite::WriteBool(10, this->valid(), output);
   }
 
-  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
-    target = ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
-        _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
+  if (_internal_metadata_.have_unknown_fields()) {
+    ::google::protobuf::internal::WireFormat::SerializeUnknownFields(
+        _internal_metadata_.unknown_fields(), output);
+  }
+  // @@protoc_insertion_point(serialize_end:pb.PDK.PoseWithVelocity.PoseCartesian)
+}
+
+::google::protobuf::uint8* PoseWithVelocity_PoseCartesian::InternalSerializeWithCachedSizesToArray(
+    bool deterministic, ::google::protobuf::uint8* target) const {
+  (void)deterministic; // Unused
+  // @@protoc_insertion_point(serialize_to_array_start:pb.PDK.PoseWithVelocity.PoseCartesian)
+  ::google::protobuf::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  cached_has_bits = _has_bits_[0];
+  // optional double x = 1;
+  if (cached_has_bits & 0x00000001u) {
+    target = ::google::protobuf::internal::WireFormatLite::WriteDoubleToArray(1, this->x(), target);
+  }
+
+  // optional double y = 2;
+  if (cached_has_bits & 0x00000002u) {
+    target = ::google::protobuf::internal::WireFormatLite::WriteDoubleToArray(2, this->y(), target);
+  }
+
+  // optional float yaw = 3;
+  if (cached_has_bits & 0x00000004u) {
+    target = ::google::protobuf::internal::WireFormatLite::WriteFloatToArray(3, this->yaw(), target);
+  }
+
+  // optional float varX = 5;
+  if (cached_has_bits & 0x00000008u) {
+    target = ::google::protobuf::internal::WireFormatLite::WriteFloatToArray(5, this->varx(), target);
+  }
+
+  // optional float varY = 6;
+  if (cached_has_bits & 0x00000010u) {
+    target = ::google::protobuf::internal::WireFormatLite::WriteFloatToArray(6, this->vary(), target);
+  }
+
+  // optional float covXY = 7;
+  if (cached_has_bits & 0x00000020u) {
+    target = ::google::protobuf::internal::WireFormatLite::WriteFloatToArray(7, this->covxy(), target);
+  }
+
+  // optional float varYaw = 9;
+  if (cached_has_bits & 0x00000040u) {
+    target = ::google::protobuf::internal::WireFormatLite::WriteFloatToArray(9, this->varyaw(), target);
+  }
+
+  // optional bool valid = 10;
+  if (cached_has_bits & 0x00000080u) {
+    target = ::google::protobuf::internal::WireFormatLite::WriteBoolToArray(10, this->valid(), target);
+  }
+
+  if (_internal_metadata_.have_unknown_fields()) {
+    target = ::google::protobuf::internal::WireFormat::SerializeUnknownFieldsToArray(
+        _internal_metadata_.unknown_fields(), target);
   }
   // @@protoc_insertion_point(serialize_to_array_end:pb.PDK.PoseWithVelocity.PoseCartesian)
   return target;
@@ -991,77 +1208,82 @@ size_t PoseWithVelocity_PoseCartesian::ByteSizeLong() const {
 // @@protoc_insertion_point(message_byte_size_start:pb.PDK.PoseWithVelocity.PoseCartesian)
   size_t total_size = 0;
 
-  uint32_t cached_has_bits = 0;
-  // Prevent compiler warnings about cached_has_bits being unused
-  (void) cached_has_bits;
-
-  cached_has_bits = _has_bits_[0];
-  if (cached_has_bits & 0x000000ffu) {
+  if (_internal_metadata_.have_unknown_fields()) {
+    total_size +=
+      ::google::protobuf::internal::WireFormat::ComputeUnknownFieldsSize(
+        _internal_metadata_.unknown_fields());
+  }
+  if (_has_bits_[0 / 32] & 255u) {
     // optional double x = 1;
-    if (cached_has_bits & 0x00000001u) {
+    if (has_x()) {
       total_size += 1 + 8;
     }
 
     // optional double y = 2;
-    if (cached_has_bits & 0x00000002u) {
+    if (has_y()) {
       total_size += 1 + 8;
     }
 
     // optional float yaw = 3;
-    if (cached_has_bits & 0x00000004u) {
+    if (has_yaw()) {
       total_size += 1 + 4;
     }
 
     // optional float varX = 5;
-    if (cached_has_bits & 0x00000008u) {
+    if (has_varx()) {
       total_size += 1 + 4;
     }
 
     // optional float varY = 6;
-    if (cached_has_bits & 0x00000010u) {
+    if (has_vary()) {
       total_size += 1 + 4;
     }
 
     // optional float covXY = 7;
-    if (cached_has_bits & 0x00000020u) {
+    if (has_covxy()) {
       total_size += 1 + 4;
     }
 
     // optional float varYaw = 9;
-    if (cached_has_bits & 0x00000040u) {
+    if (has_varyaw()) {
       total_size += 1 + 4;
     }
 
     // optional bool valid = 10;
-    if (cached_has_bits & 0x00000080u) {
+    if (has_valid()) {
       total_size += 1 + 1;
     }
 
   }
-  return MaybeComputeUnknownFieldsSize(total_size, &_cached_size_);
+  int cached_size = ::google::protobuf::internal::ToCachedSize(total_size);
+  SetCachedSize(cached_size);
+  return total_size;
 }
 
-const ::PROTOBUF_NAMESPACE_ID::Message::ClassData PoseWithVelocity_PoseCartesian::_class_data_ = {
-    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSizeCheck,
-    PoseWithVelocity_PoseCartesian::MergeImpl
-};
-const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*PoseWithVelocity_PoseCartesian::GetClassData() const { return &_class_data_; }
-
-void PoseWithVelocity_PoseCartesian::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message* to,
-                      const ::PROTOBUF_NAMESPACE_ID::Message& from) {
-  static_cast<PoseWithVelocity_PoseCartesian *>(to)->MergeFrom(
-      static_cast<const PoseWithVelocity_PoseCartesian &>(from));
+void PoseWithVelocity_PoseCartesian::MergeFrom(const ::google::protobuf::Message& from) {
+// @@protoc_insertion_point(generalized_merge_from_start:pb.PDK.PoseWithVelocity.PoseCartesian)
+  GOOGLE_DCHECK_NE(&from, this);
+  const PoseWithVelocity_PoseCartesian* source =
+      ::google::protobuf::internal::DynamicCastToGenerated<const PoseWithVelocity_PoseCartesian>(
+          &from);
+  if (source == NULL) {
+  // @@protoc_insertion_point(generalized_merge_from_cast_fail:pb.PDK.PoseWithVelocity.PoseCartesian)
+    ::google::protobuf::internal::ReflectionOps::Merge(from, this);
+  } else {
+  // @@protoc_insertion_point(generalized_merge_from_cast_success:pb.PDK.PoseWithVelocity.PoseCartesian)
+    MergeFrom(*source);
+  }
 }
-
 
 void PoseWithVelocity_PoseCartesian::MergeFrom(const PoseWithVelocity_PoseCartesian& from) {
 // @@protoc_insertion_point(class_specific_merge_from_start:pb.PDK.PoseWithVelocity.PoseCartesian)
   GOOGLE_DCHECK_NE(&from, this);
-  uint32_t cached_has_bits = 0;
+  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  ::google::protobuf::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
   cached_has_bits = from._has_bits_[0];
-  if (cached_has_bits & 0x000000ffu) {
+  if (cached_has_bits & 255u) {
     if (cached_has_bits & 0x00000001u) {
       x_ = from.x_;
     }
@@ -1088,7 +1310,13 @@ void PoseWithVelocity_PoseCartesian::MergeFrom(const PoseWithVelocity_PoseCartes
     }
     _has_bits_[0] |= cached_has_bits;
   }
-  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+}
+
+void PoseWithVelocity_PoseCartesian::CopyFrom(const ::google::protobuf::Message& from) {
+// @@protoc_insertion_point(generalized_copy_from_start:pb.PDK.PoseWithVelocity.PoseCartesian)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
 }
 
 void PoseWithVelocity_PoseCartesian::CopyFrom(const PoseWithVelocity_PoseCartesian& from) {
@@ -1102,272 +1330,354 @@ bool PoseWithVelocity_PoseCartesian::IsInitialized() const {
   return true;
 }
 
+void PoseWithVelocity_PoseCartesian::Swap(PoseWithVelocity_PoseCartesian* other) {
+  if (other == this) return;
+  InternalSwap(other);
+}
 void PoseWithVelocity_PoseCartesian::InternalSwap(PoseWithVelocity_PoseCartesian* other) {
   using std::swap;
-  _internal_metadata_.InternalSwap(&other->_internal_metadata_);
+  swap(x_, other->x_);
+  swap(y_, other->y_);
+  swap(yaw_, other->yaw_);
+  swap(varx_, other->varx_);
+  swap(vary_, other->vary_);
+  swap(covxy_, other->covxy_);
+  swap(varyaw_, other->varyaw_);
+  swap(valid_, other->valid_);
   swap(_has_bits_[0], other->_has_bits_[0]);
-  ::PROTOBUF_NAMESPACE_ID::internal::memswap<
-      PROTOBUF_FIELD_OFFSET(PoseWithVelocity_PoseCartesian, valid_)
-      + sizeof(PoseWithVelocity_PoseCartesian::valid_)
-      - PROTOBUF_FIELD_OFFSET(PoseWithVelocity_PoseCartesian, x_)>(
-          reinterpret_cast<char*>(&x_),
-          reinterpret_cast<char*>(&other->x_));
+  _internal_metadata_.Swap(&other->_internal_metadata_);
 }
 
-::PROTOBUF_NAMESPACE_ID::Metadata PoseWithVelocity_PoseCartesian::GetMetadata() const {
-  return ::_pbi::AssignDescriptors(
-      &descriptor_table_pdk_5fPoseWithVelocity_2eproto_getter, &descriptor_table_pdk_5fPoseWithVelocity_2eproto_once,
-      file_level_metadata_pdk_5fPoseWithVelocity_2eproto[1]);
+::google::protobuf::Metadata PoseWithVelocity_PoseCartesian::GetMetadata() const {
+  protobuf_pdk_5fPoseWithVelocity_2eproto::protobuf_AssignDescriptorsOnce();
+  return ::protobuf_pdk_5fPoseWithVelocity_2eproto::file_level_metadata[kIndexInFileMessages];
 }
+
 
 // ===================================================================
 
-class PoseWithVelocity_Velocity::_Internal {
- public:
-  using HasBits = decltype(std::declval<PoseWithVelocity_Velocity>()._has_bits_);
-  static void set_has_vx(HasBits* has_bits) {
-    (*has_bits)[0] |= 1u;
-  }
-  static void set_has_vy(HasBits* has_bits) {
-    (*has_bits)[0] |= 2u;
-  }
-  static void set_has_yawrate(HasBits* has_bits) {
-    (*has_bits)[0] |= 4u;
-  }
-  static void set_has_varvx(HasBits* has_bits) {
-    (*has_bits)[0] |= 8u;
-  }
-  static void set_has_varvy(HasBits* has_bits) {
-    (*has_bits)[0] |= 16u;
-  }
-  static void set_has_covvxvy(HasBits* has_bits) {
-    (*has_bits)[0] |= 32u;
-  }
-  static void set_has_varyawrate(HasBits* has_bits) {
-    (*has_bits)[0] |= 64u;
-  }
-  static void set_has_valid(HasBits* has_bits) {
-    (*has_bits)[0] |= 128u;
-  }
-};
+void PoseWithVelocity_Velocity::InitAsDefaultInstance() {
+}
+#if !defined(_MSC_VER) || _MSC_VER >= 1900
+const int PoseWithVelocity_Velocity::kVxFieldNumber;
+const int PoseWithVelocity_Velocity::kVyFieldNumber;
+const int PoseWithVelocity_Velocity::kYawRateFieldNumber;
+const int PoseWithVelocity_Velocity::kVarVxFieldNumber;
+const int PoseWithVelocity_Velocity::kVarVyFieldNumber;
+const int PoseWithVelocity_Velocity::kCovVxVyFieldNumber;
+const int PoseWithVelocity_Velocity::kVarYawRateFieldNumber;
+const int PoseWithVelocity_Velocity::kValidFieldNumber;
+#endif  // !defined(_MSC_VER) || _MSC_VER >= 1900
 
-PoseWithVelocity_Velocity::PoseWithVelocity_Velocity(::PROTOBUF_NAMESPACE_ID::Arena* arena,
-                         bool is_message_owned)
-  : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
+PoseWithVelocity_Velocity::PoseWithVelocity_Velocity()
+  : ::google::protobuf::Message(), _internal_metadata_(NULL) {
+  ::google::protobuf::internal::InitSCC(
+      &protobuf_pdk_5fPoseWithVelocity_2eproto::scc_info_PoseWithVelocity_Velocity.base);
   SharedCtor();
-  // @@protoc_insertion_point(arena_constructor:pb.PDK.PoseWithVelocity.Velocity)
+  // @@protoc_insertion_point(constructor:pb.PDK.PoseWithVelocity.Velocity)
 }
 PoseWithVelocity_Velocity::PoseWithVelocity_Velocity(const PoseWithVelocity_Velocity& from)
-  : ::PROTOBUF_NAMESPACE_ID::Message(),
+  : ::google::protobuf::Message(),
+      _internal_metadata_(NULL),
       _has_bits_(from._has_bits_) {
-  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  _internal_metadata_.MergeFrom(from._internal_metadata_);
   ::memcpy(&vx_, &from.vx_,
     static_cast<size_t>(reinterpret_cast<char*>(&valid_) -
     reinterpret_cast<char*>(&vx_)) + sizeof(valid_));
   // @@protoc_insertion_point(copy_constructor:pb.PDK.PoseWithVelocity.Velocity)
 }
 
-inline void PoseWithVelocity_Velocity::SharedCtor() {
-::memset(reinterpret_cast<char*>(this) + static_cast<size_t>(
-    reinterpret_cast<char*>(&vx_) - reinterpret_cast<char*>(this)),
-    0, static_cast<size_t>(reinterpret_cast<char*>(&valid_) -
-    reinterpret_cast<char*>(&vx_)) + sizeof(valid_));
+void PoseWithVelocity_Velocity::SharedCtor() {
+  ::memset(&vx_, 0, static_cast<size_t>(
+      reinterpret_cast<char*>(&valid_) -
+      reinterpret_cast<char*>(&vx_)) + sizeof(valid_));
 }
 
 PoseWithVelocity_Velocity::~PoseWithVelocity_Velocity() {
   // @@protoc_insertion_point(destructor:pb.PDK.PoseWithVelocity.Velocity)
-  if (auto *arena = _internal_metadata_.DeleteReturnArena<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>()) {
-  (void)arena;
-    return;
-  }
   SharedDtor();
 }
 
-inline void PoseWithVelocity_Velocity::SharedDtor() {
-  GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
+void PoseWithVelocity_Velocity::SharedDtor() {
 }
 
 void PoseWithVelocity_Velocity::SetCachedSize(int size) const {
   _cached_size_.Set(size);
 }
+const ::google::protobuf::Descriptor* PoseWithVelocity_Velocity::descriptor() {
+  ::protobuf_pdk_5fPoseWithVelocity_2eproto::protobuf_AssignDescriptorsOnce();
+  return ::protobuf_pdk_5fPoseWithVelocity_2eproto::file_level_metadata[kIndexInFileMessages].descriptor;
+}
+
+const PoseWithVelocity_Velocity& PoseWithVelocity_Velocity::default_instance() {
+  ::google::protobuf::internal::InitSCC(&protobuf_pdk_5fPoseWithVelocity_2eproto::scc_info_PoseWithVelocity_Velocity.base);
+  return *internal_default_instance();
+}
+
 
 void PoseWithVelocity_Velocity::Clear() {
 // @@protoc_insertion_point(message_clear_start:pb.PDK.PoseWithVelocity.Velocity)
-  uint32_t cached_has_bits = 0;
+  ::google::protobuf::uint32 cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
   cached_has_bits = _has_bits_[0];
-  if (cached_has_bits & 0x000000ffu) {
+  if (cached_has_bits & 255u) {
     ::memset(&vx_, 0, static_cast<size_t>(
         reinterpret_cast<char*>(&valid_) -
         reinterpret_cast<char*>(&vx_)) + sizeof(valid_));
   }
   _has_bits_.Clear();
-  _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
+  _internal_metadata_.Clear();
 }
 
-const char* PoseWithVelocity_Velocity::_InternalParse(const char* ptr, ::_pbi::ParseContext* ctx) {
-#define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
-  _Internal::HasBits has_bits{};
-  while (!ctx->Done(&ptr)) {
-    uint32_t tag;
-    ptr = ::_pbi::ReadTag(ptr, &tag);
-    switch (tag >> 3) {
+bool PoseWithVelocity_Velocity::MergePartialFromCodedStream(
+    ::google::protobuf::io::CodedInputStream* input) {
+#define DO_(EXPRESSION) if (!GOOGLE_PREDICT_TRUE(EXPRESSION)) goto failure
+  ::google::protobuf::uint32 tag;
+  // @@protoc_insertion_point(parse_start:pb.PDK.PoseWithVelocity.Velocity)
+  for (;;) {
+    ::std::pair<::google::protobuf::uint32, bool> p = input->ReadTagWithCutoffNoLastTag(127u);
+    tag = p.first;
+    if (!p.second) goto handle_unusual;
+    switch (::google::protobuf::internal::WireFormatLite::GetTagFieldNumber(tag)) {
       // optional float vx = 1;
-      case 1:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 13)) {
-          _Internal::set_has_vx(&has_bits);
-          vx_ = ::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<float>(ptr);
-          ptr += sizeof(float);
-        } else
+      case 1: {
+        if (static_cast< ::google::protobuf::uint8>(tag) ==
+            static_cast< ::google::protobuf::uint8>(13u /* 13 & 0xFF */)) {
+          set_has_vx();
+          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
+                   float, ::google::protobuf::internal::WireFormatLite::TYPE_FLOAT>(
+                 input, &vx_)));
+        } else {
           goto handle_unusual;
-        continue;
+        }
+        break;
+      }
+
       // optional float vy = 2;
-      case 2:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 21)) {
-          _Internal::set_has_vy(&has_bits);
-          vy_ = ::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<float>(ptr);
-          ptr += sizeof(float);
-        } else
+      case 2: {
+        if (static_cast< ::google::protobuf::uint8>(tag) ==
+            static_cast< ::google::protobuf::uint8>(21u /* 21 & 0xFF */)) {
+          set_has_vy();
+          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
+                   float, ::google::protobuf::internal::WireFormatLite::TYPE_FLOAT>(
+                 input, &vy_)));
+        } else {
           goto handle_unusual;
-        continue;
+        }
+        break;
+      }
+
       // optional float yawRate = 3;
-      case 3:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 29)) {
-          _Internal::set_has_yawrate(&has_bits);
-          yawrate_ = ::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<float>(ptr);
-          ptr += sizeof(float);
-        } else
+      case 3: {
+        if (static_cast< ::google::protobuf::uint8>(tag) ==
+            static_cast< ::google::protobuf::uint8>(29u /* 29 & 0xFF */)) {
+          set_has_yawrate();
+          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
+                   float, ::google::protobuf::internal::WireFormatLite::TYPE_FLOAT>(
+                 input, &yawrate_)));
+        } else {
           goto handle_unusual;
-        continue;
+        }
+        break;
+      }
+
       // optional float varVx = 4;
-      case 4:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 37)) {
-          _Internal::set_has_varvx(&has_bits);
-          varvx_ = ::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<float>(ptr);
-          ptr += sizeof(float);
-        } else
+      case 4: {
+        if (static_cast< ::google::protobuf::uint8>(tag) ==
+            static_cast< ::google::protobuf::uint8>(37u /* 37 & 0xFF */)) {
+          set_has_varvx();
+          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
+                   float, ::google::protobuf::internal::WireFormatLite::TYPE_FLOAT>(
+                 input, &varvx_)));
+        } else {
           goto handle_unusual;
-        continue;
+        }
+        break;
+      }
+
       // optional float varVy = 5;
-      case 5:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 45)) {
-          _Internal::set_has_varvy(&has_bits);
-          varvy_ = ::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<float>(ptr);
-          ptr += sizeof(float);
-        } else
+      case 5: {
+        if (static_cast< ::google::protobuf::uint8>(tag) ==
+            static_cast< ::google::protobuf::uint8>(45u /* 45 & 0xFF */)) {
+          set_has_varvy();
+          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
+                   float, ::google::protobuf::internal::WireFormatLite::TYPE_FLOAT>(
+                 input, &varvy_)));
+        } else {
           goto handle_unusual;
-        continue;
+        }
+        break;
+      }
+
       // optional float covVxVy = 6;
-      case 6:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 53)) {
-          _Internal::set_has_covvxvy(&has_bits);
-          covvxvy_ = ::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<float>(ptr);
-          ptr += sizeof(float);
-        } else
+      case 6: {
+        if (static_cast< ::google::protobuf::uint8>(tag) ==
+            static_cast< ::google::protobuf::uint8>(53u /* 53 & 0xFF */)) {
+          set_has_covvxvy();
+          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
+                   float, ::google::protobuf::internal::WireFormatLite::TYPE_FLOAT>(
+                 input, &covvxvy_)));
+        } else {
           goto handle_unusual;
-        continue;
+        }
+        break;
+      }
+
       // optional float varYawRate = 7;
-      case 7:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 61)) {
-          _Internal::set_has_varyawrate(&has_bits);
-          varyawrate_ = ::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<float>(ptr);
-          ptr += sizeof(float);
-        } else
+      case 7: {
+        if (static_cast< ::google::protobuf::uint8>(tag) ==
+            static_cast< ::google::protobuf::uint8>(61u /* 61 & 0xFF */)) {
+          set_has_varyawrate();
+          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
+                   float, ::google::protobuf::internal::WireFormatLite::TYPE_FLOAT>(
+                 input, &varyawrate_)));
+        } else {
           goto handle_unusual;
-        continue;
+        }
+        break;
+      }
+
       // optional bool valid = 8;
-      case 8:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 64)) {
-          _Internal::set_has_valid(&has_bits);
-          valid_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
-          CHK_(ptr);
-        } else
+      case 8: {
+        if (static_cast< ::google::protobuf::uint8>(tag) ==
+            static_cast< ::google::protobuf::uint8>(64u /* 64 & 0xFF */)) {
+          set_has_valid();
+          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
+                   bool, ::google::protobuf::internal::WireFormatLite::TYPE_BOOL>(
+                 input, &valid_)));
+        } else {
           goto handle_unusual;
-        continue;
-      default:
-        goto handle_unusual;
-    }  // switch
-  handle_unusual:
-    if ((tag == 0) || ((tag & 7) == 4)) {
-      CHK_(ptr);
-      ctx->SetLastTag(tag);
-      goto message_done;
+        }
+        break;
+      }
+
+      default: {
+      handle_unusual:
+        if (tag == 0) {
+          goto success;
+        }
+        DO_(::google::protobuf::internal::WireFormat::SkipField(
+              input, tag, _internal_metadata_.mutable_unknown_fields()));
+        break;
+      }
     }
-    ptr = UnknownFieldParse(
-        tag,
-        _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
-        ptr, ctx);
-    CHK_(ptr != nullptr);
-  }  // while
-message_done:
-  _has_bits_.Or(has_bits);
-  return ptr;
+  }
+success:
+  // @@protoc_insertion_point(parse_success:pb.PDK.PoseWithVelocity.Velocity)
+  return true;
 failure:
-  ptr = nullptr;
-  goto message_done;
-#undef CHK_
+  // @@protoc_insertion_point(parse_failure:pb.PDK.PoseWithVelocity.Velocity)
+  return false;
+#undef DO_
 }
 
-uint8_t* PoseWithVelocity_Velocity::_InternalSerialize(
-    uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
-  // @@protoc_insertion_point(serialize_to_array_start:pb.PDK.PoseWithVelocity.Velocity)
-  uint32_t cached_has_bits = 0;
+void PoseWithVelocity_Velocity::SerializeWithCachedSizes(
+    ::google::protobuf::io::CodedOutputStream* output) const {
+  // @@protoc_insertion_point(serialize_start:pb.PDK.PoseWithVelocity.Velocity)
+  ::google::protobuf::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
   cached_has_bits = _has_bits_[0];
   // optional float vx = 1;
   if (cached_has_bits & 0x00000001u) {
-    target = stream->EnsureSpace(target);
-    target = ::_pbi::WireFormatLite::WriteFloatToArray(1, this->_internal_vx(), target);
+    ::google::protobuf::internal::WireFormatLite::WriteFloat(1, this->vx(), output);
   }
 
   // optional float vy = 2;
   if (cached_has_bits & 0x00000002u) {
-    target = stream->EnsureSpace(target);
-    target = ::_pbi::WireFormatLite::WriteFloatToArray(2, this->_internal_vy(), target);
+    ::google::protobuf::internal::WireFormatLite::WriteFloat(2, this->vy(), output);
   }
 
   // optional float yawRate = 3;
   if (cached_has_bits & 0x00000004u) {
-    target = stream->EnsureSpace(target);
-    target = ::_pbi::WireFormatLite::WriteFloatToArray(3, this->_internal_yawrate(), target);
+    ::google::protobuf::internal::WireFormatLite::WriteFloat(3, this->yawrate(), output);
   }
 
   // optional float varVx = 4;
   if (cached_has_bits & 0x00000008u) {
-    target = stream->EnsureSpace(target);
-    target = ::_pbi::WireFormatLite::WriteFloatToArray(4, this->_internal_varvx(), target);
+    ::google::protobuf::internal::WireFormatLite::WriteFloat(4, this->varvx(), output);
   }
 
   // optional float varVy = 5;
   if (cached_has_bits & 0x00000010u) {
-    target = stream->EnsureSpace(target);
-    target = ::_pbi::WireFormatLite::WriteFloatToArray(5, this->_internal_varvy(), target);
+    ::google::protobuf::internal::WireFormatLite::WriteFloat(5, this->varvy(), output);
   }
 
   // optional float covVxVy = 6;
   if (cached_has_bits & 0x00000020u) {
-    target = stream->EnsureSpace(target);
-    target = ::_pbi::WireFormatLite::WriteFloatToArray(6, this->_internal_covvxvy(), target);
+    ::google::protobuf::internal::WireFormatLite::WriteFloat(6, this->covvxvy(), output);
   }
 
   // optional float varYawRate = 7;
   if (cached_has_bits & 0x00000040u) {
-    target = stream->EnsureSpace(target);
-    target = ::_pbi::WireFormatLite::WriteFloatToArray(7, this->_internal_varyawrate(), target);
+    ::google::protobuf::internal::WireFormatLite::WriteFloat(7, this->varyawrate(), output);
   }
 
   // optional bool valid = 8;
   if (cached_has_bits & 0x00000080u) {
-    target = stream->EnsureSpace(target);
-    target = ::_pbi::WireFormatLite::WriteBoolToArray(8, this->_internal_valid(), target);
+    ::google::protobuf::internal::WireFormatLite::WriteBool(8, this->valid(), output);
   }
 
-  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
-    target = ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
-        _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
+  if (_internal_metadata_.have_unknown_fields()) {
+    ::google::protobuf::internal::WireFormat::SerializeUnknownFields(
+        _internal_metadata_.unknown_fields(), output);
+  }
+  // @@protoc_insertion_point(serialize_end:pb.PDK.PoseWithVelocity.Velocity)
+}
+
+::google::protobuf::uint8* PoseWithVelocity_Velocity::InternalSerializeWithCachedSizesToArray(
+    bool deterministic, ::google::protobuf::uint8* target) const {
+  (void)deterministic; // Unused
+  // @@protoc_insertion_point(serialize_to_array_start:pb.PDK.PoseWithVelocity.Velocity)
+  ::google::protobuf::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  cached_has_bits = _has_bits_[0];
+  // optional float vx = 1;
+  if (cached_has_bits & 0x00000001u) {
+    target = ::google::protobuf::internal::WireFormatLite::WriteFloatToArray(1, this->vx(), target);
+  }
+
+  // optional float vy = 2;
+  if (cached_has_bits & 0x00000002u) {
+    target = ::google::protobuf::internal::WireFormatLite::WriteFloatToArray(2, this->vy(), target);
+  }
+
+  // optional float yawRate = 3;
+  if (cached_has_bits & 0x00000004u) {
+    target = ::google::protobuf::internal::WireFormatLite::WriteFloatToArray(3, this->yawrate(), target);
+  }
+
+  // optional float varVx = 4;
+  if (cached_has_bits & 0x00000008u) {
+    target = ::google::protobuf::internal::WireFormatLite::WriteFloatToArray(4, this->varvx(), target);
+  }
+
+  // optional float varVy = 5;
+  if (cached_has_bits & 0x00000010u) {
+    target = ::google::protobuf::internal::WireFormatLite::WriteFloatToArray(5, this->varvy(), target);
+  }
+
+  // optional float covVxVy = 6;
+  if (cached_has_bits & 0x00000020u) {
+    target = ::google::protobuf::internal::WireFormatLite::WriteFloatToArray(6, this->covvxvy(), target);
+  }
+
+  // optional float varYawRate = 7;
+  if (cached_has_bits & 0x00000040u) {
+    target = ::google::protobuf::internal::WireFormatLite::WriteFloatToArray(7, this->varyawrate(), target);
+  }
+
+  // optional bool valid = 8;
+  if (cached_has_bits & 0x00000080u) {
+    target = ::google::protobuf::internal::WireFormatLite::WriteBoolToArray(8, this->valid(), target);
+  }
+
+  if (_internal_metadata_.have_unknown_fields()) {
+    target = ::google::protobuf::internal::WireFormat::SerializeUnknownFieldsToArray(
+        _internal_metadata_.unknown_fields(), target);
   }
   // @@protoc_insertion_point(serialize_to_array_end:pb.PDK.PoseWithVelocity.Velocity)
   return target;
@@ -1377,77 +1687,82 @@ size_t PoseWithVelocity_Velocity::ByteSizeLong() const {
 // @@protoc_insertion_point(message_byte_size_start:pb.PDK.PoseWithVelocity.Velocity)
   size_t total_size = 0;
 
-  uint32_t cached_has_bits = 0;
-  // Prevent compiler warnings about cached_has_bits being unused
-  (void) cached_has_bits;
-
-  cached_has_bits = _has_bits_[0];
-  if (cached_has_bits & 0x000000ffu) {
+  if (_internal_metadata_.have_unknown_fields()) {
+    total_size +=
+      ::google::protobuf::internal::WireFormat::ComputeUnknownFieldsSize(
+        _internal_metadata_.unknown_fields());
+  }
+  if (_has_bits_[0 / 32] & 255u) {
     // optional float vx = 1;
-    if (cached_has_bits & 0x00000001u) {
+    if (has_vx()) {
       total_size += 1 + 4;
     }
 
     // optional float vy = 2;
-    if (cached_has_bits & 0x00000002u) {
+    if (has_vy()) {
       total_size += 1 + 4;
     }
 
     // optional float yawRate = 3;
-    if (cached_has_bits & 0x00000004u) {
+    if (has_yawrate()) {
       total_size += 1 + 4;
     }
 
     // optional float varVx = 4;
-    if (cached_has_bits & 0x00000008u) {
+    if (has_varvx()) {
       total_size += 1 + 4;
     }
 
     // optional float varVy = 5;
-    if (cached_has_bits & 0x00000010u) {
+    if (has_varvy()) {
       total_size += 1 + 4;
     }
 
     // optional float covVxVy = 6;
-    if (cached_has_bits & 0x00000020u) {
+    if (has_covvxvy()) {
       total_size += 1 + 4;
     }
 
     // optional float varYawRate = 7;
-    if (cached_has_bits & 0x00000040u) {
+    if (has_varyawrate()) {
       total_size += 1 + 4;
     }
 
     // optional bool valid = 8;
-    if (cached_has_bits & 0x00000080u) {
+    if (has_valid()) {
       total_size += 1 + 1;
     }
 
   }
-  return MaybeComputeUnknownFieldsSize(total_size, &_cached_size_);
+  int cached_size = ::google::protobuf::internal::ToCachedSize(total_size);
+  SetCachedSize(cached_size);
+  return total_size;
 }
 
-const ::PROTOBUF_NAMESPACE_ID::Message::ClassData PoseWithVelocity_Velocity::_class_data_ = {
-    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSizeCheck,
-    PoseWithVelocity_Velocity::MergeImpl
-};
-const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*PoseWithVelocity_Velocity::GetClassData() const { return &_class_data_; }
-
-void PoseWithVelocity_Velocity::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message* to,
-                      const ::PROTOBUF_NAMESPACE_ID::Message& from) {
-  static_cast<PoseWithVelocity_Velocity *>(to)->MergeFrom(
-      static_cast<const PoseWithVelocity_Velocity &>(from));
+void PoseWithVelocity_Velocity::MergeFrom(const ::google::protobuf::Message& from) {
+// @@protoc_insertion_point(generalized_merge_from_start:pb.PDK.PoseWithVelocity.Velocity)
+  GOOGLE_DCHECK_NE(&from, this);
+  const PoseWithVelocity_Velocity* source =
+      ::google::protobuf::internal::DynamicCastToGenerated<const PoseWithVelocity_Velocity>(
+          &from);
+  if (source == NULL) {
+  // @@protoc_insertion_point(generalized_merge_from_cast_fail:pb.PDK.PoseWithVelocity.Velocity)
+    ::google::protobuf::internal::ReflectionOps::Merge(from, this);
+  } else {
+  // @@protoc_insertion_point(generalized_merge_from_cast_success:pb.PDK.PoseWithVelocity.Velocity)
+    MergeFrom(*source);
+  }
 }
-
 
 void PoseWithVelocity_Velocity::MergeFrom(const PoseWithVelocity_Velocity& from) {
 // @@protoc_insertion_point(class_specific_merge_from_start:pb.PDK.PoseWithVelocity.Velocity)
   GOOGLE_DCHECK_NE(&from, this);
-  uint32_t cached_has_bits = 0;
+  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  ::google::protobuf::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
   cached_has_bits = from._has_bits_[0];
-  if (cached_has_bits & 0x000000ffu) {
+  if (cached_has_bits & 255u) {
     if (cached_has_bits & 0x00000001u) {
       vx_ = from.vx_;
     }
@@ -1474,7 +1789,13 @@ void PoseWithVelocity_Velocity::MergeFrom(const PoseWithVelocity_Velocity& from)
     }
     _has_bits_[0] |= cached_has_bits;
   }
-  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+}
+
+void PoseWithVelocity_Velocity::CopyFrom(const ::google::protobuf::Message& from) {
+// @@protoc_insertion_point(generalized_copy_from_start:pb.PDK.PoseWithVelocity.Velocity)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
 }
 
 void PoseWithVelocity_Velocity::CopyFrom(const PoseWithVelocity_Velocity& from) {
@@ -1488,113 +1809,91 @@ bool PoseWithVelocity_Velocity::IsInitialized() const {
   return true;
 }
 
+void PoseWithVelocity_Velocity::Swap(PoseWithVelocity_Velocity* other) {
+  if (other == this) return;
+  InternalSwap(other);
+}
 void PoseWithVelocity_Velocity::InternalSwap(PoseWithVelocity_Velocity* other) {
   using std::swap;
-  _internal_metadata_.InternalSwap(&other->_internal_metadata_);
+  swap(vx_, other->vx_);
+  swap(vy_, other->vy_);
+  swap(yawrate_, other->yawrate_);
+  swap(varvx_, other->varvx_);
+  swap(varvy_, other->varvy_);
+  swap(covvxvy_, other->covvxvy_);
+  swap(varyawrate_, other->varyawrate_);
+  swap(valid_, other->valid_);
   swap(_has_bits_[0], other->_has_bits_[0]);
-  ::PROTOBUF_NAMESPACE_ID::internal::memswap<
-      PROTOBUF_FIELD_OFFSET(PoseWithVelocity_Velocity, valid_)
-      + sizeof(PoseWithVelocity_Velocity::valid_)
-      - PROTOBUF_FIELD_OFFSET(PoseWithVelocity_Velocity, vx_)>(
-          reinterpret_cast<char*>(&vx_),
-          reinterpret_cast<char*>(&other->vx_));
+  _internal_metadata_.Swap(&other->_internal_metadata_);
 }
 
-::PROTOBUF_NAMESPACE_ID::Metadata PoseWithVelocity_Velocity::GetMetadata() const {
-  return ::_pbi::AssignDescriptors(
-      &descriptor_table_pdk_5fPoseWithVelocity_2eproto_getter, &descriptor_table_pdk_5fPoseWithVelocity_2eproto_once,
-      file_level_metadata_pdk_5fPoseWithVelocity_2eproto[2]);
+::google::protobuf::Metadata PoseWithVelocity_Velocity::GetMetadata() const {
+  protobuf_pdk_5fPoseWithVelocity_2eproto::protobuf_AssignDescriptorsOnce();
+  return ::protobuf_pdk_5fPoseWithVelocity_2eproto::file_level_metadata[kIndexInFileMessages];
 }
+
 
 // ===================================================================
 
-class PoseWithVelocity::_Internal {
- public:
-  using HasBits = decltype(std::declval<PoseWithVelocity>()._has_bits_);
-  static const ::pb::PDK::MsgHeader& header(const PoseWithVelocity* msg);
-  static void set_has_header(HasBits* has_bits) {
-    (*has_bits)[0] |= 2u;
-  }
-  static void set_has_referenceframe(HasBits* has_bits) {
-    (*has_bits)[0] |= 1u;
-  }
-  static const ::pb::PDK::PoseWithVelocity_PoseWGS84& posewgs84(const PoseWithVelocity* msg);
-  static void set_has_posewgs84(HasBits* has_bits) {
-    (*has_bits)[0] |= 4u;
-  }
-  static const ::pb::PDK::PoseWithVelocity_PoseCartesian& posecartesian(const PoseWithVelocity* msg);
-  static void set_has_posecartesian(HasBits* has_bits) {
-    (*has_bits)[0] |= 8u;
-  }
-  static const ::pb::PDK::PoseWithVelocity_Velocity& velocity(const PoseWithVelocity* msg);
-  static void set_has_velocity(HasBits* has_bits) {
-    (*has_bits)[0] |= 16u;
-  }
-  static void set_has_confidence(HasBits* has_bits) {
-    (*has_bits)[0] |= 32u;
-  }
-  static void set_has_signalstatus(HasBits* has_bits) {
-    (*has_bits)[0] |= 64u;
-  }
-};
-
-const ::pb::PDK::MsgHeader&
-PoseWithVelocity::_Internal::header(const PoseWithVelocity* msg) {
-  return *msg->header_;
-}
-const ::pb::PDK::PoseWithVelocity_PoseWGS84&
-PoseWithVelocity::_Internal::posewgs84(const PoseWithVelocity* msg) {
-  return *msg->posewgs84_;
-}
-const ::pb::PDK::PoseWithVelocity_PoseCartesian&
-PoseWithVelocity::_Internal::posecartesian(const PoseWithVelocity* msg) {
-  return *msg->posecartesian_;
-}
-const ::pb::PDK::PoseWithVelocity_Velocity&
-PoseWithVelocity::_Internal::velocity(const PoseWithVelocity* msg) {
-  return *msg->velocity_;
+void PoseWithVelocity::InitAsDefaultInstance() {
+  ::pb::PDK::_PoseWithVelocity_default_instance_._instance.get_mutable()->header_ = const_cast< ::pb::PDK::MsgHeader*>(
+      ::pb::PDK::MsgHeader::internal_default_instance());
+  ::pb::PDK::_PoseWithVelocity_default_instance_._instance.get_mutable()->posewgs84_ = const_cast< ::pb::PDK::PoseWithVelocity_PoseWGS84*>(
+      ::pb::PDK::PoseWithVelocity_PoseWGS84::internal_default_instance());
+  ::pb::PDK::_PoseWithVelocity_default_instance_._instance.get_mutable()->posecartesian_ = const_cast< ::pb::PDK::PoseWithVelocity_PoseCartesian*>(
+      ::pb::PDK::PoseWithVelocity_PoseCartesian::internal_default_instance());
+  ::pb::PDK::_PoseWithVelocity_default_instance_._instance.get_mutable()->velocity_ = const_cast< ::pb::PDK::PoseWithVelocity_Velocity*>(
+      ::pb::PDK::PoseWithVelocity_Velocity::internal_default_instance());
 }
 void PoseWithVelocity::clear_header() {
-  if (header_ != nullptr) header_->Clear();
-  _has_bits_[0] &= ~0x00000002u;
+  if (header_ != NULL) header_->Clear();
+  clear_has_header();
 }
-PoseWithVelocity::PoseWithVelocity(::PROTOBUF_NAMESPACE_ID::Arena* arena,
-                         bool is_message_owned)
-  : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
+#if !defined(_MSC_VER) || _MSC_VER >= 1900
+const int PoseWithVelocity::kHeaderFieldNumber;
+const int PoseWithVelocity::kReferenceFrameFieldNumber;
+const int PoseWithVelocity::kPoseWGS84FieldNumber;
+const int PoseWithVelocity::kPoseCartesianFieldNumber;
+const int PoseWithVelocity::kVelocityFieldNumber;
+const int PoseWithVelocity::kConfidenceFieldNumber;
+const int PoseWithVelocity::kSignalStatusFieldNumber;
+#endif  // !defined(_MSC_VER) || _MSC_VER >= 1900
+
+PoseWithVelocity::PoseWithVelocity()
+  : ::google::protobuf::Message(), _internal_metadata_(NULL) {
+  ::google::protobuf::internal::InitSCC(
+      &protobuf_pdk_5fPoseWithVelocity_2eproto::scc_info_PoseWithVelocity.base);
   SharedCtor();
-  // @@protoc_insertion_point(arena_constructor:pb.PDK.PoseWithVelocity)
+  // @@protoc_insertion_point(constructor:pb.PDK.PoseWithVelocity)
 }
 PoseWithVelocity::PoseWithVelocity(const PoseWithVelocity& from)
-  : ::PROTOBUF_NAMESPACE_ID::Message(),
+  : ::google::protobuf::Message(),
+      _internal_metadata_(NULL),
       _has_bits_(from._has_bits_) {
-  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
-  referenceframe_.InitDefault();
-  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-    referenceframe_.Set("", GetArenaForAllocation());
-  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  if (from._internal_has_referenceframe()) {
-    referenceframe_.Set(from._internal_referenceframe(), 
-      GetArenaForAllocation());
+  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  referenceframe_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  if (from.has_referenceframe()) {
+    referenceframe_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.referenceframe_);
   }
-  if (from._internal_has_header()) {
+  if (from.has_header()) {
     header_ = new ::pb::PDK::MsgHeader(*from.header_);
   } else {
-    header_ = nullptr;
+    header_ = NULL;
   }
-  if (from._internal_has_posewgs84()) {
+  if (from.has_posewgs84()) {
     posewgs84_ = new ::pb::PDK::PoseWithVelocity_PoseWGS84(*from.posewgs84_);
   } else {
-    posewgs84_ = nullptr;
+    posewgs84_ = NULL;
   }
-  if (from._internal_has_posecartesian()) {
+  if (from.has_posecartesian()) {
     posecartesian_ = new ::pb::PDK::PoseWithVelocity_PoseCartesian(*from.posecartesian_);
   } else {
-    posecartesian_ = nullptr;
+    posecartesian_ = NULL;
   }
-  if (from._internal_has_velocity()) {
+  if (from.has_velocity()) {
     velocity_ = new ::pb::PDK::PoseWithVelocity_Velocity(*from.velocity_);
   } else {
-    velocity_ = nullptr;
+    velocity_ = NULL;
   }
   ::memcpy(&confidence_, &from.confidence_,
     static_cast<size_t>(reinterpret_cast<char*>(&signalstatus_) -
@@ -1602,29 +1901,20 @@ PoseWithVelocity::PoseWithVelocity(const PoseWithVelocity& from)
   // @@protoc_insertion_point(copy_constructor:pb.PDK.PoseWithVelocity)
 }
 
-inline void PoseWithVelocity::SharedCtor() {
-referenceframe_.InitDefault();
-#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  referenceframe_.Set("", GetArenaForAllocation());
-#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-::memset(reinterpret_cast<char*>(this) + static_cast<size_t>(
-    reinterpret_cast<char*>(&header_) - reinterpret_cast<char*>(this)),
-    0, static_cast<size_t>(reinterpret_cast<char*>(&signalstatus_) -
-    reinterpret_cast<char*>(&header_)) + sizeof(signalstatus_));
+void PoseWithVelocity::SharedCtor() {
+  referenceframe_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  ::memset(&header_, 0, static_cast<size_t>(
+      reinterpret_cast<char*>(&signalstatus_) -
+      reinterpret_cast<char*>(&header_)) + sizeof(signalstatus_));
 }
 
 PoseWithVelocity::~PoseWithVelocity() {
   // @@protoc_insertion_point(destructor:pb.PDK.PoseWithVelocity)
-  if (auto *arena = _internal_metadata_.DeleteReturnArena<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>()) {
-  (void)arena;
-    return;
-  }
   SharedDtor();
 }
 
-inline void PoseWithVelocity::SharedDtor() {
-  GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
-  referenceframe_.Destroy();
+void PoseWithVelocity::SharedDtor() {
+  referenceframe_.DestroyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
   if (this != internal_default_instance()) delete header_;
   if (this != internal_default_instance()) delete posewgs84_;
   if (this != internal_default_instance()) delete posecartesian_;
@@ -1634,202 +1924,302 @@ inline void PoseWithVelocity::SharedDtor() {
 void PoseWithVelocity::SetCachedSize(int size) const {
   _cached_size_.Set(size);
 }
+const ::google::protobuf::Descriptor* PoseWithVelocity::descriptor() {
+  ::protobuf_pdk_5fPoseWithVelocity_2eproto::protobuf_AssignDescriptorsOnce();
+  return ::protobuf_pdk_5fPoseWithVelocity_2eproto::file_level_metadata[kIndexInFileMessages].descriptor;
+}
+
+const PoseWithVelocity& PoseWithVelocity::default_instance() {
+  ::google::protobuf::internal::InitSCC(&protobuf_pdk_5fPoseWithVelocity_2eproto::scc_info_PoseWithVelocity.base);
+  return *internal_default_instance();
+}
+
 
 void PoseWithVelocity::Clear() {
 // @@protoc_insertion_point(message_clear_start:pb.PDK.PoseWithVelocity)
-  uint32_t cached_has_bits = 0;
+  ::google::protobuf::uint32 cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
   cached_has_bits = _has_bits_[0];
-  if (cached_has_bits & 0x0000001fu) {
+  if (cached_has_bits & 31u) {
     if (cached_has_bits & 0x00000001u) {
-      referenceframe_.ClearNonDefaultToEmpty();
+      referenceframe_.ClearNonDefaultToEmptyNoArena();
     }
     if (cached_has_bits & 0x00000002u) {
-      GOOGLE_DCHECK(header_ != nullptr);
+      GOOGLE_DCHECK(header_ != NULL);
       header_->Clear();
     }
     if (cached_has_bits & 0x00000004u) {
-      GOOGLE_DCHECK(posewgs84_ != nullptr);
+      GOOGLE_DCHECK(posewgs84_ != NULL);
       posewgs84_->Clear();
     }
     if (cached_has_bits & 0x00000008u) {
-      GOOGLE_DCHECK(posecartesian_ != nullptr);
+      GOOGLE_DCHECK(posecartesian_ != NULL);
       posecartesian_->Clear();
     }
     if (cached_has_bits & 0x00000010u) {
-      GOOGLE_DCHECK(velocity_ != nullptr);
+      GOOGLE_DCHECK(velocity_ != NULL);
       velocity_->Clear();
     }
   }
-  if (cached_has_bits & 0x00000060u) {
+  if (cached_has_bits & 96u) {
     ::memset(&confidence_, 0, static_cast<size_t>(
         reinterpret_cast<char*>(&signalstatus_) -
         reinterpret_cast<char*>(&confidence_)) + sizeof(signalstatus_));
   }
   _has_bits_.Clear();
-  _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
+  _internal_metadata_.Clear();
 }
 
-const char* PoseWithVelocity::_InternalParse(const char* ptr, ::_pbi::ParseContext* ctx) {
-#define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
-  _Internal::HasBits has_bits{};
-  while (!ctx->Done(&ptr)) {
-    uint32_t tag;
-    ptr = ::_pbi::ReadTag(ptr, &tag);
-    switch (tag >> 3) {
+bool PoseWithVelocity::MergePartialFromCodedStream(
+    ::google::protobuf::io::CodedInputStream* input) {
+#define DO_(EXPRESSION) if (!GOOGLE_PREDICT_TRUE(EXPRESSION)) goto failure
+  ::google::protobuf::uint32 tag;
+  // @@protoc_insertion_point(parse_start:pb.PDK.PoseWithVelocity)
+  for (;;) {
+    ::std::pair<::google::protobuf::uint32, bool> p = input->ReadTagWithCutoffNoLastTag(127u);
+    tag = p.first;
+    if (!p.second) goto handle_unusual;
+    switch (::google::protobuf::internal::WireFormatLite::GetTagFieldNumber(tag)) {
       // optional .pb.PDK.MsgHeader header = 1;
-      case 1:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 10)) {
-          ptr = ctx->ParseMessage(_internal_mutable_header(), ptr);
-          CHK_(ptr);
-        } else
+      case 1: {
+        if (static_cast< ::google::protobuf::uint8>(tag) ==
+            static_cast< ::google::protobuf::uint8>(10u /* 10 & 0xFF */)) {
+          DO_(::google::protobuf::internal::WireFormatLite::ReadMessage(
+               input, mutable_header()));
+        } else {
           goto handle_unusual;
-        continue;
+        }
+        break;
+      }
+
       // optional string referenceFrame = 2;
-      case 2:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 18)) {
-          auto str = _internal_mutable_referenceframe();
-          ptr = ::_pbi::InlineGreedyStringParser(str, ptr, ctx);
-          CHK_(ptr);
-          #ifndef NDEBUG
-          ::_pbi::VerifyUTF8(str, "pb.PDK.PoseWithVelocity.referenceFrame");
-          #endif  // !NDEBUG
-        } else
+      case 2: {
+        if (static_cast< ::google::protobuf::uint8>(tag) ==
+            static_cast< ::google::protobuf::uint8>(18u /* 18 & 0xFF */)) {
+          DO_(::google::protobuf::internal::WireFormatLite::ReadString(
+                input, this->mutable_referenceframe()));
+          ::google::protobuf::internal::WireFormat::VerifyUTF8StringNamedField(
+            this->referenceframe().data(), static_cast<int>(this->referenceframe().length()),
+            ::google::protobuf::internal::WireFormat::PARSE,
+            "pb.PDK.PoseWithVelocity.referenceFrame");
+        } else {
           goto handle_unusual;
-        continue;
+        }
+        break;
+      }
+
       // optional .pb.PDK.PoseWithVelocity.PoseWGS84 poseWGS84 = 3;
-      case 3:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 26)) {
-          ptr = ctx->ParseMessage(_internal_mutable_posewgs84(), ptr);
-          CHK_(ptr);
-        } else
+      case 3: {
+        if (static_cast< ::google::protobuf::uint8>(tag) ==
+            static_cast< ::google::protobuf::uint8>(26u /* 26 & 0xFF */)) {
+          DO_(::google::protobuf::internal::WireFormatLite::ReadMessage(
+               input, mutable_posewgs84()));
+        } else {
           goto handle_unusual;
-        continue;
+        }
+        break;
+      }
+
       // optional .pb.PDK.PoseWithVelocity.PoseCartesian poseCartesian = 4;
-      case 4:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 34)) {
-          ptr = ctx->ParseMessage(_internal_mutable_posecartesian(), ptr);
-          CHK_(ptr);
-        } else
+      case 4: {
+        if (static_cast< ::google::protobuf::uint8>(tag) ==
+            static_cast< ::google::protobuf::uint8>(34u /* 34 & 0xFF */)) {
+          DO_(::google::protobuf::internal::WireFormatLite::ReadMessage(
+               input, mutable_posecartesian()));
+        } else {
           goto handle_unusual;
-        continue;
+        }
+        break;
+      }
+
       // optional .pb.PDK.PoseWithVelocity.Velocity velocity = 5;
-      case 5:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 42)) {
-          ptr = ctx->ParseMessage(_internal_mutable_velocity(), ptr);
-          CHK_(ptr);
-        } else
+      case 5: {
+        if (static_cast< ::google::protobuf::uint8>(tag) ==
+            static_cast< ::google::protobuf::uint8>(42u /* 42 & 0xFF */)) {
+          DO_(::google::protobuf::internal::WireFormatLite::ReadMessage(
+               input, mutable_velocity()));
+        } else {
           goto handle_unusual;
-        continue;
+        }
+        break;
+      }
+
       // optional float confidence = 6;
-      case 6:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 53)) {
-          _Internal::set_has_confidence(&has_bits);
-          confidence_ = ::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<float>(ptr);
-          ptr += sizeof(float);
-        } else
+      case 6: {
+        if (static_cast< ::google::protobuf::uint8>(tag) ==
+            static_cast< ::google::protobuf::uint8>(53u /* 53 & 0xFF */)) {
+          set_has_confidence();
+          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
+                   float, ::google::protobuf::internal::WireFormatLite::TYPE_FLOAT>(
+                 input, &confidence_)));
+        } else {
           goto handle_unusual;
-        continue;
+        }
+        break;
+      }
+
       // optional .pb.PDK.PoseWithVelocity.SignalStatus signalStatus = 7;
-      case 7:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 56)) {
-          uint64_t val = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
-          CHK_(ptr);
-          if (PROTOBUF_PREDICT_TRUE(::pb::PDK::PoseWithVelocity_SignalStatus_IsValid(val))) {
-            _internal_set_signalstatus(static_cast<::pb::PDK::PoseWithVelocity_SignalStatus>(val));
+      case 7: {
+        if (static_cast< ::google::protobuf::uint8>(tag) ==
+            static_cast< ::google::protobuf::uint8>(56u /* 56 & 0xFF */)) {
+          int value;
+          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
+                   int, ::google::protobuf::internal::WireFormatLite::TYPE_ENUM>(
+                 input, &value)));
+          if (::pb::PDK::PoseWithVelocity_SignalStatus_IsValid(value)) {
+            set_signalstatus(static_cast< ::pb::PDK::PoseWithVelocity_SignalStatus >(value));
           } else {
-            ::PROTOBUF_NAMESPACE_ID::internal::WriteVarint(7, val, mutable_unknown_fields());
+            mutable_unknown_fields()->AddVarint(
+                7, static_cast< ::google::protobuf::uint64>(value));
           }
-        } else
+        } else {
           goto handle_unusual;
-        continue;
-      default:
-        goto handle_unusual;
-    }  // switch
-  handle_unusual:
-    if ((tag == 0) || ((tag & 7) == 4)) {
-      CHK_(ptr);
-      ctx->SetLastTag(tag);
-      goto message_done;
+        }
+        break;
+      }
+
+      default: {
+      handle_unusual:
+        if (tag == 0) {
+          goto success;
+        }
+        DO_(::google::protobuf::internal::WireFormat::SkipField(
+              input, tag, _internal_metadata_.mutable_unknown_fields()));
+        break;
+      }
     }
-    ptr = UnknownFieldParse(
-        tag,
-        _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
-        ptr, ctx);
-    CHK_(ptr != nullptr);
-  }  // while
-message_done:
-  _has_bits_.Or(has_bits);
-  return ptr;
+  }
+success:
+  // @@protoc_insertion_point(parse_success:pb.PDK.PoseWithVelocity)
+  return true;
 failure:
-  ptr = nullptr;
-  goto message_done;
-#undef CHK_
+  // @@protoc_insertion_point(parse_failure:pb.PDK.PoseWithVelocity)
+  return false;
+#undef DO_
 }
 
-uint8_t* PoseWithVelocity::_InternalSerialize(
-    uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
-  // @@protoc_insertion_point(serialize_to_array_start:pb.PDK.PoseWithVelocity)
-  uint32_t cached_has_bits = 0;
+void PoseWithVelocity::SerializeWithCachedSizes(
+    ::google::protobuf::io::CodedOutputStream* output) const {
+  // @@protoc_insertion_point(serialize_start:pb.PDK.PoseWithVelocity)
+  ::google::protobuf::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
   cached_has_bits = _has_bits_[0];
   // optional .pb.PDK.MsgHeader header = 1;
   if (cached_has_bits & 0x00000002u) {
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
-      InternalWriteMessage(1, _Internal::header(this),
-        _Internal::header(this).GetCachedSize(), target, stream);
+    ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
+      1, this->_internal_header(), output);
   }
 
   // optional string referenceFrame = 2;
   if (cached_has_bits & 0x00000001u) {
-    ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::VerifyUTF8StringNamedField(
-      this->_internal_referenceframe().data(), static_cast<int>(this->_internal_referenceframe().length()),
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::SERIALIZE,
+    ::google::protobuf::internal::WireFormat::VerifyUTF8StringNamedField(
+      this->referenceframe().data(), static_cast<int>(this->referenceframe().length()),
+      ::google::protobuf::internal::WireFormat::SERIALIZE,
       "pb.PDK.PoseWithVelocity.referenceFrame");
-    target = stream->WriteStringMaybeAliased(
-        2, this->_internal_referenceframe(), target);
+    ::google::protobuf::internal::WireFormatLite::WriteStringMaybeAliased(
+      2, this->referenceframe(), output);
   }
 
   // optional .pb.PDK.PoseWithVelocity.PoseWGS84 poseWGS84 = 3;
   if (cached_has_bits & 0x00000004u) {
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
-      InternalWriteMessage(3, _Internal::posewgs84(this),
-        _Internal::posewgs84(this).GetCachedSize(), target, stream);
+    ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
+      3, this->_internal_posewgs84(), output);
   }
 
   // optional .pb.PDK.PoseWithVelocity.PoseCartesian poseCartesian = 4;
   if (cached_has_bits & 0x00000008u) {
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
-      InternalWriteMessage(4, _Internal::posecartesian(this),
-        _Internal::posecartesian(this).GetCachedSize(), target, stream);
+    ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
+      4, this->_internal_posecartesian(), output);
   }
 
   // optional .pb.PDK.PoseWithVelocity.Velocity velocity = 5;
   if (cached_has_bits & 0x00000010u) {
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
-      InternalWriteMessage(5, _Internal::velocity(this),
-        _Internal::velocity(this).GetCachedSize(), target, stream);
+    ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
+      5, this->_internal_velocity(), output);
   }
 
   // optional float confidence = 6;
   if (cached_has_bits & 0x00000020u) {
-    target = stream->EnsureSpace(target);
-    target = ::_pbi::WireFormatLite::WriteFloatToArray(6, this->_internal_confidence(), target);
+    ::google::protobuf::internal::WireFormatLite::WriteFloat(6, this->confidence(), output);
   }
 
   // optional .pb.PDK.PoseWithVelocity.SignalStatus signalStatus = 7;
   if (cached_has_bits & 0x00000040u) {
-    target = stream->EnsureSpace(target);
-    target = ::_pbi::WireFormatLite::WriteEnumToArray(
-      7, this->_internal_signalstatus(), target);
+    ::google::protobuf::internal::WireFormatLite::WriteEnum(
+      7, this->signalstatus(), output);
   }
 
-  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
-    target = ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
-        _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
+  if (_internal_metadata_.have_unknown_fields()) {
+    ::google::protobuf::internal::WireFormat::SerializeUnknownFields(
+        _internal_metadata_.unknown_fields(), output);
+  }
+  // @@protoc_insertion_point(serialize_end:pb.PDK.PoseWithVelocity)
+}
+
+::google::protobuf::uint8* PoseWithVelocity::InternalSerializeWithCachedSizesToArray(
+    bool deterministic, ::google::protobuf::uint8* target) const {
+  (void)deterministic; // Unused
+  // @@protoc_insertion_point(serialize_to_array_start:pb.PDK.PoseWithVelocity)
+  ::google::protobuf::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  cached_has_bits = _has_bits_[0];
+  // optional .pb.PDK.MsgHeader header = 1;
+  if (cached_has_bits & 0x00000002u) {
+    target = ::google::protobuf::internal::WireFormatLite::
+      InternalWriteMessageToArray(
+        1, this->_internal_header(), deterministic, target);
+  }
+
+  // optional string referenceFrame = 2;
+  if (cached_has_bits & 0x00000001u) {
+    ::google::protobuf::internal::WireFormat::VerifyUTF8StringNamedField(
+      this->referenceframe().data(), static_cast<int>(this->referenceframe().length()),
+      ::google::protobuf::internal::WireFormat::SERIALIZE,
+      "pb.PDK.PoseWithVelocity.referenceFrame");
+    target =
+      ::google::protobuf::internal::WireFormatLite::WriteStringToArray(
+        2, this->referenceframe(), target);
+  }
+
+  // optional .pb.PDK.PoseWithVelocity.PoseWGS84 poseWGS84 = 3;
+  if (cached_has_bits & 0x00000004u) {
+    target = ::google::protobuf::internal::WireFormatLite::
+      InternalWriteMessageToArray(
+        3, this->_internal_posewgs84(), deterministic, target);
+  }
+
+  // optional .pb.PDK.PoseWithVelocity.PoseCartesian poseCartesian = 4;
+  if (cached_has_bits & 0x00000008u) {
+    target = ::google::protobuf::internal::WireFormatLite::
+      InternalWriteMessageToArray(
+        4, this->_internal_posecartesian(), deterministic, target);
+  }
+
+  // optional .pb.PDK.PoseWithVelocity.Velocity velocity = 5;
+  if (cached_has_bits & 0x00000010u) {
+    target = ::google::protobuf::internal::WireFormatLite::
+      InternalWriteMessageToArray(
+        5, this->_internal_velocity(), deterministic, target);
+  }
+
+  // optional float confidence = 6;
+  if (cached_has_bits & 0x00000020u) {
+    target = ::google::protobuf::internal::WireFormatLite::WriteFloatToArray(6, this->confidence(), target);
+  }
+
+  // optional .pb.PDK.PoseWithVelocity.SignalStatus signalStatus = 7;
+  if (cached_has_bits & 0x00000040u) {
+    target = ::google::protobuf::internal::WireFormatLite::WriteEnumToArray(
+      7, this->signalstatus(), target);
+  }
+
+  if (_internal_metadata_.have_unknown_fields()) {
+    target = ::google::protobuf::internal::WireFormat::SerializeUnknownFieldsToArray(
+        _internal_metadata_.unknown_fields(), target);
   }
   // @@protoc_insertion_point(serialize_to_array_end:pb.PDK.PoseWithVelocity)
   return target;
@@ -1839,97 +2229,103 @@ size_t PoseWithVelocity::ByteSizeLong() const {
 // @@protoc_insertion_point(message_byte_size_start:pb.PDK.PoseWithVelocity)
   size_t total_size = 0;
 
-  uint32_t cached_has_bits = 0;
-  // Prevent compiler warnings about cached_has_bits being unused
-  (void) cached_has_bits;
-
-  cached_has_bits = _has_bits_[0];
-  if (cached_has_bits & 0x0000007fu) {
+  if (_internal_metadata_.have_unknown_fields()) {
+    total_size +=
+      ::google::protobuf::internal::WireFormat::ComputeUnknownFieldsSize(
+        _internal_metadata_.unknown_fields());
+  }
+  if (_has_bits_[0 / 32] & 127u) {
     // optional string referenceFrame = 2;
-    if (cached_has_bits & 0x00000001u) {
+    if (has_referenceframe()) {
       total_size += 1 +
-        ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
-          this->_internal_referenceframe());
+        ::google::protobuf::internal::WireFormatLite::StringSize(
+          this->referenceframe());
     }
 
     // optional .pb.PDK.MsgHeader header = 1;
-    if (cached_has_bits & 0x00000002u) {
+    if (has_header()) {
       total_size += 1 +
-        ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
+        ::google::protobuf::internal::WireFormatLite::MessageSize(
           *header_);
     }
 
     // optional .pb.PDK.PoseWithVelocity.PoseWGS84 poseWGS84 = 3;
-    if (cached_has_bits & 0x00000004u) {
+    if (has_posewgs84()) {
       total_size += 1 +
-        ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
+        ::google::protobuf::internal::WireFormatLite::MessageSize(
           *posewgs84_);
     }
 
     // optional .pb.PDK.PoseWithVelocity.PoseCartesian poseCartesian = 4;
-    if (cached_has_bits & 0x00000008u) {
+    if (has_posecartesian()) {
       total_size += 1 +
-        ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
+        ::google::protobuf::internal::WireFormatLite::MessageSize(
           *posecartesian_);
     }
 
     // optional .pb.PDK.PoseWithVelocity.Velocity velocity = 5;
-    if (cached_has_bits & 0x00000010u) {
+    if (has_velocity()) {
       total_size += 1 +
-        ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
+        ::google::protobuf::internal::WireFormatLite::MessageSize(
           *velocity_);
     }
 
     // optional float confidence = 6;
-    if (cached_has_bits & 0x00000020u) {
+    if (has_confidence()) {
       total_size += 1 + 4;
     }
 
     // optional .pb.PDK.PoseWithVelocity.SignalStatus signalStatus = 7;
-    if (cached_has_bits & 0x00000040u) {
+    if (has_signalstatus()) {
       total_size += 1 +
-        ::_pbi::WireFormatLite::EnumSize(this->_internal_signalstatus());
+        ::google::protobuf::internal::WireFormatLite::EnumSize(this->signalstatus());
     }
 
   }
-  return MaybeComputeUnknownFieldsSize(total_size, &_cached_size_);
+  int cached_size = ::google::protobuf::internal::ToCachedSize(total_size);
+  SetCachedSize(cached_size);
+  return total_size;
 }
 
-const ::PROTOBUF_NAMESPACE_ID::Message::ClassData PoseWithVelocity::_class_data_ = {
-    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSizeCheck,
-    PoseWithVelocity::MergeImpl
-};
-const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*PoseWithVelocity::GetClassData() const { return &_class_data_; }
-
-void PoseWithVelocity::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message* to,
-                      const ::PROTOBUF_NAMESPACE_ID::Message& from) {
-  static_cast<PoseWithVelocity *>(to)->MergeFrom(
-      static_cast<const PoseWithVelocity &>(from));
+void PoseWithVelocity::MergeFrom(const ::google::protobuf::Message& from) {
+// @@protoc_insertion_point(generalized_merge_from_start:pb.PDK.PoseWithVelocity)
+  GOOGLE_DCHECK_NE(&from, this);
+  const PoseWithVelocity* source =
+      ::google::protobuf::internal::DynamicCastToGenerated<const PoseWithVelocity>(
+          &from);
+  if (source == NULL) {
+  // @@protoc_insertion_point(generalized_merge_from_cast_fail:pb.PDK.PoseWithVelocity)
+    ::google::protobuf::internal::ReflectionOps::Merge(from, this);
+  } else {
+  // @@protoc_insertion_point(generalized_merge_from_cast_success:pb.PDK.PoseWithVelocity)
+    MergeFrom(*source);
+  }
 }
-
 
 void PoseWithVelocity::MergeFrom(const PoseWithVelocity& from) {
 // @@protoc_insertion_point(class_specific_merge_from_start:pb.PDK.PoseWithVelocity)
   GOOGLE_DCHECK_NE(&from, this);
-  uint32_t cached_has_bits = 0;
+  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  ::google::protobuf::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
   cached_has_bits = from._has_bits_[0];
-  if (cached_has_bits & 0x0000007fu) {
+  if (cached_has_bits & 127u) {
     if (cached_has_bits & 0x00000001u) {
-      _internal_set_referenceframe(from._internal_referenceframe());
+      set_has_referenceframe();
+      referenceframe_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.referenceframe_);
     }
     if (cached_has_bits & 0x00000002u) {
-      _internal_mutable_header()->::pb::PDK::MsgHeader::MergeFrom(from._internal_header());
+      mutable_header()->::pb::PDK::MsgHeader::MergeFrom(from.header());
     }
     if (cached_has_bits & 0x00000004u) {
-      _internal_mutable_posewgs84()->::pb::PDK::PoseWithVelocity_PoseWGS84::MergeFrom(from._internal_posewgs84());
+      mutable_posewgs84()->::pb::PDK::PoseWithVelocity_PoseWGS84::MergeFrom(from.posewgs84());
     }
     if (cached_has_bits & 0x00000008u) {
-      _internal_mutable_posecartesian()->::pb::PDK::PoseWithVelocity_PoseCartesian::MergeFrom(from._internal_posecartesian());
+      mutable_posecartesian()->::pb::PDK::PoseWithVelocity_PoseCartesian::MergeFrom(from.posecartesian());
     }
     if (cached_has_bits & 0x00000010u) {
-      _internal_mutable_velocity()->::pb::PDK::PoseWithVelocity_Velocity::MergeFrom(from._internal_velocity());
+      mutable_velocity()->::pb::PDK::PoseWithVelocity_Velocity::MergeFrom(from.velocity());
     }
     if (cached_has_bits & 0x00000020u) {
       confidence_ = from.confidence_;
@@ -1939,7 +2335,13 @@ void PoseWithVelocity::MergeFrom(const PoseWithVelocity& from) {
     }
     _has_bits_[0] |= cached_has_bits;
   }
-  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+}
+
+void PoseWithVelocity::CopyFrom(const ::google::protobuf::Message& from) {
+// @@protoc_insertion_point(generalized_copy_from_start:pb.PDK.PoseWithVelocity)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
 }
 
 void PoseWithVelocity::CopyFrom(const PoseWithVelocity& from) {
@@ -1953,51 +2355,48 @@ bool PoseWithVelocity::IsInitialized() const {
   return true;
 }
 
+void PoseWithVelocity::Swap(PoseWithVelocity* other) {
+  if (other == this) return;
+  InternalSwap(other);
+}
 void PoseWithVelocity::InternalSwap(PoseWithVelocity* other) {
   using std::swap;
-  auto* lhs_arena = GetArenaForAllocation();
-  auto* rhs_arena = other->GetArenaForAllocation();
-  _internal_metadata_.InternalSwap(&other->_internal_metadata_);
+  referenceframe_.Swap(&other->referenceframe_, &::google::protobuf::internal::GetEmptyStringAlreadyInited(),
+    GetArenaNoVirtual());
+  swap(header_, other->header_);
+  swap(posewgs84_, other->posewgs84_);
+  swap(posecartesian_, other->posecartesian_);
+  swap(velocity_, other->velocity_);
+  swap(confidence_, other->confidence_);
+  swap(signalstatus_, other->signalstatus_);
   swap(_has_bits_[0], other->_has_bits_[0]);
-  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
-      &referenceframe_, lhs_arena,
-      &other->referenceframe_, rhs_arena
-  );
-  ::PROTOBUF_NAMESPACE_ID::internal::memswap<
-      PROTOBUF_FIELD_OFFSET(PoseWithVelocity, signalstatus_)
-      + sizeof(PoseWithVelocity::signalstatus_)
-      - PROTOBUF_FIELD_OFFSET(PoseWithVelocity, header_)>(
-          reinterpret_cast<char*>(&header_),
-          reinterpret_cast<char*>(&other->header_));
+  _internal_metadata_.Swap(&other->_internal_metadata_);
 }
 
-::PROTOBUF_NAMESPACE_ID::Metadata PoseWithVelocity::GetMetadata() const {
-  return ::_pbi::AssignDescriptors(
-      &descriptor_table_pdk_5fPoseWithVelocity_2eproto_getter, &descriptor_table_pdk_5fPoseWithVelocity_2eproto_once,
-      file_level_metadata_pdk_5fPoseWithVelocity_2eproto[3]);
+::google::protobuf::Metadata PoseWithVelocity::GetMetadata() const {
+  protobuf_pdk_5fPoseWithVelocity_2eproto::protobuf_AssignDescriptorsOnce();
+  return ::protobuf_pdk_5fPoseWithVelocity_2eproto::file_level_metadata[kIndexInFileMessages];
 }
+
 
 // @@protoc_insertion_point(namespace_scope)
 }  // namespace PDK
 }  // namespace pb
-PROTOBUF_NAMESPACE_OPEN
-template<> PROTOBUF_NOINLINE ::pb::PDK::PoseWithVelocity_PoseWGS84*
-Arena::CreateMaybeMessage< ::pb::PDK::PoseWithVelocity_PoseWGS84 >(Arena* arena) {
-  return Arena::CreateMessageInternal< ::pb::PDK::PoseWithVelocity_PoseWGS84 >(arena);
+namespace google {
+namespace protobuf {
+template<> GOOGLE_PROTOBUF_ATTRIBUTE_NOINLINE ::pb::PDK::PoseWithVelocity_PoseWGS84* Arena::CreateMaybeMessage< ::pb::PDK::PoseWithVelocity_PoseWGS84 >(Arena* arena) {
+  return Arena::CreateInternal< ::pb::PDK::PoseWithVelocity_PoseWGS84 >(arena);
 }
-template<> PROTOBUF_NOINLINE ::pb::PDK::PoseWithVelocity_PoseCartesian*
-Arena::CreateMaybeMessage< ::pb::PDK::PoseWithVelocity_PoseCartesian >(Arena* arena) {
-  return Arena::CreateMessageInternal< ::pb::PDK::PoseWithVelocity_PoseCartesian >(arena);
+template<> GOOGLE_PROTOBUF_ATTRIBUTE_NOINLINE ::pb::PDK::PoseWithVelocity_PoseCartesian* Arena::CreateMaybeMessage< ::pb::PDK::PoseWithVelocity_PoseCartesian >(Arena* arena) {
+  return Arena::CreateInternal< ::pb::PDK::PoseWithVelocity_PoseCartesian >(arena);
 }
-template<> PROTOBUF_NOINLINE ::pb::PDK::PoseWithVelocity_Velocity*
-Arena::CreateMaybeMessage< ::pb::PDK::PoseWithVelocity_Velocity >(Arena* arena) {
-  return Arena::CreateMessageInternal< ::pb::PDK::PoseWithVelocity_Velocity >(arena);
+template<> GOOGLE_PROTOBUF_ATTRIBUTE_NOINLINE ::pb::PDK::PoseWithVelocity_Velocity* Arena::CreateMaybeMessage< ::pb::PDK::PoseWithVelocity_Velocity >(Arena* arena) {
+  return Arena::CreateInternal< ::pb::PDK::PoseWithVelocity_Velocity >(arena);
 }
-template<> PROTOBUF_NOINLINE ::pb::PDK::PoseWithVelocity*
-Arena::CreateMaybeMessage< ::pb::PDK::PoseWithVelocity >(Arena* arena) {
-  return Arena::CreateMessageInternal< ::pb::PDK::PoseWithVelocity >(arena);
+template<> GOOGLE_PROTOBUF_ATTRIBUTE_NOINLINE ::pb::PDK::PoseWithVelocity* Arena::CreateMaybeMessage< ::pb::PDK::PoseWithVelocity >(Arena* arena) {
+  return Arena::CreateInternal< ::pb::PDK::PoseWithVelocity >(arena);
 }
-PROTOBUF_NAMESPACE_CLOSE
+}  // namespace protobuf
+}  // namespace google
 
 // @@protoc_insertion_point(global_scope)
-#include <google/protobuf/port_undef.inc>

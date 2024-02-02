@@ -1,6 +1,9 @@
 #include "pdk/pdk_interface.hpp"
 #include "pdk_RadarDetectionImage.pb.h"
 #include "pdk_RadarObjectList.pb.h"
+#include "novatel_oem7_msgs/BESTVEL.h"
+#include "novatel_oem7_msgs/CORRIMU.h"
+#include "ros/ros.h"
 #include <iostream>
 #include <cmath> // Include cmath for trigonometric functions
 #include <thread>
@@ -11,6 +14,32 @@
 #include <sstream> 
 #include <vector>
 #include <algorithm>
+#include "std_msgs/Bool.h"
+#include "std_msgs/Float64.h"
+
+double f_LongVel;
+float f_YawRate;    
+float f_LongAccel;
+float f_LatAccel;
+
+ros::Publisher acc_switch_pub;
+ros::Publisher brake_action_pub;
+ros::Publisher f_vabsx_pub;
+
+std_msgs::Bool acc_switch_msg;
+std_msgs::Bool brake_action_msg;
+std_msgs::Float64 f_vabsx_msg;
+
+void CORRIMU_callback(const novatel_oem7_msgs::CORRIMU msg){
+    f_YawRate = msg.yaw_rate;
+    f_LongAccel = msg.longitudinal_acc;
+    f_LatAccel = msg.lateral_acc;
+}
+
+
+void BESTVEL_callback(const novatel_oem7_msgs::BESTVEL msg){
+    f_LongVel = msg.hor_speed;
+}
 
 // void OnReceiveDetections(const std::string &buffer)
 // {
@@ -93,6 +122,7 @@ void OnReceiveObjects(const std::string &buffer)
     
     // pb::PDK::RadarObjectList_RadarObject minRangeObject;
     std::vector<pb::PDK::RadarObjectList_RadarObject> filteredObjects;
+    bool acc_switch = false, brake_action = false;
 
     if (obj.u_nofusedobjects() == 0)
     {
@@ -102,9 +132,10 @@ void OnReceiveObjects(const std::string &buffer)
     // Open the CSV file in append mode
     // std::ofstream outputFile("radar_data.csv", std::ios::out | std::ios::trunc);
     // outputFile << "Timestamp_Sec, Timestamp_Nsec, Formatted_Time, Radar_Epoch_Time, Obj_ID, Dist_X, Dist_Y, RCS, Range, Dynamicproperty, Orientation, Objectsize, objectscore" << std::endl;
-    std::ofstream outputFile("radar_data.csv", std::ios::app);
+    std::ofstream outputFile("test4.csv", std::ios::app);
     std::ofstream outputFile1("radar_data1.csv", std::ios::app);
     std::cout << "Received " << obj.u_nofusedobjects() << " objects" << std::endl;
+    std::cout<<"ego velocity "<<f_LongVel <<std::endl;
 
     double max_range = 20.0, min_range = 10.0;
 
@@ -124,11 +155,12 @@ void OnReceiveObjects(const std::string &buffer)
 
         ///////////////////////////////////////////////////////////////
         // if (range < 10.0)
-        if (range < 40.0 &&
+        if (range < 120.0 &&
             // ro.e_dynamicproperty() == 0 &&
             // ro.f_orientation() != 0 &&
-            // ro.f_rcs() > 0.0 &&
+            ro.f_rcs() > 1.0 &&
             // ro.f_objectscore() > 0.5 &&
+            // ro.f_disty()<=2.0 && ro.f_disty()>=-2.0)
             obj_size > 0.01)
         {
             // Extract timestamp from MsgHeader
@@ -137,6 +169,7 @@ void OnReceiveObjects(const std::string &buffer)
             // uint64_t epochTime = static_cast<uint64_t>(timestamp.u_sec()) * 1000000000 + timestamp.u_nsec();
             // std::cout<<"epoch time is: "<<epochTime<<std::endl;
             std::cout<<"interesting objects: "<<filteredObjects.empty()<<std::endl;
+
             auto systemTime1 = std::chrono::high_resolution_clock::now().time_since_epoch().count(); // system epoch time in nanosecond
             
             auto systemTime = std::chrono::system_clock::to_time_t(std::chrono::system_clock::now()); // system epoch time in seconds
@@ -180,56 +213,69 @@ void OnReceiveObjects(const std::string &buffer)
             double rangeA = std::sqrt(minRangeObject.f_distx() * minRangeObject.f_distx() + minRangeObject.f_disty() * minRangeObject.f_disty());
             outputFile << timestamp.u_sec() << "," << timestamp.u_nsec() << ","<<radar_time_std << ","<<radar_time_epoch << ","
                        << minRangeObject.u_objid() << "," << minRangeObject.f_distx() << "," << minRangeObject.f_disty() << ","
-                       << minRangeObject.f_rcs() << "," << rangeA << ","<<vectorSize<<","<<minRangeObject.e_dynamicproperty()<<","<<minRangeObject.f_orientation()<<","<<obj_size<<","<<minRangeObject.f_objectscore()
+                       << minRangeObject.f_rcs() << "," << rangeA << ","<<vectorSize<<","<<minRangeObject.e_dynamicproperty()<<","<<minRangeObject.f_orientation()<<","<<obj_size<<","<<minRangeObject.f_objectscore()<<","
+                       <<minRangeObject.f_vabsx()<<","<<minRangeObject.f_vabsy()<<","<<minRangeObject.f_aabsx()<<","<<minRangeObject.f_aabsy()<<","
+                       <<f_LongVel<<","<<f_LatAccel<<","<<f_LongAccel
                        // Include other relevant information
                        << std::endl;
+
             
-            //////////////////////////////////////// ACC starts /////////////////////
-            bool acc_switch = false, brake_action = false;
-            if (rangeA < max_range && rangeA > min_range){
+            
+            ////////////////
+            if (rangeA < max_range && rangeA > min_range) {
                 acc_switch = true;
-                double brake_point = (max_range+min_range)/2;
-                if (rangeA<brake_point){
+                acc_switch_msg.data = true; // Set acc_switch_msg value
+                // Publish acc_switch
+                acc_switch_pub.publish(acc_switch_msg);
+                f_vabsx_msg.data = minRangeObject.f_vabsx();
+                f_vabsx_pub.publish(f_vabsx_msg);
+
+                double brake_point = (max_range + min_range) / 2;
+                if (rangeA < brake_point) {
                     brake_action = true;
-                    
-                }
-                else{
+                } else {
                     brake_action = false;
                 }
-            }
-            else{
+                brake_action_msg.data = brake_action; // Set brake_action_msg value
+                // Publish brake_action
+                brake_action_pub.publish(brake_action_msg);
+            } else {
                 acc_switch = false;
+                acc_switch_msg.data = false; // Set acc_switch_msg value
+                // Publish acc_switch
+                acc_switch_pub.publish(acc_switch_msg);
             }
+
+            // Publish f_vabsx
             
 
-            }
+            //////////////////
 
-            // std::cout << "Object within 10 meters range:" << std::endl
-            //           << "u_ObjId " << ro.u_objid() << std::endl
-            //           << "f_DistX " << ro.f_distx() << " m" << std::endl
-            //           << "f_DistY " << ro.f_disty() << " m" << std::endl
-            //           << "Calculated Range: " << range << " m" << std::endl
-            //           << "f_VrelX " << ro.f_vrelx() << " m/s" << std::endl
-            //           << "f_VrelY " << ro.f_vrely() << " m/s" << std::endl
-            //           // Include other relevant information
-            //           << std::endl;
+            }    
+            std::cout << "Object within 10 meters range:" << std::endl
+                      << "u_ObjId " << ro.u_objid() << std::endl
+                      << "f_DistX " << ro.f_distx() << " m" << std::endl
+                      << "f_DistY " << ro.f_disty() << " m" << std::endl
+                      << "Calculated Range: " << range << " m" << std::endl
+                      << "f_VrelX " << ro.f_vrelx() << " m/s" << std::endl
+                      << "f_VrelY " << ro.f_vrely() << " m/s" << std::endl
+                      <<"ego velocity "<<f_LongVel <<std::endl
+                      // Include other relevant information
+                      << std::endl;
                       
-            // outputFile1 << timestamp.u_sec() << "," << timestamp.u_nsec() << ","<<radar_time_std << ","<<radar_time_epoch << ","
-            //            << ro.u_objid() << "," << ro.f_distx() << "," << ro.f_disty() << ","
-            //            << ro.f_rcs() << "," << range << ","<<ro.e_dynamicproperty()<<","<<ro.f_orientation()<<","<<obj_size<<","<<ro.f_objectscore()
-            //            // Include other relevant information
-            //            << std::endl;
+            outputFile1 << timestamp.u_sec() << "," << timestamp.u_nsec() << ","<<radar_time_std << ","<<radar_time_epoch << ","
+                       << ro.u_objid() << "," << ro.f_distx() << "," << ro.f_disty() << ","
+                       << ro.f_rcs() << "," << range << ","<<ro.e_dynamicproperty()<<","<<ro.f_orientation()<<","<<obj_size<<","<<ro.f_objectscore()
+                       // Include other relevant information
+                       << std::endl;
                       
         }
-        // else{
-        //     std::cout<<"No object of interest: "<<filteredObjects.empty()<<std::endl;
-        //     // publish acc switch to be OFF that is no object detected
-        // }
 
     }
 
     // Close the CSV file
     outputFile.close();
+    outputFile1.close();
 }
 
 
@@ -237,14 +283,29 @@ void OnReceiveObjects(const std::string &buffer)
 
 int main(int argc, char *argv[])
 {
-    std::ofstream outputFile("radar_data.csv", std::ios::out | std::ios::trunc);
-    outputFile << "Timestamp_Sec, Timestamp_Nsec, Formatted_Time, Radar_Epoch_Time, Obj_ID, Dist_X, Dist_Y, RCS, Range, Vectorsize, Dynamicproperty, Orientation, Objectsize, objectscore" << std::endl;
+    std::ofstream outputFile("test4.csv", std::ios::out | std::ios::trunc);
+    outputFile << "Timestamp_Sec, Timestamp_Nsec, Formatted_Time, Radar_Epoch_Time, Obj_ID, Dist_X, Dist_Y, RCS," 
+    <<"Range, Vectorsize, Dynamicproperty, Orientation, Objectsize, objectscore,Vabsx, Vabsy, Aabsx, Aabsy,"
+    <<"ego_velocity, ego_latacc, ego_long_acc" << std::endl;
     outputFile.close();
 
     std::ofstream outputFile1("radar_data1.csv", std::ios::out | std::ios::trunc);
     outputFile1 << "Timestamp_Sec, Timestamp_Nsec, Formatted_Time, Radar_Epoch_Time, Obj_ID, Dist_X, Dist_Y, RCS, Range, Dynamicproperty, Orientation, Objectsize, objectscore" << std::endl;
     outputFile1.close();
-    // Initialization and other setup code...
+
+
+    ros::init(argc,argv,"testacc");
+    ros::NodeHandle node;
+    ros::Subscriber bestvel_sub = node.subscribe("/novatel/oem7/bestvel",1000,BESTVEL_callback);
+    ros::Subscriber corrimu_sub = node.subscribe("/novatel/oem7/corrimu",1000,CORRIMU_callback);
+
+
+    //publish the values
+    acc_switch_pub = node.advertise<std_msgs::Bool>("acc_switch_topic", 1000);
+    brake_action_pub = node.advertise<std_msgs::Bool>("brake_action_topic", 1000);
+    f_vabsx_pub = node.advertise<std_msgs::Float64>("f_vabsx_topic", 1000);
+
+   // Initialization and other setup code...
     std::string config{};
     config = "/opt/pdk/etc/pdk_config.json";
     if (argc > 1)
@@ -263,9 +324,13 @@ int main(int argc, char *argv[])
     PDK::CInterface::SetSensorObjectsCallback(OnReceiveObjects);
     // std::this_thread::sleep_for(std::chrono::seconds(15));
 
-    while (true)
-    {
-        //std::cout << (PDK::CInterface::PublishVehicleDynamics(vehicle_dynamics) ? "sent" :  "not_sent") << std::endl;
+    // while (true)
+    // {
+    //     //std::cout << (PDK::CInterface::PublishVehicleDynamics(vehicle_dynamics) ? "sent" :  "not_sent") << std::endl;
+    //     std::this_thread::sleep_for(std::chrono::milliseconds(100));
+    // }
+    while(ros::ok()){
+        ros::spinOnce();
         std::this_thread::sleep_for(std::chrono::milliseconds(100));
     }
 

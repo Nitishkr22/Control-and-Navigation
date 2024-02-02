@@ -5,197 +5,230 @@
 
 #include <algorithm>
 
+#include <google/protobuf/stubs/common.h>
+#include <google/protobuf/stubs/port.h>
 #include <google/protobuf/io/coded_stream.h>
-#include <google/protobuf/extension_set.h>
-#include <google/protobuf/wire_format_lite.h>
+#include <google/protobuf/wire_format_lite_inl.h>
 #include <google/protobuf/descriptor.h>
 #include <google/protobuf/generated_message_reflection.h>
 #include <google/protobuf/reflection_ops.h>
 #include <google/protobuf/wire_format.h>
+// This is a temporary google only hack
+#ifdef GOOGLE_PROTOBUF_ENFORCE_UNIQUENESS
+#include "third_party/protobuf/version.h"
+#endif
 // @@protoc_insertion_point(includes)
-#include <google/protobuf/port_def.inc>
 
-PROTOBUF_PRAGMA_INIT_SEG
-
-namespace _pb = ::PROTOBUF_NAMESPACE_ID;
-namespace _pbi = _pb::internal;
-
+namespace protobuf_pdk_5fIMUData_2eproto {
+extern PROTOBUF_INTERNAL_EXPORT_protobuf_pdk_5fIMUData_2eproto ::google::protobuf::internal::SCCInfo<0> scc_info_IMUData_SignalStates;
+extern PROTOBUF_INTERNAL_EXPORT_protobuf_pdk_5fIMUData_2eproto ::google::protobuf::internal::SCCInfo<0> scc_info_IMUData_Signals;
+}  // namespace protobuf_pdk_5fIMUData_2eproto
+namespace protobuf_pdk_5fMsgHeader_2eproto {
+extern PROTOBUF_INTERNAL_EXPORT_protobuf_pdk_5fMsgHeader_2eproto ::google::protobuf::internal::SCCInfo<1> scc_info_MsgHeader;
+}  // namespace protobuf_pdk_5fMsgHeader_2eproto
 namespace pb {
 namespace PDK {
-PROTOBUF_CONSTEXPR IMUData_SignalStates::IMUData_SignalStates(
-    ::_pbi::ConstantInitialized)
-  : rollrate_(0)
-
-  , pitchrate_(0)
-
-  , yawrate_(0)
-
-  , longacc_(0)
-
-  , vertacc_(0)
-
-  , latacc_(0)
-{}
-struct IMUData_SignalStatesDefaultTypeInternal {
-  PROTOBUF_CONSTEXPR IMUData_SignalStatesDefaultTypeInternal()
-      : _instance(::_pbi::ConstantInitialized{}) {}
-  ~IMUData_SignalStatesDefaultTypeInternal() {}
-  union {
-    IMUData_SignalStates _instance;
-  };
-};
-PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 IMUData_SignalStatesDefaultTypeInternal _IMUData_SignalStates_default_instance_;
-PROTOBUF_CONSTEXPR IMUData_Signals::IMUData_Signals(
-    ::_pbi::ConstantInitialized)
-  : rollrate_(0)
-  , pitchrate_(0)
-  , yawrate_(0)
-  , longacc_(0)
-  , vertacc_(0)
-  , latacc_(0){}
-struct IMUData_SignalsDefaultTypeInternal {
-  PROTOBUF_CONSTEXPR IMUData_SignalsDefaultTypeInternal()
-      : _instance(::_pbi::ConstantInitialized{}) {}
-  ~IMUData_SignalsDefaultTypeInternal() {}
-  union {
-    IMUData_Signals _instance;
-  };
-};
-PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 IMUData_SignalsDefaultTypeInternal _IMUData_Signals_default_instance_;
-PROTOBUF_CONSTEXPR IMUData::IMUData(
-    ::_pbi::ConstantInitialized)
-  : header_(nullptr)
-  , signalstates_(nullptr)
-  , signals_(nullptr)
-  , sensortype_(255)
-{}
-struct IMUDataDefaultTypeInternal {
-  PROTOBUF_CONSTEXPR IMUDataDefaultTypeInternal()
-      : _instance(::_pbi::ConstantInitialized{}) {}
-  ~IMUDataDefaultTypeInternal() {}
-  union {
-    IMUData _instance;
-  };
-};
-PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 IMUDataDefaultTypeInternal _IMUData_default_instance_;
+class IMUData_SignalStatesDefaultTypeInternal {
+ public:
+  ::google::protobuf::internal::ExplicitlyConstructed<IMUData_SignalStates>
+      _instance;
+} _IMUData_SignalStates_default_instance_;
+class IMUData_SignalsDefaultTypeInternal {
+ public:
+  ::google::protobuf::internal::ExplicitlyConstructed<IMUData_Signals>
+      _instance;
+} _IMUData_Signals_default_instance_;
+class IMUDataDefaultTypeInternal {
+ public:
+  ::google::protobuf::internal::ExplicitlyConstructed<IMUData>
+      _instance;
+} _IMUData_default_instance_;
 }  // namespace PDK
 }  // namespace pb
-static ::_pb::Metadata file_level_metadata_pdk_5fIMUData_2eproto[3];
-static const ::_pb::EnumDescriptor* file_level_enum_descriptors_pdk_5fIMUData_2eproto[2];
-static constexpr ::_pb::ServiceDescriptor const** file_level_service_descriptors_pdk_5fIMUData_2eproto = nullptr;
+namespace protobuf_pdk_5fIMUData_2eproto {
+static void InitDefaultsIMUData_SignalStates() {
+  GOOGLE_PROTOBUF_VERIFY_VERSION;
 
-const uint32_t TableStruct_pdk_5fIMUData_2eproto::offsets[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
-  PROTOBUF_FIELD_OFFSET(::pb::PDK::IMUData_SignalStates, _has_bits_),
-  PROTOBUF_FIELD_OFFSET(::pb::PDK::IMUData_SignalStates, _internal_metadata_),
-  ~0u,  // no _extensions_
-  ~0u,  // no _oneof_case_
-  ~0u,  // no _weak_field_map_
-  ~0u,  // no _inlined_string_donated_
-  PROTOBUF_FIELD_OFFSET(::pb::PDK::IMUData_SignalStates, rollrate_),
-  PROTOBUF_FIELD_OFFSET(::pb::PDK::IMUData_SignalStates, pitchrate_),
-  PROTOBUF_FIELD_OFFSET(::pb::PDK::IMUData_SignalStates, yawrate_),
-  PROTOBUF_FIELD_OFFSET(::pb::PDK::IMUData_SignalStates, longacc_),
-  PROTOBUF_FIELD_OFFSET(::pb::PDK::IMUData_SignalStates, vertacc_),
-  PROTOBUF_FIELD_OFFSET(::pb::PDK::IMUData_SignalStates, latacc_),
-  0,
-  1,
-  2,
-  3,
-  4,
-  5,
-  PROTOBUF_FIELD_OFFSET(::pb::PDK::IMUData_Signals, _has_bits_),
-  PROTOBUF_FIELD_OFFSET(::pb::PDK::IMUData_Signals, _internal_metadata_),
-  ~0u,  // no _extensions_
-  ~0u,  // no _oneof_case_
-  ~0u,  // no _weak_field_map_
-  ~0u,  // no _inlined_string_donated_
-  PROTOBUF_FIELD_OFFSET(::pb::PDK::IMUData_Signals, rollrate_),
-  PROTOBUF_FIELD_OFFSET(::pb::PDK::IMUData_Signals, pitchrate_),
-  PROTOBUF_FIELD_OFFSET(::pb::PDK::IMUData_Signals, yawrate_),
-  PROTOBUF_FIELD_OFFSET(::pb::PDK::IMUData_Signals, longacc_),
-  PROTOBUF_FIELD_OFFSET(::pb::PDK::IMUData_Signals, vertacc_),
-  PROTOBUF_FIELD_OFFSET(::pb::PDK::IMUData_Signals, latacc_),
-  0,
-  1,
-  2,
-  3,
-  4,
-  5,
-  PROTOBUF_FIELD_OFFSET(::pb::PDK::IMUData, _has_bits_),
-  PROTOBUF_FIELD_OFFSET(::pb::PDK::IMUData, _internal_metadata_),
-  ~0u,  // no _extensions_
-  ~0u,  // no _oneof_case_
-  ~0u,  // no _weak_field_map_
-  ~0u,  // no _inlined_string_donated_
-  PROTOBUF_FIELD_OFFSET(::pb::PDK::IMUData, header_),
-  PROTOBUF_FIELD_OFFSET(::pb::PDK::IMUData, sensortype_),
-  PROTOBUF_FIELD_OFFSET(::pb::PDK::IMUData, signalstates_),
-  PROTOBUF_FIELD_OFFSET(::pb::PDK::IMUData, signals_),
-  0,
-  3,
-  1,
-  2,
-};
-static const ::_pbi::MigrationSchema schemas[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
-  { 0, 12, -1, sizeof(::pb::PDK::IMUData_SignalStates)},
-  { 18, 30, -1, sizeof(::pb::PDK::IMUData_Signals)},
-  { 36, 46, -1, sizeof(::pb::PDK::IMUData)},
-};
-
-static const ::_pb::Message* const file_default_instances[] = {
-  &::pb::PDK::_IMUData_SignalStates_default_instance_._instance,
-  &::pb::PDK::_IMUData_Signals_default_instance_._instance,
-  &::pb::PDK::_IMUData_default_instance_._instance,
-};
-
-const char descriptor_table_protodef_pdk_5fIMUData_2eproto[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) =
-  "\n\021pdk_IMUData.proto\022\006pb.PDK\032\023pdk_MsgHead"
-  "er.proto\"\304\006\n\007IMUData\022!\n\006header\030\001 \001(\0132\021.p"
-  "b.PDK.MsgHeader\0227\n\nsensorType\030\002 \001(\0162\032.pb"
-  ".PDK.IMUData.SensorType:\007UNKNOWN\0222\n\014sign"
-  "alStates\030\003 \001(\0132\034.pb.PDK.IMUData.SignalSt"
-  "ates\022(\n\007signals\030\004 \001(\0132\027.pb.PDK.IMUData.S"
-  "ignals\032\234\003\n\014SignalStates\022A\n\010rollRate\030\001 \001("
-  "\0162\033.pb.PDK.IMUData.SignalState:\022IMU_SIGN"
-  "AL_INVALID\022B\n\tpitchRate\030\002 \001(\0162\033.pb.PDK.I"
-  "MUData.SignalState:\022IMU_SIGNAL_INVALID\022@"
-  "\n\007yawRate\030\003 \001(\0162\033.pb.PDK.IMUData.SignalS"
-  "tate:\022IMU_SIGNAL_INVALID\022@\n\007longAcc\030\004 \001("
-  "\0162\033.pb.PDK.IMUData.SignalState:\022IMU_SIGN"
-  "AL_INVALID\022@\n\007vertAcc\030\005 \001(\0162\033.pb.PDK.IMU"
-  "Data.SignalState:\022IMU_SIGNAL_INVALID\022\?\n\006"
-  "latAcc\030\006 \001(\0162\033.pb.PDK.IMUData.SignalStat"
-  "e:\022IMU_SIGNAL_INVALID\032q\n\007Signals\022\020\n\010roll"
-  "Rate\030\001 \001(\002\022\021\n\tpitchRate\030\002 \001(\002\022\017\n\007yawRate"
-  "\030\003 \001(\002\022\017\n\007longAcc\030\004 \001(\002\022\017\n\007vertAcc\030\005 \001(\002"
-  "\022\016\n\006latAcc\030\006 \001(\002\";\n\013SignalState\022\026\n\022IMU_S"
-  "IGNAL_INVALID\020\000\022\024\n\020IMU_SIGNAL_VALID\020\001\"0\n"
-  "\nSensorType\022\t\n\005SC23S\020\000\022\t\n\005SC13S\020\001\022\014\n\007UNK"
-  "NOWN\020\377\001"
-  ;
-static const ::_pbi::DescriptorTable* const descriptor_table_pdk_5fIMUData_2eproto_deps[1] = {
-  &::descriptor_table_pdk_5fMsgHeader_2eproto,
-};
-static ::_pbi::once_flag descriptor_table_pdk_5fIMUData_2eproto_once;
-const ::_pbi::DescriptorTable descriptor_table_pdk_5fIMUData_2eproto = {
-    false, false, 887, descriptor_table_protodef_pdk_5fIMUData_2eproto,
-    "pdk_IMUData.proto",
-    &descriptor_table_pdk_5fIMUData_2eproto_once, descriptor_table_pdk_5fIMUData_2eproto_deps, 1, 3,
-    schemas, file_default_instances, TableStruct_pdk_5fIMUData_2eproto::offsets,
-    file_level_metadata_pdk_5fIMUData_2eproto, file_level_enum_descriptors_pdk_5fIMUData_2eproto,
-    file_level_service_descriptors_pdk_5fIMUData_2eproto,
-};
-PROTOBUF_ATTRIBUTE_WEAK const ::_pbi::DescriptorTable* descriptor_table_pdk_5fIMUData_2eproto_getter() {
-  return &descriptor_table_pdk_5fIMUData_2eproto;
+  {
+    void* ptr = &::pb::PDK::_IMUData_SignalStates_default_instance_;
+    new (ptr) ::pb::PDK::IMUData_SignalStates();
+    ::google::protobuf::internal::OnShutdownDestroyMessage(ptr);
+  }
+  ::pb::PDK::IMUData_SignalStates::InitAsDefaultInstance();
 }
 
-// Force running AddDescriptors() at dynamic initialization time.
-PROTOBUF_ATTRIBUTE_INIT_PRIORITY2 static ::_pbi::AddDescriptorsRunner dynamic_init_dummy_pdk_5fIMUData_2eproto(&descriptor_table_pdk_5fIMUData_2eproto);
+::google::protobuf::internal::SCCInfo<0> scc_info_IMUData_SignalStates =
+    {{ATOMIC_VAR_INIT(::google::protobuf::internal::SCCInfoBase::kUninitialized), 0, InitDefaultsIMUData_SignalStates}, {}};
+
+static void InitDefaultsIMUData_Signals() {
+  GOOGLE_PROTOBUF_VERIFY_VERSION;
+
+  {
+    void* ptr = &::pb::PDK::_IMUData_Signals_default_instance_;
+    new (ptr) ::pb::PDK::IMUData_Signals();
+    ::google::protobuf::internal::OnShutdownDestroyMessage(ptr);
+  }
+  ::pb::PDK::IMUData_Signals::InitAsDefaultInstance();
+}
+
+::google::protobuf::internal::SCCInfo<0> scc_info_IMUData_Signals =
+    {{ATOMIC_VAR_INIT(::google::protobuf::internal::SCCInfoBase::kUninitialized), 0, InitDefaultsIMUData_Signals}, {}};
+
+static void InitDefaultsIMUData() {
+  GOOGLE_PROTOBUF_VERIFY_VERSION;
+
+  {
+    void* ptr = &::pb::PDK::_IMUData_default_instance_;
+    new (ptr) ::pb::PDK::IMUData();
+    ::google::protobuf::internal::OnShutdownDestroyMessage(ptr);
+  }
+  ::pb::PDK::IMUData::InitAsDefaultInstance();
+}
+
+::google::protobuf::internal::SCCInfo<3> scc_info_IMUData =
+    {{ATOMIC_VAR_INIT(::google::protobuf::internal::SCCInfoBase::kUninitialized), 3, InitDefaultsIMUData}, {
+      &protobuf_pdk_5fMsgHeader_2eproto::scc_info_MsgHeader.base,
+      &protobuf_pdk_5fIMUData_2eproto::scc_info_IMUData_SignalStates.base,
+      &protobuf_pdk_5fIMUData_2eproto::scc_info_IMUData_Signals.base,}};
+
+void InitDefaults() {
+  ::google::protobuf::internal::InitSCC(&scc_info_IMUData_SignalStates.base);
+  ::google::protobuf::internal::InitSCC(&scc_info_IMUData_Signals.base);
+  ::google::protobuf::internal::InitSCC(&scc_info_IMUData.base);
+}
+
+::google::protobuf::Metadata file_level_metadata[3];
+const ::google::protobuf::EnumDescriptor* file_level_enum_descriptors[2];
+
+const ::google::protobuf::uint32 TableStruct::offsets[] GOOGLE_PROTOBUF_ATTRIBUTE_SECTION_VARIABLE(protodesc_cold) = {
+  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::pb::PDK::IMUData_SignalStates, _has_bits_),
+  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::pb::PDK::IMUData_SignalStates, _internal_metadata_),
+  ~0u,  // no _extensions_
+  ~0u,  // no _oneof_case_
+  ~0u,  // no _weak_field_map_
+  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::pb::PDK::IMUData_SignalStates, rollrate_),
+  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::pb::PDK::IMUData_SignalStates, pitchrate_),
+  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::pb::PDK::IMUData_SignalStates, yawrate_),
+  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::pb::PDK::IMUData_SignalStates, longacc_),
+  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::pb::PDK::IMUData_SignalStates, vertacc_),
+  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::pb::PDK::IMUData_SignalStates, latacc_),
+  0,
+  1,
+  2,
+  3,
+  4,
+  5,
+  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::pb::PDK::IMUData_Signals, _has_bits_),
+  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::pb::PDK::IMUData_Signals, _internal_metadata_),
+  ~0u,  // no _extensions_
+  ~0u,  // no _oneof_case_
+  ~0u,  // no _weak_field_map_
+  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::pb::PDK::IMUData_Signals, rollrate_),
+  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::pb::PDK::IMUData_Signals, pitchrate_),
+  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::pb::PDK::IMUData_Signals, yawrate_),
+  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::pb::PDK::IMUData_Signals, longacc_),
+  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::pb::PDK::IMUData_Signals, vertacc_),
+  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::pb::PDK::IMUData_Signals, latacc_),
+  0,
+  1,
+  2,
+  3,
+  4,
+  5,
+  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::pb::PDK::IMUData, _has_bits_),
+  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::pb::PDK::IMUData, _internal_metadata_),
+  ~0u,  // no _extensions_
+  ~0u,  // no _oneof_case_
+  ~0u,  // no _weak_field_map_
+  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::pb::PDK::IMUData, header_),
+  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::pb::PDK::IMUData, sensortype_),
+  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::pb::PDK::IMUData, signalstates_),
+  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::pb::PDK::IMUData, signals_),
+  0,
+  3,
+  1,
+  2,
+};
+static const ::google::protobuf::internal::MigrationSchema schemas[] GOOGLE_PROTOBUF_ATTRIBUTE_SECTION_VARIABLE(protodesc_cold) = {
+  { 0, 11, sizeof(::pb::PDK::IMUData_SignalStates)},
+  { 17, 28, sizeof(::pb::PDK::IMUData_Signals)},
+  { 34, 43, sizeof(::pb::PDK::IMUData)},
+};
+
+static ::google::protobuf::Message const * const file_default_instances[] = {
+  reinterpret_cast<const ::google::protobuf::Message*>(&::pb::PDK::_IMUData_SignalStates_default_instance_),
+  reinterpret_cast<const ::google::protobuf::Message*>(&::pb::PDK::_IMUData_Signals_default_instance_),
+  reinterpret_cast<const ::google::protobuf::Message*>(&::pb::PDK::_IMUData_default_instance_),
+};
+
+void protobuf_AssignDescriptors() {
+  AddDescriptors();
+  AssignDescriptors(
+      "pdk_IMUData.proto", schemas, file_default_instances, TableStruct::offsets,
+      file_level_metadata, file_level_enum_descriptors, NULL);
+}
+
+void protobuf_AssignDescriptorsOnce() {
+  static ::google::protobuf::internal::once_flag once;
+  ::google::protobuf::internal::call_once(once, protobuf_AssignDescriptors);
+}
+
+void protobuf_RegisterTypes(const ::std::string&) GOOGLE_PROTOBUF_ATTRIBUTE_COLD;
+void protobuf_RegisterTypes(const ::std::string&) {
+  protobuf_AssignDescriptorsOnce();
+  ::google::protobuf::internal::RegisterAllTypes(file_level_metadata, 3);
+}
+
+void AddDescriptorsImpl() {
+  InitDefaults();
+  static const char descriptor[] GOOGLE_PROTOBUF_ATTRIBUTE_SECTION_VARIABLE(protodesc_cold) = {
+      "\n\021pdk_IMUData.proto\022\006pb.PDK\032\023pdk_MsgHead"
+      "er.proto\"\304\006\n\007IMUData\022!\n\006header\030\001 \001(\0132\021.p"
+      "b.PDK.MsgHeader\0227\n\nsensorType\030\002 \001(\0162\032.pb"
+      ".PDK.IMUData.SensorType:\007UNKNOWN\0222\n\014sign"
+      "alStates\030\003 \001(\0132\034.pb.PDK.IMUData.SignalSt"
+      "ates\022(\n\007signals\030\004 \001(\0132\027.pb.PDK.IMUData.S"
+      "ignals\032\234\003\n\014SignalStates\022A\n\010rollRate\030\001 \001("
+      "\0162\033.pb.PDK.IMUData.SignalState:\022IMU_SIGN"
+      "AL_INVALID\022B\n\tpitchRate\030\002 \001(\0162\033.pb.PDK.I"
+      "MUData.SignalState:\022IMU_SIGNAL_INVALID\022@"
+      "\n\007yawRate\030\003 \001(\0162\033.pb.PDK.IMUData.SignalS"
+      "tate:\022IMU_SIGNAL_INVALID\022@\n\007longAcc\030\004 \001("
+      "\0162\033.pb.PDK.IMUData.SignalState:\022IMU_SIGN"
+      "AL_INVALID\022@\n\007vertAcc\030\005 \001(\0162\033.pb.PDK.IMU"
+      "Data.SignalState:\022IMU_SIGNAL_INVALID\022\?\n\006"
+      "latAcc\030\006 \001(\0162\033.pb.PDK.IMUData.SignalStat"
+      "e:\022IMU_SIGNAL_INVALID\032q\n\007Signals\022\020\n\010roll"
+      "Rate\030\001 \001(\002\022\021\n\tpitchRate\030\002 \001(\002\022\017\n\007yawRate"
+      "\030\003 \001(\002\022\017\n\007longAcc\030\004 \001(\002\022\017\n\007vertAcc\030\005 \001(\002"
+      "\022\016\n\006latAcc\030\006 \001(\002\";\n\013SignalState\022\026\n\022IMU_S"
+      "IGNAL_INVALID\020\000\022\024\n\020IMU_SIGNAL_VALID\020\001\"0\n"
+      "\nSensorType\022\t\n\005SC23S\020\000\022\t\n\005SC13S\020\001\022\014\n\007UNK"
+      "NOWN\020\377\001"
+  };
+  ::google::protobuf::DescriptorPool::InternalAddGeneratedFile(
+      descriptor, 887);
+  ::google::protobuf::MessageFactory::InternalRegisterGeneratedFile(
+    "pdk_IMUData.proto", &protobuf_RegisterTypes);
+  ::protobuf_pdk_5fMsgHeader_2eproto::AddDescriptors();
+}
+
+void AddDescriptors() {
+  static ::google::protobuf::internal::once_flag once;
+  ::google::protobuf::internal::call_once(once, AddDescriptorsImpl);
+}
+// Force AddDescriptors() to be called at dynamic initialization time.
+struct StaticDescriptorInitializer {
+  StaticDescriptorInitializer() {
+    AddDescriptors();
+  }
+} static_descriptor_initializer;
+}  // namespace protobuf_pdk_5fIMUData_2eproto
 namespace pb {
 namespace PDK {
-const ::PROTOBUF_NAMESPACE_ID::EnumDescriptor* IMUData_SignalState_descriptor() {
-  ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(&descriptor_table_pdk_5fIMUData_2eproto);
-  return file_level_enum_descriptors_pdk_5fIMUData_2eproto[0];
+const ::google::protobuf::EnumDescriptor* IMUData_SignalState_descriptor() {
+  protobuf_pdk_5fIMUData_2eproto::protobuf_AssignDescriptorsOnce();
+  return protobuf_pdk_5fIMUData_2eproto::file_level_enum_descriptors[0];
 }
 bool IMUData_SignalState_IsValid(int value) {
   switch (value) {
@@ -207,16 +240,16 @@ bool IMUData_SignalState_IsValid(int value) {
   }
 }
 
-#if (__cplusplus < 201703) && (!defined(_MSC_VER) || (_MSC_VER >= 1900 && _MSC_VER < 1912))
-constexpr IMUData_SignalState IMUData::IMU_SIGNAL_INVALID;
-constexpr IMUData_SignalState IMUData::IMU_SIGNAL_VALID;
-constexpr IMUData_SignalState IMUData::SignalState_MIN;
-constexpr IMUData_SignalState IMUData::SignalState_MAX;
-constexpr int IMUData::SignalState_ARRAYSIZE;
-#endif  // (__cplusplus < 201703) && (!defined(_MSC_VER) || (_MSC_VER >= 1900 && _MSC_VER < 1912))
-const ::PROTOBUF_NAMESPACE_ID::EnumDescriptor* IMUData_SensorType_descriptor() {
-  ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(&descriptor_table_pdk_5fIMUData_2eproto);
-  return file_level_enum_descriptors_pdk_5fIMUData_2eproto[1];
+#if !defined(_MSC_VER) || _MSC_VER >= 1900
+const IMUData_SignalState IMUData::IMU_SIGNAL_INVALID;
+const IMUData_SignalState IMUData::IMU_SIGNAL_VALID;
+const IMUData_SignalState IMUData::SignalState_MIN;
+const IMUData_SignalState IMUData::SignalState_MAX;
+const int IMUData::SignalState_ARRAYSIZE;
+#endif  // !defined(_MSC_VER) || _MSC_VER >= 1900
+const ::google::protobuf::EnumDescriptor* IMUData_SensorType_descriptor() {
+  protobuf_pdk_5fIMUData_2eproto::protobuf_AssignDescriptorsOnce();
+  return protobuf_pdk_5fIMUData_2eproto::file_level_enum_descriptors[1];
 }
 bool IMUData_SensorType_IsValid(int value) {
   switch (value) {
@@ -229,257 +262,337 @@ bool IMUData_SensorType_IsValid(int value) {
   }
 }
 
-#if (__cplusplus < 201703) && (!defined(_MSC_VER) || (_MSC_VER >= 1900 && _MSC_VER < 1912))
-constexpr IMUData_SensorType IMUData::SC23S;
-constexpr IMUData_SensorType IMUData::SC13S;
-constexpr IMUData_SensorType IMUData::UNKNOWN;
-constexpr IMUData_SensorType IMUData::SensorType_MIN;
-constexpr IMUData_SensorType IMUData::SensorType_MAX;
-constexpr int IMUData::SensorType_ARRAYSIZE;
-#endif  // (__cplusplus < 201703) && (!defined(_MSC_VER) || (_MSC_VER >= 1900 && _MSC_VER < 1912))
+#if !defined(_MSC_VER) || _MSC_VER >= 1900
+const IMUData_SensorType IMUData::SC23S;
+const IMUData_SensorType IMUData::SC13S;
+const IMUData_SensorType IMUData::UNKNOWN;
+const IMUData_SensorType IMUData::SensorType_MIN;
+const IMUData_SensorType IMUData::SensorType_MAX;
+const int IMUData::SensorType_ARRAYSIZE;
+#endif  // !defined(_MSC_VER) || _MSC_VER >= 1900
 
 // ===================================================================
 
-class IMUData_SignalStates::_Internal {
- public:
-  using HasBits = decltype(std::declval<IMUData_SignalStates>()._has_bits_);
-  static void set_has_rollrate(HasBits* has_bits) {
-    (*has_bits)[0] |= 1u;
-  }
-  static void set_has_pitchrate(HasBits* has_bits) {
-    (*has_bits)[0] |= 2u;
-  }
-  static void set_has_yawrate(HasBits* has_bits) {
-    (*has_bits)[0] |= 4u;
-  }
-  static void set_has_longacc(HasBits* has_bits) {
-    (*has_bits)[0] |= 8u;
-  }
-  static void set_has_vertacc(HasBits* has_bits) {
-    (*has_bits)[0] |= 16u;
-  }
-  static void set_has_latacc(HasBits* has_bits) {
-    (*has_bits)[0] |= 32u;
-  }
-};
+void IMUData_SignalStates::InitAsDefaultInstance() {
+}
+#if !defined(_MSC_VER) || _MSC_VER >= 1900
+const int IMUData_SignalStates::kRollRateFieldNumber;
+const int IMUData_SignalStates::kPitchRateFieldNumber;
+const int IMUData_SignalStates::kYawRateFieldNumber;
+const int IMUData_SignalStates::kLongAccFieldNumber;
+const int IMUData_SignalStates::kVertAccFieldNumber;
+const int IMUData_SignalStates::kLatAccFieldNumber;
+#endif  // !defined(_MSC_VER) || _MSC_VER >= 1900
 
-IMUData_SignalStates::IMUData_SignalStates(::PROTOBUF_NAMESPACE_ID::Arena* arena,
-                         bool is_message_owned)
-  : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
+IMUData_SignalStates::IMUData_SignalStates()
+  : ::google::protobuf::Message(), _internal_metadata_(NULL) {
+  ::google::protobuf::internal::InitSCC(
+      &protobuf_pdk_5fIMUData_2eproto::scc_info_IMUData_SignalStates.base);
   SharedCtor();
-  // @@protoc_insertion_point(arena_constructor:pb.PDK.IMUData.SignalStates)
+  // @@protoc_insertion_point(constructor:pb.PDK.IMUData.SignalStates)
 }
 IMUData_SignalStates::IMUData_SignalStates(const IMUData_SignalStates& from)
-  : ::PROTOBUF_NAMESPACE_ID::Message(),
+  : ::google::protobuf::Message(),
+      _internal_metadata_(NULL),
       _has_bits_(from._has_bits_) {
-  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  _internal_metadata_.MergeFrom(from._internal_metadata_);
   ::memcpy(&rollrate_, &from.rollrate_,
     static_cast<size_t>(reinterpret_cast<char*>(&latacc_) -
     reinterpret_cast<char*>(&rollrate_)) + sizeof(latacc_));
   // @@protoc_insertion_point(copy_constructor:pb.PDK.IMUData.SignalStates)
 }
 
-inline void IMUData_SignalStates::SharedCtor() {
-::memset(reinterpret_cast<char*>(this) + static_cast<size_t>(
-    reinterpret_cast<char*>(&rollrate_) - reinterpret_cast<char*>(this)),
-    0, static_cast<size_t>(reinterpret_cast<char*>(&latacc_) -
-    reinterpret_cast<char*>(&rollrate_)) + sizeof(latacc_));
+void IMUData_SignalStates::SharedCtor() {
+  ::memset(&rollrate_, 0, static_cast<size_t>(
+      reinterpret_cast<char*>(&latacc_) -
+      reinterpret_cast<char*>(&rollrate_)) + sizeof(latacc_));
 }
 
 IMUData_SignalStates::~IMUData_SignalStates() {
   // @@protoc_insertion_point(destructor:pb.PDK.IMUData.SignalStates)
-  if (auto *arena = _internal_metadata_.DeleteReturnArena<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>()) {
-  (void)arena;
-    return;
-  }
   SharedDtor();
 }
 
-inline void IMUData_SignalStates::SharedDtor() {
-  GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
+void IMUData_SignalStates::SharedDtor() {
 }
 
 void IMUData_SignalStates::SetCachedSize(int size) const {
   _cached_size_.Set(size);
 }
+const ::google::protobuf::Descriptor* IMUData_SignalStates::descriptor() {
+  ::protobuf_pdk_5fIMUData_2eproto::protobuf_AssignDescriptorsOnce();
+  return ::protobuf_pdk_5fIMUData_2eproto::file_level_metadata[kIndexInFileMessages].descriptor;
+}
+
+const IMUData_SignalStates& IMUData_SignalStates::default_instance() {
+  ::google::protobuf::internal::InitSCC(&protobuf_pdk_5fIMUData_2eproto::scc_info_IMUData_SignalStates.base);
+  return *internal_default_instance();
+}
+
 
 void IMUData_SignalStates::Clear() {
 // @@protoc_insertion_point(message_clear_start:pb.PDK.IMUData.SignalStates)
-  uint32_t cached_has_bits = 0;
+  ::google::protobuf::uint32 cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
   cached_has_bits = _has_bits_[0];
-  if (cached_has_bits & 0x0000003fu) {
+  if (cached_has_bits & 63u) {
     ::memset(&rollrate_, 0, static_cast<size_t>(
         reinterpret_cast<char*>(&latacc_) -
         reinterpret_cast<char*>(&rollrate_)) + sizeof(latacc_));
   }
   _has_bits_.Clear();
-  _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
+  _internal_metadata_.Clear();
 }
 
-const char* IMUData_SignalStates::_InternalParse(const char* ptr, ::_pbi::ParseContext* ctx) {
-#define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
-  _Internal::HasBits has_bits{};
-  while (!ctx->Done(&ptr)) {
-    uint32_t tag;
-    ptr = ::_pbi::ReadTag(ptr, &tag);
-    switch (tag >> 3) {
+bool IMUData_SignalStates::MergePartialFromCodedStream(
+    ::google::protobuf::io::CodedInputStream* input) {
+#define DO_(EXPRESSION) if (!GOOGLE_PREDICT_TRUE(EXPRESSION)) goto failure
+  ::google::protobuf::uint32 tag;
+  // @@protoc_insertion_point(parse_start:pb.PDK.IMUData.SignalStates)
+  for (;;) {
+    ::std::pair<::google::protobuf::uint32, bool> p = input->ReadTagWithCutoffNoLastTag(127u);
+    tag = p.first;
+    if (!p.second) goto handle_unusual;
+    switch (::google::protobuf::internal::WireFormatLite::GetTagFieldNumber(tag)) {
       // optional .pb.PDK.IMUData.SignalState rollRate = 1 [default = IMU_SIGNAL_INVALID];
-      case 1:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 8)) {
-          uint64_t val = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
-          CHK_(ptr);
-          if (PROTOBUF_PREDICT_TRUE(::pb::PDK::IMUData_SignalState_IsValid(val))) {
-            _internal_set_rollrate(static_cast<::pb::PDK::IMUData_SignalState>(val));
+      case 1: {
+        if (static_cast< ::google::protobuf::uint8>(tag) ==
+            static_cast< ::google::protobuf::uint8>(8u /* 8 & 0xFF */)) {
+          int value;
+          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
+                   int, ::google::protobuf::internal::WireFormatLite::TYPE_ENUM>(
+                 input, &value)));
+          if (::pb::PDK::IMUData_SignalState_IsValid(value)) {
+            set_rollrate(static_cast< ::pb::PDK::IMUData_SignalState >(value));
           } else {
-            ::PROTOBUF_NAMESPACE_ID::internal::WriteVarint(1, val, mutable_unknown_fields());
+            mutable_unknown_fields()->AddVarint(
+                1, static_cast< ::google::protobuf::uint64>(value));
           }
-        } else
+        } else {
           goto handle_unusual;
-        continue;
+        }
+        break;
+      }
+
       // optional .pb.PDK.IMUData.SignalState pitchRate = 2 [default = IMU_SIGNAL_INVALID];
-      case 2:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 16)) {
-          uint64_t val = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
-          CHK_(ptr);
-          if (PROTOBUF_PREDICT_TRUE(::pb::PDK::IMUData_SignalState_IsValid(val))) {
-            _internal_set_pitchrate(static_cast<::pb::PDK::IMUData_SignalState>(val));
+      case 2: {
+        if (static_cast< ::google::protobuf::uint8>(tag) ==
+            static_cast< ::google::protobuf::uint8>(16u /* 16 & 0xFF */)) {
+          int value;
+          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
+                   int, ::google::protobuf::internal::WireFormatLite::TYPE_ENUM>(
+                 input, &value)));
+          if (::pb::PDK::IMUData_SignalState_IsValid(value)) {
+            set_pitchrate(static_cast< ::pb::PDK::IMUData_SignalState >(value));
           } else {
-            ::PROTOBUF_NAMESPACE_ID::internal::WriteVarint(2, val, mutable_unknown_fields());
+            mutable_unknown_fields()->AddVarint(
+                2, static_cast< ::google::protobuf::uint64>(value));
           }
-        } else
+        } else {
           goto handle_unusual;
-        continue;
+        }
+        break;
+      }
+
       // optional .pb.PDK.IMUData.SignalState yawRate = 3 [default = IMU_SIGNAL_INVALID];
-      case 3:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 24)) {
-          uint64_t val = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
-          CHK_(ptr);
-          if (PROTOBUF_PREDICT_TRUE(::pb::PDK::IMUData_SignalState_IsValid(val))) {
-            _internal_set_yawrate(static_cast<::pb::PDK::IMUData_SignalState>(val));
+      case 3: {
+        if (static_cast< ::google::protobuf::uint8>(tag) ==
+            static_cast< ::google::protobuf::uint8>(24u /* 24 & 0xFF */)) {
+          int value;
+          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
+                   int, ::google::protobuf::internal::WireFormatLite::TYPE_ENUM>(
+                 input, &value)));
+          if (::pb::PDK::IMUData_SignalState_IsValid(value)) {
+            set_yawrate(static_cast< ::pb::PDK::IMUData_SignalState >(value));
           } else {
-            ::PROTOBUF_NAMESPACE_ID::internal::WriteVarint(3, val, mutable_unknown_fields());
+            mutable_unknown_fields()->AddVarint(
+                3, static_cast< ::google::protobuf::uint64>(value));
           }
-        } else
+        } else {
           goto handle_unusual;
-        continue;
+        }
+        break;
+      }
+
       // optional .pb.PDK.IMUData.SignalState longAcc = 4 [default = IMU_SIGNAL_INVALID];
-      case 4:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 32)) {
-          uint64_t val = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
-          CHK_(ptr);
-          if (PROTOBUF_PREDICT_TRUE(::pb::PDK::IMUData_SignalState_IsValid(val))) {
-            _internal_set_longacc(static_cast<::pb::PDK::IMUData_SignalState>(val));
+      case 4: {
+        if (static_cast< ::google::protobuf::uint8>(tag) ==
+            static_cast< ::google::protobuf::uint8>(32u /* 32 & 0xFF */)) {
+          int value;
+          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
+                   int, ::google::protobuf::internal::WireFormatLite::TYPE_ENUM>(
+                 input, &value)));
+          if (::pb::PDK::IMUData_SignalState_IsValid(value)) {
+            set_longacc(static_cast< ::pb::PDK::IMUData_SignalState >(value));
           } else {
-            ::PROTOBUF_NAMESPACE_ID::internal::WriteVarint(4, val, mutable_unknown_fields());
+            mutable_unknown_fields()->AddVarint(
+                4, static_cast< ::google::protobuf::uint64>(value));
           }
-        } else
+        } else {
           goto handle_unusual;
-        continue;
+        }
+        break;
+      }
+
       // optional .pb.PDK.IMUData.SignalState vertAcc = 5 [default = IMU_SIGNAL_INVALID];
-      case 5:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 40)) {
-          uint64_t val = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
-          CHK_(ptr);
-          if (PROTOBUF_PREDICT_TRUE(::pb::PDK::IMUData_SignalState_IsValid(val))) {
-            _internal_set_vertacc(static_cast<::pb::PDK::IMUData_SignalState>(val));
+      case 5: {
+        if (static_cast< ::google::protobuf::uint8>(tag) ==
+            static_cast< ::google::protobuf::uint8>(40u /* 40 & 0xFF */)) {
+          int value;
+          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
+                   int, ::google::protobuf::internal::WireFormatLite::TYPE_ENUM>(
+                 input, &value)));
+          if (::pb::PDK::IMUData_SignalState_IsValid(value)) {
+            set_vertacc(static_cast< ::pb::PDK::IMUData_SignalState >(value));
           } else {
-            ::PROTOBUF_NAMESPACE_ID::internal::WriteVarint(5, val, mutable_unknown_fields());
+            mutable_unknown_fields()->AddVarint(
+                5, static_cast< ::google::protobuf::uint64>(value));
           }
-        } else
+        } else {
           goto handle_unusual;
-        continue;
+        }
+        break;
+      }
+
       // optional .pb.PDK.IMUData.SignalState latAcc = 6 [default = IMU_SIGNAL_INVALID];
-      case 6:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 48)) {
-          uint64_t val = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
-          CHK_(ptr);
-          if (PROTOBUF_PREDICT_TRUE(::pb::PDK::IMUData_SignalState_IsValid(val))) {
-            _internal_set_latacc(static_cast<::pb::PDK::IMUData_SignalState>(val));
+      case 6: {
+        if (static_cast< ::google::protobuf::uint8>(tag) ==
+            static_cast< ::google::protobuf::uint8>(48u /* 48 & 0xFF */)) {
+          int value;
+          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
+                   int, ::google::protobuf::internal::WireFormatLite::TYPE_ENUM>(
+                 input, &value)));
+          if (::pb::PDK::IMUData_SignalState_IsValid(value)) {
+            set_latacc(static_cast< ::pb::PDK::IMUData_SignalState >(value));
           } else {
-            ::PROTOBUF_NAMESPACE_ID::internal::WriteVarint(6, val, mutable_unknown_fields());
+            mutable_unknown_fields()->AddVarint(
+                6, static_cast< ::google::protobuf::uint64>(value));
           }
-        } else
+        } else {
           goto handle_unusual;
-        continue;
-      default:
-        goto handle_unusual;
-    }  // switch
-  handle_unusual:
-    if ((tag == 0) || ((tag & 7) == 4)) {
-      CHK_(ptr);
-      ctx->SetLastTag(tag);
-      goto message_done;
+        }
+        break;
+      }
+
+      default: {
+      handle_unusual:
+        if (tag == 0) {
+          goto success;
+        }
+        DO_(::google::protobuf::internal::WireFormat::SkipField(
+              input, tag, _internal_metadata_.mutable_unknown_fields()));
+        break;
+      }
     }
-    ptr = UnknownFieldParse(
-        tag,
-        _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
-        ptr, ctx);
-    CHK_(ptr != nullptr);
-  }  // while
-message_done:
-  _has_bits_.Or(has_bits);
-  return ptr;
+  }
+success:
+  // @@protoc_insertion_point(parse_success:pb.PDK.IMUData.SignalStates)
+  return true;
 failure:
-  ptr = nullptr;
-  goto message_done;
-#undef CHK_
+  // @@protoc_insertion_point(parse_failure:pb.PDK.IMUData.SignalStates)
+  return false;
+#undef DO_
 }
 
-uint8_t* IMUData_SignalStates::_InternalSerialize(
-    uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
-  // @@protoc_insertion_point(serialize_to_array_start:pb.PDK.IMUData.SignalStates)
-  uint32_t cached_has_bits = 0;
+void IMUData_SignalStates::SerializeWithCachedSizes(
+    ::google::protobuf::io::CodedOutputStream* output) const {
+  // @@protoc_insertion_point(serialize_start:pb.PDK.IMUData.SignalStates)
+  ::google::protobuf::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
   cached_has_bits = _has_bits_[0];
   // optional .pb.PDK.IMUData.SignalState rollRate = 1 [default = IMU_SIGNAL_INVALID];
   if (cached_has_bits & 0x00000001u) {
-    target = stream->EnsureSpace(target);
-    target = ::_pbi::WireFormatLite::WriteEnumToArray(
-      1, this->_internal_rollrate(), target);
+    ::google::protobuf::internal::WireFormatLite::WriteEnum(
+      1, this->rollrate(), output);
   }
 
   // optional .pb.PDK.IMUData.SignalState pitchRate = 2 [default = IMU_SIGNAL_INVALID];
   if (cached_has_bits & 0x00000002u) {
-    target = stream->EnsureSpace(target);
-    target = ::_pbi::WireFormatLite::WriteEnumToArray(
-      2, this->_internal_pitchrate(), target);
+    ::google::protobuf::internal::WireFormatLite::WriteEnum(
+      2, this->pitchrate(), output);
   }
 
   // optional .pb.PDK.IMUData.SignalState yawRate = 3 [default = IMU_SIGNAL_INVALID];
   if (cached_has_bits & 0x00000004u) {
-    target = stream->EnsureSpace(target);
-    target = ::_pbi::WireFormatLite::WriteEnumToArray(
-      3, this->_internal_yawrate(), target);
+    ::google::protobuf::internal::WireFormatLite::WriteEnum(
+      3, this->yawrate(), output);
   }
 
   // optional .pb.PDK.IMUData.SignalState longAcc = 4 [default = IMU_SIGNAL_INVALID];
   if (cached_has_bits & 0x00000008u) {
-    target = stream->EnsureSpace(target);
-    target = ::_pbi::WireFormatLite::WriteEnumToArray(
-      4, this->_internal_longacc(), target);
+    ::google::protobuf::internal::WireFormatLite::WriteEnum(
+      4, this->longacc(), output);
   }
 
   // optional .pb.PDK.IMUData.SignalState vertAcc = 5 [default = IMU_SIGNAL_INVALID];
   if (cached_has_bits & 0x00000010u) {
-    target = stream->EnsureSpace(target);
-    target = ::_pbi::WireFormatLite::WriteEnumToArray(
-      5, this->_internal_vertacc(), target);
+    ::google::protobuf::internal::WireFormatLite::WriteEnum(
+      5, this->vertacc(), output);
   }
 
   // optional .pb.PDK.IMUData.SignalState latAcc = 6 [default = IMU_SIGNAL_INVALID];
   if (cached_has_bits & 0x00000020u) {
-    target = stream->EnsureSpace(target);
-    target = ::_pbi::WireFormatLite::WriteEnumToArray(
-      6, this->_internal_latacc(), target);
+    ::google::protobuf::internal::WireFormatLite::WriteEnum(
+      6, this->latacc(), output);
   }
 
-  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
-    target = ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
-        _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
+  if (_internal_metadata_.have_unknown_fields()) {
+    ::google::protobuf::internal::WireFormat::SerializeUnknownFields(
+        _internal_metadata_.unknown_fields(), output);
+  }
+  // @@protoc_insertion_point(serialize_end:pb.PDK.IMUData.SignalStates)
+}
+
+::google::protobuf::uint8* IMUData_SignalStates::InternalSerializeWithCachedSizesToArray(
+    bool deterministic, ::google::protobuf::uint8* target) const {
+  (void)deterministic; // Unused
+  // @@protoc_insertion_point(serialize_to_array_start:pb.PDK.IMUData.SignalStates)
+  ::google::protobuf::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  cached_has_bits = _has_bits_[0];
+  // optional .pb.PDK.IMUData.SignalState rollRate = 1 [default = IMU_SIGNAL_INVALID];
+  if (cached_has_bits & 0x00000001u) {
+    target = ::google::protobuf::internal::WireFormatLite::WriteEnumToArray(
+      1, this->rollrate(), target);
+  }
+
+  // optional .pb.PDK.IMUData.SignalState pitchRate = 2 [default = IMU_SIGNAL_INVALID];
+  if (cached_has_bits & 0x00000002u) {
+    target = ::google::protobuf::internal::WireFormatLite::WriteEnumToArray(
+      2, this->pitchrate(), target);
+  }
+
+  // optional .pb.PDK.IMUData.SignalState yawRate = 3 [default = IMU_SIGNAL_INVALID];
+  if (cached_has_bits & 0x00000004u) {
+    target = ::google::protobuf::internal::WireFormatLite::WriteEnumToArray(
+      3, this->yawrate(), target);
+  }
+
+  // optional .pb.PDK.IMUData.SignalState longAcc = 4 [default = IMU_SIGNAL_INVALID];
+  if (cached_has_bits & 0x00000008u) {
+    target = ::google::protobuf::internal::WireFormatLite::WriteEnumToArray(
+      4, this->longacc(), target);
+  }
+
+  // optional .pb.PDK.IMUData.SignalState vertAcc = 5 [default = IMU_SIGNAL_INVALID];
+  if (cached_has_bits & 0x00000010u) {
+    target = ::google::protobuf::internal::WireFormatLite::WriteEnumToArray(
+      5, this->vertacc(), target);
+  }
+
+  // optional .pb.PDK.IMUData.SignalState latAcc = 6 [default = IMU_SIGNAL_INVALID];
+  if (cached_has_bits & 0x00000020u) {
+    target = ::google::protobuf::internal::WireFormatLite::WriteEnumToArray(
+      6, this->latacc(), target);
+  }
+
+  if (_internal_metadata_.have_unknown_fields()) {
+    target = ::google::protobuf::internal::WireFormat::SerializeUnknownFieldsToArray(
+        _internal_metadata_.unknown_fields(), target);
   }
   // @@protoc_insertion_point(serialize_to_array_end:pb.PDK.IMUData.SignalStates)
   return target;
@@ -489,73 +602,78 @@ size_t IMUData_SignalStates::ByteSizeLong() const {
 // @@protoc_insertion_point(message_byte_size_start:pb.PDK.IMUData.SignalStates)
   size_t total_size = 0;
 
-  uint32_t cached_has_bits = 0;
-  // Prevent compiler warnings about cached_has_bits being unused
-  (void) cached_has_bits;
-
-  cached_has_bits = _has_bits_[0];
-  if (cached_has_bits & 0x0000003fu) {
+  if (_internal_metadata_.have_unknown_fields()) {
+    total_size +=
+      ::google::protobuf::internal::WireFormat::ComputeUnknownFieldsSize(
+        _internal_metadata_.unknown_fields());
+  }
+  if (_has_bits_[0 / 32] & 63u) {
     // optional .pb.PDK.IMUData.SignalState rollRate = 1 [default = IMU_SIGNAL_INVALID];
-    if (cached_has_bits & 0x00000001u) {
+    if (has_rollrate()) {
       total_size += 1 +
-        ::_pbi::WireFormatLite::EnumSize(this->_internal_rollrate());
+        ::google::protobuf::internal::WireFormatLite::EnumSize(this->rollrate());
     }
 
     // optional .pb.PDK.IMUData.SignalState pitchRate = 2 [default = IMU_SIGNAL_INVALID];
-    if (cached_has_bits & 0x00000002u) {
+    if (has_pitchrate()) {
       total_size += 1 +
-        ::_pbi::WireFormatLite::EnumSize(this->_internal_pitchrate());
+        ::google::protobuf::internal::WireFormatLite::EnumSize(this->pitchrate());
     }
 
     // optional .pb.PDK.IMUData.SignalState yawRate = 3 [default = IMU_SIGNAL_INVALID];
-    if (cached_has_bits & 0x00000004u) {
+    if (has_yawrate()) {
       total_size += 1 +
-        ::_pbi::WireFormatLite::EnumSize(this->_internal_yawrate());
+        ::google::protobuf::internal::WireFormatLite::EnumSize(this->yawrate());
     }
 
     // optional .pb.PDK.IMUData.SignalState longAcc = 4 [default = IMU_SIGNAL_INVALID];
-    if (cached_has_bits & 0x00000008u) {
+    if (has_longacc()) {
       total_size += 1 +
-        ::_pbi::WireFormatLite::EnumSize(this->_internal_longacc());
+        ::google::protobuf::internal::WireFormatLite::EnumSize(this->longacc());
     }
 
     // optional .pb.PDK.IMUData.SignalState vertAcc = 5 [default = IMU_SIGNAL_INVALID];
-    if (cached_has_bits & 0x00000010u) {
+    if (has_vertacc()) {
       total_size += 1 +
-        ::_pbi::WireFormatLite::EnumSize(this->_internal_vertacc());
+        ::google::protobuf::internal::WireFormatLite::EnumSize(this->vertacc());
     }
 
     // optional .pb.PDK.IMUData.SignalState latAcc = 6 [default = IMU_SIGNAL_INVALID];
-    if (cached_has_bits & 0x00000020u) {
+    if (has_latacc()) {
       total_size += 1 +
-        ::_pbi::WireFormatLite::EnumSize(this->_internal_latacc());
+        ::google::protobuf::internal::WireFormatLite::EnumSize(this->latacc());
     }
 
   }
-  return MaybeComputeUnknownFieldsSize(total_size, &_cached_size_);
+  int cached_size = ::google::protobuf::internal::ToCachedSize(total_size);
+  SetCachedSize(cached_size);
+  return total_size;
 }
 
-const ::PROTOBUF_NAMESPACE_ID::Message::ClassData IMUData_SignalStates::_class_data_ = {
-    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSizeCheck,
-    IMUData_SignalStates::MergeImpl
-};
-const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*IMUData_SignalStates::GetClassData() const { return &_class_data_; }
-
-void IMUData_SignalStates::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message* to,
-                      const ::PROTOBUF_NAMESPACE_ID::Message& from) {
-  static_cast<IMUData_SignalStates *>(to)->MergeFrom(
-      static_cast<const IMUData_SignalStates &>(from));
+void IMUData_SignalStates::MergeFrom(const ::google::protobuf::Message& from) {
+// @@protoc_insertion_point(generalized_merge_from_start:pb.PDK.IMUData.SignalStates)
+  GOOGLE_DCHECK_NE(&from, this);
+  const IMUData_SignalStates* source =
+      ::google::protobuf::internal::DynamicCastToGenerated<const IMUData_SignalStates>(
+          &from);
+  if (source == NULL) {
+  // @@protoc_insertion_point(generalized_merge_from_cast_fail:pb.PDK.IMUData.SignalStates)
+    ::google::protobuf::internal::ReflectionOps::Merge(from, this);
+  } else {
+  // @@protoc_insertion_point(generalized_merge_from_cast_success:pb.PDK.IMUData.SignalStates)
+    MergeFrom(*source);
+  }
 }
-
 
 void IMUData_SignalStates::MergeFrom(const IMUData_SignalStates& from) {
 // @@protoc_insertion_point(class_specific_merge_from_start:pb.PDK.IMUData.SignalStates)
   GOOGLE_DCHECK_NE(&from, this);
-  uint32_t cached_has_bits = 0;
+  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  ::google::protobuf::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
   cached_has_bits = from._has_bits_[0];
-  if (cached_has_bits & 0x0000003fu) {
+  if (cached_has_bits & 63u) {
     if (cached_has_bits & 0x00000001u) {
       rollrate_ = from.rollrate_;
     }
@@ -576,7 +694,13 @@ void IMUData_SignalStates::MergeFrom(const IMUData_SignalStates& from) {
     }
     _has_bits_[0] |= cached_has_bits;
   }
-  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+}
+
+void IMUData_SignalStates::CopyFrom(const ::google::protobuf::Message& from) {
+// @@protoc_insertion_point(generalized_copy_from_start:pb.PDK.IMUData.SignalStates)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
 }
 
 void IMUData_SignalStates::CopyFrom(const IMUData_SignalStates& from) {
@@ -590,236 +714,302 @@ bool IMUData_SignalStates::IsInitialized() const {
   return true;
 }
 
+void IMUData_SignalStates::Swap(IMUData_SignalStates* other) {
+  if (other == this) return;
+  InternalSwap(other);
+}
 void IMUData_SignalStates::InternalSwap(IMUData_SignalStates* other) {
   using std::swap;
-  _internal_metadata_.InternalSwap(&other->_internal_metadata_);
+  swap(rollrate_, other->rollrate_);
+  swap(pitchrate_, other->pitchrate_);
+  swap(yawrate_, other->yawrate_);
+  swap(longacc_, other->longacc_);
+  swap(vertacc_, other->vertacc_);
+  swap(latacc_, other->latacc_);
   swap(_has_bits_[0], other->_has_bits_[0]);
-  ::PROTOBUF_NAMESPACE_ID::internal::memswap<
-      PROTOBUF_FIELD_OFFSET(IMUData_SignalStates, latacc_)
-      + sizeof(IMUData_SignalStates::latacc_)
-      - PROTOBUF_FIELD_OFFSET(IMUData_SignalStates, rollrate_)>(
-          reinterpret_cast<char*>(&rollrate_),
-          reinterpret_cast<char*>(&other->rollrate_));
+  _internal_metadata_.Swap(&other->_internal_metadata_);
 }
 
-::PROTOBUF_NAMESPACE_ID::Metadata IMUData_SignalStates::GetMetadata() const {
-  return ::_pbi::AssignDescriptors(
-      &descriptor_table_pdk_5fIMUData_2eproto_getter, &descriptor_table_pdk_5fIMUData_2eproto_once,
-      file_level_metadata_pdk_5fIMUData_2eproto[0]);
+::google::protobuf::Metadata IMUData_SignalStates::GetMetadata() const {
+  protobuf_pdk_5fIMUData_2eproto::protobuf_AssignDescriptorsOnce();
+  return ::protobuf_pdk_5fIMUData_2eproto::file_level_metadata[kIndexInFileMessages];
 }
+
 
 // ===================================================================
 
-class IMUData_Signals::_Internal {
- public:
-  using HasBits = decltype(std::declval<IMUData_Signals>()._has_bits_);
-  static void set_has_rollrate(HasBits* has_bits) {
-    (*has_bits)[0] |= 1u;
-  }
-  static void set_has_pitchrate(HasBits* has_bits) {
-    (*has_bits)[0] |= 2u;
-  }
-  static void set_has_yawrate(HasBits* has_bits) {
-    (*has_bits)[0] |= 4u;
-  }
-  static void set_has_longacc(HasBits* has_bits) {
-    (*has_bits)[0] |= 8u;
-  }
-  static void set_has_vertacc(HasBits* has_bits) {
-    (*has_bits)[0] |= 16u;
-  }
-  static void set_has_latacc(HasBits* has_bits) {
-    (*has_bits)[0] |= 32u;
-  }
-};
+void IMUData_Signals::InitAsDefaultInstance() {
+}
+#if !defined(_MSC_VER) || _MSC_VER >= 1900
+const int IMUData_Signals::kRollRateFieldNumber;
+const int IMUData_Signals::kPitchRateFieldNumber;
+const int IMUData_Signals::kYawRateFieldNumber;
+const int IMUData_Signals::kLongAccFieldNumber;
+const int IMUData_Signals::kVertAccFieldNumber;
+const int IMUData_Signals::kLatAccFieldNumber;
+#endif  // !defined(_MSC_VER) || _MSC_VER >= 1900
 
-IMUData_Signals::IMUData_Signals(::PROTOBUF_NAMESPACE_ID::Arena* arena,
-                         bool is_message_owned)
-  : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
+IMUData_Signals::IMUData_Signals()
+  : ::google::protobuf::Message(), _internal_metadata_(NULL) {
+  ::google::protobuf::internal::InitSCC(
+      &protobuf_pdk_5fIMUData_2eproto::scc_info_IMUData_Signals.base);
   SharedCtor();
-  // @@protoc_insertion_point(arena_constructor:pb.PDK.IMUData.Signals)
+  // @@protoc_insertion_point(constructor:pb.PDK.IMUData.Signals)
 }
 IMUData_Signals::IMUData_Signals(const IMUData_Signals& from)
-  : ::PROTOBUF_NAMESPACE_ID::Message(),
+  : ::google::protobuf::Message(),
+      _internal_metadata_(NULL),
       _has_bits_(from._has_bits_) {
-  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  _internal_metadata_.MergeFrom(from._internal_metadata_);
   ::memcpy(&rollrate_, &from.rollrate_,
     static_cast<size_t>(reinterpret_cast<char*>(&latacc_) -
     reinterpret_cast<char*>(&rollrate_)) + sizeof(latacc_));
   // @@protoc_insertion_point(copy_constructor:pb.PDK.IMUData.Signals)
 }
 
-inline void IMUData_Signals::SharedCtor() {
-::memset(reinterpret_cast<char*>(this) + static_cast<size_t>(
-    reinterpret_cast<char*>(&rollrate_) - reinterpret_cast<char*>(this)),
-    0, static_cast<size_t>(reinterpret_cast<char*>(&latacc_) -
-    reinterpret_cast<char*>(&rollrate_)) + sizeof(latacc_));
+void IMUData_Signals::SharedCtor() {
+  ::memset(&rollrate_, 0, static_cast<size_t>(
+      reinterpret_cast<char*>(&latacc_) -
+      reinterpret_cast<char*>(&rollrate_)) + sizeof(latacc_));
 }
 
 IMUData_Signals::~IMUData_Signals() {
   // @@protoc_insertion_point(destructor:pb.PDK.IMUData.Signals)
-  if (auto *arena = _internal_metadata_.DeleteReturnArena<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>()) {
-  (void)arena;
-    return;
-  }
   SharedDtor();
 }
 
-inline void IMUData_Signals::SharedDtor() {
-  GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
+void IMUData_Signals::SharedDtor() {
 }
 
 void IMUData_Signals::SetCachedSize(int size) const {
   _cached_size_.Set(size);
 }
+const ::google::protobuf::Descriptor* IMUData_Signals::descriptor() {
+  ::protobuf_pdk_5fIMUData_2eproto::protobuf_AssignDescriptorsOnce();
+  return ::protobuf_pdk_5fIMUData_2eproto::file_level_metadata[kIndexInFileMessages].descriptor;
+}
+
+const IMUData_Signals& IMUData_Signals::default_instance() {
+  ::google::protobuf::internal::InitSCC(&protobuf_pdk_5fIMUData_2eproto::scc_info_IMUData_Signals.base);
+  return *internal_default_instance();
+}
+
 
 void IMUData_Signals::Clear() {
 // @@protoc_insertion_point(message_clear_start:pb.PDK.IMUData.Signals)
-  uint32_t cached_has_bits = 0;
+  ::google::protobuf::uint32 cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
   cached_has_bits = _has_bits_[0];
-  if (cached_has_bits & 0x0000003fu) {
+  if (cached_has_bits & 63u) {
     ::memset(&rollrate_, 0, static_cast<size_t>(
         reinterpret_cast<char*>(&latacc_) -
         reinterpret_cast<char*>(&rollrate_)) + sizeof(latacc_));
   }
   _has_bits_.Clear();
-  _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
+  _internal_metadata_.Clear();
 }
 
-const char* IMUData_Signals::_InternalParse(const char* ptr, ::_pbi::ParseContext* ctx) {
-#define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
-  _Internal::HasBits has_bits{};
-  while (!ctx->Done(&ptr)) {
-    uint32_t tag;
-    ptr = ::_pbi::ReadTag(ptr, &tag);
-    switch (tag >> 3) {
+bool IMUData_Signals::MergePartialFromCodedStream(
+    ::google::protobuf::io::CodedInputStream* input) {
+#define DO_(EXPRESSION) if (!GOOGLE_PREDICT_TRUE(EXPRESSION)) goto failure
+  ::google::protobuf::uint32 tag;
+  // @@protoc_insertion_point(parse_start:pb.PDK.IMUData.Signals)
+  for (;;) {
+    ::std::pair<::google::protobuf::uint32, bool> p = input->ReadTagWithCutoffNoLastTag(127u);
+    tag = p.first;
+    if (!p.second) goto handle_unusual;
+    switch (::google::protobuf::internal::WireFormatLite::GetTagFieldNumber(tag)) {
       // optional float rollRate = 1;
-      case 1:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 13)) {
-          _Internal::set_has_rollrate(&has_bits);
-          rollrate_ = ::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<float>(ptr);
-          ptr += sizeof(float);
-        } else
+      case 1: {
+        if (static_cast< ::google::protobuf::uint8>(tag) ==
+            static_cast< ::google::protobuf::uint8>(13u /* 13 & 0xFF */)) {
+          set_has_rollrate();
+          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
+                   float, ::google::protobuf::internal::WireFormatLite::TYPE_FLOAT>(
+                 input, &rollrate_)));
+        } else {
           goto handle_unusual;
-        continue;
+        }
+        break;
+      }
+
       // optional float pitchRate = 2;
-      case 2:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 21)) {
-          _Internal::set_has_pitchrate(&has_bits);
-          pitchrate_ = ::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<float>(ptr);
-          ptr += sizeof(float);
-        } else
+      case 2: {
+        if (static_cast< ::google::protobuf::uint8>(tag) ==
+            static_cast< ::google::protobuf::uint8>(21u /* 21 & 0xFF */)) {
+          set_has_pitchrate();
+          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
+                   float, ::google::protobuf::internal::WireFormatLite::TYPE_FLOAT>(
+                 input, &pitchrate_)));
+        } else {
           goto handle_unusual;
-        continue;
+        }
+        break;
+      }
+
       // optional float yawRate = 3;
-      case 3:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 29)) {
-          _Internal::set_has_yawrate(&has_bits);
-          yawrate_ = ::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<float>(ptr);
-          ptr += sizeof(float);
-        } else
+      case 3: {
+        if (static_cast< ::google::protobuf::uint8>(tag) ==
+            static_cast< ::google::protobuf::uint8>(29u /* 29 & 0xFF */)) {
+          set_has_yawrate();
+          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
+                   float, ::google::protobuf::internal::WireFormatLite::TYPE_FLOAT>(
+                 input, &yawrate_)));
+        } else {
           goto handle_unusual;
-        continue;
+        }
+        break;
+      }
+
       // optional float longAcc = 4;
-      case 4:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 37)) {
-          _Internal::set_has_longacc(&has_bits);
-          longacc_ = ::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<float>(ptr);
-          ptr += sizeof(float);
-        } else
+      case 4: {
+        if (static_cast< ::google::protobuf::uint8>(tag) ==
+            static_cast< ::google::protobuf::uint8>(37u /* 37 & 0xFF */)) {
+          set_has_longacc();
+          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
+                   float, ::google::protobuf::internal::WireFormatLite::TYPE_FLOAT>(
+                 input, &longacc_)));
+        } else {
           goto handle_unusual;
-        continue;
+        }
+        break;
+      }
+
       // optional float vertAcc = 5;
-      case 5:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 45)) {
-          _Internal::set_has_vertacc(&has_bits);
-          vertacc_ = ::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<float>(ptr);
-          ptr += sizeof(float);
-        } else
+      case 5: {
+        if (static_cast< ::google::protobuf::uint8>(tag) ==
+            static_cast< ::google::protobuf::uint8>(45u /* 45 & 0xFF */)) {
+          set_has_vertacc();
+          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
+                   float, ::google::protobuf::internal::WireFormatLite::TYPE_FLOAT>(
+                 input, &vertacc_)));
+        } else {
           goto handle_unusual;
-        continue;
+        }
+        break;
+      }
+
       // optional float latAcc = 6;
-      case 6:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 53)) {
-          _Internal::set_has_latacc(&has_bits);
-          latacc_ = ::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<float>(ptr);
-          ptr += sizeof(float);
-        } else
+      case 6: {
+        if (static_cast< ::google::protobuf::uint8>(tag) ==
+            static_cast< ::google::protobuf::uint8>(53u /* 53 & 0xFF */)) {
+          set_has_latacc();
+          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
+                   float, ::google::protobuf::internal::WireFormatLite::TYPE_FLOAT>(
+                 input, &latacc_)));
+        } else {
           goto handle_unusual;
-        continue;
-      default:
-        goto handle_unusual;
-    }  // switch
-  handle_unusual:
-    if ((tag == 0) || ((tag & 7) == 4)) {
-      CHK_(ptr);
-      ctx->SetLastTag(tag);
-      goto message_done;
+        }
+        break;
+      }
+
+      default: {
+      handle_unusual:
+        if (tag == 0) {
+          goto success;
+        }
+        DO_(::google::protobuf::internal::WireFormat::SkipField(
+              input, tag, _internal_metadata_.mutable_unknown_fields()));
+        break;
+      }
     }
-    ptr = UnknownFieldParse(
-        tag,
-        _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
-        ptr, ctx);
-    CHK_(ptr != nullptr);
-  }  // while
-message_done:
-  _has_bits_.Or(has_bits);
-  return ptr;
+  }
+success:
+  // @@protoc_insertion_point(parse_success:pb.PDK.IMUData.Signals)
+  return true;
 failure:
-  ptr = nullptr;
-  goto message_done;
-#undef CHK_
+  // @@protoc_insertion_point(parse_failure:pb.PDK.IMUData.Signals)
+  return false;
+#undef DO_
 }
 
-uint8_t* IMUData_Signals::_InternalSerialize(
-    uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
-  // @@protoc_insertion_point(serialize_to_array_start:pb.PDK.IMUData.Signals)
-  uint32_t cached_has_bits = 0;
+void IMUData_Signals::SerializeWithCachedSizes(
+    ::google::protobuf::io::CodedOutputStream* output) const {
+  // @@protoc_insertion_point(serialize_start:pb.PDK.IMUData.Signals)
+  ::google::protobuf::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
   cached_has_bits = _has_bits_[0];
   // optional float rollRate = 1;
   if (cached_has_bits & 0x00000001u) {
-    target = stream->EnsureSpace(target);
-    target = ::_pbi::WireFormatLite::WriteFloatToArray(1, this->_internal_rollrate(), target);
+    ::google::protobuf::internal::WireFormatLite::WriteFloat(1, this->rollrate(), output);
   }
 
   // optional float pitchRate = 2;
   if (cached_has_bits & 0x00000002u) {
-    target = stream->EnsureSpace(target);
-    target = ::_pbi::WireFormatLite::WriteFloatToArray(2, this->_internal_pitchrate(), target);
+    ::google::protobuf::internal::WireFormatLite::WriteFloat(2, this->pitchrate(), output);
   }
 
   // optional float yawRate = 3;
   if (cached_has_bits & 0x00000004u) {
-    target = stream->EnsureSpace(target);
-    target = ::_pbi::WireFormatLite::WriteFloatToArray(3, this->_internal_yawrate(), target);
+    ::google::protobuf::internal::WireFormatLite::WriteFloat(3, this->yawrate(), output);
   }
 
   // optional float longAcc = 4;
   if (cached_has_bits & 0x00000008u) {
-    target = stream->EnsureSpace(target);
-    target = ::_pbi::WireFormatLite::WriteFloatToArray(4, this->_internal_longacc(), target);
+    ::google::protobuf::internal::WireFormatLite::WriteFloat(4, this->longacc(), output);
   }
 
   // optional float vertAcc = 5;
   if (cached_has_bits & 0x00000010u) {
-    target = stream->EnsureSpace(target);
-    target = ::_pbi::WireFormatLite::WriteFloatToArray(5, this->_internal_vertacc(), target);
+    ::google::protobuf::internal::WireFormatLite::WriteFloat(5, this->vertacc(), output);
   }
 
   // optional float latAcc = 6;
   if (cached_has_bits & 0x00000020u) {
-    target = stream->EnsureSpace(target);
-    target = ::_pbi::WireFormatLite::WriteFloatToArray(6, this->_internal_latacc(), target);
+    ::google::protobuf::internal::WireFormatLite::WriteFloat(6, this->latacc(), output);
   }
 
-  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
-    target = ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
-        _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
+  if (_internal_metadata_.have_unknown_fields()) {
+    ::google::protobuf::internal::WireFormat::SerializeUnknownFields(
+        _internal_metadata_.unknown_fields(), output);
+  }
+  // @@protoc_insertion_point(serialize_end:pb.PDK.IMUData.Signals)
+}
+
+::google::protobuf::uint8* IMUData_Signals::InternalSerializeWithCachedSizesToArray(
+    bool deterministic, ::google::protobuf::uint8* target) const {
+  (void)deterministic; // Unused
+  // @@protoc_insertion_point(serialize_to_array_start:pb.PDK.IMUData.Signals)
+  ::google::protobuf::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  cached_has_bits = _has_bits_[0];
+  // optional float rollRate = 1;
+  if (cached_has_bits & 0x00000001u) {
+    target = ::google::protobuf::internal::WireFormatLite::WriteFloatToArray(1, this->rollrate(), target);
+  }
+
+  // optional float pitchRate = 2;
+  if (cached_has_bits & 0x00000002u) {
+    target = ::google::protobuf::internal::WireFormatLite::WriteFloatToArray(2, this->pitchrate(), target);
+  }
+
+  // optional float yawRate = 3;
+  if (cached_has_bits & 0x00000004u) {
+    target = ::google::protobuf::internal::WireFormatLite::WriteFloatToArray(3, this->yawrate(), target);
+  }
+
+  // optional float longAcc = 4;
+  if (cached_has_bits & 0x00000008u) {
+    target = ::google::protobuf::internal::WireFormatLite::WriteFloatToArray(4, this->longacc(), target);
+  }
+
+  // optional float vertAcc = 5;
+  if (cached_has_bits & 0x00000010u) {
+    target = ::google::protobuf::internal::WireFormatLite::WriteFloatToArray(5, this->vertacc(), target);
+  }
+
+  // optional float latAcc = 6;
+  if (cached_has_bits & 0x00000020u) {
+    target = ::google::protobuf::internal::WireFormatLite::WriteFloatToArray(6, this->latacc(), target);
+  }
+
+  if (_internal_metadata_.have_unknown_fields()) {
+    target = ::google::protobuf::internal::WireFormat::SerializeUnknownFieldsToArray(
+        _internal_metadata_.unknown_fields(), target);
   }
   // @@protoc_insertion_point(serialize_to_array_end:pb.PDK.IMUData.Signals)
   return target;
@@ -829,67 +1019,72 @@ size_t IMUData_Signals::ByteSizeLong() const {
 // @@protoc_insertion_point(message_byte_size_start:pb.PDK.IMUData.Signals)
   size_t total_size = 0;
 
-  uint32_t cached_has_bits = 0;
-  // Prevent compiler warnings about cached_has_bits being unused
-  (void) cached_has_bits;
-
-  cached_has_bits = _has_bits_[0];
-  if (cached_has_bits & 0x0000003fu) {
+  if (_internal_metadata_.have_unknown_fields()) {
+    total_size +=
+      ::google::protobuf::internal::WireFormat::ComputeUnknownFieldsSize(
+        _internal_metadata_.unknown_fields());
+  }
+  if (_has_bits_[0 / 32] & 63u) {
     // optional float rollRate = 1;
-    if (cached_has_bits & 0x00000001u) {
+    if (has_rollrate()) {
       total_size += 1 + 4;
     }
 
     // optional float pitchRate = 2;
-    if (cached_has_bits & 0x00000002u) {
+    if (has_pitchrate()) {
       total_size += 1 + 4;
     }
 
     // optional float yawRate = 3;
-    if (cached_has_bits & 0x00000004u) {
+    if (has_yawrate()) {
       total_size += 1 + 4;
     }
 
     // optional float longAcc = 4;
-    if (cached_has_bits & 0x00000008u) {
+    if (has_longacc()) {
       total_size += 1 + 4;
     }
 
     // optional float vertAcc = 5;
-    if (cached_has_bits & 0x00000010u) {
+    if (has_vertacc()) {
       total_size += 1 + 4;
     }
 
     // optional float latAcc = 6;
-    if (cached_has_bits & 0x00000020u) {
+    if (has_latacc()) {
       total_size += 1 + 4;
     }
 
   }
-  return MaybeComputeUnknownFieldsSize(total_size, &_cached_size_);
+  int cached_size = ::google::protobuf::internal::ToCachedSize(total_size);
+  SetCachedSize(cached_size);
+  return total_size;
 }
 
-const ::PROTOBUF_NAMESPACE_ID::Message::ClassData IMUData_Signals::_class_data_ = {
-    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSizeCheck,
-    IMUData_Signals::MergeImpl
-};
-const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*IMUData_Signals::GetClassData() const { return &_class_data_; }
-
-void IMUData_Signals::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message* to,
-                      const ::PROTOBUF_NAMESPACE_ID::Message& from) {
-  static_cast<IMUData_Signals *>(to)->MergeFrom(
-      static_cast<const IMUData_Signals &>(from));
+void IMUData_Signals::MergeFrom(const ::google::protobuf::Message& from) {
+// @@protoc_insertion_point(generalized_merge_from_start:pb.PDK.IMUData.Signals)
+  GOOGLE_DCHECK_NE(&from, this);
+  const IMUData_Signals* source =
+      ::google::protobuf::internal::DynamicCastToGenerated<const IMUData_Signals>(
+          &from);
+  if (source == NULL) {
+  // @@protoc_insertion_point(generalized_merge_from_cast_fail:pb.PDK.IMUData.Signals)
+    ::google::protobuf::internal::ReflectionOps::Merge(from, this);
+  } else {
+  // @@protoc_insertion_point(generalized_merge_from_cast_success:pb.PDK.IMUData.Signals)
+    MergeFrom(*source);
+  }
 }
-
 
 void IMUData_Signals::MergeFrom(const IMUData_Signals& from) {
 // @@protoc_insertion_point(class_specific_merge_from_start:pb.PDK.IMUData.Signals)
   GOOGLE_DCHECK_NE(&from, this);
-  uint32_t cached_has_bits = 0;
+  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  ::google::protobuf::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
   cached_has_bits = from._has_bits_[0];
-  if (cached_has_bits & 0x0000003fu) {
+  if (cached_has_bits & 63u) {
     if (cached_has_bits & 0x00000001u) {
       rollrate_ = from.rollrate_;
     }
@@ -910,7 +1105,13 @@ void IMUData_Signals::MergeFrom(const IMUData_Signals& from) {
     }
     _has_bits_[0] |= cached_has_bits;
   }
-  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+}
+
+void IMUData_Signals::CopyFrom(const ::google::protobuf::Message& from) {
+// @@protoc_insertion_point(generalized_copy_from_start:pb.PDK.IMUData.Signals)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
 }
 
 void IMUData_Signals::CopyFrom(const IMUData_Signals& from) {
@@ -924,110 +1125,93 @@ bool IMUData_Signals::IsInitialized() const {
   return true;
 }
 
+void IMUData_Signals::Swap(IMUData_Signals* other) {
+  if (other == this) return;
+  InternalSwap(other);
+}
 void IMUData_Signals::InternalSwap(IMUData_Signals* other) {
   using std::swap;
-  _internal_metadata_.InternalSwap(&other->_internal_metadata_);
+  swap(rollrate_, other->rollrate_);
+  swap(pitchrate_, other->pitchrate_);
+  swap(yawrate_, other->yawrate_);
+  swap(longacc_, other->longacc_);
+  swap(vertacc_, other->vertacc_);
+  swap(latacc_, other->latacc_);
   swap(_has_bits_[0], other->_has_bits_[0]);
-  ::PROTOBUF_NAMESPACE_ID::internal::memswap<
-      PROTOBUF_FIELD_OFFSET(IMUData_Signals, latacc_)
-      + sizeof(IMUData_Signals::latacc_)
-      - PROTOBUF_FIELD_OFFSET(IMUData_Signals, rollrate_)>(
-          reinterpret_cast<char*>(&rollrate_),
-          reinterpret_cast<char*>(&other->rollrate_));
+  _internal_metadata_.Swap(&other->_internal_metadata_);
 }
 
-::PROTOBUF_NAMESPACE_ID::Metadata IMUData_Signals::GetMetadata() const {
-  return ::_pbi::AssignDescriptors(
-      &descriptor_table_pdk_5fIMUData_2eproto_getter, &descriptor_table_pdk_5fIMUData_2eproto_once,
-      file_level_metadata_pdk_5fIMUData_2eproto[1]);
+::google::protobuf::Metadata IMUData_Signals::GetMetadata() const {
+  protobuf_pdk_5fIMUData_2eproto::protobuf_AssignDescriptorsOnce();
+  return ::protobuf_pdk_5fIMUData_2eproto::file_level_metadata[kIndexInFileMessages];
 }
+
 
 // ===================================================================
 
-class IMUData::_Internal {
- public:
-  using HasBits = decltype(std::declval<IMUData>()._has_bits_);
-  static const ::pb::PDK::MsgHeader& header(const IMUData* msg);
-  static void set_has_header(HasBits* has_bits) {
-    (*has_bits)[0] |= 1u;
-  }
-  static void set_has_sensortype(HasBits* has_bits) {
-    (*has_bits)[0] |= 8u;
-  }
-  static const ::pb::PDK::IMUData_SignalStates& signalstates(const IMUData* msg);
-  static void set_has_signalstates(HasBits* has_bits) {
-    (*has_bits)[0] |= 2u;
-  }
-  static const ::pb::PDK::IMUData_Signals& signals(const IMUData* msg);
-  static void set_has_signals(HasBits* has_bits) {
-    (*has_bits)[0] |= 4u;
-  }
-};
-
-const ::pb::PDK::MsgHeader&
-IMUData::_Internal::header(const IMUData* msg) {
-  return *msg->header_;
-}
-const ::pb::PDK::IMUData_SignalStates&
-IMUData::_Internal::signalstates(const IMUData* msg) {
-  return *msg->signalstates_;
-}
-const ::pb::PDK::IMUData_Signals&
-IMUData::_Internal::signals(const IMUData* msg) {
-  return *msg->signals_;
+void IMUData::InitAsDefaultInstance() {
+  ::pb::PDK::_IMUData_default_instance_._instance.get_mutable()->header_ = const_cast< ::pb::PDK::MsgHeader*>(
+      ::pb::PDK::MsgHeader::internal_default_instance());
+  ::pb::PDK::_IMUData_default_instance_._instance.get_mutable()->signalstates_ = const_cast< ::pb::PDK::IMUData_SignalStates*>(
+      ::pb::PDK::IMUData_SignalStates::internal_default_instance());
+  ::pb::PDK::_IMUData_default_instance_._instance.get_mutable()->signals_ = const_cast< ::pb::PDK::IMUData_Signals*>(
+      ::pb::PDK::IMUData_Signals::internal_default_instance());
 }
 void IMUData::clear_header() {
-  if (header_ != nullptr) header_->Clear();
-  _has_bits_[0] &= ~0x00000001u;
+  if (header_ != NULL) header_->Clear();
+  clear_has_header();
 }
-IMUData::IMUData(::PROTOBUF_NAMESPACE_ID::Arena* arena,
-                         bool is_message_owned)
-  : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
+#if !defined(_MSC_VER) || _MSC_VER >= 1900
+const int IMUData::kHeaderFieldNumber;
+const int IMUData::kSensorTypeFieldNumber;
+const int IMUData::kSignalStatesFieldNumber;
+const int IMUData::kSignalsFieldNumber;
+#endif  // !defined(_MSC_VER) || _MSC_VER >= 1900
+
+IMUData::IMUData()
+  : ::google::protobuf::Message(), _internal_metadata_(NULL) {
+  ::google::protobuf::internal::InitSCC(
+      &protobuf_pdk_5fIMUData_2eproto::scc_info_IMUData.base);
   SharedCtor();
-  // @@protoc_insertion_point(arena_constructor:pb.PDK.IMUData)
+  // @@protoc_insertion_point(constructor:pb.PDK.IMUData)
 }
 IMUData::IMUData(const IMUData& from)
-  : ::PROTOBUF_NAMESPACE_ID::Message(),
+  : ::google::protobuf::Message(),
+      _internal_metadata_(NULL),
       _has_bits_(from._has_bits_) {
-  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
-  if (from._internal_has_header()) {
+  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  if (from.has_header()) {
     header_ = new ::pb::PDK::MsgHeader(*from.header_);
   } else {
-    header_ = nullptr;
+    header_ = NULL;
   }
-  if (from._internal_has_signalstates()) {
+  if (from.has_signalstates()) {
     signalstates_ = new ::pb::PDK::IMUData_SignalStates(*from.signalstates_);
   } else {
-    signalstates_ = nullptr;
+    signalstates_ = NULL;
   }
-  if (from._internal_has_signals()) {
+  if (from.has_signals()) {
     signals_ = new ::pb::PDK::IMUData_Signals(*from.signals_);
   } else {
-    signals_ = nullptr;
+    signals_ = NULL;
   }
   sensortype_ = from.sensortype_;
   // @@protoc_insertion_point(copy_constructor:pb.PDK.IMUData)
 }
 
-inline void IMUData::SharedCtor() {
-::memset(reinterpret_cast<char*>(this) + static_cast<size_t>(
-    reinterpret_cast<char*>(&header_) - reinterpret_cast<char*>(this)),
-    0, static_cast<size_t>(reinterpret_cast<char*>(&signals_) -
-    reinterpret_cast<char*>(&header_)) + sizeof(signals_));
-sensortype_ = 255;
+void IMUData::SharedCtor() {
+  ::memset(&header_, 0, static_cast<size_t>(
+      reinterpret_cast<char*>(&signals_) -
+      reinterpret_cast<char*>(&header_)) + sizeof(signals_));
+  sensortype_ = 255;
 }
 
 IMUData::~IMUData() {
   // @@protoc_insertion_point(destructor:pb.PDK.IMUData)
-  if (auto *arena = _internal_metadata_.DeleteReturnArena<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>()) {
-  (void)arena;
-    return;
-  }
   SharedDtor();
 }
 
-inline void IMUData::SharedDtor() {
-  GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
+void IMUData::SharedDtor() {
   if (this != internal_default_instance()) delete header_;
   if (this != internal_default_instance()) delete signalstates_;
   if (this != internal_default_instance()) delete signals_;
@@ -1036,139 +1220,205 @@ inline void IMUData::SharedDtor() {
 void IMUData::SetCachedSize(int size) const {
   _cached_size_.Set(size);
 }
+const ::google::protobuf::Descriptor* IMUData::descriptor() {
+  ::protobuf_pdk_5fIMUData_2eproto::protobuf_AssignDescriptorsOnce();
+  return ::protobuf_pdk_5fIMUData_2eproto::file_level_metadata[kIndexInFileMessages].descriptor;
+}
+
+const IMUData& IMUData::default_instance() {
+  ::google::protobuf::internal::InitSCC(&protobuf_pdk_5fIMUData_2eproto::scc_info_IMUData.base);
+  return *internal_default_instance();
+}
+
 
 void IMUData::Clear() {
 // @@protoc_insertion_point(message_clear_start:pb.PDK.IMUData)
-  uint32_t cached_has_bits = 0;
+  ::google::protobuf::uint32 cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
   cached_has_bits = _has_bits_[0];
-  if (cached_has_bits & 0x0000000fu) {
+  if (cached_has_bits & 15u) {
     if (cached_has_bits & 0x00000001u) {
-      GOOGLE_DCHECK(header_ != nullptr);
+      GOOGLE_DCHECK(header_ != NULL);
       header_->Clear();
     }
     if (cached_has_bits & 0x00000002u) {
-      GOOGLE_DCHECK(signalstates_ != nullptr);
+      GOOGLE_DCHECK(signalstates_ != NULL);
       signalstates_->Clear();
     }
     if (cached_has_bits & 0x00000004u) {
-      GOOGLE_DCHECK(signals_ != nullptr);
+      GOOGLE_DCHECK(signals_ != NULL);
       signals_->Clear();
     }
     sensortype_ = 255;
   }
   _has_bits_.Clear();
-  _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
+  _internal_metadata_.Clear();
 }
 
-const char* IMUData::_InternalParse(const char* ptr, ::_pbi::ParseContext* ctx) {
-#define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
-  _Internal::HasBits has_bits{};
-  while (!ctx->Done(&ptr)) {
-    uint32_t tag;
-    ptr = ::_pbi::ReadTag(ptr, &tag);
-    switch (tag >> 3) {
+bool IMUData::MergePartialFromCodedStream(
+    ::google::protobuf::io::CodedInputStream* input) {
+#define DO_(EXPRESSION) if (!GOOGLE_PREDICT_TRUE(EXPRESSION)) goto failure
+  ::google::protobuf::uint32 tag;
+  // @@protoc_insertion_point(parse_start:pb.PDK.IMUData)
+  for (;;) {
+    ::std::pair<::google::protobuf::uint32, bool> p = input->ReadTagWithCutoffNoLastTag(127u);
+    tag = p.first;
+    if (!p.second) goto handle_unusual;
+    switch (::google::protobuf::internal::WireFormatLite::GetTagFieldNumber(tag)) {
       // optional .pb.PDK.MsgHeader header = 1;
-      case 1:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 10)) {
-          ptr = ctx->ParseMessage(_internal_mutable_header(), ptr);
-          CHK_(ptr);
-        } else
+      case 1: {
+        if (static_cast< ::google::protobuf::uint8>(tag) ==
+            static_cast< ::google::protobuf::uint8>(10u /* 10 & 0xFF */)) {
+          DO_(::google::protobuf::internal::WireFormatLite::ReadMessage(
+               input, mutable_header()));
+        } else {
           goto handle_unusual;
-        continue;
+        }
+        break;
+      }
+
       // optional .pb.PDK.IMUData.SensorType sensorType = 2 [default = UNKNOWN];
-      case 2:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 16)) {
-          uint64_t val = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
-          CHK_(ptr);
-          if (PROTOBUF_PREDICT_TRUE(::pb::PDK::IMUData_SensorType_IsValid(val))) {
-            _internal_set_sensortype(static_cast<::pb::PDK::IMUData_SensorType>(val));
+      case 2: {
+        if (static_cast< ::google::protobuf::uint8>(tag) ==
+            static_cast< ::google::protobuf::uint8>(16u /* 16 & 0xFF */)) {
+          int value;
+          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
+                   int, ::google::protobuf::internal::WireFormatLite::TYPE_ENUM>(
+                 input, &value)));
+          if (::pb::PDK::IMUData_SensorType_IsValid(value)) {
+            set_sensortype(static_cast< ::pb::PDK::IMUData_SensorType >(value));
           } else {
-            ::PROTOBUF_NAMESPACE_ID::internal::WriteVarint(2, val, mutable_unknown_fields());
+            mutable_unknown_fields()->AddVarint(
+                2, static_cast< ::google::protobuf::uint64>(value));
           }
-        } else
+        } else {
           goto handle_unusual;
-        continue;
+        }
+        break;
+      }
+
       // optional .pb.PDK.IMUData.SignalStates signalStates = 3;
-      case 3:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 26)) {
-          ptr = ctx->ParseMessage(_internal_mutable_signalstates(), ptr);
-          CHK_(ptr);
-        } else
+      case 3: {
+        if (static_cast< ::google::protobuf::uint8>(tag) ==
+            static_cast< ::google::protobuf::uint8>(26u /* 26 & 0xFF */)) {
+          DO_(::google::protobuf::internal::WireFormatLite::ReadMessage(
+               input, mutable_signalstates()));
+        } else {
           goto handle_unusual;
-        continue;
+        }
+        break;
+      }
+
       // optional .pb.PDK.IMUData.Signals signals = 4;
-      case 4:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 34)) {
-          ptr = ctx->ParseMessage(_internal_mutable_signals(), ptr);
-          CHK_(ptr);
-        } else
+      case 4: {
+        if (static_cast< ::google::protobuf::uint8>(tag) ==
+            static_cast< ::google::protobuf::uint8>(34u /* 34 & 0xFF */)) {
+          DO_(::google::protobuf::internal::WireFormatLite::ReadMessage(
+               input, mutable_signals()));
+        } else {
           goto handle_unusual;
-        continue;
-      default:
-        goto handle_unusual;
-    }  // switch
-  handle_unusual:
-    if ((tag == 0) || ((tag & 7) == 4)) {
-      CHK_(ptr);
-      ctx->SetLastTag(tag);
-      goto message_done;
+        }
+        break;
+      }
+
+      default: {
+      handle_unusual:
+        if (tag == 0) {
+          goto success;
+        }
+        DO_(::google::protobuf::internal::WireFormat::SkipField(
+              input, tag, _internal_metadata_.mutable_unknown_fields()));
+        break;
+      }
     }
-    ptr = UnknownFieldParse(
-        tag,
-        _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
-        ptr, ctx);
-    CHK_(ptr != nullptr);
-  }  // while
-message_done:
-  _has_bits_.Or(has_bits);
-  return ptr;
+  }
+success:
+  // @@protoc_insertion_point(parse_success:pb.PDK.IMUData)
+  return true;
 failure:
-  ptr = nullptr;
-  goto message_done;
-#undef CHK_
+  // @@protoc_insertion_point(parse_failure:pb.PDK.IMUData)
+  return false;
+#undef DO_
 }
 
-uint8_t* IMUData::_InternalSerialize(
-    uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
-  // @@protoc_insertion_point(serialize_to_array_start:pb.PDK.IMUData)
-  uint32_t cached_has_bits = 0;
+void IMUData::SerializeWithCachedSizes(
+    ::google::protobuf::io::CodedOutputStream* output) const {
+  // @@protoc_insertion_point(serialize_start:pb.PDK.IMUData)
+  ::google::protobuf::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
   cached_has_bits = _has_bits_[0];
   // optional .pb.PDK.MsgHeader header = 1;
   if (cached_has_bits & 0x00000001u) {
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
-      InternalWriteMessage(1, _Internal::header(this),
-        _Internal::header(this).GetCachedSize(), target, stream);
+    ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
+      1, this->_internal_header(), output);
   }
 
   // optional .pb.PDK.IMUData.SensorType sensorType = 2 [default = UNKNOWN];
   if (cached_has_bits & 0x00000008u) {
-    target = stream->EnsureSpace(target);
-    target = ::_pbi::WireFormatLite::WriteEnumToArray(
-      2, this->_internal_sensortype(), target);
+    ::google::protobuf::internal::WireFormatLite::WriteEnum(
+      2, this->sensortype(), output);
   }
 
   // optional .pb.PDK.IMUData.SignalStates signalStates = 3;
   if (cached_has_bits & 0x00000002u) {
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
-      InternalWriteMessage(3, _Internal::signalstates(this),
-        _Internal::signalstates(this).GetCachedSize(), target, stream);
+    ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
+      3, this->_internal_signalstates(), output);
   }
 
   // optional .pb.PDK.IMUData.Signals signals = 4;
   if (cached_has_bits & 0x00000004u) {
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
-      InternalWriteMessage(4, _Internal::signals(this),
-        _Internal::signals(this).GetCachedSize(), target, stream);
+    ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
+      4, this->_internal_signals(), output);
   }
 
-  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
-    target = ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
-        _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
+  if (_internal_metadata_.have_unknown_fields()) {
+    ::google::protobuf::internal::WireFormat::SerializeUnknownFields(
+        _internal_metadata_.unknown_fields(), output);
+  }
+  // @@protoc_insertion_point(serialize_end:pb.PDK.IMUData)
+}
+
+::google::protobuf::uint8* IMUData::InternalSerializeWithCachedSizesToArray(
+    bool deterministic, ::google::protobuf::uint8* target) const {
+  (void)deterministic; // Unused
+  // @@protoc_insertion_point(serialize_to_array_start:pb.PDK.IMUData)
+  ::google::protobuf::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  cached_has_bits = _has_bits_[0];
+  // optional .pb.PDK.MsgHeader header = 1;
+  if (cached_has_bits & 0x00000001u) {
+    target = ::google::protobuf::internal::WireFormatLite::
+      InternalWriteMessageToArray(
+        1, this->_internal_header(), deterministic, target);
+  }
+
+  // optional .pb.PDK.IMUData.SensorType sensorType = 2 [default = UNKNOWN];
+  if (cached_has_bits & 0x00000008u) {
+    target = ::google::protobuf::internal::WireFormatLite::WriteEnumToArray(
+      2, this->sensortype(), target);
+  }
+
+  // optional .pb.PDK.IMUData.SignalStates signalStates = 3;
+  if (cached_has_bits & 0x00000002u) {
+    target = ::google::protobuf::internal::WireFormatLite::
+      InternalWriteMessageToArray(
+        3, this->_internal_signalstates(), deterministic, target);
+  }
+
+  // optional .pb.PDK.IMUData.Signals signals = 4;
+  if (cached_has_bits & 0x00000004u) {
+    target = ::google::protobuf::internal::WireFormatLite::
+      InternalWriteMessageToArray(
+        4, this->_internal_signals(), deterministic, target);
+  }
+
+  if (_internal_metadata_.have_unknown_fields()) {
+    target = ::google::protobuf::internal::WireFormat::SerializeUnknownFieldsToArray(
+        _internal_metadata_.unknown_fields(), target);
   }
   // @@protoc_insertion_point(serialize_to_array_end:pb.PDK.IMUData)
   return target;
@@ -1178,79 +1428,90 @@ size_t IMUData::ByteSizeLong() const {
 // @@protoc_insertion_point(message_byte_size_start:pb.PDK.IMUData)
   size_t total_size = 0;
 
-  uint32_t cached_has_bits = 0;
-  // Prevent compiler warnings about cached_has_bits being unused
-  (void) cached_has_bits;
-
-  cached_has_bits = _has_bits_[0];
-  if (cached_has_bits & 0x0000000fu) {
+  if (_internal_metadata_.have_unknown_fields()) {
+    total_size +=
+      ::google::protobuf::internal::WireFormat::ComputeUnknownFieldsSize(
+        _internal_metadata_.unknown_fields());
+  }
+  if (_has_bits_[0 / 32] & 15u) {
     // optional .pb.PDK.MsgHeader header = 1;
-    if (cached_has_bits & 0x00000001u) {
+    if (has_header()) {
       total_size += 1 +
-        ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
+        ::google::protobuf::internal::WireFormatLite::MessageSize(
           *header_);
     }
 
     // optional .pb.PDK.IMUData.SignalStates signalStates = 3;
-    if (cached_has_bits & 0x00000002u) {
+    if (has_signalstates()) {
       total_size += 1 +
-        ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
+        ::google::protobuf::internal::WireFormatLite::MessageSize(
           *signalstates_);
     }
 
     // optional .pb.PDK.IMUData.Signals signals = 4;
-    if (cached_has_bits & 0x00000004u) {
+    if (has_signals()) {
       total_size += 1 +
-        ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
+        ::google::protobuf::internal::WireFormatLite::MessageSize(
           *signals_);
     }
 
     // optional .pb.PDK.IMUData.SensorType sensorType = 2 [default = UNKNOWN];
-    if (cached_has_bits & 0x00000008u) {
+    if (has_sensortype()) {
       total_size += 1 +
-        ::_pbi::WireFormatLite::EnumSize(this->_internal_sensortype());
+        ::google::protobuf::internal::WireFormatLite::EnumSize(this->sensortype());
     }
 
   }
-  return MaybeComputeUnknownFieldsSize(total_size, &_cached_size_);
+  int cached_size = ::google::protobuf::internal::ToCachedSize(total_size);
+  SetCachedSize(cached_size);
+  return total_size;
 }
 
-const ::PROTOBUF_NAMESPACE_ID::Message::ClassData IMUData::_class_data_ = {
-    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSizeCheck,
-    IMUData::MergeImpl
-};
-const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*IMUData::GetClassData() const { return &_class_data_; }
-
-void IMUData::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message* to,
-                      const ::PROTOBUF_NAMESPACE_ID::Message& from) {
-  static_cast<IMUData *>(to)->MergeFrom(
-      static_cast<const IMUData &>(from));
+void IMUData::MergeFrom(const ::google::protobuf::Message& from) {
+// @@protoc_insertion_point(generalized_merge_from_start:pb.PDK.IMUData)
+  GOOGLE_DCHECK_NE(&from, this);
+  const IMUData* source =
+      ::google::protobuf::internal::DynamicCastToGenerated<const IMUData>(
+          &from);
+  if (source == NULL) {
+  // @@protoc_insertion_point(generalized_merge_from_cast_fail:pb.PDK.IMUData)
+    ::google::protobuf::internal::ReflectionOps::Merge(from, this);
+  } else {
+  // @@protoc_insertion_point(generalized_merge_from_cast_success:pb.PDK.IMUData)
+    MergeFrom(*source);
+  }
 }
-
 
 void IMUData::MergeFrom(const IMUData& from) {
 // @@protoc_insertion_point(class_specific_merge_from_start:pb.PDK.IMUData)
   GOOGLE_DCHECK_NE(&from, this);
-  uint32_t cached_has_bits = 0;
+  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  ::google::protobuf::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
   cached_has_bits = from._has_bits_[0];
-  if (cached_has_bits & 0x0000000fu) {
+  if (cached_has_bits & 15u) {
     if (cached_has_bits & 0x00000001u) {
-      _internal_mutable_header()->::pb::PDK::MsgHeader::MergeFrom(from._internal_header());
+      mutable_header()->::pb::PDK::MsgHeader::MergeFrom(from.header());
     }
     if (cached_has_bits & 0x00000002u) {
-      _internal_mutable_signalstates()->::pb::PDK::IMUData_SignalStates::MergeFrom(from._internal_signalstates());
+      mutable_signalstates()->::pb::PDK::IMUData_SignalStates::MergeFrom(from.signalstates());
     }
     if (cached_has_bits & 0x00000004u) {
-      _internal_mutable_signals()->::pb::PDK::IMUData_Signals::MergeFrom(from._internal_signals());
+      mutable_signals()->::pb::PDK::IMUData_Signals::MergeFrom(from.signals());
     }
     if (cached_has_bits & 0x00000008u) {
       sensortype_ = from.sensortype_;
     }
     _has_bits_[0] |= cached_has_bits;
   }
-  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+}
+
+void IMUData::CopyFrom(const ::google::protobuf::Message& from) {
+// @@protoc_insertion_point(generalized_copy_from_start:pb.PDK.IMUData)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
 }
 
 void IMUData::CopyFrom(const IMUData& from) {
@@ -1264,42 +1525,41 @@ bool IMUData::IsInitialized() const {
   return true;
 }
 
+void IMUData::Swap(IMUData* other) {
+  if (other == this) return;
+  InternalSwap(other);
+}
 void IMUData::InternalSwap(IMUData* other) {
   using std::swap;
-  _internal_metadata_.InternalSwap(&other->_internal_metadata_);
-  swap(_has_bits_[0], other->_has_bits_[0]);
-  ::PROTOBUF_NAMESPACE_ID::internal::memswap<
-      PROTOBUF_FIELD_OFFSET(IMUData, signals_)
-      + sizeof(IMUData::signals_)
-      - PROTOBUF_FIELD_OFFSET(IMUData, header_)>(
-          reinterpret_cast<char*>(&header_),
-          reinterpret_cast<char*>(&other->header_));
+  swap(header_, other->header_);
+  swap(signalstates_, other->signalstates_);
+  swap(signals_, other->signals_);
   swap(sensortype_, other->sensortype_);
+  swap(_has_bits_[0], other->_has_bits_[0]);
+  _internal_metadata_.Swap(&other->_internal_metadata_);
 }
 
-::PROTOBUF_NAMESPACE_ID::Metadata IMUData::GetMetadata() const {
-  return ::_pbi::AssignDescriptors(
-      &descriptor_table_pdk_5fIMUData_2eproto_getter, &descriptor_table_pdk_5fIMUData_2eproto_once,
-      file_level_metadata_pdk_5fIMUData_2eproto[2]);
+::google::protobuf::Metadata IMUData::GetMetadata() const {
+  protobuf_pdk_5fIMUData_2eproto::protobuf_AssignDescriptorsOnce();
+  return ::protobuf_pdk_5fIMUData_2eproto::file_level_metadata[kIndexInFileMessages];
 }
+
 
 // @@protoc_insertion_point(namespace_scope)
 }  // namespace PDK
 }  // namespace pb
-PROTOBUF_NAMESPACE_OPEN
-template<> PROTOBUF_NOINLINE ::pb::PDK::IMUData_SignalStates*
-Arena::CreateMaybeMessage< ::pb::PDK::IMUData_SignalStates >(Arena* arena) {
-  return Arena::CreateMessageInternal< ::pb::PDK::IMUData_SignalStates >(arena);
+namespace google {
+namespace protobuf {
+template<> GOOGLE_PROTOBUF_ATTRIBUTE_NOINLINE ::pb::PDK::IMUData_SignalStates* Arena::CreateMaybeMessage< ::pb::PDK::IMUData_SignalStates >(Arena* arena) {
+  return Arena::CreateInternal< ::pb::PDK::IMUData_SignalStates >(arena);
 }
-template<> PROTOBUF_NOINLINE ::pb::PDK::IMUData_Signals*
-Arena::CreateMaybeMessage< ::pb::PDK::IMUData_Signals >(Arena* arena) {
-  return Arena::CreateMessageInternal< ::pb::PDK::IMUData_Signals >(arena);
+template<> GOOGLE_PROTOBUF_ATTRIBUTE_NOINLINE ::pb::PDK::IMUData_Signals* Arena::CreateMaybeMessage< ::pb::PDK::IMUData_Signals >(Arena* arena) {
+  return Arena::CreateInternal< ::pb::PDK::IMUData_Signals >(arena);
 }
-template<> PROTOBUF_NOINLINE ::pb::PDK::IMUData*
-Arena::CreateMaybeMessage< ::pb::PDK::IMUData >(Arena* arena) {
-  return Arena::CreateMessageInternal< ::pb::PDK::IMUData >(arena);
+template<> GOOGLE_PROTOBUF_ATTRIBUTE_NOINLINE ::pb::PDK::IMUData* Arena::CreateMaybeMessage< ::pb::PDK::IMUData >(Arena* arena) {
+  return Arena::CreateInternal< ::pb::PDK::IMUData >(arena);
 }
-PROTOBUF_NAMESPACE_CLOSE
+}  // namespace protobuf
+}  // namespace google
 
 // @@protoc_insertion_point(global_scope)
-#include <google/protobuf/port_undef.inc>
