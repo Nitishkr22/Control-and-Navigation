@@ -665,7 +665,7 @@ print(feed)
 message = "A,N,0,0,0,0,0,0,0,0,0 \r\n"
 obj.send_data(message)
 feed = obj.receive_data()
-print(feed)
+# print(feed)
 
 
 def accn(kp, acc):
@@ -702,7 +702,7 @@ ki = 0.0006
 kd = 0.28
 
 pid_controller = controller2.PIDControllervel(kp, ki, kd)
-setpoint = 35.0
+setpoint = 15.0
 # while not rospy.is_shutdown():
 
 if __name__=="__main__":
