@@ -1,0 +1,35 @@
+int32 id
+float32[] f_DistX
+float32[] f_DistY
+float32[] f_VrelX
+float32[] f_VrelY
+float32[] f_ArelX
+float32[] f_ArelY
+float32[] f_DistXStd
+float32[] f_DistYStd
+float32[] f_VrelXStd
+float32[] f_VrelYStd
+float32[] f_ArelXStd
+float32[] f_ArelYStd
+float32[] f_LDeltaX_left
+float32[] f_LDeltaX_mid
+float32[] f_LDeltaX_right
+float32[] f_LDeltaY_left
+
+float32[] f_LDeltaY_mid
+float32[] f_LDeltaY_right
+float32[] f_RCS
+float32[] f_ObjectScore
+float32[] f_VabsX
+float32[] f_VabsY
+float32[] f_AabsX
+float32[] f_AabsY
+float32[] f_VabsXStd
+float32[] f_VabsYStd
+float32[] f_AabsXStd
+float32[] f_AabsYStd
+
+float32[] f_Orientation
+float32[] f_OrientationStd
+float32[] f_DistZ
+float32[] f_DistZStd

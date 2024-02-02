@@ -1,0 +1,2 @@
+conti_radar
+-DCATKIN_DEVEL_PREFIX=/home/nitish/radar_ros/devel -DCMAKE_INSTALL_PREFIX=/home/nitish/radar_ros/install -G Unix Makefiles
