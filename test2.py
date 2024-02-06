@@ -5,6 +5,8 @@ from novatel_oem7_msgs.msg import INSPVA
 import rospy
 from std_msgs.msg import String
 from std_msgs.msg import Float32
+from std_msgs.msg import Float64
+from std_msgs.msg import Bool
 import actuator
 import math
 import pid
@@ -27,6 +29,9 @@ obj.connect()
 # pid_controller = pid.PIDController(Kp, Ki, Kd, rate_min, rate_max)
 velg = 0.0
 vsub = 0.0
+acc_switch = False
+brake_switch = False
+abs_vel = 0.0
 def callback_vel(data):
 
     global velg
@@ -36,10 +41,25 @@ def callback_vsub(data):
 
     global vsub
     vsub=data.data  
+
+def callback_acc_switch(data):
+    global acc_switch
+    acc_switch = data.data
+
+def callback_brake_switch(data):
+    global brake_switch
+    brake_switch = data.data
+
+def callback_abs_velx(data):
+    global abs_vel
+    abs_vel = data.data
 rospy.init_node('Navigation', anonymous=True)
 #ROS subscription
 rospy.Subscriber("/novatel/oem7/bestvel",BESTVEL, callback_vel)
 rospy.Subscriber("/user_value",Float32, callback_vsub)
+rospy.Subscriber("/acc_switch_topic",Bool, callback_acc_switch)
+rospy.Subscriber("/brake_action_topic",Bool, callback_brake_switch)
+rospy.Subscriber("/f_vabsx_topic",Float64, callback_abs_velx)
 
 def calculate_steer_angle(currentLocation, wp, heading):
     """
@@ -705,41 +725,62 @@ pid_controller = controller2.PIDControllervel(kp, ki, kd)
 max_dist = 20.0
 min_dist = 8.0
 ego_speed = 10.0
-acc_switch = False
+# acc_switch = False
+brake_rate = 0
+
 # setpoint = 10.0
 # while not rospy.is_shutdown():
 while not rospy.is_shutdown():
     try:
         velocity_feedback = float(obj.receive_data().split(',')[3]) #velocity feedback from controller
         # velocity_feedback =  np.clip(1, 0, 100)
-        print("velllllll: ",velg*(18/5))  # velg is the velocity from gnss 
+        print("GNSS Vel: ",velg*(18/5))  # velg is the velocity from gnss 
         vel_gnss = velg*(18/5)
-        print("adfd: ",vsub)   # vsub is the desired velocity
-        setpoint = vsub
+        # print("adfd: ",vsub)   # vsub is the desired velocity
+        # setpoint = vsub
+        if acc_switch:
+            setpoint = abs_vel
+        else:
+            setpoint = ego_speed
+
+
         control_signal = pid_controller.compute(setpoint, vel_gnss)  # (desired_vel, feedback)
 
-        throttle_input1 = np.clip(control_signal, 0, 100)
-        print(throttle_input1)
+        throttle_input1 = np.clip(control_signal, 0, 22)
+        print("throttle: ",throttle_input1)
 
         if acc_switch:
-            if(vel_gnss>v_abs):
+            print("ACC is ON")
+            print("velocity from radar: ",abs_vel)
+            if(vel_gnss>abs_vel):
                 # obj.send_data("A1,D,2,0,0,0,0,0,0,0,0\r\n")
-                throttle_input = 1
-                if brake:
+                throttle = 1.0
+                if brake_switch:
+                    print("brake applied")
                     brake_rate = 10
+                else:
+                    print("NO brake")
+                    brake_rate = 0
             else:
-                throttle_input = throttle_input1
+                throttle = throttle_input1
+        else:
+            print("ACC is OFF")
+            if(vel_gnss>ego_speed):
+                throttle = 1.0
+            else:
+                throttle = throttle_input1
             
         
-        if(vel_gnss>setpoint):
-            # obj.send_data("A1,D,2,0,0,0,0,0,0,0,0\r\n")
-            throttle_input = 2
-        else:
-            throttle_input = throttle_input1
+        # if(vel_gnss>setpoint):
+        #     # obj.send_data("A1,D,2,0,0,0,0,0,0,0,0\r\n")
+        #     throttle_input = 2
+        # else:
+        #     throttle_input = throttle_input1
             
             # obj.send_data("A1,D,"+str(throttle_input)+",0,0,0,0,0,0,0,0\r\n")
+                # obj.send_data("A,D,4,1,30,1,"+str(steer_rate)+",0,0,0,0\r\n")
 
-        obj.send_data("A1,D,"+str(throttle_input)+",0,0,0,0,0,0,0,0\r\n")
+        obj.send_data("A1,D,"+str(throttle)+",1,"+str(brake_rate)+",0,0,0,0,0,0\r\n")
         
 
     except Exception as e:

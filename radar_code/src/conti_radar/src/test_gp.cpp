@@ -155,13 +155,13 @@ void OnReceiveObjects(const std::string &buffer)
 
         ///////////////////////////////////////////////////////////////
         // if (range < 10.0)
-        if (range < 120.0 &&
+        if (range < 60.0 &&
             // ro.e_dynamicproperty() == 0 &&
             // ro.f_orientation() != 0 &&
-            ro.f_rcs() > 1.0 &&
-            // ro.f_objectscore() > 0.5 &&
-            // ro.f_disty()<=2.0 && ro.f_disty()>=-2.0)
-            obj_size > 0.01)
+            // ro.f_rcs() > 1.0 &&
+            ro.f_objectscore() > 0.5 &&
+            ro.f_disty()<=2.0 && ro.f_disty()>=-2.0&&
+            obj_size > 0.010)
         {
             // Extract timestamp from MsgHeader
             filteredObjects.push_back(ro);
@@ -222,12 +222,13 @@ void OnReceiveObjects(const std::string &buffer)
             
             
             ////////////////
-            if (rangeA < max_range && rangeA > min_range) {
+            if (rangeA < max_range ) //&& rangeA > min_range
+            {
                 acc_switch = true;
                 acc_switch_msg.data = true; // Set acc_switch_msg value
                 // Publish acc_switch
                 acc_switch_pub.publish(acc_switch_msg);
-                f_vabsx_msg.data = minRangeObject.f_vabsx();
+                f_vabsx_msg.data = minRangeObject.f_vabsx() * (18/5);
                 f_vabsx_pub.publish(f_vabsx_msg);
 
                 double brake_point = (max_range + min_range) / 2;
@@ -242,7 +243,11 @@ void OnReceiveObjects(const std::string &buffer)
             } else {
                 acc_switch = false;
                 acc_switch_msg.data = false; // Set acc_switch_msg value
+                brake_action = false;
                 // Publish acc_switch
+                brake_action_msg.data = brake_action; // Set brake_action_msg value
+                // Publish brake_action
+                brake_action_pub.publish(brake_action_msg);
                 acc_switch_pub.publish(acc_switch_msg);
             }
 
