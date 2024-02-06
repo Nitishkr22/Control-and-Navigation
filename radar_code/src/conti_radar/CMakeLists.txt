@@ -246,7 +246,7 @@ add_executable(radar_img
    ${PROTO_SRCS}
    )
 add_executable(radar_vdy 
-    src/radar_vdy_old.cpp
+    src/radar_vdy.cpp
     ${PROTO_SRCS}
     )
 add_executable(radar_aeb 

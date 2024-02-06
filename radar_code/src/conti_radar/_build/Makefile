@@ -1080,32 +1080,32 @@ src/radar_ros_img.cpp.s:
 	$(MAKE) -f CMakeFiles/radar_img.dir/build.make CMakeFiles/radar_img.dir/src/radar_ros_img.cpp.s
 .PHONY : src/radar_ros_img.cpp.s
 
-src/radar_vdy_old.o: src/radar_vdy_old.cpp.o
+src/radar_vdy.o: src/radar_vdy.cpp.o
 
-.PHONY : src/radar_vdy_old.o
+.PHONY : src/radar_vdy.o
 
 # target to build an object file
-src/radar_vdy_old.cpp.o:
-	$(MAKE) -f CMakeFiles/radar_vdy.dir/build.make CMakeFiles/radar_vdy.dir/src/radar_vdy_old.cpp.o
-.PHONY : src/radar_vdy_old.cpp.o
+src/radar_vdy.cpp.o:
+	$(MAKE) -f CMakeFiles/radar_vdy.dir/build.make CMakeFiles/radar_vdy.dir/src/radar_vdy.cpp.o
+.PHONY : src/radar_vdy.cpp.o
 
-src/radar_vdy_old.i: src/radar_vdy_old.cpp.i
+src/radar_vdy.i: src/radar_vdy.cpp.i
 
-.PHONY : src/radar_vdy_old.i
+.PHONY : src/radar_vdy.i
 
 # target to preprocess a source file
-src/radar_vdy_old.cpp.i:
-	$(MAKE) -f CMakeFiles/radar_vdy.dir/build.make CMakeFiles/radar_vdy.dir/src/radar_vdy_old.cpp.i
-.PHONY : src/radar_vdy_old.cpp.i
+src/radar_vdy.cpp.i:
+	$(MAKE) -f CMakeFiles/radar_vdy.dir/build.make CMakeFiles/radar_vdy.dir/src/radar_vdy.cpp.i
+.PHONY : src/radar_vdy.cpp.i
 
-src/radar_vdy_old.s: src/radar_vdy_old.cpp.s
+src/radar_vdy.s: src/radar_vdy.cpp.s
 
-.PHONY : src/radar_vdy_old.s
+.PHONY : src/radar_vdy.s
 
 # target to generate assembly for a file
-src/radar_vdy_old.cpp.s:
-	$(MAKE) -f CMakeFiles/radar_vdy.dir/build.make CMakeFiles/radar_vdy.dir/src/radar_vdy_old.cpp.s
-.PHONY : src/radar_vdy_old.cpp.s
+src/radar_vdy.cpp.s:
+	$(MAKE) -f CMakeFiles/radar_vdy.dir/build.make CMakeFiles/radar_vdy.dir/src/radar_vdy.cpp.s
+.PHONY : src/radar_vdy.cpp.s
 
 src/test_gp.o: src/test_gp.cpp.o
 
@@ -1220,9 +1220,9 @@ help:
 	@echo "... src/radar_ros_img.o"
 	@echo "... src/radar_ros_img.i"
 	@echo "... src/radar_ros_img.s"
-	@echo "... src/radar_vdy_old.o"
-	@echo "... src/radar_vdy_old.i"
-	@echo "... src/radar_vdy_old.s"
+	@echo "... src/radar_vdy.o"
+	@echo "... src/radar_vdy.i"
+	@echo "... src/radar_vdy.s"
 	@echo "... src/test_gp.o"
 	@echo "... src/test_gp.i"
 	@echo "... src/test_gp.s"

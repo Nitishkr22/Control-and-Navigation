@@ -137,7 +137,7 @@ void OnReceiveObjects(const std::string &buffer)
     std::cout << "Received " << obj.u_nofusedobjects() << " objects" << std::endl;
     std::cout<<"ego velocity "<<f_LongVel <<std::endl;
 
-    double max_range = 20.0, min_range = 10.0;
+    double max_range = 40.0, min_range = 10.0;
 
     for (const auto &ro : obj.a_radarobjectlist())
     {
@@ -155,13 +155,13 @@ void OnReceiveObjects(const std::string &buffer)
 
         ///////////////////////////////////////////////////////////////
         // if (range < 10.0)
-        if (range < 60.0 &&
+        if (range < 80.0 &&
             // ro.e_dynamicproperty() == 0 &&
             // ro.f_orientation() != 0 &&
-            // ro.f_rcs() > 1.0 &&
+            ro.f_rcs() > 1.0 &&
             ro.f_objectscore() > 0.5 &&
-            ro.f_disty()<=2.0 && ro.f_disty()>=-2.0&&
-            obj_size > 0.010)
+            ro.f_disty()<=1.8 && ro.f_disty()>=-1.8&&
+            obj_size > 1.5)
         {
             // Extract timestamp from MsgHeader
             filteredObjects.push_back(ro);

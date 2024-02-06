@@ -6,7 +6,7 @@ file(REMOVE_RECURSE
   "CMakeFiles/radar_vdy.dir/pdk_RadarObjectList.pb.cc.o"
   "CMakeFiles/radar_vdy.dir/pdk_RadarStatus.pb.cc.o"
   "CMakeFiles/radar_vdy.dir/pdk_SensorMsgHeader.pb.cc.o"
-  "CMakeFiles/radar_vdy.dir/src/radar_vdy_old.cpp.o"
+  "CMakeFiles/radar_vdy.dir/src/radar_vdy.cpp.o"
   "devel/lib/conti_radar/radar_vdy"
   "devel/lib/conti_radar/radar_vdy.pdb"
   "pdk_IMUData.pb.cc"

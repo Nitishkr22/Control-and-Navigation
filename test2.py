@@ -14,6 +14,7 @@ import time
 from geopy.distance import geodesic
 import controller
 import controller2
+import threading
 
 
 #TCP connection
@@ -32,6 +33,14 @@ vsub = 0.0
 acc_switch = False
 brake_switch = False
 abs_vel = 0.0
+
+def timeout():
+    global abs_vel, acc_switch
+    abs_vel = 0.0
+    acc_switch = False
+    brake_switch = False
+
+
 def callback_vel(data):
 
     global velg
@@ -43,16 +52,33 @@ def callback_vsub(data):
     vsub=data.data  
 
 def callback_acc_switch(data):
-    global acc_switch
+    global acc_switch, timer
     acc_switch = data.data
+    if timer is not None:
+        timer.cancel()
+    timer = threading.Timer(1.5, timeout)
+    timer.start()
+
+
 
 def callback_brake_switch(data):
-    global brake_switch
+    global brake_switch, timer
     brake_switch = data.data
+    if timer is not None:
+        timer.cancel()
+    timer = threading.Timer(1.5, timeout)
+    timer.start()
 
 def callback_abs_velx(data):
     global abs_vel
     abs_vel = data.data
+    # print("dddddddddddd", aeb_flag2)
+    # if timer is not None:
+    #     timer.cancel()
+    # timer = threading.Timer(3, timeout)
+    # timer.start()
+
+
 rospy.init_node('Navigation', anonymous=True)
 #ROS subscription
 rospy.Subscriber("/novatel/oem7/bestvel",BESTVEL, callback_vel)
@@ -60,6 +86,7 @@ rospy.Subscriber("/user_value",Float32, callback_vsub)
 rospy.Subscriber("/acc_switch_topic",Bool, callback_acc_switch)
 rospy.Subscriber("/brake_action_topic",Bool, callback_brake_switch)
 rospy.Subscriber("/f_vabsx_topic",Float64, callback_abs_velx)
+timer = threading.Timer(3, timeout)
 
 def calculate_steer_angle(currentLocation, wp, heading):
     """
@@ -724,7 +751,7 @@ pid_controller = controller2.PIDControllervel(kp, ki, kd)
 
 max_dist = 20.0
 min_dist = 8.0
-ego_speed = 10.0
+ego_speed = 9.0
 # acc_switch = False
 brake_rate = 0
 
@@ -738,36 +765,49 @@ while not rospy.is_shutdown():
         vel_gnss = velg*(18/5)
         # print("adfd: ",vsub)   # vsub is the desired velocity
         # setpoint = vsub
-        if acc_switch:
-            setpoint = abs_vel
-        else:
-            setpoint = ego_speed
+        # if acc_switch:
+        #     setpoint = abs_vel
+        # else:
+        #     setpoint = ego_speed
 
 
-        control_signal = pid_controller.compute(setpoint, vel_gnss)  # (desired_vel, feedback)
+        # control_signal = pid_controller.compute(setpoint, vel_gnss)  # (desired_vel, feedback)
 
-        throttle_input1 = np.clip(control_signal, 0, 22)
-        print("throttle: ",throttle_input1)
+        # throttle_input1 = np.clip(control_signal, 0, 100)
+        # print("throttle: ",throttle_input1)
 
         if acc_switch:
             print("ACC is ON")
+            setpoint = abs_vel
+            control_signal = pid_controller.compute(setpoint, vel_gnss)  # (desired_vel, feedback)
+
+            throttle_input1 = np.clip(control_signal, 0, 19)
+            print("throttle: ",throttle_input1)
+            
             print("velocity from radar: ",abs_vel)
             if(vel_gnss>abs_vel):
                 # obj.send_data("A1,D,2,0,0,0,0,0,0,0,0\r\n")
                 throttle = 1.0
                 if brake_switch:
                     print("brake applied")
-                    brake_rate = 10
+                    brake_rate = 20
                 else:
                     print("NO brake")
                     brake_rate = 0
             else:
+                
                 throttle = throttle_input1
         else:
             print("ACC is OFF")
+            setpoint = ego_speed
+            control_signal = pid_controller.compute(setpoint, vel_gnss)  # (desired_vel, feedback)
+
+            throttle_input1 = np.clip(control_signal, 0, 100)
+            print("throttle: ",throttle_input1)
             if(vel_gnss>ego_speed):
                 throttle = 1.0
             else:
+                
                 throttle = throttle_input1
             
         
