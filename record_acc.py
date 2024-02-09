@@ -3,17 +3,15 @@ from novatel_oem7_msgs.msg import BESTPOS
 from novatel_oem7_msgs.msg import BESTVEL
 from novatel_oem7_msgs.msg import INSPVA
 import rospy
-from std_msgs.msg import String
+# from std_msgs.msg import String
 from std_msgs.msg import Float32
 from std_msgs.msg import Float64
 from std_msgs.msg import Bool
 import actuator
 import math
-import pid
 import time
-from geopy.distance import geodesic
-import controller
 import controller2
+import csv
 import threading
 
 
@@ -21,36 +19,35 @@ import threading
 obj = actuator.controller("169.254.178.227",5001)
 obj.connect()
 
-#PID controller
-# Kp = 1.65971
-# Ki = 0.00007
-# Kd = 0.710
-# rate_min = -100
-# rate_max = 100
-# pid_controller = pid.PIDController(Kp, Ki, Kd, rate_min, rate_max)
 
 velg = 0.0
 vsub = 0.0
 acc_switch = False
 brake_switch = False
 abs_vel = 0.0
+range_rel = 0.0
 
 def timeout():
-    global abs_vel, acc_switch, brake_switch
+    global abs_vel, acc_switch, brake_switch, range_rel
     abs_vel = 0.0
     acc_switch = False
     brake_switch = False
+    range_rel = 0.0
+
+def timeoutr():
+    global range_rel
+    range_rel = 0.0
 
 
 def callback_vel(data):
-
     global velg
     velg=data.hor_speed  
 
-def callback_vsub(data):
 
+def callback_vsub(data):
     global vsub
     vsub=data.data  
+
 
 def callback_acc_switch(data):
     global acc_switch, timer
@@ -61,7 +58,6 @@ def callback_acc_switch(data):
     timer.start()
 
 
-
 def callback_brake_switch(data):
     global brake_switch, timer
     brake_switch = data.data
@@ -69,6 +65,7 @@ def callback_brake_switch(data):
         timer.cancel()
     timer = threading.Timer(1.5, timeout)
     timer.start()
+
 
 def callback_abs_velx(data):
     global abs_vel
@@ -78,6 +75,13 @@ def callback_abs_velx(data):
     #     timer.cancel()
     # timer = threading.Timer(3, timeout)
     # timer.start()
+def callback_range_rel(data):
+    global range_rel
+    range_rel = data.data
+    if timer is not None:
+        timer.cancel()
+    timer = threading.Timer(1.5, timeoutr)
+    timer.start()
 
 
 rospy.init_node('Navigation', anonymous=True)
@@ -87,7 +91,9 @@ rospy.Subscriber("/user_value",Float32, callback_vsub)
 rospy.Subscriber("/acc_switch_topic",Bool, callback_acc_switch)
 rospy.Subscriber("/brake_action_topic",Bool, callback_brake_switch)
 rospy.Subscriber("/f_vabsx_topic",Float64, callback_abs_velx)
+rospy.Subscriber("/range_topic",Float64, callback_range_rel)
 timer = threading.Timer(3, timeout)
+
 
 def calculate_steer_angle(currentLocation, wp, heading):
     """
@@ -728,7 +734,8 @@ print(feed)
 message = "A,N,0,0,0,0,0,0,0,0,0 \r\n"
 obj.send_data(message)
 feed = obj.receive_data()
-print(feed)
+# print(feed)
+
 
 def accn(kp, acc):
     return acc+kp
@@ -738,9 +745,24 @@ def dccn(kp, acc):
 def damping(error):
     kp = 1-np.exp(-0.0006*abs(error))
     return kp
-desired_vel = 6.0
-acc = 1
-# cont = controller.Controller2D()
+
+def current_time_in_nanoseconds():
+        # Get current epoch time in seconds
+    epoch_time_seconds = time.time()
+
+    # Convert seconds to nanoseconds
+    epoch_time_nanoseconds = int(epoch_time_seconds * 1e3)
+
+    return epoch_time_nanoseconds
+
+def write_to_csv(data, filename, headers):
+    with open(filename, 'a', newline='') as csvfile:
+        writer = csv.DictWriter(csvfile, fieldnames=headers)
+        if csvfile.tell() == 0:
+            writer.writeheader()  # Write headers if the file is empty
+        writer.writerow(data)
+
+
 obj.send_data("A1,D,1,0,0,0,0,0,0,0,0\r\n")
 time.sleep(1)
 
@@ -749,74 +771,95 @@ ki = 0.0006
 kd = 0.28
 
 pid_controller = controller2.PIDControllervel(kp, ki, kd)
-
-max_dist = 20.0
-min_dist = 8.0
-ego_speed = 9.0
-# acc_switch = False
-brake_rate = 0
-
-# setpoint = 10.0
+# setpoint = 15.0
 # while not rospy.is_shutdown():
-while not rospy.is_shutdown():
-    try:
-        velocity_feedback = float(obj.receive_data().split(',')[3]) #velocity feedback from controller
-        # velocity_feedback =  np.clip(1, 0, 100)
-        print("Ego_velocity: ",velg*(18/5))  # velg is the velocity from gnss 
-        vel_gnss = velg*(18/5)
-        # print("adfd: ",vsub)   # vsub is the desired velocity
-        # setpoint = vsub
-        # control_signal = pid_controller.compute(setpoint, vel_gnss)  # (desired_vel, feedback)
 
-        # throttle_input1 = np.clip(control_signal, 0, 100)
-        # print("throttle: ",throttle_input1)
+if __name__=="__main__":
 
-        if acc_switch:
-            print("ACC is ON")
-            setpoint = abs_vel
-            control_signal = pid_controller.compute(setpoint, vel_gnss)  # (desired_vel, feedback)
+    data = {
+        'timestamp': 1643138325,  # Example timestamp
+        'acceleration': 2,            # Example velocity
+        'Ego_velocity': 50,
+        'target_velocity' : 50,
+        'ACC_state': False,
+        'Range': 10.0        # Example acceleration
+    }
+    headers = ['timestamp', 'acceleration', 'Ego_velocity', 'target_velocity', 'ACC_state', 'Range']
+    ego_speed = 9.0
+    # acc_switch = False
+    brake_rate = 0
 
-            throttle_input1 = np.clip(control_signal, 0, 19)
-            print("throttle: ",throttle_input1)
-            
-            print("velocity from radar: ",abs_vel)
-            if(vel_gnss>abs_vel):
-                # obj.send_data("A1,D,2,0,0,0,0,0,0,0,0\r\n")
-                throttle = 1.0
-                if brake_switch:
-                    print("brake applied")
-                    brake_rate = 20
+
+    while not rospy.is_shutdown():
+        try:
+            ########################
+
+            print("Ego_velocity: ",velg*(18/5))  # velg is the velocity from gnss 
+            vel_gnss = velg*(18/5)
+            # print("adfd: ",vsub)   # vsub is the desired velocity
+            # setpoint = vsub
+            # control_signal = pid_controller.compute(setpoint, vel_gnss)  # (desired_vel, feedback)
+
+            # throttle_input1 = np.clip(control_signal, 0, 100)
+            # print("throttle: ",throttle_input1)
+            data['timestamp'] = current_time_in_nanoseconds()
+            if acc_switch:
+                print("ACC is ON")
+                setpoint = abs_vel
+                control_signal = pid_controller.compute(setpoint, vel_gnss)  # (desired_vel, feedback)
+
+                throttle_input1 = np.clip(control_signal, 0, 19)
+                print("throttle: ",throttle_input1)
+                
+                print("velocity from radar: ",abs_vel)
+                if(vel_gnss>abs_vel):
+                    # obj.send_data("A1,D,2,0,0,0,0,0,0,0,0\r\n")
+                    throttle = 1.0
+                    if brake_switch:
+                        print("brake applied")
+                        brake_rate = 20
+                    else:
+                        print("NO brake")
+                        brake_rate = 0
                 else:
-                    print("NO brake")
-                    brake_rate = 0
+                    
+                    throttle = throttle_input1
             else:
+                print("ACC is OFF")
+                setpoint = ego_speed
+                control_signal = pid_controller.compute(setpoint, vel_gnss)  # (desired_vel, feedback)
+
+                throttle_input1 = np.clip(control_signal, 0, 100)
+                print("throttle: ",throttle_input1)
+                if(vel_gnss>ego_speed):
+                    throttle = 1.0
+                else:
+                    
+                    throttle = throttle_input1
+
+            data['timestamp'] = current_time_in_nanoseconds()
+            data['acceleration'] = throttle_input1
+            data['Ego_velocity'] = vel_gnss
+            data['target_velocity'] = abs_vel
+            data['ACC_state'] = acc_switch
+            data['Range'] = range_rel
                 
-                throttle = throttle_input1
-        else:
-            print("ACC is OFF")
-            setpoint = ego_speed
-            control_signal = pid_controller.compute(setpoint, vel_gnss)  # (desired_vel, feedback)
-
-            throttle_input1 = np.clip(control_signal, 0, 100)
-            print("throttle: ",throttle_input1)
-            if(vel_gnss>ego_speed):
-                throttle = 1.0
-            else:
+            
+            # if(vel_gnss>setpoint):
+            #     # obj.send_data("A1,D,2,0,0,0,0,0,0,0,0\r\n")
+            #     throttle_input = 2
+            # else:
+            #     throttle_input = throttle_input1
                 
-                throttle = throttle_input1
-            
-        
-        # if(vel_gnss>setpoint):
-        #     # obj.send_data("A1,D,2,0,0,0,0,0,0,0,0\r\n")
-        #     throttle_input = 2
-        # else:
-        #     throttle_input = throttle_input1
-            
-            # obj.send_data("A1,D,"+str(throttle_input)+",0,0,0,0,0,0,0,0\r\n")
-                # obj.send_data("A,D,4,1,30,1,"+str(steer_rate)+",0,0,0,0\r\n")
+                # obj.send_data("A1,D,"+str(throttle_input)+",0,0,0,0,0,0,0,0\r\n")
+                    # obj.send_data("A,D,4,1,30,1,"+str(steer_rate)+",0,0,0,0\r\n")
 
-        obj.send_data("A1,D,"+str(throttle)+",1,"+str(brake_rate)+",0,0,0,0,0,0\r\n")
-        
+            obj.send_data("A1,D,"+str(throttle)+",1,"+str(brake_rate)+",0,0,0,0,0,0\r\n")
+            write_to_csv(data, 'velocity_40.csv', headers)
+            ########################
 
-    except Exception as e:
-        print("Error:", e)
+            
+
+
+        except Exception as e:
+            print("Error:", e)

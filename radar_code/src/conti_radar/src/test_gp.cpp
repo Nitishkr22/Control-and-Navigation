@@ -25,10 +25,12 @@ float f_LatAccel;
 ros::Publisher acc_switch_pub;
 ros::Publisher brake_action_pub;
 ros::Publisher f_vabsx_pub;
+ros::Publisher range_pub;
 
 std_msgs::Bool acc_switch_msg;
 std_msgs::Bool brake_action_msg;
 std_msgs::Float64 f_vabsx_msg;
+std_msgs::Float64 range_msg;
 
 void CORRIMU_callback(const novatel_oem7_msgs::CORRIMU msg){
     f_YawRate = msg.yaw_rate;
@@ -230,6 +232,8 @@ void OnReceiveObjects(const std::string &buffer)
                 acc_switch_pub.publish(acc_switch_msg);
                 f_vabsx_msg.data = minRangeObject.f_vabsx() * (18/5);
                 f_vabsx_pub.publish(f_vabsx_msg);
+                range_msg.data = rangeA;
+                range_pub.publish(range_msg);
 
                 double brake_point = (max_range + min_range) / 2;
                 if (rangeA < brake_point) {
@@ -249,8 +253,13 @@ void OnReceiveObjects(const std::string &buffer)
                 // Publish brake_action
                 brake_action_pub.publish(brake_action_msg);
                 acc_switch_pub.publish(acc_switch_msg);
+                if (rangeA !=0){
+                    range_msg.data = rangeA;
+                    range_pub.publish(range_msg);
+                }
+                
             }
-
+            
             // Publish f_vabsx
             
 
@@ -309,6 +318,7 @@ int main(int argc, char *argv[])
     acc_switch_pub = node.advertise<std_msgs::Bool>("acc_switch_topic", 1000);
     brake_action_pub = node.advertise<std_msgs::Bool>("brake_action_topic", 1000);
     f_vabsx_pub = node.advertise<std_msgs::Float64>("f_vabsx_topic", 1000);
+    range_pub = node.advertise<std_msgs::Float64>("range_topic", 1000);
 
    // Initialization and other setup code...
     std::string config{};
