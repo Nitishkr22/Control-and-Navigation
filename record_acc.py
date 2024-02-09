@@ -69,19 +69,20 @@ def callback_brake_switch(data):
 
 def callback_abs_velx(data):
     global abs_vel
-    abs_vel = data.data
+    abs_vel = data.data +2.0
     # print("dddddddddddd", aeb_flag2)
     # if timer is not None:
     #     timer.cancel()
     # timer = threading.Timer(3, timeout)
     # timer.start()
+
 def callback_range_rel(data):
     global range_rel
     range_rel = data.data
-    if timer is not None:
-        timer.cancel()
-    timer = threading.Timer(1.5, timeoutr)
-    timer.start()
+    if timer2 is not None:
+        timer2.cancel()
+    timer2 = threading.Timer(1.5, timeoutr)
+    timer2.start()
 
 
 rospy.init_node('Navigation', anonymous=True)
@@ -91,8 +92,9 @@ rospy.Subscriber("/user_value",Float32, callback_vsub)
 rospy.Subscriber("/acc_switch_topic",Bool, callback_acc_switch)
 rospy.Subscriber("/brake_action_topic",Bool, callback_brake_switch)
 rospy.Subscriber("/f_vabsx_topic",Float64, callback_abs_velx)
-rospy.Subscriber("/range_topic",Float64, callback_range_rel)
+# rospy.Subscriber("/range_topic",Float64, callback_range_rel)
 timer = threading.Timer(3, timeout)
+timer2 = threading.Timer(3, timeoutr)
 
 
 def calculate_steer_angle(currentLocation, wp, heading):
@@ -766,11 +768,11 @@ def write_to_csv(data, filename, headers):
 obj.send_data("A1,D,1,0,0,0,0,0,0,0,0\r\n")
 time.sleep(1)
 
-kp = 0.00008
-ki = 0.0006
-kd = 0.28
+# kp = 0.00008
+# ki = 0.0006
+# kd = 0.28
 
-pid_controller = controller2.PIDControllervel(kp, ki, kd)
+# pid_controller = controller2.PIDControllervel(kp, ki, kd)
 # setpoint = 15.0
 # while not rospy.is_shutdown():
 
@@ -785,7 +787,13 @@ if __name__=="__main__":
         'Range': 10.0        # Example acceleration
     }
     headers = ['timestamp', 'acceleration', 'Ego_velocity', 'target_velocity', 'ACC_state', 'Range']
-    ego_speed = 9.0
+    kp = 0.00008
+    ki = 0.0006
+    kd = 0.28
+
+    pid_controller = controller2.PIDControllervel(kp, ki, kd)
+
+    ego_speed = 12.0
     # acc_switch = False
     brake_rate = 0
 
@@ -793,6 +801,7 @@ if __name__=="__main__":
     while not rospy.is_shutdown():
         try:
             ########################
+            velocity_feedback = float(obj.receive_data().split(',')[3]) #velocity feedback from controller
 
             print("Ego_velocity: ",velg*(18/5))  # velg is the velocity from gnss 
             vel_gnss = velg*(18/5)
@@ -802,7 +811,7 @@ if __name__=="__main__":
 
             # throttle_input1 = np.clip(control_signal, 0, 100)
             # print("throttle: ",throttle_input1)
-            data['timestamp'] = current_time_in_nanoseconds()
+            # data['timestamp'] = current_time_in_nanoseconds()
             if acc_switch:
                 print("ACC is ON")
                 setpoint = abs_vel
@@ -814,10 +823,10 @@ if __name__=="__main__":
                 print("velocity from radar: ",abs_vel)
                 if(vel_gnss>abs_vel):
                     # obj.send_data("A1,D,2,0,0,0,0,0,0,0,0\r\n")
-                    throttle = 1.0
+                    throttle = 2.0
                     if brake_switch:
                         print("brake applied")
-                        brake_rate = 20
+                        brake_rate = 15
                     else:
                         print("NO brake")
                         brake_rate = 0
@@ -855,7 +864,7 @@ if __name__=="__main__":
                     # obj.send_data("A,D,4,1,30,1,"+str(steer_rate)+",0,0,0,0\r\n")
 
             obj.send_data("A1,D,"+str(throttle)+",1,"+str(brake_rate)+",0,0,0,0,0,0\r\n")
-            write_to_csv(data, 'velocity_40.csv', headers)
+            write_to_csv(data, 'trial9.csv', headers)
             ########################
 
             

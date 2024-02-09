@@ -139,7 +139,7 @@ void OnReceiveObjects(const std::string &buffer)
     std::cout << "Received " << obj.u_nofusedobjects() << " objects" << std::endl;
     std::cout<<"ego velocity "<<f_LongVel <<std::endl;
 
-    double max_range = 40.0, min_range = 10.0;
+    double max_range = 60.0, min_range = 10.0;
 
     for (const auto &ro : obj.a_radarobjectlist())
     {
