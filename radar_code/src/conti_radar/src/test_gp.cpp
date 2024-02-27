@@ -143,7 +143,7 @@ void OnReceiveObjects(const std::string &buffer)
     std::cout << "Received " << obj.u_nofusedobjects() << " objects" << std::endl;
     std::cout<<"ego velocity "<<f_LongVel <<std::endl;
 
-    double max_range = 60.0, min_range = 10.0;
+    double max_range = 100.0, min_range = 5.0;
 
     for (const auto &ro : obj.a_radarobjectlist())
     {
@@ -335,8 +335,8 @@ int main(int argc, char *argv[])
     brake_action_pub = node.advertise<std_msgs::Bool>("brake_action_topic", 1000);
     f_vabsx_pub = node.advertise<std_msgs::Float64>("f_vabsx_topic", 1000);
     range_pub = node.advertise<std_msgs::Float64>("range_topic", 1000);
-    x_pos = node.advertise<std_msgs::Float64>("x_pos_topic", 1000);
-    y_pos = node.advertise<std_msgs::Float64>("y_pos_topic", 1000);
+    x_pos_pub = node.advertise<std_msgs::Float64>("x_pos_topic", 1000);
+    y_pos_pub = node.advertise<std_msgs::Float64>("y_pos_topic", 1000);
 
    // Initialization and other setup code...
     std::string config{};

@@ -67,8 +67,8 @@ set(conti_radar_CONFIG_INCLUDED TRUE)
 
 # set variables for source/devel/install prefixes
 if("FALSE" STREQUAL "TRUE")
-  set(conti_radar_SOURCE_PREFIX /home/radar/Documents/Nexon_acc/Navigation/Control-and-Navigation/radar_code/src/conti_radar)
-  set(conti_radar_DEVEL_PREFIX /home/radar/Documents/Nexon_acc/Navigation/Control-and-Navigation/radar_code/src/conti_radar/_build/devel)
+  set(conti_radar_SOURCE_PREFIX /home/orin/Documents/Nitish_Nexon/Navigation/radar_code/src/conti_radar)
+  set(conti_radar_DEVEL_PREFIX /home/orin/Documents/Nitish_Nexon/Navigation/radar_code/src/conti_radar/_build/devel)
   set(conti_radar_INSTALL_PREFIX "")
   set(conti_radar_PREFIX ${conti_radar_DEVEL_PREFIX})
 else()
@@ -154,7 +154,7 @@ foreach(library ${libraries})
     set(lib_path "")
     set(lib "${library}-NOTFOUND")
     # since the path where the library is found is returned we have to iterate over the paths manually
-    foreach(path /usr/local/lib;/opt/ros/melodic/lib)
+    foreach(path /usr/local/lib;/opt/ros/noetic/lib)
       find_library(lib ${library}
         PATHS ${path}
         NO_DEFAULT_PATH NO_CMAKE_FIND_ROOT_PATH)
@@ -211,7 +211,7 @@ foreach(depend ${depends})
   _unpack_libraries_with_build_configuration(conti_radar_LIBRARIES ${conti_radar_LIBRARIES})
 
   _list_append_unique(conti_radar_LIBRARY_DIRS ${${conti_radar_dep}_LIBRARY_DIRS})
-  list(APPEND conti_radar_EXPORTED_TARGETS ${${conti_radar_dep}_EXPORTED_TARGETS})
+  _list_append_deduplicate(conti_radar_EXPORTED_TARGETS ${${conti_radar_dep}_EXPORTED_TARGETS})
 endforeach()
 
 set(pkg_cfg_extras "conti_radar-msg-extras.cmake")

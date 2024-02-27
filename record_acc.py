@@ -29,6 +29,7 @@ range_rel = 0.0
 x_pos = 0.0
 y_pos = 0.0
 
+
 def timeout():
     global abs_vel, acc_switch, brake_switch, range_rel
     abs_vel = 0.0
@@ -37,7 +38,7 @@ def timeout():
     range_rel = 0.0
 
 def timeoutr():
-    global range_rel,x_pos,y_pos
+    global range_rel, x_pos, y_pos
     range_rel = 0.0
     x_pos = 0.0
     y_pos = 0.0
@@ -81,7 +82,7 @@ def callback_abs_velx(data):
     # timer.start()
 
 def callback_range_rel(data):
-    global range_rel
+    global range_rel, timer2
     range_rel = data.data
     if timer2 is not None:
         timer2.cancel()
@@ -89,7 +90,7 @@ def callback_range_rel(data):
     timer2.start()
 
 def callback_x_pos(data):
-    global x_pos
+    global x_pos, timer2
     x_pos = data.data
     if timer2 is not None:
         timer2.cancel()
@@ -97,7 +98,7 @@ def callback_x_pos(data):
     timer2.start()
 
 def callback_y_pos(data):
-    global y_pos
+    global y_pos, timer2
     y_pos = data.data
     if timer2 is not None:
         timer2.cancel()
@@ -806,9 +807,11 @@ if __name__=="__main__":
         'Ego_velocity': 50,
         'target_velocity' : 50,
         'ACC_state': False,
-        'Range': 10.0        # Example acceleration
+        'Range': 10.0,        # Example acceleration
+        'x_pos': 2.0,
+        'y_pos': 2.0
     }
-    headers = ['timestamp', 'acceleration', 'Ego_velocity', 'target_velocity', 'ACC_state', 'Range']
+    headers = ['timestamp', 'acceleration', 'Ego_velocity', 'target_velocity', 'ACC_state', 'Range', 'x_pos','y_pos']
     kp = 0.00008
     ki = 0.0006
     kd = 0.28
@@ -874,6 +877,8 @@ if __name__=="__main__":
             data['target_velocity'] = abs_vel
             data['ACC_state'] = acc_switch
             data['Range'] = range_rel
+            data['x_pos'] = x_pos
+            data['y_pos'] = y_pos
                 
             
             # if(vel_gnss>setpoint):
@@ -886,7 +891,7 @@ if __name__=="__main__":
                     # obj.send_data("A,D,4,1,30,1,"+str(steer_rate)+",0,0,0,0\r\n")
 
             obj.send_data("A1,D,"+str(throttle)+",1,"+str(brake_rate)+",0,0,0,0,0,0\r\n")
-            write_to_csv(data, 'trial9.csv', headers)
+            write_to_csv(data, 'abhi_data.csv', headers)
             ########################
 
             

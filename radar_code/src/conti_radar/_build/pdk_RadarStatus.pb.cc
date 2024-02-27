@@ -5,81 +5,77 @@
 
 #include <algorithm>
 
+#include <google/protobuf/stubs/common.h>
+#include <google/protobuf/stubs/port.h>
 #include <google/protobuf/io/coded_stream.h>
-#include <google/protobuf/extension_set.h>
-#include <google/protobuf/wire_format_lite.h>
+#include <google/protobuf/wire_format_lite_inl.h>
 #include <google/protobuf/descriptor.h>
 #include <google/protobuf/generated_message_reflection.h>
 #include <google/protobuf/reflection_ops.h>
 #include <google/protobuf/wire_format.h>
+// This is a temporary google only hack
+#ifdef GOOGLE_PROTOBUF_ENFORCE_UNIQUENESS
+#include "third_party/protobuf/version.h"
+#endif
 // @@protoc_insertion_point(includes)
-#include <google/protobuf/port_def.inc>
 
-PROTOBUF_PRAGMA_INIT_SEG
-
-namespace _pb = ::PROTOBUF_NAMESPACE_ID;
-namespace _pbi = _pb::internal;
-
+namespace protobuf_pdk_5fSensorMsgHeader_2eproto {
+extern PROTOBUF_INTERNAL_EXPORT_protobuf_pdk_5fSensorMsgHeader_2eproto ::google::protobuf::internal::SCCInfo<1> scc_info_SensorMsgHeader;
+}  // namespace protobuf_pdk_5fSensorMsgHeader_2eproto
 namespace pb {
 namespace PDK {
-PROTOBUF_CONSTEXPR RadarStatus::RadarStatus(
-    ::_pbi::ConstantInitialized)
-  : a_swversion_()
-  , a_ethernet_ip_()
-  , a_ethernet_mac_()
-  , a_serialnumber_()
-  , t_header_(nullptr)
-  , u_ethernet_vlan_(0u)
-  , f_azalignangledeviation_far_(0)
-  , f_azalignangledeviation_near_(0)
-  , f_elalignangledeviation_(0)
-  , b_deadjusted_(false)
-  , b_hardwaredefective_(false)
-  , b_extdisturbed_(false)
-  , b_supplvoltlimit_(false)
-  , b_sensorofftemp_(false)
-  , b_comerror_(false)
-  , b_swerror_(false)
-  , b_txoutreduced_(false){}
-struct RadarStatusDefaultTypeInternal {
-  PROTOBUF_CONSTEXPR RadarStatusDefaultTypeInternal()
-      : _instance(::_pbi::ConstantInitialized{}) {}
-  ~RadarStatusDefaultTypeInternal() {}
-  union {
-    RadarStatus _instance;
-  };
-};
-PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 RadarStatusDefaultTypeInternal _RadarStatus_default_instance_;
+class RadarStatusDefaultTypeInternal {
+ public:
+  ::google::protobuf::internal::ExplicitlyConstructed<RadarStatus>
+      _instance;
+} _RadarStatus_default_instance_;
 }  // namespace PDK
 }  // namespace pb
-static ::_pb::Metadata file_level_metadata_pdk_5fRadarStatus_2eproto[1];
-static constexpr ::_pb::EnumDescriptor const** file_level_enum_descriptors_pdk_5fRadarStatus_2eproto = nullptr;
-static constexpr ::_pb::ServiceDescriptor const** file_level_service_descriptors_pdk_5fRadarStatus_2eproto = nullptr;
+namespace protobuf_pdk_5fRadarStatus_2eproto {
+static void InitDefaultsRadarStatus() {
+  GOOGLE_PROTOBUF_VERIFY_VERSION;
 
-const uint32_t TableStruct_pdk_5fRadarStatus_2eproto::offsets[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
-  PROTOBUF_FIELD_OFFSET(::pb::PDK::RadarStatus, _has_bits_),
-  PROTOBUF_FIELD_OFFSET(::pb::PDK::RadarStatus, _internal_metadata_),
+  {
+    void* ptr = &::pb::PDK::_RadarStatus_default_instance_;
+    new (ptr) ::pb::PDK::RadarStatus();
+    ::google::protobuf::internal::OnShutdownDestroyMessage(ptr);
+  }
+  ::pb::PDK::RadarStatus::InitAsDefaultInstance();
+}
+
+::google::protobuf::internal::SCCInfo<1> scc_info_RadarStatus =
+    {{ATOMIC_VAR_INIT(::google::protobuf::internal::SCCInfoBase::kUninitialized), 1, InitDefaultsRadarStatus}, {
+      &protobuf_pdk_5fSensorMsgHeader_2eproto::scc_info_SensorMsgHeader.base,}};
+
+void InitDefaults() {
+  ::google::protobuf::internal::InitSCC(&scc_info_RadarStatus.base);
+}
+
+::google::protobuf::Metadata file_level_metadata[1];
+
+const ::google::protobuf::uint32 TableStruct::offsets[] GOOGLE_PROTOBUF_ATTRIBUTE_SECTION_VARIABLE(protodesc_cold) = {
+  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::pb::PDK::RadarStatus, _has_bits_),
+  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::pb::PDK::RadarStatus, _internal_metadata_),
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
-  ~0u,  // no _inlined_string_donated_
-  PROTOBUF_FIELD_OFFSET(::pb::PDK::RadarStatus, t_header_),
-  PROTOBUF_FIELD_OFFSET(::pb::PDK::RadarStatus, a_swversion_),
-  PROTOBUF_FIELD_OFFSET(::pb::PDK::RadarStatus, a_ethernet_ip_),
-  PROTOBUF_FIELD_OFFSET(::pb::PDK::RadarStatus, a_ethernet_mac_),
-  PROTOBUF_FIELD_OFFSET(::pb::PDK::RadarStatus, u_ethernet_vlan_),
-  PROTOBUF_FIELD_OFFSET(::pb::PDK::RadarStatus, a_serialnumber_),
-  PROTOBUF_FIELD_OFFSET(::pb::PDK::RadarStatus, b_deadjusted_),
-  PROTOBUF_FIELD_OFFSET(::pb::PDK::RadarStatus, f_azalignangledeviation_far_),
-  PROTOBUF_FIELD_OFFSET(::pb::PDK::RadarStatus, f_azalignangledeviation_near_),
-  PROTOBUF_FIELD_OFFSET(::pb::PDK::RadarStatus, f_elalignangledeviation_),
-  PROTOBUF_FIELD_OFFSET(::pb::PDK::RadarStatus, b_hardwaredefective_),
-  PROTOBUF_FIELD_OFFSET(::pb::PDK::RadarStatus, b_extdisturbed_),
-  PROTOBUF_FIELD_OFFSET(::pb::PDK::RadarStatus, b_supplvoltlimit_),
-  PROTOBUF_FIELD_OFFSET(::pb::PDK::RadarStatus, b_sensorofftemp_),
-  PROTOBUF_FIELD_OFFSET(::pb::PDK::RadarStatus, b_comerror_),
-  PROTOBUF_FIELD_OFFSET(::pb::PDK::RadarStatus, b_swerror_),
-  PROTOBUF_FIELD_OFFSET(::pb::PDK::RadarStatus, b_txoutreduced_),
+  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::pb::PDK::RadarStatus, t_header_),
+  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::pb::PDK::RadarStatus, a_swversion_),
+  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::pb::PDK::RadarStatus, a_ethernet_ip_),
+  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::pb::PDK::RadarStatus, a_ethernet_mac_),
+  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::pb::PDK::RadarStatus, u_ethernet_vlan_),
+  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::pb::PDK::RadarStatus, a_serialnumber_),
+  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::pb::PDK::RadarStatus, b_deadjusted_),
+  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::pb::PDK::RadarStatus, f_azalignangledeviation_far_),
+  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::pb::PDK::RadarStatus, f_azalignangledeviation_near_),
+  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::pb::PDK::RadarStatus, f_elalignangledeviation_),
+  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::pb::PDK::RadarStatus, b_hardwaredefective_),
+  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::pb::PDK::RadarStatus, b_extdisturbed_),
+  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::pb::PDK::RadarStatus, b_supplvoltlimit_),
+  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::pb::PDK::RadarStatus, b_sensorofftemp_),
+  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::pb::PDK::RadarStatus, b_comerror_),
+  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::pb::PDK::RadarStatus, b_swerror_),
+  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::pb::PDK::RadarStatus, b_txoutreduced_),
   0,
   ~0u,
   ~0u,
@@ -98,128 +94,121 @@ const uint32_t TableStruct_pdk_5fRadarStatus_2eproto::offsets[] PROTOBUF_SECTION
   11,
   12,
 };
-static const ::_pbi::MigrationSchema schemas[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
-  { 0, 23, -1, sizeof(::pb::PDK::RadarStatus)},
+static const ::google::protobuf::internal::MigrationSchema schemas[] GOOGLE_PROTOBUF_ATTRIBUTE_SECTION_VARIABLE(protodesc_cold) = {
+  { 0, 22, sizeof(::pb::PDK::RadarStatus)},
 };
 
-static const ::_pb::Message* const file_default_instances[] = {
-  &::pb::PDK::_RadarStatus_default_instance_._instance,
+static ::google::protobuf::Message const * const file_default_instances[] = {
+  reinterpret_cast<const ::google::protobuf::Message*>(&::pb::PDK::_RadarStatus_default_instance_),
 };
 
-const char descriptor_table_protodef_pdk_5fRadarStatus_2eproto[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) =
-  "\n\025pdk_RadarStatus.proto\022\006pb.PDK\032\031pdk_Sen"
-  "sorMsgHeader.proto\"\326\003\n\013RadarStatus\022)\n\010t_"
-  "Header\030\001 \001(\0132\027.pb.PDK.SensorMsgHeader\022\023\n"
-  "\013a_SWVersion\030\005 \003(\014\022\025\n\ra_Ethernet_IP\030\007 \003("
-  "\014\022\026\n\016a_Ethernet_MAC\030\010 \003(\014\022\027\n\017u_Ethernet_"
-  "VLAN\030\t \001(\r\022\026\n\016a_SerialNumber\030\n \003(\014\022\024\n\014b_"
-  "Deadjusted\030\r \001(\010\022#\n\033f_AzAlignAngleDeviat"
-  "ion_Far\030\016 \001(\002\022$\n\034f_AzAlignAngleDeviation"
-  "_Near\030\017 \001(\002\022\037\n\027f_ElAlignAngleDeviation\030\020"
-  " \001(\002\022\033\n\023b_HardwareDefective\030! \001(\010\022\026\n\016b_E"
-  "xtDisturbed\030\" \001(\010\022\030\n\020b_SupplVoltLimit\030# "
-  "\001(\010\022\027\n\017b_SensorOffTemp\030$ \001(\010\022\022\n\nb_ComErr"
-  "or\030% \001(\010\022\021\n\tb_SWError\030& \001(\010\022\026\n\016b_TxOutRe"
-  "duced\030\' \001(\010"
-  ;
-static const ::_pbi::DescriptorTable* const descriptor_table_pdk_5fRadarStatus_2eproto_deps[1] = {
-  &::descriptor_table_pdk_5fSensorMsgHeader_2eproto,
-};
-static ::_pbi::once_flag descriptor_table_pdk_5fRadarStatus_2eproto_once;
-const ::_pbi::DescriptorTable descriptor_table_pdk_5fRadarStatus_2eproto = {
-    false, false, 531, descriptor_table_protodef_pdk_5fRadarStatus_2eproto,
-    "pdk_RadarStatus.proto",
-    &descriptor_table_pdk_5fRadarStatus_2eproto_once, descriptor_table_pdk_5fRadarStatus_2eproto_deps, 1, 1,
-    schemas, file_default_instances, TableStruct_pdk_5fRadarStatus_2eproto::offsets,
-    file_level_metadata_pdk_5fRadarStatus_2eproto, file_level_enum_descriptors_pdk_5fRadarStatus_2eproto,
-    file_level_service_descriptors_pdk_5fRadarStatus_2eproto,
-};
-PROTOBUF_ATTRIBUTE_WEAK const ::_pbi::DescriptorTable* descriptor_table_pdk_5fRadarStatus_2eproto_getter() {
-  return &descriptor_table_pdk_5fRadarStatus_2eproto;
+void protobuf_AssignDescriptors() {
+  AddDescriptors();
+  AssignDescriptors(
+      "pdk_RadarStatus.proto", schemas, file_default_instances, TableStruct::offsets,
+      file_level_metadata, NULL, NULL);
 }
 
-// Force running AddDescriptors() at dynamic initialization time.
-PROTOBUF_ATTRIBUTE_INIT_PRIORITY2 static ::_pbi::AddDescriptorsRunner dynamic_init_dummy_pdk_5fRadarStatus_2eproto(&descriptor_table_pdk_5fRadarStatus_2eproto);
+void protobuf_AssignDescriptorsOnce() {
+  static ::google::protobuf::internal::once_flag once;
+  ::google::protobuf::internal::call_once(once, protobuf_AssignDescriptors);
+}
+
+void protobuf_RegisterTypes(const ::std::string&) GOOGLE_PROTOBUF_ATTRIBUTE_COLD;
+void protobuf_RegisterTypes(const ::std::string&) {
+  protobuf_AssignDescriptorsOnce();
+  ::google::protobuf::internal::RegisterAllTypes(file_level_metadata, 1);
+}
+
+void AddDescriptorsImpl() {
+  InitDefaults();
+  static const char descriptor[] GOOGLE_PROTOBUF_ATTRIBUTE_SECTION_VARIABLE(protodesc_cold) = {
+      "\n\025pdk_RadarStatus.proto\022\006pb.PDK\032\031pdk_Sen"
+      "sorMsgHeader.proto\"\326\003\n\013RadarStatus\022)\n\010t_"
+      "Header\030\001 \001(\0132\027.pb.PDK.SensorMsgHeader\022\023\n"
+      "\013a_SWVersion\030\005 \003(\014\022\025\n\ra_Ethernet_IP\030\007 \003("
+      "\014\022\026\n\016a_Ethernet_MAC\030\010 \003(\014\022\027\n\017u_Ethernet_"
+      "VLAN\030\t \001(\r\022\026\n\016a_SerialNumber\030\n \003(\014\022\024\n\014b_"
+      "Deadjusted\030\r \001(\010\022#\n\033f_AzAlignAngleDeviat"
+      "ion_Far\030\016 \001(\002\022$\n\034f_AzAlignAngleDeviation"
+      "_Near\030\017 \001(\002\022\037\n\027f_ElAlignAngleDeviation\030\020"
+      " \001(\002\022\033\n\023b_HardwareDefective\030! \001(\010\022\026\n\016b_E"
+      "xtDisturbed\030\" \001(\010\022\030\n\020b_SupplVoltLimit\030# "
+      "\001(\010\022\027\n\017b_SensorOffTemp\030$ \001(\010\022\022\n\nb_ComErr"
+      "or\030% \001(\010\022\021\n\tb_SWError\030& \001(\010\022\026\n\016b_TxOutRe"
+      "duced\030\' \001(\010"
+  };
+  ::google::protobuf::DescriptorPool::InternalAddGeneratedFile(
+      descriptor, 531);
+  ::google::protobuf::MessageFactory::InternalRegisterGeneratedFile(
+    "pdk_RadarStatus.proto", &protobuf_RegisterTypes);
+  ::protobuf_pdk_5fSensorMsgHeader_2eproto::AddDescriptors();
+}
+
+void AddDescriptors() {
+  static ::google::protobuf::internal::once_flag once;
+  ::google::protobuf::internal::call_once(once, AddDescriptorsImpl);
+}
+// Force AddDescriptors() to be called at dynamic initialization time.
+struct StaticDescriptorInitializer {
+  StaticDescriptorInitializer() {
+    AddDescriptors();
+  }
+} static_descriptor_initializer;
+}  // namespace protobuf_pdk_5fRadarStatus_2eproto
 namespace pb {
 namespace PDK {
 
 // ===================================================================
 
-class RadarStatus::_Internal {
- public:
-  using HasBits = decltype(std::declval<RadarStatus>()._has_bits_);
-  static const ::pb::PDK::SensorMsgHeader& t_header(const RadarStatus* msg);
-  static void set_has_t_header(HasBits* has_bits) {
-    (*has_bits)[0] |= 1u;
-  }
-  static void set_has_u_ethernet_vlan(HasBits* has_bits) {
-    (*has_bits)[0] |= 2u;
-  }
-  static void set_has_b_deadjusted(HasBits* has_bits) {
-    (*has_bits)[0] |= 32u;
-  }
-  static void set_has_f_azalignangledeviation_far(HasBits* has_bits) {
-    (*has_bits)[0] |= 4u;
-  }
-  static void set_has_f_azalignangledeviation_near(HasBits* has_bits) {
-    (*has_bits)[0] |= 8u;
-  }
-  static void set_has_f_elalignangledeviation(HasBits* has_bits) {
-    (*has_bits)[0] |= 16u;
-  }
-  static void set_has_b_hardwaredefective(HasBits* has_bits) {
-    (*has_bits)[0] |= 64u;
-  }
-  static void set_has_b_extdisturbed(HasBits* has_bits) {
-    (*has_bits)[0] |= 128u;
-  }
-  static void set_has_b_supplvoltlimit(HasBits* has_bits) {
-    (*has_bits)[0] |= 256u;
-  }
-  static void set_has_b_sensorofftemp(HasBits* has_bits) {
-    (*has_bits)[0] |= 512u;
-  }
-  static void set_has_b_comerror(HasBits* has_bits) {
-    (*has_bits)[0] |= 1024u;
-  }
-  static void set_has_b_swerror(HasBits* has_bits) {
-    (*has_bits)[0] |= 2048u;
-  }
-  static void set_has_b_txoutreduced(HasBits* has_bits) {
-    (*has_bits)[0] |= 4096u;
-  }
-};
-
-const ::pb::PDK::SensorMsgHeader&
-RadarStatus::_Internal::t_header(const RadarStatus* msg) {
-  return *msg->t_header_;
+void RadarStatus::InitAsDefaultInstance() {
+  ::pb::PDK::_RadarStatus_default_instance_._instance.get_mutable()->t_header_ = const_cast< ::pb::PDK::SensorMsgHeader*>(
+      ::pb::PDK::SensorMsgHeader::internal_default_instance());
 }
 void RadarStatus::clear_t_header() {
-  if (t_header_ != nullptr) t_header_->Clear();
-  _has_bits_[0] &= ~0x00000001u;
+  if (t_header_ != NULL) t_header_->Clear();
+  clear_has_t_header();
 }
-RadarStatus::RadarStatus(::PROTOBUF_NAMESPACE_ID::Arena* arena,
-                         bool is_message_owned)
-  : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned),
-  a_swversion_(arena),
-  a_ethernet_ip_(arena),
-  a_ethernet_mac_(arena),
-  a_serialnumber_(arena) {
+#if !defined(_MSC_VER) || _MSC_VER >= 1900
+const int RadarStatus::kTHeaderFieldNumber;
+const int RadarStatus::kASWVersionFieldNumber;
+const int RadarStatus::kAEthernetIPFieldNumber;
+const int RadarStatus::kAEthernetMACFieldNumber;
+const int RadarStatus::kUEthernetVLANFieldNumber;
+const int RadarStatus::kASerialNumberFieldNumber;
+const int RadarStatus::kBDeadjustedFieldNumber;
+const int RadarStatus::kFAzAlignAngleDeviationFarFieldNumber;
+const int RadarStatus::kFAzAlignAngleDeviationNearFieldNumber;
+const int RadarStatus::kFElAlignAngleDeviationFieldNumber;
+const int RadarStatus::kBHardwareDefectiveFieldNumber;
+const int RadarStatus::kBExtDisturbedFieldNumber;
+const int RadarStatus::kBSupplVoltLimitFieldNumber;
+const int RadarStatus::kBSensorOffTempFieldNumber;
+const int RadarStatus::kBComErrorFieldNumber;
+const int RadarStatus::kBSWErrorFieldNumber;
+const int RadarStatus::kBTxOutReducedFieldNumber;
+#endif  // !defined(_MSC_VER) || _MSC_VER >= 1900
+
+RadarStatus::RadarStatus()
+  : ::google::protobuf::Message(), _internal_metadata_(NULL) {
+  ::google::protobuf::internal::InitSCC(
+      &protobuf_pdk_5fRadarStatus_2eproto::scc_info_RadarStatus.base);
   SharedCtor();
-  // @@protoc_insertion_point(arena_constructor:pb.PDK.RadarStatus)
+  // @@protoc_insertion_point(constructor:pb.PDK.RadarStatus)
 }
 RadarStatus::RadarStatus(const RadarStatus& from)
-  : ::PROTOBUF_NAMESPACE_ID::Message(),
+  : ::google::protobuf::Message(),
+      _internal_metadata_(NULL),
       _has_bits_(from._has_bits_),
       a_swversion_(from.a_swversion_),
       a_ethernet_ip_(from.a_ethernet_ip_),
       a_ethernet_mac_(from.a_ethernet_mac_),
       a_serialnumber_(from.a_serialnumber_) {
-  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
-  if (from._internal_has_t_header()) {
+  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  if (from.has_t_header()) {
     t_header_ = new ::pb::PDK::SensorMsgHeader(*from.t_header_);
   } else {
-    t_header_ = nullptr;
+    t_header_ = NULL;
   }
   ::memcpy(&u_ethernet_vlan_, &from.u_ethernet_vlan_,
     static_cast<size_t>(reinterpret_cast<char*>(&b_txoutreduced_) -
@@ -227,34 +216,38 @@ RadarStatus::RadarStatus(const RadarStatus& from)
   // @@protoc_insertion_point(copy_constructor:pb.PDK.RadarStatus)
 }
 
-inline void RadarStatus::SharedCtor() {
-::memset(reinterpret_cast<char*>(this) + static_cast<size_t>(
-    reinterpret_cast<char*>(&t_header_) - reinterpret_cast<char*>(this)),
-    0, static_cast<size_t>(reinterpret_cast<char*>(&b_txoutreduced_) -
-    reinterpret_cast<char*>(&t_header_)) + sizeof(b_txoutreduced_));
+void RadarStatus::SharedCtor() {
+  ::memset(&t_header_, 0, static_cast<size_t>(
+      reinterpret_cast<char*>(&b_txoutreduced_) -
+      reinterpret_cast<char*>(&t_header_)) + sizeof(b_txoutreduced_));
 }
 
 RadarStatus::~RadarStatus() {
   // @@protoc_insertion_point(destructor:pb.PDK.RadarStatus)
-  if (auto *arena = _internal_metadata_.DeleteReturnArena<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>()) {
-  (void)arena;
-    return;
-  }
   SharedDtor();
 }
 
-inline void RadarStatus::SharedDtor() {
-  GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
+void RadarStatus::SharedDtor() {
   if (this != internal_default_instance()) delete t_header_;
 }
 
 void RadarStatus::SetCachedSize(int size) const {
   _cached_size_.Set(size);
 }
+const ::google::protobuf::Descriptor* RadarStatus::descriptor() {
+  ::protobuf_pdk_5fRadarStatus_2eproto::protobuf_AssignDescriptorsOnce();
+  return ::protobuf_pdk_5fRadarStatus_2eproto::file_level_metadata[kIndexInFileMessages].descriptor;
+}
+
+const RadarStatus& RadarStatus::default_instance() {
+  ::google::protobuf::internal::InitSCC(&protobuf_pdk_5fRadarStatus_2eproto::scc_info_RadarStatus.base);
+  return *internal_default_instance();
+}
+
 
 void RadarStatus::Clear() {
 // @@protoc_insertion_point(message_clear_start:pb.PDK.RadarStatus)
-  uint32_t cached_has_bits = 0;
+  ::google::protobuf::uint32 cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
@@ -264,339 +257,487 @@ void RadarStatus::Clear() {
   a_serialnumber_.Clear();
   cached_has_bits = _has_bits_[0];
   if (cached_has_bits & 0x00000001u) {
-    GOOGLE_DCHECK(t_header_ != nullptr);
+    GOOGLE_DCHECK(t_header_ != NULL);
     t_header_->Clear();
   }
-  if (cached_has_bits & 0x000000feu) {
+  if (cached_has_bits & 254u) {
     ::memset(&u_ethernet_vlan_, 0, static_cast<size_t>(
         reinterpret_cast<char*>(&b_extdisturbed_) -
         reinterpret_cast<char*>(&u_ethernet_vlan_)) + sizeof(b_extdisturbed_));
   }
-  if (cached_has_bits & 0x00001f00u) {
+  if (cached_has_bits & 7936u) {
     ::memset(&b_supplvoltlimit_, 0, static_cast<size_t>(
         reinterpret_cast<char*>(&b_txoutreduced_) -
         reinterpret_cast<char*>(&b_supplvoltlimit_)) + sizeof(b_txoutreduced_));
   }
   _has_bits_.Clear();
-  _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
+  _internal_metadata_.Clear();
 }
 
-const char* RadarStatus::_InternalParse(const char* ptr, ::_pbi::ParseContext* ctx) {
-#define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
-  _Internal::HasBits has_bits{};
-  while (!ctx->Done(&ptr)) {
-    uint32_t tag;
-    ptr = ::_pbi::ReadTag(ptr, &tag);
-    switch (tag >> 3) {
+bool RadarStatus::MergePartialFromCodedStream(
+    ::google::protobuf::io::CodedInputStream* input) {
+#define DO_(EXPRESSION) if (!GOOGLE_PREDICT_TRUE(EXPRESSION)) goto failure
+  ::google::protobuf::uint32 tag;
+  // @@protoc_insertion_point(parse_start:pb.PDK.RadarStatus)
+  for (;;) {
+    ::std::pair<::google::protobuf::uint32, bool> p = input->ReadTagWithCutoffNoLastTag(16383u);
+    tag = p.first;
+    if (!p.second) goto handle_unusual;
+    switch (::google::protobuf::internal::WireFormatLite::GetTagFieldNumber(tag)) {
       // optional .pb.PDK.SensorMsgHeader t_Header = 1;
-      case 1:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 10)) {
-          ptr = ctx->ParseMessage(_internal_mutable_t_header(), ptr);
-          CHK_(ptr);
-        } else
+      case 1: {
+        if (static_cast< ::google::protobuf::uint8>(tag) ==
+            static_cast< ::google::protobuf::uint8>(10u /* 10 & 0xFF */)) {
+          DO_(::google::protobuf::internal::WireFormatLite::ReadMessage(
+               input, mutable_t_header()));
+        } else {
           goto handle_unusual;
-        continue;
+        }
+        break;
+      }
+
       // repeated bytes a_SWVersion = 5;
-      case 5:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 42)) {
-          ptr -= 1;
-          do {
-            ptr += 1;
-            auto str = _internal_add_a_swversion();
-            ptr = ::_pbi::InlineGreedyStringParser(str, ptr, ctx);
-            CHK_(ptr);
-            if (!ctx->DataAvailable(ptr)) break;
-          } while (::PROTOBUF_NAMESPACE_ID::internal::ExpectTag<42>(ptr));
-        } else
+      case 5: {
+        if (static_cast< ::google::protobuf::uint8>(tag) ==
+            static_cast< ::google::protobuf::uint8>(42u /* 42 & 0xFF */)) {
+          DO_(::google::protobuf::internal::WireFormatLite::ReadBytes(
+                input, this->add_a_swversion()));
+        } else {
           goto handle_unusual;
-        continue;
+        }
+        break;
+      }
+
       // repeated bytes a_Ethernet_IP = 7;
-      case 7:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 58)) {
-          ptr -= 1;
-          do {
-            ptr += 1;
-            auto str = _internal_add_a_ethernet_ip();
-            ptr = ::_pbi::InlineGreedyStringParser(str, ptr, ctx);
-            CHK_(ptr);
-            if (!ctx->DataAvailable(ptr)) break;
-          } while (::PROTOBUF_NAMESPACE_ID::internal::ExpectTag<58>(ptr));
-        } else
+      case 7: {
+        if (static_cast< ::google::protobuf::uint8>(tag) ==
+            static_cast< ::google::protobuf::uint8>(58u /* 58 & 0xFF */)) {
+          DO_(::google::protobuf::internal::WireFormatLite::ReadBytes(
+                input, this->add_a_ethernet_ip()));
+        } else {
           goto handle_unusual;
-        continue;
+        }
+        break;
+      }
+
       // repeated bytes a_Ethernet_MAC = 8;
-      case 8:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 66)) {
-          ptr -= 1;
-          do {
-            ptr += 1;
-            auto str = _internal_add_a_ethernet_mac();
-            ptr = ::_pbi::InlineGreedyStringParser(str, ptr, ctx);
-            CHK_(ptr);
-            if (!ctx->DataAvailable(ptr)) break;
-          } while (::PROTOBUF_NAMESPACE_ID::internal::ExpectTag<66>(ptr));
-        } else
+      case 8: {
+        if (static_cast< ::google::protobuf::uint8>(tag) ==
+            static_cast< ::google::protobuf::uint8>(66u /* 66 & 0xFF */)) {
+          DO_(::google::protobuf::internal::WireFormatLite::ReadBytes(
+                input, this->add_a_ethernet_mac()));
+        } else {
           goto handle_unusual;
-        continue;
+        }
+        break;
+      }
+
       // optional uint32 u_Ethernet_VLAN = 9;
-      case 9:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 72)) {
-          _Internal::set_has_u_ethernet_vlan(&has_bits);
-          u_ethernet_vlan_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
-          CHK_(ptr);
-        } else
+      case 9: {
+        if (static_cast< ::google::protobuf::uint8>(tag) ==
+            static_cast< ::google::protobuf::uint8>(72u /* 72 & 0xFF */)) {
+          set_has_u_ethernet_vlan();
+          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
+                   ::google::protobuf::uint32, ::google::protobuf::internal::WireFormatLite::TYPE_UINT32>(
+                 input, &u_ethernet_vlan_)));
+        } else {
           goto handle_unusual;
-        continue;
+        }
+        break;
+      }
+
       // repeated bytes a_SerialNumber = 10;
-      case 10:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 82)) {
-          ptr -= 1;
-          do {
-            ptr += 1;
-            auto str = _internal_add_a_serialnumber();
-            ptr = ::_pbi::InlineGreedyStringParser(str, ptr, ctx);
-            CHK_(ptr);
-            if (!ctx->DataAvailable(ptr)) break;
-          } while (::PROTOBUF_NAMESPACE_ID::internal::ExpectTag<82>(ptr));
-        } else
+      case 10: {
+        if (static_cast< ::google::protobuf::uint8>(tag) ==
+            static_cast< ::google::protobuf::uint8>(82u /* 82 & 0xFF */)) {
+          DO_(::google::protobuf::internal::WireFormatLite::ReadBytes(
+                input, this->add_a_serialnumber()));
+        } else {
           goto handle_unusual;
-        continue;
+        }
+        break;
+      }
+
       // optional bool b_Deadjusted = 13;
-      case 13:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 104)) {
-          _Internal::set_has_b_deadjusted(&has_bits);
-          b_deadjusted_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
-          CHK_(ptr);
-        } else
+      case 13: {
+        if (static_cast< ::google::protobuf::uint8>(tag) ==
+            static_cast< ::google::protobuf::uint8>(104u /* 104 & 0xFF */)) {
+          set_has_b_deadjusted();
+          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
+                   bool, ::google::protobuf::internal::WireFormatLite::TYPE_BOOL>(
+                 input, &b_deadjusted_)));
+        } else {
           goto handle_unusual;
-        continue;
+        }
+        break;
+      }
+
       // optional float f_AzAlignAngleDeviation_Far = 14;
-      case 14:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 117)) {
-          _Internal::set_has_f_azalignangledeviation_far(&has_bits);
-          f_azalignangledeviation_far_ = ::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<float>(ptr);
-          ptr += sizeof(float);
-        } else
+      case 14: {
+        if (static_cast< ::google::protobuf::uint8>(tag) ==
+            static_cast< ::google::protobuf::uint8>(117u /* 117 & 0xFF */)) {
+          set_has_f_azalignangledeviation_far();
+          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
+                   float, ::google::protobuf::internal::WireFormatLite::TYPE_FLOAT>(
+                 input, &f_azalignangledeviation_far_)));
+        } else {
           goto handle_unusual;
-        continue;
+        }
+        break;
+      }
+
       // optional float f_AzAlignAngleDeviation_Near = 15;
-      case 15:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 125)) {
-          _Internal::set_has_f_azalignangledeviation_near(&has_bits);
-          f_azalignangledeviation_near_ = ::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<float>(ptr);
-          ptr += sizeof(float);
-        } else
+      case 15: {
+        if (static_cast< ::google::protobuf::uint8>(tag) ==
+            static_cast< ::google::protobuf::uint8>(125u /* 125 & 0xFF */)) {
+          set_has_f_azalignangledeviation_near();
+          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
+                   float, ::google::protobuf::internal::WireFormatLite::TYPE_FLOAT>(
+                 input, &f_azalignangledeviation_near_)));
+        } else {
           goto handle_unusual;
-        continue;
+        }
+        break;
+      }
+
       // optional float f_ElAlignAngleDeviation = 16;
-      case 16:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 133)) {
-          _Internal::set_has_f_elalignangledeviation(&has_bits);
-          f_elalignangledeviation_ = ::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<float>(ptr);
-          ptr += sizeof(float);
-        } else
+      case 16: {
+        if (static_cast< ::google::protobuf::uint8>(tag) ==
+            static_cast< ::google::protobuf::uint8>(133u /* 133 & 0xFF */)) {
+          set_has_f_elalignangledeviation();
+          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
+                   float, ::google::protobuf::internal::WireFormatLite::TYPE_FLOAT>(
+                 input, &f_elalignangledeviation_)));
+        } else {
           goto handle_unusual;
-        continue;
+        }
+        break;
+      }
+
       // optional bool b_HardwareDefective = 33;
-      case 33:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 8)) {
-          _Internal::set_has_b_hardwaredefective(&has_bits);
-          b_hardwaredefective_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
-          CHK_(ptr);
-        } else
+      case 33: {
+        if (static_cast< ::google::protobuf::uint8>(tag) ==
+            static_cast< ::google::protobuf::uint8>(8u /* 264 & 0xFF */)) {
+          set_has_b_hardwaredefective();
+          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
+                   bool, ::google::protobuf::internal::WireFormatLite::TYPE_BOOL>(
+                 input, &b_hardwaredefective_)));
+        } else {
           goto handle_unusual;
-        continue;
+        }
+        break;
+      }
+
       // optional bool b_ExtDisturbed = 34;
-      case 34:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 16)) {
-          _Internal::set_has_b_extdisturbed(&has_bits);
-          b_extdisturbed_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
-          CHK_(ptr);
-        } else
+      case 34: {
+        if (static_cast< ::google::protobuf::uint8>(tag) ==
+            static_cast< ::google::protobuf::uint8>(16u /* 272 & 0xFF */)) {
+          set_has_b_extdisturbed();
+          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
+                   bool, ::google::protobuf::internal::WireFormatLite::TYPE_BOOL>(
+                 input, &b_extdisturbed_)));
+        } else {
           goto handle_unusual;
-        continue;
+        }
+        break;
+      }
+
       // optional bool b_SupplVoltLimit = 35;
-      case 35:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 24)) {
-          _Internal::set_has_b_supplvoltlimit(&has_bits);
-          b_supplvoltlimit_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
-          CHK_(ptr);
-        } else
+      case 35: {
+        if (static_cast< ::google::protobuf::uint8>(tag) ==
+            static_cast< ::google::protobuf::uint8>(24u /* 280 & 0xFF */)) {
+          set_has_b_supplvoltlimit();
+          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
+                   bool, ::google::protobuf::internal::WireFormatLite::TYPE_BOOL>(
+                 input, &b_supplvoltlimit_)));
+        } else {
           goto handle_unusual;
-        continue;
+        }
+        break;
+      }
+
       // optional bool b_SensorOffTemp = 36;
-      case 36:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 32)) {
-          _Internal::set_has_b_sensorofftemp(&has_bits);
-          b_sensorofftemp_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
-          CHK_(ptr);
-        } else
+      case 36: {
+        if (static_cast< ::google::protobuf::uint8>(tag) ==
+            static_cast< ::google::protobuf::uint8>(32u /* 288 & 0xFF */)) {
+          set_has_b_sensorofftemp();
+          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
+                   bool, ::google::protobuf::internal::WireFormatLite::TYPE_BOOL>(
+                 input, &b_sensorofftemp_)));
+        } else {
           goto handle_unusual;
-        continue;
+        }
+        break;
+      }
+
       // optional bool b_ComError = 37;
-      case 37:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 40)) {
-          _Internal::set_has_b_comerror(&has_bits);
-          b_comerror_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
-          CHK_(ptr);
-        } else
+      case 37: {
+        if (static_cast< ::google::protobuf::uint8>(tag) ==
+            static_cast< ::google::protobuf::uint8>(40u /* 296 & 0xFF */)) {
+          set_has_b_comerror();
+          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
+                   bool, ::google::protobuf::internal::WireFormatLite::TYPE_BOOL>(
+                 input, &b_comerror_)));
+        } else {
           goto handle_unusual;
-        continue;
+        }
+        break;
+      }
+
       // optional bool b_SWError = 38;
-      case 38:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 48)) {
-          _Internal::set_has_b_swerror(&has_bits);
-          b_swerror_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
-          CHK_(ptr);
-        } else
+      case 38: {
+        if (static_cast< ::google::protobuf::uint8>(tag) ==
+            static_cast< ::google::protobuf::uint8>(48u /* 304 & 0xFF */)) {
+          set_has_b_swerror();
+          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
+                   bool, ::google::protobuf::internal::WireFormatLite::TYPE_BOOL>(
+                 input, &b_swerror_)));
+        } else {
           goto handle_unusual;
-        continue;
+        }
+        break;
+      }
+
       // optional bool b_TxOutReduced = 39;
-      case 39:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 56)) {
-          _Internal::set_has_b_txoutreduced(&has_bits);
-          b_txoutreduced_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
-          CHK_(ptr);
-        } else
+      case 39: {
+        if (static_cast< ::google::protobuf::uint8>(tag) ==
+            static_cast< ::google::protobuf::uint8>(56u /* 312 & 0xFF */)) {
+          set_has_b_txoutreduced();
+          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
+                   bool, ::google::protobuf::internal::WireFormatLite::TYPE_BOOL>(
+                 input, &b_txoutreduced_)));
+        } else {
           goto handle_unusual;
-        continue;
-      default:
-        goto handle_unusual;
-    }  // switch
-  handle_unusual:
-    if ((tag == 0) || ((tag & 7) == 4)) {
-      CHK_(ptr);
-      ctx->SetLastTag(tag);
-      goto message_done;
+        }
+        break;
+      }
+
+      default: {
+      handle_unusual:
+        if (tag == 0) {
+          goto success;
+        }
+        DO_(::google::protobuf::internal::WireFormat::SkipField(
+              input, tag, _internal_metadata_.mutable_unknown_fields()));
+        break;
+      }
     }
-    ptr = UnknownFieldParse(
-        tag,
-        _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
-        ptr, ctx);
-    CHK_(ptr != nullptr);
-  }  // while
-message_done:
-  _has_bits_.Or(has_bits);
-  return ptr;
+  }
+success:
+  // @@protoc_insertion_point(parse_success:pb.PDK.RadarStatus)
+  return true;
 failure:
-  ptr = nullptr;
-  goto message_done;
-#undef CHK_
+  // @@protoc_insertion_point(parse_failure:pb.PDK.RadarStatus)
+  return false;
+#undef DO_
 }
 
-uint8_t* RadarStatus::_InternalSerialize(
-    uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
-  // @@protoc_insertion_point(serialize_to_array_start:pb.PDK.RadarStatus)
-  uint32_t cached_has_bits = 0;
+void RadarStatus::SerializeWithCachedSizes(
+    ::google::protobuf::io::CodedOutputStream* output) const {
+  // @@protoc_insertion_point(serialize_start:pb.PDK.RadarStatus)
+  ::google::protobuf::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
   cached_has_bits = _has_bits_[0];
   // optional .pb.PDK.SensorMsgHeader t_Header = 1;
   if (cached_has_bits & 0x00000001u) {
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
-      InternalWriteMessage(1, _Internal::t_header(this),
-        _Internal::t_header(this).GetCachedSize(), target, stream);
+    ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
+      1, this->_internal_t_header(), output);
   }
 
   // repeated bytes a_SWVersion = 5;
-  for (int i = 0, n = this->_internal_a_swversion_size(); i < n; i++) {
-    const auto& s = this->_internal_a_swversion(i);
-    target = stream->WriteBytes(5, s, target);
+  for (int i = 0, n = this->a_swversion_size(); i < n; i++) {
+    ::google::protobuf::internal::WireFormatLite::WriteBytes(
+      5, this->a_swversion(i), output);
   }
 
   // repeated bytes a_Ethernet_IP = 7;
-  for (int i = 0, n = this->_internal_a_ethernet_ip_size(); i < n; i++) {
-    const auto& s = this->_internal_a_ethernet_ip(i);
-    target = stream->WriteBytes(7, s, target);
+  for (int i = 0, n = this->a_ethernet_ip_size(); i < n; i++) {
+    ::google::protobuf::internal::WireFormatLite::WriteBytes(
+      7, this->a_ethernet_ip(i), output);
   }
 
   // repeated bytes a_Ethernet_MAC = 8;
-  for (int i = 0, n = this->_internal_a_ethernet_mac_size(); i < n; i++) {
-    const auto& s = this->_internal_a_ethernet_mac(i);
-    target = stream->WriteBytes(8, s, target);
+  for (int i = 0, n = this->a_ethernet_mac_size(); i < n; i++) {
+    ::google::protobuf::internal::WireFormatLite::WriteBytes(
+      8, this->a_ethernet_mac(i), output);
   }
 
   // optional uint32 u_Ethernet_VLAN = 9;
   if (cached_has_bits & 0x00000002u) {
-    target = stream->EnsureSpace(target);
-    target = ::_pbi::WireFormatLite::WriteUInt32ToArray(9, this->_internal_u_ethernet_vlan(), target);
+    ::google::protobuf::internal::WireFormatLite::WriteUInt32(9, this->u_ethernet_vlan(), output);
   }
 
   // repeated bytes a_SerialNumber = 10;
-  for (int i = 0, n = this->_internal_a_serialnumber_size(); i < n; i++) {
-    const auto& s = this->_internal_a_serialnumber(i);
-    target = stream->WriteBytes(10, s, target);
+  for (int i = 0, n = this->a_serialnumber_size(); i < n; i++) {
+    ::google::protobuf::internal::WireFormatLite::WriteBytes(
+      10, this->a_serialnumber(i), output);
   }
 
   // optional bool b_Deadjusted = 13;
   if (cached_has_bits & 0x00000020u) {
-    target = stream->EnsureSpace(target);
-    target = ::_pbi::WireFormatLite::WriteBoolToArray(13, this->_internal_b_deadjusted(), target);
+    ::google::protobuf::internal::WireFormatLite::WriteBool(13, this->b_deadjusted(), output);
   }
 
   // optional float f_AzAlignAngleDeviation_Far = 14;
   if (cached_has_bits & 0x00000004u) {
-    target = stream->EnsureSpace(target);
-    target = ::_pbi::WireFormatLite::WriteFloatToArray(14, this->_internal_f_azalignangledeviation_far(), target);
+    ::google::protobuf::internal::WireFormatLite::WriteFloat(14, this->f_azalignangledeviation_far(), output);
   }
 
   // optional float f_AzAlignAngleDeviation_Near = 15;
   if (cached_has_bits & 0x00000008u) {
-    target = stream->EnsureSpace(target);
-    target = ::_pbi::WireFormatLite::WriteFloatToArray(15, this->_internal_f_azalignangledeviation_near(), target);
+    ::google::protobuf::internal::WireFormatLite::WriteFloat(15, this->f_azalignangledeviation_near(), output);
   }
 
   // optional float f_ElAlignAngleDeviation = 16;
   if (cached_has_bits & 0x00000010u) {
-    target = stream->EnsureSpace(target);
-    target = ::_pbi::WireFormatLite::WriteFloatToArray(16, this->_internal_f_elalignangledeviation(), target);
+    ::google::protobuf::internal::WireFormatLite::WriteFloat(16, this->f_elalignangledeviation(), output);
   }
 
   // optional bool b_HardwareDefective = 33;
   if (cached_has_bits & 0x00000040u) {
-    target = stream->EnsureSpace(target);
-    target = ::_pbi::WireFormatLite::WriteBoolToArray(33, this->_internal_b_hardwaredefective(), target);
+    ::google::protobuf::internal::WireFormatLite::WriteBool(33, this->b_hardwaredefective(), output);
   }
 
   // optional bool b_ExtDisturbed = 34;
   if (cached_has_bits & 0x00000080u) {
-    target = stream->EnsureSpace(target);
-    target = ::_pbi::WireFormatLite::WriteBoolToArray(34, this->_internal_b_extdisturbed(), target);
+    ::google::protobuf::internal::WireFormatLite::WriteBool(34, this->b_extdisturbed(), output);
   }
 
   // optional bool b_SupplVoltLimit = 35;
   if (cached_has_bits & 0x00000100u) {
-    target = stream->EnsureSpace(target);
-    target = ::_pbi::WireFormatLite::WriteBoolToArray(35, this->_internal_b_supplvoltlimit(), target);
+    ::google::protobuf::internal::WireFormatLite::WriteBool(35, this->b_supplvoltlimit(), output);
   }
 
   // optional bool b_SensorOffTemp = 36;
   if (cached_has_bits & 0x00000200u) {
-    target = stream->EnsureSpace(target);
-    target = ::_pbi::WireFormatLite::WriteBoolToArray(36, this->_internal_b_sensorofftemp(), target);
+    ::google::protobuf::internal::WireFormatLite::WriteBool(36, this->b_sensorofftemp(), output);
   }
 
   // optional bool b_ComError = 37;
   if (cached_has_bits & 0x00000400u) {
-    target = stream->EnsureSpace(target);
-    target = ::_pbi::WireFormatLite::WriteBoolToArray(37, this->_internal_b_comerror(), target);
+    ::google::protobuf::internal::WireFormatLite::WriteBool(37, this->b_comerror(), output);
   }
 
   // optional bool b_SWError = 38;
   if (cached_has_bits & 0x00000800u) {
-    target = stream->EnsureSpace(target);
-    target = ::_pbi::WireFormatLite::WriteBoolToArray(38, this->_internal_b_swerror(), target);
+    ::google::protobuf::internal::WireFormatLite::WriteBool(38, this->b_swerror(), output);
   }
 
   // optional bool b_TxOutReduced = 39;
   if (cached_has_bits & 0x00001000u) {
-    target = stream->EnsureSpace(target);
-    target = ::_pbi::WireFormatLite::WriteBoolToArray(39, this->_internal_b_txoutreduced(), target);
+    ::google::protobuf::internal::WireFormatLite::WriteBool(39, this->b_txoutreduced(), output);
   }
 
-  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
-    target = ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
-        _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
+  if (_internal_metadata_.have_unknown_fields()) {
+    ::google::protobuf::internal::WireFormat::SerializeUnknownFields(
+        _internal_metadata_.unknown_fields(), output);
+  }
+  // @@protoc_insertion_point(serialize_end:pb.PDK.RadarStatus)
+}
+
+::google::protobuf::uint8* RadarStatus::InternalSerializeWithCachedSizesToArray(
+    bool deterministic, ::google::protobuf::uint8* target) const {
+  (void)deterministic; // Unused
+  // @@protoc_insertion_point(serialize_to_array_start:pb.PDK.RadarStatus)
+  ::google::protobuf::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  cached_has_bits = _has_bits_[0];
+  // optional .pb.PDK.SensorMsgHeader t_Header = 1;
+  if (cached_has_bits & 0x00000001u) {
+    target = ::google::protobuf::internal::WireFormatLite::
+      InternalWriteMessageToArray(
+        1, this->_internal_t_header(), deterministic, target);
+  }
+
+  // repeated bytes a_SWVersion = 5;
+  for (int i = 0, n = this->a_swversion_size(); i < n; i++) {
+    target = ::google::protobuf::internal::WireFormatLite::
+      WriteBytesToArray(5, this->a_swversion(i), target);
+  }
+
+  // repeated bytes a_Ethernet_IP = 7;
+  for (int i = 0, n = this->a_ethernet_ip_size(); i < n; i++) {
+    target = ::google::protobuf::internal::WireFormatLite::
+      WriteBytesToArray(7, this->a_ethernet_ip(i), target);
+  }
+
+  // repeated bytes a_Ethernet_MAC = 8;
+  for (int i = 0, n = this->a_ethernet_mac_size(); i < n; i++) {
+    target = ::google::protobuf::internal::WireFormatLite::
+      WriteBytesToArray(8, this->a_ethernet_mac(i), target);
+  }
+
+  // optional uint32 u_Ethernet_VLAN = 9;
+  if (cached_has_bits & 0x00000002u) {
+    target = ::google::protobuf::internal::WireFormatLite::WriteUInt32ToArray(9, this->u_ethernet_vlan(), target);
+  }
+
+  // repeated bytes a_SerialNumber = 10;
+  for (int i = 0, n = this->a_serialnumber_size(); i < n; i++) {
+    target = ::google::protobuf::internal::WireFormatLite::
+      WriteBytesToArray(10, this->a_serialnumber(i), target);
+  }
+
+  // optional bool b_Deadjusted = 13;
+  if (cached_has_bits & 0x00000020u) {
+    target = ::google::protobuf::internal::WireFormatLite::WriteBoolToArray(13, this->b_deadjusted(), target);
+  }
+
+  // optional float f_AzAlignAngleDeviation_Far = 14;
+  if (cached_has_bits & 0x00000004u) {
+    target = ::google::protobuf::internal::WireFormatLite::WriteFloatToArray(14, this->f_azalignangledeviation_far(), target);
+  }
+
+  // optional float f_AzAlignAngleDeviation_Near = 15;
+  if (cached_has_bits & 0x00000008u) {
+    target = ::google::protobuf::internal::WireFormatLite::WriteFloatToArray(15, this->f_azalignangledeviation_near(), target);
+  }
+
+  // optional float f_ElAlignAngleDeviation = 16;
+  if (cached_has_bits & 0x00000010u) {
+    target = ::google::protobuf::internal::WireFormatLite::WriteFloatToArray(16, this->f_elalignangledeviation(), target);
+  }
+
+  // optional bool b_HardwareDefective = 33;
+  if (cached_has_bits & 0x00000040u) {
+    target = ::google::protobuf::internal::WireFormatLite::WriteBoolToArray(33, this->b_hardwaredefective(), target);
+  }
+
+  // optional bool b_ExtDisturbed = 34;
+  if (cached_has_bits & 0x00000080u) {
+    target = ::google::protobuf::internal::WireFormatLite::WriteBoolToArray(34, this->b_extdisturbed(), target);
+  }
+
+  // optional bool b_SupplVoltLimit = 35;
+  if (cached_has_bits & 0x00000100u) {
+    target = ::google::protobuf::internal::WireFormatLite::WriteBoolToArray(35, this->b_supplvoltlimit(), target);
+  }
+
+  // optional bool b_SensorOffTemp = 36;
+  if (cached_has_bits & 0x00000200u) {
+    target = ::google::protobuf::internal::WireFormatLite::WriteBoolToArray(36, this->b_sensorofftemp(), target);
+  }
+
+  // optional bool b_ComError = 37;
+  if (cached_has_bits & 0x00000400u) {
+    target = ::google::protobuf::internal::WireFormatLite::WriteBoolToArray(37, this->b_comerror(), target);
+  }
+
+  // optional bool b_SWError = 38;
+  if (cached_has_bits & 0x00000800u) {
+    target = ::google::protobuf::internal::WireFormatLite::WriteBoolToArray(38, this->b_swerror(), target);
+  }
+
+  // optional bool b_TxOutReduced = 39;
+  if (cached_has_bits & 0x00001000u) {
+    target = ::google::protobuf::internal::WireFormatLite::WriteBoolToArray(39, this->b_txoutreduced(), target);
+  }
+
+  if (_internal_metadata_.have_unknown_fields()) {
+    target = ::google::protobuf::internal::WireFormat::SerializeUnknownFieldsToArray(
+        _internal_metadata_.unknown_fields(), target);
   }
   // @@protoc_insertion_point(serialize_to_array_end:pb.PDK.RadarStatus)
   return target;
@@ -606,134 +747,141 @@ size_t RadarStatus::ByteSizeLong() const {
 // @@protoc_insertion_point(message_byte_size_start:pb.PDK.RadarStatus)
   size_t total_size = 0;
 
-  uint32_t cached_has_bits = 0;
-  // Prevent compiler warnings about cached_has_bits being unused
-  (void) cached_has_bits;
-
+  if (_internal_metadata_.have_unknown_fields()) {
+    total_size +=
+      ::google::protobuf::internal::WireFormat::ComputeUnknownFieldsSize(
+        _internal_metadata_.unknown_fields());
+  }
   // repeated bytes a_SWVersion = 5;
   total_size += 1 *
-      ::PROTOBUF_NAMESPACE_ID::internal::FromIntSize(a_swversion_.size());
-  for (int i = 0, n = a_swversion_.size(); i < n; i++) {
-    total_size += ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::BytesSize(
-      a_swversion_.Get(i));
+      ::google::protobuf::internal::FromIntSize(this->a_swversion_size());
+  for (int i = 0, n = this->a_swversion_size(); i < n; i++) {
+    total_size += ::google::protobuf::internal::WireFormatLite::BytesSize(
+      this->a_swversion(i));
   }
 
   // repeated bytes a_Ethernet_IP = 7;
   total_size += 1 *
-      ::PROTOBUF_NAMESPACE_ID::internal::FromIntSize(a_ethernet_ip_.size());
-  for (int i = 0, n = a_ethernet_ip_.size(); i < n; i++) {
-    total_size += ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::BytesSize(
-      a_ethernet_ip_.Get(i));
+      ::google::protobuf::internal::FromIntSize(this->a_ethernet_ip_size());
+  for (int i = 0, n = this->a_ethernet_ip_size(); i < n; i++) {
+    total_size += ::google::protobuf::internal::WireFormatLite::BytesSize(
+      this->a_ethernet_ip(i));
   }
 
   // repeated bytes a_Ethernet_MAC = 8;
   total_size += 1 *
-      ::PROTOBUF_NAMESPACE_ID::internal::FromIntSize(a_ethernet_mac_.size());
-  for (int i = 0, n = a_ethernet_mac_.size(); i < n; i++) {
-    total_size += ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::BytesSize(
-      a_ethernet_mac_.Get(i));
+      ::google::protobuf::internal::FromIntSize(this->a_ethernet_mac_size());
+  for (int i = 0, n = this->a_ethernet_mac_size(); i < n; i++) {
+    total_size += ::google::protobuf::internal::WireFormatLite::BytesSize(
+      this->a_ethernet_mac(i));
   }
 
   // repeated bytes a_SerialNumber = 10;
   total_size += 1 *
-      ::PROTOBUF_NAMESPACE_ID::internal::FromIntSize(a_serialnumber_.size());
-  for (int i = 0, n = a_serialnumber_.size(); i < n; i++) {
-    total_size += ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::BytesSize(
-      a_serialnumber_.Get(i));
+      ::google::protobuf::internal::FromIntSize(this->a_serialnumber_size());
+  for (int i = 0, n = this->a_serialnumber_size(); i < n; i++) {
+    total_size += ::google::protobuf::internal::WireFormatLite::BytesSize(
+      this->a_serialnumber(i));
   }
 
-  cached_has_bits = _has_bits_[0];
-  if (cached_has_bits & 0x000000ffu) {
+  if (_has_bits_[0 / 32] & 255u) {
     // optional .pb.PDK.SensorMsgHeader t_Header = 1;
-    if (cached_has_bits & 0x00000001u) {
+    if (has_t_header()) {
       total_size += 1 +
-        ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
+        ::google::protobuf::internal::WireFormatLite::MessageSize(
           *t_header_);
     }
 
     // optional uint32 u_Ethernet_VLAN = 9;
-    if (cached_has_bits & 0x00000002u) {
-      total_size += ::_pbi::WireFormatLite::UInt32SizePlusOne(this->_internal_u_ethernet_vlan());
+    if (has_u_ethernet_vlan()) {
+      total_size += 1 +
+        ::google::protobuf::internal::WireFormatLite::UInt32Size(
+          this->u_ethernet_vlan());
     }
 
     // optional float f_AzAlignAngleDeviation_Far = 14;
-    if (cached_has_bits & 0x00000004u) {
+    if (has_f_azalignangledeviation_far()) {
       total_size += 1 + 4;
     }
 
     // optional float f_AzAlignAngleDeviation_Near = 15;
-    if (cached_has_bits & 0x00000008u) {
+    if (has_f_azalignangledeviation_near()) {
       total_size += 1 + 4;
     }
 
     // optional float f_ElAlignAngleDeviation = 16;
-    if (cached_has_bits & 0x00000010u) {
+    if (has_f_elalignangledeviation()) {
       total_size += 2 + 4;
     }
 
     // optional bool b_Deadjusted = 13;
-    if (cached_has_bits & 0x00000020u) {
+    if (has_b_deadjusted()) {
       total_size += 1 + 1;
     }
 
     // optional bool b_HardwareDefective = 33;
-    if (cached_has_bits & 0x00000040u) {
+    if (has_b_hardwaredefective()) {
       total_size += 2 + 1;
     }
 
     // optional bool b_ExtDisturbed = 34;
-    if (cached_has_bits & 0x00000080u) {
+    if (has_b_extdisturbed()) {
       total_size += 2 + 1;
     }
 
   }
-  if (cached_has_bits & 0x00001f00u) {
+  if (_has_bits_[8 / 32] & 7936u) {
     // optional bool b_SupplVoltLimit = 35;
-    if (cached_has_bits & 0x00000100u) {
+    if (has_b_supplvoltlimit()) {
       total_size += 2 + 1;
     }
 
     // optional bool b_SensorOffTemp = 36;
-    if (cached_has_bits & 0x00000200u) {
+    if (has_b_sensorofftemp()) {
       total_size += 2 + 1;
     }
 
     // optional bool b_ComError = 37;
-    if (cached_has_bits & 0x00000400u) {
+    if (has_b_comerror()) {
       total_size += 2 + 1;
     }
 
     // optional bool b_SWError = 38;
-    if (cached_has_bits & 0x00000800u) {
+    if (has_b_swerror()) {
       total_size += 2 + 1;
     }
 
     // optional bool b_TxOutReduced = 39;
-    if (cached_has_bits & 0x00001000u) {
+    if (has_b_txoutreduced()) {
       total_size += 2 + 1;
     }
 
   }
-  return MaybeComputeUnknownFieldsSize(total_size, &_cached_size_);
+  int cached_size = ::google::protobuf::internal::ToCachedSize(total_size);
+  SetCachedSize(cached_size);
+  return total_size;
 }
 
-const ::PROTOBUF_NAMESPACE_ID::Message::ClassData RadarStatus::_class_data_ = {
-    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSizeCheck,
-    RadarStatus::MergeImpl
-};
-const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*RadarStatus::GetClassData() const { return &_class_data_; }
-
-void RadarStatus::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message* to,
-                      const ::PROTOBUF_NAMESPACE_ID::Message& from) {
-  static_cast<RadarStatus *>(to)->MergeFrom(
-      static_cast<const RadarStatus &>(from));
+void RadarStatus::MergeFrom(const ::google::protobuf::Message& from) {
+// @@protoc_insertion_point(generalized_merge_from_start:pb.PDK.RadarStatus)
+  GOOGLE_DCHECK_NE(&from, this);
+  const RadarStatus* source =
+      ::google::protobuf::internal::DynamicCastToGenerated<const RadarStatus>(
+          &from);
+  if (source == NULL) {
+  // @@protoc_insertion_point(generalized_merge_from_cast_fail:pb.PDK.RadarStatus)
+    ::google::protobuf::internal::ReflectionOps::Merge(from, this);
+  } else {
+  // @@protoc_insertion_point(generalized_merge_from_cast_success:pb.PDK.RadarStatus)
+    MergeFrom(*source);
+  }
 }
-
 
 void RadarStatus::MergeFrom(const RadarStatus& from) {
 // @@protoc_insertion_point(class_specific_merge_from_start:pb.PDK.RadarStatus)
   GOOGLE_DCHECK_NE(&from, this);
-  uint32_t cached_has_bits = 0;
+  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  ::google::protobuf::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
   a_swversion_.MergeFrom(from.a_swversion_);
@@ -741,9 +889,9 @@ void RadarStatus::MergeFrom(const RadarStatus& from) {
   a_ethernet_mac_.MergeFrom(from.a_ethernet_mac_);
   a_serialnumber_.MergeFrom(from.a_serialnumber_);
   cached_has_bits = from._has_bits_[0];
-  if (cached_has_bits & 0x000000ffu) {
+  if (cached_has_bits & 255u) {
     if (cached_has_bits & 0x00000001u) {
-      _internal_mutable_t_header()->::pb::PDK::SensorMsgHeader::MergeFrom(from._internal_t_header());
+      mutable_t_header()->::pb::PDK::SensorMsgHeader::MergeFrom(from.t_header());
     }
     if (cached_has_bits & 0x00000002u) {
       u_ethernet_vlan_ = from.u_ethernet_vlan_;
@@ -768,7 +916,7 @@ void RadarStatus::MergeFrom(const RadarStatus& from) {
     }
     _has_bits_[0] |= cached_has_bits;
   }
-  if (cached_has_bits & 0x00001f00u) {
+  if (cached_has_bits & 7936u) {
     if (cached_has_bits & 0x00000100u) {
       b_supplvoltlimit_ = from.b_supplvoltlimit_;
     }
@@ -786,7 +934,13 @@ void RadarStatus::MergeFrom(const RadarStatus& from) {
     }
     _has_bits_[0] |= cached_has_bits;
   }
-  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+}
+
+void RadarStatus::CopyFrom(const ::google::protobuf::Message& from) {
+// @@protoc_insertion_point(generalized_copy_from_start:pb.PDK.RadarStatus)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
 }
 
 void RadarStatus::CopyFrom(const RadarStatus& from) {
@@ -800,37 +954,48 @@ bool RadarStatus::IsInitialized() const {
   return true;
 }
 
+void RadarStatus::Swap(RadarStatus* other) {
+  if (other == this) return;
+  InternalSwap(other);
+}
 void RadarStatus::InternalSwap(RadarStatus* other) {
   using std::swap;
-  _internal_metadata_.InternalSwap(&other->_internal_metadata_);
+  a_swversion_.InternalSwap(CastToBase(&other->a_swversion_));
+  a_ethernet_ip_.InternalSwap(CastToBase(&other->a_ethernet_ip_));
+  a_ethernet_mac_.InternalSwap(CastToBase(&other->a_ethernet_mac_));
+  a_serialnumber_.InternalSwap(CastToBase(&other->a_serialnumber_));
+  swap(t_header_, other->t_header_);
+  swap(u_ethernet_vlan_, other->u_ethernet_vlan_);
+  swap(f_azalignangledeviation_far_, other->f_azalignangledeviation_far_);
+  swap(f_azalignangledeviation_near_, other->f_azalignangledeviation_near_);
+  swap(f_elalignangledeviation_, other->f_elalignangledeviation_);
+  swap(b_deadjusted_, other->b_deadjusted_);
+  swap(b_hardwaredefective_, other->b_hardwaredefective_);
+  swap(b_extdisturbed_, other->b_extdisturbed_);
+  swap(b_supplvoltlimit_, other->b_supplvoltlimit_);
+  swap(b_sensorofftemp_, other->b_sensorofftemp_);
+  swap(b_comerror_, other->b_comerror_);
+  swap(b_swerror_, other->b_swerror_);
+  swap(b_txoutreduced_, other->b_txoutreduced_);
   swap(_has_bits_[0], other->_has_bits_[0]);
-  a_swversion_.InternalSwap(&other->a_swversion_);
-  a_ethernet_ip_.InternalSwap(&other->a_ethernet_ip_);
-  a_ethernet_mac_.InternalSwap(&other->a_ethernet_mac_);
-  a_serialnumber_.InternalSwap(&other->a_serialnumber_);
-  ::PROTOBUF_NAMESPACE_ID::internal::memswap<
-      PROTOBUF_FIELD_OFFSET(RadarStatus, b_txoutreduced_)
-      + sizeof(RadarStatus::b_txoutreduced_)
-      - PROTOBUF_FIELD_OFFSET(RadarStatus, t_header_)>(
-          reinterpret_cast<char*>(&t_header_),
-          reinterpret_cast<char*>(&other->t_header_));
+  _internal_metadata_.Swap(&other->_internal_metadata_);
 }
 
-::PROTOBUF_NAMESPACE_ID::Metadata RadarStatus::GetMetadata() const {
-  return ::_pbi::AssignDescriptors(
-      &descriptor_table_pdk_5fRadarStatus_2eproto_getter, &descriptor_table_pdk_5fRadarStatus_2eproto_once,
-      file_level_metadata_pdk_5fRadarStatus_2eproto[0]);
+::google::protobuf::Metadata RadarStatus::GetMetadata() const {
+  protobuf_pdk_5fRadarStatus_2eproto::protobuf_AssignDescriptorsOnce();
+  return ::protobuf_pdk_5fRadarStatus_2eproto::file_level_metadata[kIndexInFileMessages];
 }
+
 
 // @@protoc_insertion_point(namespace_scope)
 }  // namespace PDK
 }  // namespace pb
-PROTOBUF_NAMESPACE_OPEN
-template<> PROTOBUF_NOINLINE ::pb::PDK::RadarStatus*
-Arena::CreateMaybeMessage< ::pb::PDK::RadarStatus >(Arena* arena) {
-  return Arena::CreateMessageInternal< ::pb::PDK::RadarStatus >(arena);
+namespace google {
+namespace protobuf {
+template<> GOOGLE_PROTOBUF_ATTRIBUTE_NOINLINE ::pb::PDK::RadarStatus* Arena::CreateMaybeMessage< ::pb::PDK::RadarStatus >(Arena* arena) {
+  return Arena::CreateInternal< ::pb::PDK::RadarStatus >(arena);
 }
-PROTOBUF_NAMESPACE_CLOSE
+}  // namespace protobuf
+}  // namespace google
 
 // @@protoc_insertion_point(global_scope)
-#include <google/protobuf/port_undef.inc>

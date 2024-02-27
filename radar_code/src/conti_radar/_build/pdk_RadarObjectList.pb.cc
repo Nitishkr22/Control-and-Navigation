@@ -5,145 +5,123 @@
 
 #include <algorithm>
 
+#include <google/protobuf/stubs/common.h>
+#include <google/protobuf/stubs/port.h>
 #include <google/protobuf/io/coded_stream.h>
-#include <google/protobuf/extension_set.h>
-#include <google/protobuf/wire_format_lite.h>
+#include <google/protobuf/wire_format_lite_inl.h>
 #include <google/protobuf/descriptor.h>
 #include <google/protobuf/generated_message_reflection.h>
 #include <google/protobuf/reflection_ops.h>
 #include <google/protobuf/wire_format.h>
+// This is a temporary google only hack
+#ifdef GOOGLE_PROTOBUF_ENFORCE_UNIQUENESS
+#include "third_party/protobuf/version.h"
+#endif
 // @@protoc_insertion_point(includes)
-#include <google/protobuf/port_def.inc>
 
-PROTOBUF_PRAGMA_INIT_SEG
-
-namespace _pb = ::PROTOBUF_NAMESPACE_ID;
-namespace _pbi = _pb::internal;
-
+namespace protobuf_pdk_5fRadarObjectList_2eproto {
+extern PROTOBUF_INTERNAL_EXPORT_protobuf_pdk_5fRadarObjectList_2eproto ::google::protobuf::internal::SCCInfo<0> scc_info_RadarObjectList_RadarObject;
+}  // namespace protobuf_pdk_5fRadarObjectList_2eproto
+namespace protobuf_pdk_5fSensorMsgHeader_2eproto {
+extern PROTOBUF_INTERNAL_EXPORT_protobuf_pdk_5fSensorMsgHeader_2eproto ::google::protobuf::internal::SCCInfo<1> scc_info_SensorMsgHeader;
+}  // namespace protobuf_pdk_5fSensorMsgHeader_2eproto
 namespace pb {
 namespace PDK {
-PROTOBUF_CONSTEXPR RadarObjectList_RadarObject::RadarObjectList_RadarObject(
-    ::_pbi::ConstantInitialized)
-  : a_classification_()
-  , u_objid_(0u)
-  , f_distx_(0)
-  , f_disty_(0)
-  , f_vrelx_(0)
-  , f_vrely_(0)
-  , f_arelx_(0)
-  , f_arely_(0)
-  , f_distxstd_(0)
-  , f_distystd_(0)
-  , f_vrelxstd_(0)
-  , f_vrelystd_(0)
-  , f_arelxstd_(0)
-  , f_arelystd_(0)
-  , f_ldeltax_left_(0)
-  , f_ldeltax_mid_(0)
-  , f_ldeltax_right_(0)
-  , f_ldeltay_left_(0)
-  , f_ldeltay_mid_(0)
-  , f_ldeltay_right_(0)
-  , e_ldeltaqual_(0)
-
-  , f_rcs_(0)
-  , f_objectscore_(0)
-  , u_lifecycles_(0u)
-  , e_dynamicproperty_(0)
-
-  , e_objstate_(0)
-
-  , f_vabsx_(0)
-  , f_vabsy_(0)
-  , f_aabsx_(0)
-  , f_aabsy_(0)
-  , f_vabsxstd_(0)
-  , f_vabsystd_(0)
-  , f_aabsxstd_(0)
-  , f_aabsystd_(0)
-  , f_orientation_(0)
-  , f_orientationstd_(0)
-  , f_distz_(0)
-  , f_distzstd_(0){}
-struct RadarObjectList_RadarObjectDefaultTypeInternal {
-  PROTOBUF_CONSTEXPR RadarObjectList_RadarObjectDefaultTypeInternal()
-      : _instance(::_pbi::ConstantInitialized{}) {}
-  ~RadarObjectList_RadarObjectDefaultTypeInternal() {}
-  union {
-    RadarObjectList_RadarObject _instance;
-  };
-};
-PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 RadarObjectList_RadarObjectDefaultTypeInternal _RadarObjectList_RadarObject_default_instance_;
-PROTOBUF_CONSTEXPR RadarObjectList::RadarObjectList(
-    ::_pbi::ConstantInitialized)
-  : a_radarobjectlist_()
-  , a_classificationlabels_()
-  , t_header_(nullptr)
-  , f_egovelocity_(0)
-  , f_egoyawrate_(0)
-  , u_nofusedobjects_(0u)
-  , e_providedkinematics_(0)
-{}
-struct RadarObjectListDefaultTypeInternal {
-  PROTOBUF_CONSTEXPR RadarObjectListDefaultTypeInternal()
-      : _instance(::_pbi::ConstantInitialized{}) {}
-  ~RadarObjectListDefaultTypeInternal() {}
-  union {
-    RadarObjectList _instance;
-  };
-};
-PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 RadarObjectListDefaultTypeInternal _RadarObjectList_default_instance_;
+class RadarObjectList_RadarObjectDefaultTypeInternal {
+ public:
+  ::google::protobuf::internal::ExplicitlyConstructed<RadarObjectList_RadarObject>
+      _instance;
+} _RadarObjectList_RadarObject_default_instance_;
+class RadarObjectListDefaultTypeInternal {
+ public:
+  ::google::protobuf::internal::ExplicitlyConstructed<RadarObjectList>
+      _instance;
+} _RadarObjectList_default_instance_;
 }  // namespace PDK
 }  // namespace pb
-static ::_pb::Metadata file_level_metadata_pdk_5fRadarObjectList_2eproto[2];
-static const ::_pb::EnumDescriptor* file_level_enum_descriptors_pdk_5fRadarObjectList_2eproto[4];
-static constexpr ::_pb::ServiceDescriptor const** file_level_service_descriptors_pdk_5fRadarObjectList_2eproto = nullptr;
+namespace protobuf_pdk_5fRadarObjectList_2eproto {
+static void InitDefaultsRadarObjectList_RadarObject() {
+  GOOGLE_PROTOBUF_VERIFY_VERSION;
 
-const uint32_t TableStruct_pdk_5fRadarObjectList_2eproto::offsets[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
-  PROTOBUF_FIELD_OFFSET(::pb::PDK::RadarObjectList_RadarObject, _has_bits_),
-  PROTOBUF_FIELD_OFFSET(::pb::PDK::RadarObjectList_RadarObject, _internal_metadata_),
+  {
+    void* ptr = &::pb::PDK::_RadarObjectList_RadarObject_default_instance_;
+    new (ptr) ::pb::PDK::RadarObjectList_RadarObject();
+    ::google::protobuf::internal::OnShutdownDestroyMessage(ptr);
+  }
+  ::pb::PDK::RadarObjectList_RadarObject::InitAsDefaultInstance();
+}
+
+::google::protobuf::internal::SCCInfo<0> scc_info_RadarObjectList_RadarObject =
+    {{ATOMIC_VAR_INIT(::google::protobuf::internal::SCCInfoBase::kUninitialized), 0, InitDefaultsRadarObjectList_RadarObject}, {}};
+
+static void InitDefaultsRadarObjectList() {
+  GOOGLE_PROTOBUF_VERIFY_VERSION;
+
+  {
+    void* ptr = &::pb::PDK::_RadarObjectList_default_instance_;
+    new (ptr) ::pb::PDK::RadarObjectList();
+    ::google::protobuf::internal::OnShutdownDestroyMessage(ptr);
+  }
+  ::pb::PDK::RadarObjectList::InitAsDefaultInstance();
+}
+
+::google::protobuf::internal::SCCInfo<2> scc_info_RadarObjectList =
+    {{ATOMIC_VAR_INIT(::google::protobuf::internal::SCCInfoBase::kUninitialized), 2, InitDefaultsRadarObjectList}, {
+      &protobuf_pdk_5fSensorMsgHeader_2eproto::scc_info_SensorMsgHeader.base,
+      &protobuf_pdk_5fRadarObjectList_2eproto::scc_info_RadarObjectList_RadarObject.base,}};
+
+void InitDefaults() {
+  ::google::protobuf::internal::InitSCC(&scc_info_RadarObjectList_RadarObject.base);
+  ::google::protobuf::internal::InitSCC(&scc_info_RadarObjectList.base);
+}
+
+::google::protobuf::Metadata file_level_metadata[2];
+const ::google::protobuf::EnumDescriptor* file_level_enum_descriptors[4];
+
+const ::google::protobuf::uint32 TableStruct::offsets[] GOOGLE_PROTOBUF_ATTRIBUTE_SECTION_VARIABLE(protodesc_cold) = {
+  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::pb::PDK::RadarObjectList_RadarObject, _has_bits_),
+  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::pb::PDK::RadarObjectList_RadarObject, _internal_metadata_),
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
-  ~0u,  // no _inlined_string_donated_
-  PROTOBUF_FIELD_OFFSET(::pb::PDK::RadarObjectList_RadarObject, u_objid_),
-  PROTOBUF_FIELD_OFFSET(::pb::PDK::RadarObjectList_RadarObject, f_distx_),
-  PROTOBUF_FIELD_OFFSET(::pb::PDK::RadarObjectList_RadarObject, f_disty_),
-  PROTOBUF_FIELD_OFFSET(::pb::PDK::RadarObjectList_RadarObject, f_vrelx_),
-  PROTOBUF_FIELD_OFFSET(::pb::PDK::RadarObjectList_RadarObject, f_vrely_),
-  PROTOBUF_FIELD_OFFSET(::pb::PDK::RadarObjectList_RadarObject, f_arelx_),
-  PROTOBUF_FIELD_OFFSET(::pb::PDK::RadarObjectList_RadarObject, f_arely_),
-  PROTOBUF_FIELD_OFFSET(::pb::PDK::RadarObjectList_RadarObject, f_distxstd_),
-  PROTOBUF_FIELD_OFFSET(::pb::PDK::RadarObjectList_RadarObject, f_distystd_),
-  PROTOBUF_FIELD_OFFSET(::pb::PDK::RadarObjectList_RadarObject, f_vrelxstd_),
-  PROTOBUF_FIELD_OFFSET(::pb::PDK::RadarObjectList_RadarObject, f_vrelystd_),
-  PROTOBUF_FIELD_OFFSET(::pb::PDK::RadarObjectList_RadarObject, f_arelxstd_),
-  PROTOBUF_FIELD_OFFSET(::pb::PDK::RadarObjectList_RadarObject, f_arelystd_),
-  PROTOBUF_FIELD_OFFSET(::pb::PDK::RadarObjectList_RadarObject, f_ldeltax_left_),
-  PROTOBUF_FIELD_OFFSET(::pb::PDK::RadarObjectList_RadarObject, f_ldeltax_mid_),
-  PROTOBUF_FIELD_OFFSET(::pb::PDK::RadarObjectList_RadarObject, f_ldeltax_right_),
-  PROTOBUF_FIELD_OFFSET(::pb::PDK::RadarObjectList_RadarObject, f_ldeltay_left_),
-  PROTOBUF_FIELD_OFFSET(::pb::PDK::RadarObjectList_RadarObject, f_ldeltay_mid_),
-  PROTOBUF_FIELD_OFFSET(::pb::PDK::RadarObjectList_RadarObject, f_ldeltay_right_),
-  PROTOBUF_FIELD_OFFSET(::pb::PDK::RadarObjectList_RadarObject, e_ldeltaqual_),
-  PROTOBUF_FIELD_OFFSET(::pb::PDK::RadarObjectList_RadarObject, f_rcs_),
-  PROTOBUF_FIELD_OFFSET(::pb::PDK::RadarObjectList_RadarObject, f_objectscore_),
-  PROTOBUF_FIELD_OFFSET(::pb::PDK::RadarObjectList_RadarObject, u_lifecycles_),
-  PROTOBUF_FIELD_OFFSET(::pb::PDK::RadarObjectList_RadarObject, e_dynamicproperty_),
-  PROTOBUF_FIELD_OFFSET(::pb::PDK::RadarObjectList_RadarObject, e_objstate_),
-  PROTOBUF_FIELD_OFFSET(::pb::PDK::RadarObjectList_RadarObject, f_vabsx_),
-  PROTOBUF_FIELD_OFFSET(::pb::PDK::RadarObjectList_RadarObject, f_vabsy_),
-  PROTOBUF_FIELD_OFFSET(::pb::PDK::RadarObjectList_RadarObject, f_aabsx_),
-  PROTOBUF_FIELD_OFFSET(::pb::PDK::RadarObjectList_RadarObject, f_aabsy_),
-  PROTOBUF_FIELD_OFFSET(::pb::PDK::RadarObjectList_RadarObject, f_vabsxstd_),
-  PROTOBUF_FIELD_OFFSET(::pb::PDK::RadarObjectList_RadarObject, f_vabsystd_),
-  PROTOBUF_FIELD_OFFSET(::pb::PDK::RadarObjectList_RadarObject, f_aabsxstd_),
-  PROTOBUF_FIELD_OFFSET(::pb::PDK::RadarObjectList_RadarObject, f_aabsystd_),
-  PROTOBUF_FIELD_OFFSET(::pb::PDK::RadarObjectList_RadarObject, f_orientation_),
-  PROTOBUF_FIELD_OFFSET(::pb::PDK::RadarObjectList_RadarObject, f_orientationstd_),
-  PROTOBUF_FIELD_OFFSET(::pb::PDK::RadarObjectList_RadarObject, f_distz_),
-  PROTOBUF_FIELD_OFFSET(::pb::PDK::RadarObjectList_RadarObject, f_distzstd_),
-  PROTOBUF_FIELD_OFFSET(::pb::PDK::RadarObjectList_RadarObject, a_classification_),
+  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::pb::PDK::RadarObjectList_RadarObject, u_objid_),
+  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::pb::PDK::RadarObjectList_RadarObject, f_distx_),
+  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::pb::PDK::RadarObjectList_RadarObject, f_disty_),
+  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::pb::PDK::RadarObjectList_RadarObject, f_vrelx_),
+  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::pb::PDK::RadarObjectList_RadarObject, f_vrely_),
+  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::pb::PDK::RadarObjectList_RadarObject, f_arelx_),
+  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::pb::PDK::RadarObjectList_RadarObject, f_arely_),
+  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::pb::PDK::RadarObjectList_RadarObject, f_distxstd_),
+  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::pb::PDK::RadarObjectList_RadarObject, f_distystd_),
+  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::pb::PDK::RadarObjectList_RadarObject, f_vrelxstd_),
+  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::pb::PDK::RadarObjectList_RadarObject, f_vrelystd_),
+  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::pb::PDK::RadarObjectList_RadarObject, f_arelxstd_),
+  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::pb::PDK::RadarObjectList_RadarObject, f_arelystd_),
+  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::pb::PDK::RadarObjectList_RadarObject, f_ldeltax_left_),
+  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::pb::PDK::RadarObjectList_RadarObject, f_ldeltax_mid_),
+  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::pb::PDK::RadarObjectList_RadarObject, f_ldeltax_right_),
+  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::pb::PDK::RadarObjectList_RadarObject, f_ldeltay_left_),
+  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::pb::PDK::RadarObjectList_RadarObject, f_ldeltay_mid_),
+  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::pb::PDK::RadarObjectList_RadarObject, f_ldeltay_right_),
+  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::pb::PDK::RadarObjectList_RadarObject, e_ldeltaqual_),
+  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::pb::PDK::RadarObjectList_RadarObject, f_rcs_),
+  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::pb::PDK::RadarObjectList_RadarObject, f_objectscore_),
+  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::pb::PDK::RadarObjectList_RadarObject, u_lifecycles_),
+  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::pb::PDK::RadarObjectList_RadarObject, e_dynamicproperty_),
+  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::pb::PDK::RadarObjectList_RadarObject, e_objstate_),
+  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::pb::PDK::RadarObjectList_RadarObject, f_vabsx_),
+  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::pb::PDK::RadarObjectList_RadarObject, f_vabsy_),
+  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::pb::PDK::RadarObjectList_RadarObject, f_aabsx_),
+  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::pb::PDK::RadarObjectList_RadarObject, f_aabsy_),
+  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::pb::PDK::RadarObjectList_RadarObject, f_vabsxstd_),
+  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::pb::PDK::RadarObjectList_RadarObject, f_vabsystd_),
+  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::pb::PDK::RadarObjectList_RadarObject, f_aabsxstd_),
+  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::pb::PDK::RadarObjectList_RadarObject, f_aabsystd_),
+  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::pb::PDK::RadarObjectList_RadarObject, f_orientation_),
+  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::pb::PDK::RadarObjectList_RadarObject, f_orientationstd_),
+  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::pb::PDK::RadarObjectList_RadarObject, f_distz_),
+  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::pb::PDK::RadarObjectList_RadarObject, f_distzstd_),
+  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::pb::PDK::RadarObjectList_RadarObject, a_classification_),
   0,
   1,
   2,
@@ -182,19 +160,18 @@ const uint32_t TableStruct_pdk_5fRadarObjectList_2eproto::offsets[] PROTOBUF_SEC
   35,
   36,
   ~0u,
-  PROTOBUF_FIELD_OFFSET(::pb::PDK::RadarObjectList, _has_bits_),
-  PROTOBUF_FIELD_OFFSET(::pb::PDK::RadarObjectList, _internal_metadata_),
+  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::pb::PDK::RadarObjectList, _has_bits_),
+  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::pb::PDK::RadarObjectList, _internal_metadata_),
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
-  ~0u,  // no _inlined_string_donated_
-  PROTOBUF_FIELD_OFFSET(::pb::PDK::RadarObjectList, t_header_),
-  PROTOBUF_FIELD_OFFSET(::pb::PDK::RadarObjectList, f_egovelocity_),
-  PROTOBUF_FIELD_OFFSET(::pb::PDK::RadarObjectList, f_egoyawrate_),
-  PROTOBUF_FIELD_OFFSET(::pb::PDK::RadarObjectList, u_nofusedobjects_),
-  PROTOBUF_FIELD_OFFSET(::pb::PDK::RadarObjectList, a_radarobjectlist_),
-  PROTOBUF_FIELD_OFFSET(::pb::PDK::RadarObjectList, e_providedkinematics_),
-  PROTOBUF_FIELD_OFFSET(::pb::PDK::RadarObjectList, a_classificationlabels_),
+  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::pb::PDK::RadarObjectList, t_header_),
+  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::pb::PDK::RadarObjectList, f_egovelocity_),
+  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::pb::PDK::RadarObjectList, f_egoyawrate_),
+  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::pb::PDK::RadarObjectList, u_nofusedobjects_),
+  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::pb::PDK::RadarObjectList, a_radarobjectlist_),
+  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::pb::PDK::RadarObjectList, e_providedkinematics_),
+  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::pb::PDK::RadarObjectList, a_classificationlabels_),
   0,
   1,
   2,
@@ -203,88 +180,108 @@ const uint32_t TableStruct_pdk_5fRadarObjectList_2eproto::offsets[] PROTOBUF_SEC
   4,
   ~0u,
 };
-static const ::_pbi::MigrationSchema schemas[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
-  { 0, 44, -1, sizeof(::pb::PDK::RadarObjectList_RadarObject)},
-  { 82, 95, -1, sizeof(::pb::PDK::RadarObjectList)},
+static const ::google::protobuf::internal::MigrationSchema schemas[] GOOGLE_PROTOBUF_ATTRIBUTE_SECTION_VARIABLE(protodesc_cold) = {
+  { 0, 43, sizeof(::pb::PDK::RadarObjectList_RadarObject)},
+  { 81, 93, sizeof(::pb::PDK::RadarObjectList)},
 };
 
-static const ::_pb::Message* const file_default_instances[] = {
-  &::pb::PDK::_RadarObjectList_RadarObject_default_instance_._instance,
-  &::pb::PDK::_RadarObjectList_default_instance_._instance,
+static ::google::protobuf::Message const * const file_default_instances[] = {
+  reinterpret_cast<const ::google::protobuf::Message*>(&::pb::PDK::_RadarObjectList_RadarObject_default_instance_),
+  reinterpret_cast<const ::google::protobuf::Message*>(&::pb::PDK::_RadarObjectList_default_instance_),
 };
 
-const char descriptor_table_protodef_pdk_5fRadarObjectList_2eproto[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) =
-  "\n\031pdk_RadarObjectList.proto\022\006pb.PDK\032\031pdk"
-  "_SensorMsgHeader.proto\"\360\r\n\017RadarObjectLi"
-  "st\022)\n\010t_Header\030\001 \001(\0132\027.pb.PDK.SensorMsgH"
-  "eader\022\025\n\rf_EgoVelocity\030\003 \001(\002\022\024\n\014f_EgoYaw"
-  "Rate\030\004 \001(\002\022\030\n\020u_NofUsedObjects\030\005 \001(\r\022>\n\021"
-  "a_RadarObjectList\030\006 \003(\0132#.pb.PDK.RadarOb"
-  "jectList.RadarObject\022H\n\024e_ProvidedKinema"
-  "tics\030\010 \001(\0162*.pb.PDK.RadarObjectList.Kine"
-  "maticsProvided\022\036\n\026a_ClassificationLabels"
-  "\030\t \003(\t\032\363\n\n\013RadarObject\022\017\n\007u_ObjId\030\001 \001(\r\022"
-  "\017\n\007f_DistX\030\003 \001(\002\022\017\n\007f_DistY\030\004 \001(\002\022\017\n\007f_V"
-  "relX\030\005 \001(\002\022\017\n\007f_VrelY\030\006 \001(\002\022\017\n\007f_ArelX\030\007"
-  " \001(\002\022\017\n\007f_ArelY\030\010 \001(\002\022\022\n\nf_DistXStd\030\t \001("
-  "\002\022\022\n\nf_DistYStd\030\n \001(\002\022\022\n\nf_VrelXStd\030\013 \001("
-  "\002\022\022\n\nf_VrelYStd\030\014 \001(\002\022\022\n\nf_ArelXStd\030\r \001("
-  "\002\022\022\n\nf_ArelYStd\030\016 \001(\002\022\026\n\016f_LDeltaX_left\030"
-  "\017 \001(\002\022\025\n\rf_LDeltaX_mid\030\020 \001(\002\022\027\n\017f_LDelta"
-  "X_right\030\021 \001(\002\022\026\n\016f_LDeltaY_left\030\022 \001(\002\022\025\n"
-  "\rf_LDeltaY_mid\030\023 \001(\002\022\027\n\017f_LDeltaY_right\030"
-  "\024 \001(\002\022D\n\014e_LDeltaQual\030\025 \001(\0162..pb.PDK.Rad"
-  "arObjectList.RadarObject.LDeltaQual\022\r\n\005f"
-  "_RCS\030\026 \001(\002\022\025\n\rf_ObjectScore\030\027 \001(\002\022\024\n\014u_L"
-  "ifeCycles\030\030 \001(\r\022N\n\021e_DynamicProperty\030\031 \001"
-  "(\01623.pb.PDK.RadarObjectList.RadarObject."
-  "DynamicProperty\022@\n\ne_ObjState\030\032 \001(\0162,.pb"
-  ".PDK.RadarObjectList.RadarObject.ObjStat"
-  "e\022\017\n\007f_VabsX\030\034 \001(\002\022\017\n\007f_VabsY\030\035 \001(\002\022\017\n\007f"
-  "_AabsX\030\036 \001(\002\022\017\n\007f_AabsY\030\037 \001(\002\022\022\n\nf_VabsX"
-  "Std\030  \001(\002\022\022\n\nf_VabsYStd\030! \001(\002\022\022\n\nf_AabsX"
-  "Std\030\" \001(\002\022\022\n\nf_AabsYStd\030# \001(\002\022\025\n\rf_Orien"
-  "tation\030$ \001(\002\022\030\n\020f_OrientationStd\030% \001(\002\022\017"
-  "\n\007f_DistZ\030& \001(\002\022\022\n\nf_DistZStd\030\' \001(\002\022\030\n\020a"
-  "_Classification\030( \003(\002\"\373\001\n\nLDeltaQual\022\033\n\027"
-  "LDELTA_QUAL_ALL_INVALID\020\000\022\032\n\026LDELTA_QUAL"
-  "_LEFT_VALID\020\001\022\031\n\025LDELTA_QUAL_MID_VALID\020\002"
-  "\022\036\n\032LDELTA_QUAL_LEFT_MID_VALID\020\003\022\033\n\027LDEL"
-  "TA_QUAL_RIGHT_VALID\020\004\022 \n\034LDELTA_QUAL_RIG"
-  "HT_LEFT_VALID\020\005\022\037\n\033LDELTA_QUAL_RIGHT_MID"
-  "_VALID\020\006\022\031\n\025LDELTA_QUAL_ALL_VALID\020\007\"l\n\017D"
-  "ynamicProperty\022\023\n\017DYN_PROP_MOVING\020\000\022\027\n\023D"
-  "YN_PROP_STATIONARY\020\001\022\025\n\021DYN_PROP_ONCOMIN"
-  "G\020\002\022\024\n\020DYN_PROP_UNKNOWN\020\003\"a\n\010ObjState\022\024\n"
-  "\020OBJSTATE_DELETED\020\000\022\020\n\014OBJSTATE_NEW\020\001\022\025\n"
-  "\021OBJSTATE_MEASURED\020\002\022\026\n\022OBJSTATE_PREDICT"
-  "ED\020\003\"K\n\022KinematicsProvided\022\014\n\010RELATIVE\020\000"
-  "\022\014\n\010ABSOLUTE\020\001\022\031\n\025RELATIVE_AND_ABSOLUTE\020"
-  "\002"
-  ;
-static const ::_pbi::DescriptorTable* const descriptor_table_pdk_5fRadarObjectList_2eproto_deps[1] = {
-  &::descriptor_table_pdk_5fSensorMsgHeader_2eproto,
-};
-static ::_pbi::once_flag descriptor_table_pdk_5fRadarObjectList_2eproto_once;
-const ::_pbi::DescriptorTable descriptor_table_pdk_5fRadarObjectList_2eproto = {
-    false, false, 1841, descriptor_table_protodef_pdk_5fRadarObjectList_2eproto,
-    "pdk_RadarObjectList.proto",
-    &descriptor_table_pdk_5fRadarObjectList_2eproto_once, descriptor_table_pdk_5fRadarObjectList_2eproto_deps, 1, 2,
-    schemas, file_default_instances, TableStruct_pdk_5fRadarObjectList_2eproto::offsets,
-    file_level_metadata_pdk_5fRadarObjectList_2eproto, file_level_enum_descriptors_pdk_5fRadarObjectList_2eproto,
-    file_level_service_descriptors_pdk_5fRadarObjectList_2eproto,
-};
-PROTOBUF_ATTRIBUTE_WEAK const ::_pbi::DescriptorTable* descriptor_table_pdk_5fRadarObjectList_2eproto_getter() {
-  return &descriptor_table_pdk_5fRadarObjectList_2eproto;
+void protobuf_AssignDescriptors() {
+  AddDescriptors();
+  AssignDescriptors(
+      "pdk_RadarObjectList.proto", schemas, file_default_instances, TableStruct::offsets,
+      file_level_metadata, file_level_enum_descriptors, NULL);
 }
 
-// Force running AddDescriptors() at dynamic initialization time.
-PROTOBUF_ATTRIBUTE_INIT_PRIORITY2 static ::_pbi::AddDescriptorsRunner dynamic_init_dummy_pdk_5fRadarObjectList_2eproto(&descriptor_table_pdk_5fRadarObjectList_2eproto);
+void protobuf_AssignDescriptorsOnce() {
+  static ::google::protobuf::internal::once_flag once;
+  ::google::protobuf::internal::call_once(once, protobuf_AssignDescriptors);
+}
+
+void protobuf_RegisterTypes(const ::std::string&) GOOGLE_PROTOBUF_ATTRIBUTE_COLD;
+void protobuf_RegisterTypes(const ::std::string&) {
+  protobuf_AssignDescriptorsOnce();
+  ::google::protobuf::internal::RegisterAllTypes(file_level_metadata, 2);
+}
+
+void AddDescriptorsImpl() {
+  InitDefaults();
+  static const char descriptor[] GOOGLE_PROTOBUF_ATTRIBUTE_SECTION_VARIABLE(protodesc_cold) = {
+      "\n\031pdk_RadarObjectList.proto\022\006pb.PDK\032\031pdk"
+      "_SensorMsgHeader.proto\"\360\r\n\017RadarObjectLi"
+      "st\022)\n\010t_Header\030\001 \001(\0132\027.pb.PDK.SensorMsgH"
+      "eader\022\025\n\rf_EgoVelocity\030\003 \001(\002\022\024\n\014f_EgoYaw"
+      "Rate\030\004 \001(\002\022\030\n\020u_NofUsedObjects\030\005 \001(\r\022>\n\021"
+      "a_RadarObjectList\030\006 \003(\0132#.pb.PDK.RadarOb"
+      "jectList.RadarObject\022H\n\024e_ProvidedKinema"
+      "tics\030\010 \001(\0162*.pb.PDK.RadarObjectList.Kine"
+      "maticsProvided\022\036\n\026a_ClassificationLabels"
+      "\030\t \003(\t\032\363\n\n\013RadarObject\022\017\n\007u_ObjId\030\001 \001(\r\022"
+      "\017\n\007f_DistX\030\003 \001(\002\022\017\n\007f_DistY\030\004 \001(\002\022\017\n\007f_V"
+      "relX\030\005 \001(\002\022\017\n\007f_VrelY\030\006 \001(\002\022\017\n\007f_ArelX\030\007"
+      " \001(\002\022\017\n\007f_ArelY\030\010 \001(\002\022\022\n\nf_DistXStd\030\t \001("
+      "\002\022\022\n\nf_DistYStd\030\n \001(\002\022\022\n\nf_VrelXStd\030\013 \001("
+      "\002\022\022\n\nf_VrelYStd\030\014 \001(\002\022\022\n\nf_ArelXStd\030\r \001("
+      "\002\022\022\n\nf_ArelYStd\030\016 \001(\002\022\026\n\016f_LDeltaX_left\030"
+      "\017 \001(\002\022\025\n\rf_LDeltaX_mid\030\020 \001(\002\022\027\n\017f_LDelta"
+      "X_right\030\021 \001(\002\022\026\n\016f_LDeltaY_left\030\022 \001(\002\022\025\n"
+      "\rf_LDeltaY_mid\030\023 \001(\002\022\027\n\017f_LDeltaY_right\030"
+      "\024 \001(\002\022D\n\014e_LDeltaQual\030\025 \001(\0162..pb.PDK.Rad"
+      "arObjectList.RadarObject.LDeltaQual\022\r\n\005f"
+      "_RCS\030\026 \001(\002\022\025\n\rf_ObjectScore\030\027 \001(\002\022\024\n\014u_L"
+      "ifeCycles\030\030 \001(\r\022N\n\021e_DynamicProperty\030\031 \001"
+      "(\01623.pb.PDK.RadarObjectList.RadarObject."
+      "DynamicProperty\022@\n\ne_ObjState\030\032 \001(\0162,.pb"
+      ".PDK.RadarObjectList.RadarObject.ObjStat"
+      "e\022\017\n\007f_VabsX\030\034 \001(\002\022\017\n\007f_VabsY\030\035 \001(\002\022\017\n\007f"
+      "_AabsX\030\036 \001(\002\022\017\n\007f_AabsY\030\037 \001(\002\022\022\n\nf_VabsX"
+      "Std\030  \001(\002\022\022\n\nf_VabsYStd\030! \001(\002\022\022\n\nf_AabsX"
+      "Std\030\" \001(\002\022\022\n\nf_AabsYStd\030# \001(\002\022\025\n\rf_Orien"
+      "tation\030$ \001(\002\022\030\n\020f_OrientationStd\030% \001(\002\022\017"
+      "\n\007f_DistZ\030& \001(\002\022\022\n\nf_DistZStd\030\' \001(\002\022\030\n\020a"
+      "_Classification\030( \003(\002\"\373\001\n\nLDeltaQual\022\033\n\027"
+      "LDELTA_QUAL_ALL_INVALID\020\000\022\032\n\026LDELTA_QUAL"
+      "_LEFT_VALID\020\001\022\031\n\025LDELTA_QUAL_MID_VALID\020\002"
+      "\022\036\n\032LDELTA_QUAL_LEFT_MID_VALID\020\003\022\033\n\027LDEL"
+      "TA_QUAL_RIGHT_VALID\020\004\022 \n\034LDELTA_QUAL_RIG"
+      "HT_LEFT_VALID\020\005\022\037\n\033LDELTA_QUAL_RIGHT_MID"
+      "_VALID\020\006\022\031\n\025LDELTA_QUAL_ALL_VALID\020\007\"l\n\017D"
+      "ynamicProperty\022\023\n\017DYN_PROP_MOVING\020\000\022\027\n\023D"
+      "YN_PROP_STATIONARY\020\001\022\025\n\021DYN_PROP_ONCOMIN"
+      "G\020\002\022\024\n\020DYN_PROP_UNKNOWN\020\003\"a\n\010ObjState\022\024\n"
+      "\020OBJSTATE_DELETED\020\000\022\020\n\014OBJSTATE_NEW\020\001\022\025\n"
+      "\021OBJSTATE_MEASURED\020\002\022\026\n\022OBJSTATE_PREDICT"
+      "ED\020\003\"K\n\022KinematicsProvided\022\014\n\010RELATIVE\020\000"
+      "\022\014\n\010ABSOLUTE\020\001\022\031\n\025RELATIVE_AND_ABSOLUTE\020"
+      "\002"
+  };
+  ::google::protobuf::DescriptorPool::InternalAddGeneratedFile(
+      descriptor, 1841);
+  ::google::protobuf::MessageFactory::InternalRegisterGeneratedFile(
+    "pdk_RadarObjectList.proto", &protobuf_RegisterTypes);
+  ::protobuf_pdk_5fSensorMsgHeader_2eproto::AddDescriptors();
+}
+
+void AddDescriptors() {
+  static ::google::protobuf::internal::once_flag once;
+  ::google::protobuf::internal::call_once(once, AddDescriptorsImpl);
+}
+// Force AddDescriptors() to be called at dynamic initialization time.
+struct StaticDescriptorInitializer {
+  StaticDescriptorInitializer() {
+    AddDescriptors();
+  }
+} static_descriptor_initializer;
+}  // namespace protobuf_pdk_5fRadarObjectList_2eproto
 namespace pb {
 namespace PDK {
-const ::PROTOBUF_NAMESPACE_ID::EnumDescriptor* RadarObjectList_RadarObject_LDeltaQual_descriptor() {
-  ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(&descriptor_table_pdk_5fRadarObjectList_2eproto);
-  return file_level_enum_descriptors_pdk_5fRadarObjectList_2eproto[0];
+const ::google::protobuf::EnumDescriptor* RadarObjectList_RadarObject_LDeltaQual_descriptor() {
+  protobuf_pdk_5fRadarObjectList_2eproto::protobuf_AssignDescriptorsOnce();
+  return protobuf_pdk_5fRadarObjectList_2eproto::file_level_enum_descriptors[0];
 }
 bool RadarObjectList_RadarObject_LDeltaQual_IsValid(int value) {
   switch (value) {
@@ -302,22 +299,22 @@ bool RadarObjectList_RadarObject_LDeltaQual_IsValid(int value) {
   }
 }
 
-#if (__cplusplus < 201703) && (!defined(_MSC_VER) || (_MSC_VER >= 1900 && _MSC_VER < 1912))
-constexpr RadarObjectList_RadarObject_LDeltaQual RadarObjectList_RadarObject::LDELTA_QUAL_ALL_INVALID;
-constexpr RadarObjectList_RadarObject_LDeltaQual RadarObjectList_RadarObject::LDELTA_QUAL_LEFT_VALID;
-constexpr RadarObjectList_RadarObject_LDeltaQual RadarObjectList_RadarObject::LDELTA_QUAL_MID_VALID;
-constexpr RadarObjectList_RadarObject_LDeltaQual RadarObjectList_RadarObject::LDELTA_QUAL_LEFT_MID_VALID;
-constexpr RadarObjectList_RadarObject_LDeltaQual RadarObjectList_RadarObject::LDELTA_QUAL_RIGHT_VALID;
-constexpr RadarObjectList_RadarObject_LDeltaQual RadarObjectList_RadarObject::LDELTA_QUAL_RIGHT_LEFT_VALID;
-constexpr RadarObjectList_RadarObject_LDeltaQual RadarObjectList_RadarObject::LDELTA_QUAL_RIGHT_MID_VALID;
-constexpr RadarObjectList_RadarObject_LDeltaQual RadarObjectList_RadarObject::LDELTA_QUAL_ALL_VALID;
-constexpr RadarObjectList_RadarObject_LDeltaQual RadarObjectList_RadarObject::LDeltaQual_MIN;
-constexpr RadarObjectList_RadarObject_LDeltaQual RadarObjectList_RadarObject::LDeltaQual_MAX;
-constexpr int RadarObjectList_RadarObject::LDeltaQual_ARRAYSIZE;
-#endif  // (__cplusplus < 201703) && (!defined(_MSC_VER) || (_MSC_VER >= 1900 && _MSC_VER < 1912))
-const ::PROTOBUF_NAMESPACE_ID::EnumDescriptor* RadarObjectList_RadarObject_DynamicProperty_descriptor() {
-  ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(&descriptor_table_pdk_5fRadarObjectList_2eproto);
-  return file_level_enum_descriptors_pdk_5fRadarObjectList_2eproto[1];
+#if !defined(_MSC_VER) || _MSC_VER >= 1900
+const RadarObjectList_RadarObject_LDeltaQual RadarObjectList_RadarObject::LDELTA_QUAL_ALL_INVALID;
+const RadarObjectList_RadarObject_LDeltaQual RadarObjectList_RadarObject::LDELTA_QUAL_LEFT_VALID;
+const RadarObjectList_RadarObject_LDeltaQual RadarObjectList_RadarObject::LDELTA_QUAL_MID_VALID;
+const RadarObjectList_RadarObject_LDeltaQual RadarObjectList_RadarObject::LDELTA_QUAL_LEFT_MID_VALID;
+const RadarObjectList_RadarObject_LDeltaQual RadarObjectList_RadarObject::LDELTA_QUAL_RIGHT_VALID;
+const RadarObjectList_RadarObject_LDeltaQual RadarObjectList_RadarObject::LDELTA_QUAL_RIGHT_LEFT_VALID;
+const RadarObjectList_RadarObject_LDeltaQual RadarObjectList_RadarObject::LDELTA_QUAL_RIGHT_MID_VALID;
+const RadarObjectList_RadarObject_LDeltaQual RadarObjectList_RadarObject::LDELTA_QUAL_ALL_VALID;
+const RadarObjectList_RadarObject_LDeltaQual RadarObjectList_RadarObject::LDeltaQual_MIN;
+const RadarObjectList_RadarObject_LDeltaQual RadarObjectList_RadarObject::LDeltaQual_MAX;
+const int RadarObjectList_RadarObject::LDeltaQual_ARRAYSIZE;
+#endif  // !defined(_MSC_VER) || _MSC_VER >= 1900
+const ::google::protobuf::EnumDescriptor* RadarObjectList_RadarObject_DynamicProperty_descriptor() {
+  protobuf_pdk_5fRadarObjectList_2eproto::protobuf_AssignDescriptorsOnce();
+  return protobuf_pdk_5fRadarObjectList_2eproto::file_level_enum_descriptors[1];
 }
 bool RadarObjectList_RadarObject_DynamicProperty_IsValid(int value) {
   switch (value) {
@@ -331,18 +328,18 @@ bool RadarObjectList_RadarObject_DynamicProperty_IsValid(int value) {
   }
 }
 
-#if (__cplusplus < 201703) && (!defined(_MSC_VER) || (_MSC_VER >= 1900 && _MSC_VER < 1912))
-constexpr RadarObjectList_RadarObject_DynamicProperty RadarObjectList_RadarObject::DYN_PROP_MOVING;
-constexpr RadarObjectList_RadarObject_DynamicProperty RadarObjectList_RadarObject::DYN_PROP_STATIONARY;
-constexpr RadarObjectList_RadarObject_DynamicProperty RadarObjectList_RadarObject::DYN_PROP_ONCOMING;
-constexpr RadarObjectList_RadarObject_DynamicProperty RadarObjectList_RadarObject::DYN_PROP_UNKNOWN;
-constexpr RadarObjectList_RadarObject_DynamicProperty RadarObjectList_RadarObject::DynamicProperty_MIN;
-constexpr RadarObjectList_RadarObject_DynamicProperty RadarObjectList_RadarObject::DynamicProperty_MAX;
-constexpr int RadarObjectList_RadarObject::DynamicProperty_ARRAYSIZE;
-#endif  // (__cplusplus < 201703) && (!defined(_MSC_VER) || (_MSC_VER >= 1900 && _MSC_VER < 1912))
-const ::PROTOBUF_NAMESPACE_ID::EnumDescriptor* RadarObjectList_RadarObject_ObjState_descriptor() {
-  ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(&descriptor_table_pdk_5fRadarObjectList_2eproto);
-  return file_level_enum_descriptors_pdk_5fRadarObjectList_2eproto[2];
+#if !defined(_MSC_VER) || _MSC_VER >= 1900
+const RadarObjectList_RadarObject_DynamicProperty RadarObjectList_RadarObject::DYN_PROP_MOVING;
+const RadarObjectList_RadarObject_DynamicProperty RadarObjectList_RadarObject::DYN_PROP_STATIONARY;
+const RadarObjectList_RadarObject_DynamicProperty RadarObjectList_RadarObject::DYN_PROP_ONCOMING;
+const RadarObjectList_RadarObject_DynamicProperty RadarObjectList_RadarObject::DYN_PROP_UNKNOWN;
+const RadarObjectList_RadarObject_DynamicProperty RadarObjectList_RadarObject::DynamicProperty_MIN;
+const RadarObjectList_RadarObject_DynamicProperty RadarObjectList_RadarObject::DynamicProperty_MAX;
+const int RadarObjectList_RadarObject::DynamicProperty_ARRAYSIZE;
+#endif  // !defined(_MSC_VER) || _MSC_VER >= 1900
+const ::google::protobuf::EnumDescriptor* RadarObjectList_RadarObject_ObjState_descriptor() {
+  protobuf_pdk_5fRadarObjectList_2eproto::protobuf_AssignDescriptorsOnce();
+  return protobuf_pdk_5fRadarObjectList_2eproto::file_level_enum_descriptors[2];
 }
 bool RadarObjectList_RadarObject_ObjState_IsValid(int value) {
   switch (value) {
@@ -356,18 +353,18 @@ bool RadarObjectList_RadarObject_ObjState_IsValid(int value) {
   }
 }
 
-#if (__cplusplus < 201703) && (!defined(_MSC_VER) || (_MSC_VER >= 1900 && _MSC_VER < 1912))
-constexpr RadarObjectList_RadarObject_ObjState RadarObjectList_RadarObject::OBJSTATE_DELETED;
-constexpr RadarObjectList_RadarObject_ObjState RadarObjectList_RadarObject::OBJSTATE_NEW;
-constexpr RadarObjectList_RadarObject_ObjState RadarObjectList_RadarObject::OBJSTATE_MEASURED;
-constexpr RadarObjectList_RadarObject_ObjState RadarObjectList_RadarObject::OBJSTATE_PREDICTED;
-constexpr RadarObjectList_RadarObject_ObjState RadarObjectList_RadarObject::ObjState_MIN;
-constexpr RadarObjectList_RadarObject_ObjState RadarObjectList_RadarObject::ObjState_MAX;
-constexpr int RadarObjectList_RadarObject::ObjState_ARRAYSIZE;
-#endif  // (__cplusplus < 201703) && (!defined(_MSC_VER) || (_MSC_VER >= 1900 && _MSC_VER < 1912))
-const ::PROTOBUF_NAMESPACE_ID::EnumDescriptor* RadarObjectList_KinematicsProvided_descriptor() {
-  ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(&descriptor_table_pdk_5fRadarObjectList_2eproto);
-  return file_level_enum_descriptors_pdk_5fRadarObjectList_2eproto[3];
+#if !defined(_MSC_VER) || _MSC_VER >= 1900
+const RadarObjectList_RadarObject_ObjState RadarObjectList_RadarObject::OBJSTATE_DELETED;
+const RadarObjectList_RadarObject_ObjState RadarObjectList_RadarObject::OBJSTATE_NEW;
+const RadarObjectList_RadarObject_ObjState RadarObjectList_RadarObject::OBJSTATE_MEASURED;
+const RadarObjectList_RadarObject_ObjState RadarObjectList_RadarObject::OBJSTATE_PREDICTED;
+const RadarObjectList_RadarObject_ObjState RadarObjectList_RadarObject::ObjState_MIN;
+const RadarObjectList_RadarObject_ObjState RadarObjectList_RadarObject::ObjState_MAX;
+const int RadarObjectList_RadarObject::ObjState_ARRAYSIZE;
+#endif  // !defined(_MSC_VER) || _MSC_VER >= 1900
+const ::google::protobuf::EnumDescriptor* RadarObjectList_KinematicsProvided_descriptor() {
+  protobuf_pdk_5fRadarObjectList_2eproto::protobuf_AssignDescriptorsOnce();
+  return protobuf_pdk_5fRadarObjectList_2eproto::file_level_enum_descriptors[3];
 }
 bool RadarObjectList_KinematicsProvided_IsValid(int value) {
   switch (value) {
@@ -380,845 +377,1143 @@ bool RadarObjectList_KinematicsProvided_IsValid(int value) {
   }
 }
 
-#if (__cplusplus < 201703) && (!defined(_MSC_VER) || (_MSC_VER >= 1900 && _MSC_VER < 1912))
-constexpr RadarObjectList_KinematicsProvided RadarObjectList::RELATIVE;
-constexpr RadarObjectList_KinematicsProvided RadarObjectList::ABSOLUTE;
-constexpr RadarObjectList_KinematicsProvided RadarObjectList::RELATIVE_AND_ABSOLUTE;
-constexpr RadarObjectList_KinematicsProvided RadarObjectList::KinematicsProvided_MIN;
-constexpr RadarObjectList_KinematicsProvided RadarObjectList::KinematicsProvided_MAX;
-constexpr int RadarObjectList::KinematicsProvided_ARRAYSIZE;
-#endif  // (__cplusplus < 201703) && (!defined(_MSC_VER) || (_MSC_VER >= 1900 && _MSC_VER < 1912))
+#if !defined(_MSC_VER) || _MSC_VER >= 1900
+const RadarObjectList_KinematicsProvided RadarObjectList::RELATIVE;
+const RadarObjectList_KinematicsProvided RadarObjectList::ABSOLUTE;
+const RadarObjectList_KinematicsProvided RadarObjectList::RELATIVE_AND_ABSOLUTE;
+const RadarObjectList_KinematicsProvided RadarObjectList::KinematicsProvided_MIN;
+const RadarObjectList_KinematicsProvided RadarObjectList::KinematicsProvided_MAX;
+const int RadarObjectList::KinematicsProvided_ARRAYSIZE;
+#endif  // !defined(_MSC_VER) || _MSC_VER >= 1900
 
 // ===================================================================
 
-class RadarObjectList_RadarObject::_Internal {
- public:
-  using HasBits = decltype(std::declval<RadarObjectList_RadarObject>()._has_bits_);
-  static void set_has_u_objid(HasBits* has_bits) {
-    (*has_bits)[0] |= 1u;
-  }
-  static void set_has_f_distx(HasBits* has_bits) {
-    (*has_bits)[0] |= 2u;
-  }
-  static void set_has_f_disty(HasBits* has_bits) {
-    (*has_bits)[0] |= 4u;
-  }
-  static void set_has_f_vrelx(HasBits* has_bits) {
-    (*has_bits)[0] |= 8u;
-  }
-  static void set_has_f_vrely(HasBits* has_bits) {
-    (*has_bits)[0] |= 16u;
-  }
-  static void set_has_f_arelx(HasBits* has_bits) {
-    (*has_bits)[0] |= 32u;
-  }
-  static void set_has_f_arely(HasBits* has_bits) {
-    (*has_bits)[0] |= 64u;
-  }
-  static void set_has_f_distxstd(HasBits* has_bits) {
-    (*has_bits)[0] |= 128u;
-  }
-  static void set_has_f_distystd(HasBits* has_bits) {
-    (*has_bits)[0] |= 256u;
-  }
-  static void set_has_f_vrelxstd(HasBits* has_bits) {
-    (*has_bits)[0] |= 512u;
-  }
-  static void set_has_f_vrelystd(HasBits* has_bits) {
-    (*has_bits)[0] |= 1024u;
-  }
-  static void set_has_f_arelxstd(HasBits* has_bits) {
-    (*has_bits)[0] |= 2048u;
-  }
-  static void set_has_f_arelystd(HasBits* has_bits) {
-    (*has_bits)[0] |= 4096u;
-  }
-  static void set_has_f_ldeltax_left(HasBits* has_bits) {
-    (*has_bits)[0] |= 8192u;
-  }
-  static void set_has_f_ldeltax_mid(HasBits* has_bits) {
-    (*has_bits)[0] |= 16384u;
-  }
-  static void set_has_f_ldeltax_right(HasBits* has_bits) {
-    (*has_bits)[0] |= 32768u;
-  }
-  static void set_has_f_ldeltay_left(HasBits* has_bits) {
-    (*has_bits)[0] |= 65536u;
-  }
-  static void set_has_f_ldeltay_mid(HasBits* has_bits) {
-    (*has_bits)[0] |= 131072u;
-  }
-  static void set_has_f_ldeltay_right(HasBits* has_bits) {
-    (*has_bits)[0] |= 262144u;
-  }
-  static void set_has_e_ldeltaqual(HasBits* has_bits) {
-    (*has_bits)[0] |= 524288u;
-  }
-  static void set_has_f_rcs(HasBits* has_bits) {
-    (*has_bits)[0] |= 1048576u;
-  }
-  static void set_has_f_objectscore(HasBits* has_bits) {
-    (*has_bits)[0] |= 2097152u;
-  }
-  static void set_has_u_lifecycles(HasBits* has_bits) {
-    (*has_bits)[0] |= 4194304u;
-  }
-  static void set_has_e_dynamicproperty(HasBits* has_bits) {
-    (*has_bits)[0] |= 8388608u;
-  }
-  static void set_has_e_objstate(HasBits* has_bits) {
-    (*has_bits)[0] |= 16777216u;
-  }
-  static void set_has_f_vabsx(HasBits* has_bits) {
-    (*has_bits)[0] |= 33554432u;
-  }
-  static void set_has_f_vabsy(HasBits* has_bits) {
-    (*has_bits)[0] |= 67108864u;
-  }
-  static void set_has_f_aabsx(HasBits* has_bits) {
-    (*has_bits)[0] |= 134217728u;
-  }
-  static void set_has_f_aabsy(HasBits* has_bits) {
-    (*has_bits)[0] |= 268435456u;
-  }
-  static void set_has_f_vabsxstd(HasBits* has_bits) {
-    (*has_bits)[0] |= 536870912u;
-  }
-  static void set_has_f_vabsystd(HasBits* has_bits) {
-    (*has_bits)[0] |= 1073741824u;
-  }
-  static void set_has_f_aabsxstd(HasBits* has_bits) {
-    (*has_bits)[0] |= 2147483648u;
-  }
-  static void set_has_f_aabsystd(HasBits* has_bits) {
-    (*has_bits)[1] |= 1u;
-  }
-  static void set_has_f_orientation(HasBits* has_bits) {
-    (*has_bits)[1] |= 2u;
-  }
-  static void set_has_f_orientationstd(HasBits* has_bits) {
-    (*has_bits)[1] |= 4u;
-  }
-  static void set_has_f_distz(HasBits* has_bits) {
-    (*has_bits)[1] |= 8u;
-  }
-  static void set_has_f_distzstd(HasBits* has_bits) {
-    (*has_bits)[1] |= 16u;
-  }
-};
+void RadarObjectList_RadarObject::InitAsDefaultInstance() {
+}
+#if !defined(_MSC_VER) || _MSC_VER >= 1900
+const int RadarObjectList_RadarObject::kUObjIdFieldNumber;
+const int RadarObjectList_RadarObject::kFDistXFieldNumber;
+const int RadarObjectList_RadarObject::kFDistYFieldNumber;
+const int RadarObjectList_RadarObject::kFVrelXFieldNumber;
+const int RadarObjectList_RadarObject::kFVrelYFieldNumber;
+const int RadarObjectList_RadarObject::kFArelXFieldNumber;
+const int RadarObjectList_RadarObject::kFArelYFieldNumber;
+const int RadarObjectList_RadarObject::kFDistXStdFieldNumber;
+const int RadarObjectList_RadarObject::kFDistYStdFieldNumber;
+const int RadarObjectList_RadarObject::kFVrelXStdFieldNumber;
+const int RadarObjectList_RadarObject::kFVrelYStdFieldNumber;
+const int RadarObjectList_RadarObject::kFArelXStdFieldNumber;
+const int RadarObjectList_RadarObject::kFArelYStdFieldNumber;
+const int RadarObjectList_RadarObject::kFLDeltaXLeftFieldNumber;
+const int RadarObjectList_RadarObject::kFLDeltaXMidFieldNumber;
+const int RadarObjectList_RadarObject::kFLDeltaXRightFieldNumber;
+const int RadarObjectList_RadarObject::kFLDeltaYLeftFieldNumber;
+const int RadarObjectList_RadarObject::kFLDeltaYMidFieldNumber;
+const int RadarObjectList_RadarObject::kFLDeltaYRightFieldNumber;
+const int RadarObjectList_RadarObject::kELDeltaQualFieldNumber;
+const int RadarObjectList_RadarObject::kFRCSFieldNumber;
+const int RadarObjectList_RadarObject::kFObjectScoreFieldNumber;
+const int RadarObjectList_RadarObject::kULifeCyclesFieldNumber;
+const int RadarObjectList_RadarObject::kEDynamicPropertyFieldNumber;
+const int RadarObjectList_RadarObject::kEObjStateFieldNumber;
+const int RadarObjectList_RadarObject::kFVabsXFieldNumber;
+const int RadarObjectList_RadarObject::kFVabsYFieldNumber;
+const int RadarObjectList_RadarObject::kFAabsXFieldNumber;
+const int RadarObjectList_RadarObject::kFAabsYFieldNumber;
+const int RadarObjectList_RadarObject::kFVabsXStdFieldNumber;
+const int RadarObjectList_RadarObject::kFVabsYStdFieldNumber;
+const int RadarObjectList_RadarObject::kFAabsXStdFieldNumber;
+const int RadarObjectList_RadarObject::kFAabsYStdFieldNumber;
+const int RadarObjectList_RadarObject::kFOrientationFieldNumber;
+const int RadarObjectList_RadarObject::kFOrientationStdFieldNumber;
+const int RadarObjectList_RadarObject::kFDistZFieldNumber;
+const int RadarObjectList_RadarObject::kFDistZStdFieldNumber;
+const int RadarObjectList_RadarObject::kAClassificationFieldNumber;
+#endif  // !defined(_MSC_VER) || _MSC_VER >= 1900
 
-RadarObjectList_RadarObject::RadarObjectList_RadarObject(::PROTOBUF_NAMESPACE_ID::Arena* arena,
-                         bool is_message_owned)
-  : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned),
-  a_classification_(arena) {
+RadarObjectList_RadarObject::RadarObjectList_RadarObject()
+  : ::google::protobuf::Message(), _internal_metadata_(NULL) {
+  ::google::protobuf::internal::InitSCC(
+      &protobuf_pdk_5fRadarObjectList_2eproto::scc_info_RadarObjectList_RadarObject.base);
   SharedCtor();
-  // @@protoc_insertion_point(arena_constructor:pb.PDK.RadarObjectList.RadarObject)
+  // @@protoc_insertion_point(constructor:pb.PDK.RadarObjectList.RadarObject)
 }
 RadarObjectList_RadarObject::RadarObjectList_RadarObject(const RadarObjectList_RadarObject& from)
-  : ::PROTOBUF_NAMESPACE_ID::Message(),
+  : ::google::protobuf::Message(),
+      _internal_metadata_(NULL),
       _has_bits_(from._has_bits_),
       a_classification_(from.a_classification_) {
-  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  _internal_metadata_.MergeFrom(from._internal_metadata_);
   ::memcpy(&u_objid_, &from.u_objid_,
     static_cast<size_t>(reinterpret_cast<char*>(&f_distzstd_) -
     reinterpret_cast<char*>(&u_objid_)) + sizeof(f_distzstd_));
   // @@protoc_insertion_point(copy_constructor:pb.PDK.RadarObjectList.RadarObject)
 }
 
-inline void RadarObjectList_RadarObject::SharedCtor() {
-::memset(reinterpret_cast<char*>(this) + static_cast<size_t>(
-    reinterpret_cast<char*>(&u_objid_) - reinterpret_cast<char*>(this)),
-    0, static_cast<size_t>(reinterpret_cast<char*>(&f_distzstd_) -
-    reinterpret_cast<char*>(&u_objid_)) + sizeof(f_distzstd_));
+void RadarObjectList_RadarObject::SharedCtor() {
+  ::memset(&u_objid_, 0, static_cast<size_t>(
+      reinterpret_cast<char*>(&f_distzstd_) -
+      reinterpret_cast<char*>(&u_objid_)) + sizeof(f_distzstd_));
 }
 
 RadarObjectList_RadarObject::~RadarObjectList_RadarObject() {
   // @@protoc_insertion_point(destructor:pb.PDK.RadarObjectList.RadarObject)
-  if (auto *arena = _internal_metadata_.DeleteReturnArena<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>()) {
-  (void)arena;
-    return;
-  }
   SharedDtor();
 }
 
-inline void RadarObjectList_RadarObject::SharedDtor() {
-  GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
+void RadarObjectList_RadarObject::SharedDtor() {
 }
 
 void RadarObjectList_RadarObject::SetCachedSize(int size) const {
   _cached_size_.Set(size);
 }
+const ::google::protobuf::Descriptor* RadarObjectList_RadarObject::descriptor() {
+  ::protobuf_pdk_5fRadarObjectList_2eproto::protobuf_AssignDescriptorsOnce();
+  return ::protobuf_pdk_5fRadarObjectList_2eproto::file_level_metadata[kIndexInFileMessages].descriptor;
+}
+
+const RadarObjectList_RadarObject& RadarObjectList_RadarObject::default_instance() {
+  ::google::protobuf::internal::InitSCC(&protobuf_pdk_5fRadarObjectList_2eproto::scc_info_RadarObjectList_RadarObject.base);
+  return *internal_default_instance();
+}
+
 
 void RadarObjectList_RadarObject::Clear() {
 // @@protoc_insertion_point(message_clear_start:pb.PDK.RadarObjectList.RadarObject)
-  uint32_t cached_has_bits = 0;
+  ::google::protobuf::uint32 cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
   a_classification_.Clear();
   cached_has_bits = _has_bits_[0];
-  if (cached_has_bits & 0x000000ffu) {
+  if (cached_has_bits & 255u) {
     ::memset(&u_objid_, 0, static_cast<size_t>(
         reinterpret_cast<char*>(&f_distxstd_) -
         reinterpret_cast<char*>(&u_objid_)) + sizeof(f_distxstd_));
   }
-  if (cached_has_bits & 0x0000ff00u) {
+  if (cached_has_bits & 65280u) {
     ::memset(&f_distystd_, 0, static_cast<size_t>(
         reinterpret_cast<char*>(&f_ldeltax_right_) -
         reinterpret_cast<char*>(&f_distystd_)) + sizeof(f_ldeltax_right_));
   }
-  if (cached_has_bits & 0x00ff0000u) {
+  if (cached_has_bits & 16711680u) {
     ::memset(&f_ldeltay_left_, 0, static_cast<size_t>(
         reinterpret_cast<char*>(&e_dynamicproperty_) -
         reinterpret_cast<char*>(&f_ldeltay_left_)) + sizeof(e_dynamicproperty_));
   }
-  if (cached_has_bits & 0xff000000u) {
+  if (cached_has_bits & 4278190080u) {
     ::memset(&e_objstate_, 0, static_cast<size_t>(
         reinterpret_cast<char*>(&f_aabsxstd_) -
         reinterpret_cast<char*>(&e_objstate_)) + sizeof(f_aabsxstd_));
   }
   cached_has_bits = _has_bits_[1];
-  if (cached_has_bits & 0x0000001fu) {
+  if (cached_has_bits & 31u) {
     ::memset(&f_aabsystd_, 0, static_cast<size_t>(
         reinterpret_cast<char*>(&f_distzstd_) -
         reinterpret_cast<char*>(&f_aabsystd_)) + sizeof(f_distzstd_));
   }
   _has_bits_.Clear();
-  _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
+  _internal_metadata_.Clear();
 }
 
-const char* RadarObjectList_RadarObject::_InternalParse(const char* ptr, ::_pbi::ParseContext* ctx) {
-#define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
-  while (!ctx->Done(&ptr)) {
-    uint32_t tag;
-    ptr = ::_pbi::ReadTag(ptr, &tag);
-    switch (tag >> 3) {
+bool RadarObjectList_RadarObject::MergePartialFromCodedStream(
+    ::google::protobuf::io::CodedInputStream* input) {
+#define DO_(EXPRESSION) if (!GOOGLE_PREDICT_TRUE(EXPRESSION)) goto failure
+  ::google::protobuf::uint32 tag;
+  // @@protoc_insertion_point(parse_start:pb.PDK.RadarObjectList.RadarObject)
+  for (;;) {
+    ::std::pair<::google::protobuf::uint32, bool> p = input->ReadTagWithCutoffNoLastTag(16383u);
+    tag = p.first;
+    if (!p.second) goto handle_unusual;
+    switch (::google::protobuf::internal::WireFormatLite::GetTagFieldNumber(tag)) {
       // optional uint32 u_ObjId = 1;
-      case 1:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 8)) {
-          _Internal::set_has_u_objid(&_has_bits_);
-          u_objid_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
-          CHK_(ptr);
-        } else
+      case 1: {
+        if (static_cast< ::google::protobuf::uint8>(tag) ==
+            static_cast< ::google::protobuf::uint8>(8u /* 8 & 0xFF */)) {
+          set_has_u_objid();
+          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
+                   ::google::protobuf::uint32, ::google::protobuf::internal::WireFormatLite::TYPE_UINT32>(
+                 input, &u_objid_)));
+        } else {
           goto handle_unusual;
-        continue;
+        }
+        break;
+      }
+
       // optional float f_DistX = 3;
-      case 3:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 29)) {
-          _Internal::set_has_f_distx(&_has_bits_);
-          f_distx_ = ::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<float>(ptr);
-          ptr += sizeof(float);
-        } else
+      case 3: {
+        if (static_cast< ::google::protobuf::uint8>(tag) ==
+            static_cast< ::google::protobuf::uint8>(29u /* 29 & 0xFF */)) {
+          set_has_f_distx();
+          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
+                   float, ::google::protobuf::internal::WireFormatLite::TYPE_FLOAT>(
+                 input, &f_distx_)));
+        } else {
           goto handle_unusual;
-        continue;
+        }
+        break;
+      }
+
       // optional float f_DistY = 4;
-      case 4:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 37)) {
-          _Internal::set_has_f_disty(&_has_bits_);
-          f_disty_ = ::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<float>(ptr);
-          ptr += sizeof(float);
-        } else
+      case 4: {
+        if (static_cast< ::google::protobuf::uint8>(tag) ==
+            static_cast< ::google::protobuf::uint8>(37u /* 37 & 0xFF */)) {
+          set_has_f_disty();
+          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
+                   float, ::google::protobuf::internal::WireFormatLite::TYPE_FLOAT>(
+                 input, &f_disty_)));
+        } else {
           goto handle_unusual;
-        continue;
+        }
+        break;
+      }
+
       // optional float f_VrelX = 5;
-      case 5:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 45)) {
-          _Internal::set_has_f_vrelx(&_has_bits_);
-          f_vrelx_ = ::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<float>(ptr);
-          ptr += sizeof(float);
-        } else
+      case 5: {
+        if (static_cast< ::google::protobuf::uint8>(tag) ==
+            static_cast< ::google::protobuf::uint8>(45u /* 45 & 0xFF */)) {
+          set_has_f_vrelx();
+          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
+                   float, ::google::protobuf::internal::WireFormatLite::TYPE_FLOAT>(
+                 input, &f_vrelx_)));
+        } else {
           goto handle_unusual;
-        continue;
+        }
+        break;
+      }
+
       // optional float f_VrelY = 6;
-      case 6:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 53)) {
-          _Internal::set_has_f_vrely(&_has_bits_);
-          f_vrely_ = ::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<float>(ptr);
-          ptr += sizeof(float);
-        } else
+      case 6: {
+        if (static_cast< ::google::protobuf::uint8>(tag) ==
+            static_cast< ::google::protobuf::uint8>(53u /* 53 & 0xFF */)) {
+          set_has_f_vrely();
+          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
+                   float, ::google::protobuf::internal::WireFormatLite::TYPE_FLOAT>(
+                 input, &f_vrely_)));
+        } else {
           goto handle_unusual;
-        continue;
+        }
+        break;
+      }
+
       // optional float f_ArelX = 7;
-      case 7:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 61)) {
-          _Internal::set_has_f_arelx(&_has_bits_);
-          f_arelx_ = ::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<float>(ptr);
-          ptr += sizeof(float);
-        } else
+      case 7: {
+        if (static_cast< ::google::protobuf::uint8>(tag) ==
+            static_cast< ::google::protobuf::uint8>(61u /* 61 & 0xFF */)) {
+          set_has_f_arelx();
+          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
+                   float, ::google::protobuf::internal::WireFormatLite::TYPE_FLOAT>(
+                 input, &f_arelx_)));
+        } else {
           goto handle_unusual;
-        continue;
+        }
+        break;
+      }
+
       // optional float f_ArelY = 8;
-      case 8:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 69)) {
-          _Internal::set_has_f_arely(&_has_bits_);
-          f_arely_ = ::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<float>(ptr);
-          ptr += sizeof(float);
-        } else
+      case 8: {
+        if (static_cast< ::google::protobuf::uint8>(tag) ==
+            static_cast< ::google::protobuf::uint8>(69u /* 69 & 0xFF */)) {
+          set_has_f_arely();
+          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
+                   float, ::google::protobuf::internal::WireFormatLite::TYPE_FLOAT>(
+                 input, &f_arely_)));
+        } else {
           goto handle_unusual;
-        continue;
+        }
+        break;
+      }
+
       // optional float f_DistXStd = 9;
-      case 9:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 77)) {
-          _Internal::set_has_f_distxstd(&_has_bits_);
-          f_distxstd_ = ::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<float>(ptr);
-          ptr += sizeof(float);
-        } else
+      case 9: {
+        if (static_cast< ::google::protobuf::uint8>(tag) ==
+            static_cast< ::google::protobuf::uint8>(77u /* 77 & 0xFF */)) {
+          set_has_f_distxstd();
+          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
+                   float, ::google::protobuf::internal::WireFormatLite::TYPE_FLOAT>(
+                 input, &f_distxstd_)));
+        } else {
           goto handle_unusual;
-        continue;
+        }
+        break;
+      }
+
       // optional float f_DistYStd = 10;
-      case 10:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 85)) {
-          _Internal::set_has_f_distystd(&_has_bits_);
-          f_distystd_ = ::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<float>(ptr);
-          ptr += sizeof(float);
-        } else
+      case 10: {
+        if (static_cast< ::google::protobuf::uint8>(tag) ==
+            static_cast< ::google::protobuf::uint8>(85u /* 85 & 0xFF */)) {
+          set_has_f_distystd();
+          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
+                   float, ::google::protobuf::internal::WireFormatLite::TYPE_FLOAT>(
+                 input, &f_distystd_)));
+        } else {
           goto handle_unusual;
-        continue;
+        }
+        break;
+      }
+
       // optional float f_VrelXStd = 11;
-      case 11:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 93)) {
-          _Internal::set_has_f_vrelxstd(&_has_bits_);
-          f_vrelxstd_ = ::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<float>(ptr);
-          ptr += sizeof(float);
-        } else
+      case 11: {
+        if (static_cast< ::google::protobuf::uint8>(tag) ==
+            static_cast< ::google::protobuf::uint8>(93u /* 93 & 0xFF */)) {
+          set_has_f_vrelxstd();
+          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
+                   float, ::google::protobuf::internal::WireFormatLite::TYPE_FLOAT>(
+                 input, &f_vrelxstd_)));
+        } else {
           goto handle_unusual;
-        continue;
+        }
+        break;
+      }
+
       // optional float f_VrelYStd = 12;
-      case 12:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 101)) {
-          _Internal::set_has_f_vrelystd(&_has_bits_);
-          f_vrelystd_ = ::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<float>(ptr);
-          ptr += sizeof(float);
-        } else
+      case 12: {
+        if (static_cast< ::google::protobuf::uint8>(tag) ==
+            static_cast< ::google::protobuf::uint8>(101u /* 101 & 0xFF */)) {
+          set_has_f_vrelystd();
+          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
+                   float, ::google::protobuf::internal::WireFormatLite::TYPE_FLOAT>(
+                 input, &f_vrelystd_)));
+        } else {
           goto handle_unusual;
-        continue;
+        }
+        break;
+      }
+
       // optional float f_ArelXStd = 13;
-      case 13:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 109)) {
-          _Internal::set_has_f_arelxstd(&_has_bits_);
-          f_arelxstd_ = ::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<float>(ptr);
-          ptr += sizeof(float);
-        } else
+      case 13: {
+        if (static_cast< ::google::protobuf::uint8>(tag) ==
+            static_cast< ::google::protobuf::uint8>(109u /* 109 & 0xFF */)) {
+          set_has_f_arelxstd();
+          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
+                   float, ::google::protobuf::internal::WireFormatLite::TYPE_FLOAT>(
+                 input, &f_arelxstd_)));
+        } else {
           goto handle_unusual;
-        continue;
+        }
+        break;
+      }
+
       // optional float f_ArelYStd = 14;
-      case 14:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 117)) {
-          _Internal::set_has_f_arelystd(&_has_bits_);
-          f_arelystd_ = ::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<float>(ptr);
-          ptr += sizeof(float);
-        } else
+      case 14: {
+        if (static_cast< ::google::protobuf::uint8>(tag) ==
+            static_cast< ::google::protobuf::uint8>(117u /* 117 & 0xFF */)) {
+          set_has_f_arelystd();
+          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
+                   float, ::google::protobuf::internal::WireFormatLite::TYPE_FLOAT>(
+                 input, &f_arelystd_)));
+        } else {
           goto handle_unusual;
-        continue;
+        }
+        break;
+      }
+
       // optional float f_LDeltaX_left = 15;
-      case 15:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 125)) {
-          _Internal::set_has_f_ldeltax_left(&_has_bits_);
-          f_ldeltax_left_ = ::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<float>(ptr);
-          ptr += sizeof(float);
-        } else
+      case 15: {
+        if (static_cast< ::google::protobuf::uint8>(tag) ==
+            static_cast< ::google::protobuf::uint8>(125u /* 125 & 0xFF */)) {
+          set_has_f_ldeltax_left();
+          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
+                   float, ::google::protobuf::internal::WireFormatLite::TYPE_FLOAT>(
+                 input, &f_ldeltax_left_)));
+        } else {
           goto handle_unusual;
-        continue;
+        }
+        break;
+      }
+
       // optional float f_LDeltaX_mid = 16;
-      case 16:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 133)) {
-          _Internal::set_has_f_ldeltax_mid(&_has_bits_);
-          f_ldeltax_mid_ = ::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<float>(ptr);
-          ptr += sizeof(float);
-        } else
+      case 16: {
+        if (static_cast< ::google::protobuf::uint8>(tag) ==
+            static_cast< ::google::protobuf::uint8>(133u /* 133 & 0xFF */)) {
+          set_has_f_ldeltax_mid();
+          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
+                   float, ::google::protobuf::internal::WireFormatLite::TYPE_FLOAT>(
+                 input, &f_ldeltax_mid_)));
+        } else {
           goto handle_unusual;
-        continue;
+        }
+        break;
+      }
+
       // optional float f_LDeltaX_right = 17;
-      case 17:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 141)) {
-          _Internal::set_has_f_ldeltax_right(&_has_bits_);
-          f_ldeltax_right_ = ::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<float>(ptr);
-          ptr += sizeof(float);
-        } else
+      case 17: {
+        if (static_cast< ::google::protobuf::uint8>(tag) ==
+            static_cast< ::google::protobuf::uint8>(141u /* 141 & 0xFF */)) {
+          set_has_f_ldeltax_right();
+          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
+                   float, ::google::protobuf::internal::WireFormatLite::TYPE_FLOAT>(
+                 input, &f_ldeltax_right_)));
+        } else {
           goto handle_unusual;
-        continue;
+        }
+        break;
+      }
+
       // optional float f_LDeltaY_left = 18;
-      case 18:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 149)) {
-          _Internal::set_has_f_ldeltay_left(&_has_bits_);
-          f_ldeltay_left_ = ::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<float>(ptr);
-          ptr += sizeof(float);
-        } else
+      case 18: {
+        if (static_cast< ::google::protobuf::uint8>(tag) ==
+            static_cast< ::google::protobuf::uint8>(149u /* 149 & 0xFF */)) {
+          set_has_f_ldeltay_left();
+          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
+                   float, ::google::protobuf::internal::WireFormatLite::TYPE_FLOAT>(
+                 input, &f_ldeltay_left_)));
+        } else {
           goto handle_unusual;
-        continue;
+        }
+        break;
+      }
+
       // optional float f_LDeltaY_mid = 19;
-      case 19:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 157)) {
-          _Internal::set_has_f_ldeltay_mid(&_has_bits_);
-          f_ldeltay_mid_ = ::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<float>(ptr);
-          ptr += sizeof(float);
-        } else
+      case 19: {
+        if (static_cast< ::google::protobuf::uint8>(tag) ==
+            static_cast< ::google::protobuf::uint8>(157u /* 157 & 0xFF */)) {
+          set_has_f_ldeltay_mid();
+          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
+                   float, ::google::protobuf::internal::WireFormatLite::TYPE_FLOAT>(
+                 input, &f_ldeltay_mid_)));
+        } else {
           goto handle_unusual;
-        continue;
+        }
+        break;
+      }
+
       // optional float f_LDeltaY_right = 20;
-      case 20:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 165)) {
-          _Internal::set_has_f_ldeltay_right(&_has_bits_);
-          f_ldeltay_right_ = ::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<float>(ptr);
-          ptr += sizeof(float);
-        } else
+      case 20: {
+        if (static_cast< ::google::protobuf::uint8>(tag) ==
+            static_cast< ::google::protobuf::uint8>(165u /* 165 & 0xFF */)) {
+          set_has_f_ldeltay_right();
+          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
+                   float, ::google::protobuf::internal::WireFormatLite::TYPE_FLOAT>(
+                 input, &f_ldeltay_right_)));
+        } else {
           goto handle_unusual;
-        continue;
+        }
+        break;
+      }
+
       // optional .pb.PDK.RadarObjectList.RadarObject.LDeltaQual e_LDeltaQual = 21;
-      case 21:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 168)) {
-          uint64_t val = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
-          CHK_(ptr);
-          if (PROTOBUF_PREDICT_TRUE(::pb::PDK::RadarObjectList_RadarObject_LDeltaQual_IsValid(val))) {
-            _internal_set_e_ldeltaqual(static_cast<::pb::PDK::RadarObjectList_RadarObject_LDeltaQual>(val));
+      case 21: {
+        if (static_cast< ::google::protobuf::uint8>(tag) ==
+            static_cast< ::google::protobuf::uint8>(168u /* 168 & 0xFF */)) {
+          int value;
+          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
+                   int, ::google::protobuf::internal::WireFormatLite::TYPE_ENUM>(
+                 input, &value)));
+          if (::pb::PDK::RadarObjectList_RadarObject_LDeltaQual_IsValid(value)) {
+            set_e_ldeltaqual(static_cast< ::pb::PDK::RadarObjectList_RadarObject_LDeltaQual >(value));
           } else {
-            ::PROTOBUF_NAMESPACE_ID::internal::WriteVarint(21, val, mutable_unknown_fields());
+            mutable_unknown_fields()->AddVarint(
+                21, static_cast< ::google::protobuf::uint64>(value));
           }
-        } else
+        } else {
           goto handle_unusual;
-        continue;
+        }
+        break;
+      }
+
       // optional float f_RCS = 22;
-      case 22:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 181)) {
-          _Internal::set_has_f_rcs(&_has_bits_);
-          f_rcs_ = ::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<float>(ptr);
-          ptr += sizeof(float);
-        } else
+      case 22: {
+        if (static_cast< ::google::protobuf::uint8>(tag) ==
+            static_cast< ::google::protobuf::uint8>(181u /* 181 & 0xFF */)) {
+          set_has_f_rcs();
+          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
+                   float, ::google::protobuf::internal::WireFormatLite::TYPE_FLOAT>(
+                 input, &f_rcs_)));
+        } else {
           goto handle_unusual;
-        continue;
+        }
+        break;
+      }
+
       // optional float f_ObjectScore = 23;
-      case 23:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 189)) {
-          _Internal::set_has_f_objectscore(&_has_bits_);
-          f_objectscore_ = ::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<float>(ptr);
-          ptr += sizeof(float);
-        } else
+      case 23: {
+        if (static_cast< ::google::protobuf::uint8>(tag) ==
+            static_cast< ::google::protobuf::uint8>(189u /* 189 & 0xFF */)) {
+          set_has_f_objectscore();
+          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
+                   float, ::google::protobuf::internal::WireFormatLite::TYPE_FLOAT>(
+                 input, &f_objectscore_)));
+        } else {
           goto handle_unusual;
-        continue;
+        }
+        break;
+      }
+
       // optional uint32 u_LifeCycles = 24;
-      case 24:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 192)) {
-          _Internal::set_has_u_lifecycles(&_has_bits_);
-          u_lifecycles_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
-          CHK_(ptr);
-        } else
+      case 24: {
+        if (static_cast< ::google::protobuf::uint8>(tag) ==
+            static_cast< ::google::protobuf::uint8>(192u /* 192 & 0xFF */)) {
+          set_has_u_lifecycles();
+          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
+                   ::google::protobuf::uint32, ::google::protobuf::internal::WireFormatLite::TYPE_UINT32>(
+                 input, &u_lifecycles_)));
+        } else {
           goto handle_unusual;
-        continue;
+        }
+        break;
+      }
+
       // optional .pb.PDK.RadarObjectList.RadarObject.DynamicProperty e_DynamicProperty = 25;
-      case 25:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 200)) {
-          uint64_t val = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
-          CHK_(ptr);
-          if (PROTOBUF_PREDICT_TRUE(::pb::PDK::RadarObjectList_RadarObject_DynamicProperty_IsValid(val))) {
-            _internal_set_e_dynamicproperty(static_cast<::pb::PDK::RadarObjectList_RadarObject_DynamicProperty>(val));
+      case 25: {
+        if (static_cast< ::google::protobuf::uint8>(tag) ==
+            static_cast< ::google::protobuf::uint8>(200u /* 200 & 0xFF */)) {
+          int value;
+          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
+                   int, ::google::protobuf::internal::WireFormatLite::TYPE_ENUM>(
+                 input, &value)));
+          if (::pb::PDK::RadarObjectList_RadarObject_DynamicProperty_IsValid(value)) {
+            set_e_dynamicproperty(static_cast< ::pb::PDK::RadarObjectList_RadarObject_DynamicProperty >(value));
           } else {
-            ::PROTOBUF_NAMESPACE_ID::internal::WriteVarint(25, val, mutable_unknown_fields());
+            mutable_unknown_fields()->AddVarint(
+                25, static_cast< ::google::protobuf::uint64>(value));
           }
-        } else
+        } else {
           goto handle_unusual;
-        continue;
+        }
+        break;
+      }
+
       // optional .pb.PDK.RadarObjectList.RadarObject.ObjState e_ObjState = 26;
-      case 26:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 208)) {
-          uint64_t val = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
-          CHK_(ptr);
-          if (PROTOBUF_PREDICT_TRUE(::pb::PDK::RadarObjectList_RadarObject_ObjState_IsValid(val))) {
-            _internal_set_e_objstate(static_cast<::pb::PDK::RadarObjectList_RadarObject_ObjState>(val));
+      case 26: {
+        if (static_cast< ::google::protobuf::uint8>(tag) ==
+            static_cast< ::google::protobuf::uint8>(208u /* 208 & 0xFF */)) {
+          int value;
+          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
+                   int, ::google::protobuf::internal::WireFormatLite::TYPE_ENUM>(
+                 input, &value)));
+          if (::pb::PDK::RadarObjectList_RadarObject_ObjState_IsValid(value)) {
+            set_e_objstate(static_cast< ::pb::PDK::RadarObjectList_RadarObject_ObjState >(value));
           } else {
-            ::PROTOBUF_NAMESPACE_ID::internal::WriteVarint(26, val, mutable_unknown_fields());
+            mutable_unknown_fields()->AddVarint(
+                26, static_cast< ::google::protobuf::uint64>(value));
           }
-        } else
+        } else {
           goto handle_unusual;
-        continue;
+        }
+        break;
+      }
+
       // optional float f_VabsX = 28;
-      case 28:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 229)) {
-          _Internal::set_has_f_vabsx(&_has_bits_);
-          f_vabsx_ = ::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<float>(ptr);
-          ptr += sizeof(float);
-        } else
+      case 28: {
+        if (static_cast< ::google::protobuf::uint8>(tag) ==
+            static_cast< ::google::protobuf::uint8>(229u /* 229 & 0xFF */)) {
+          set_has_f_vabsx();
+          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
+                   float, ::google::protobuf::internal::WireFormatLite::TYPE_FLOAT>(
+                 input, &f_vabsx_)));
+        } else {
           goto handle_unusual;
-        continue;
+        }
+        break;
+      }
+
       // optional float f_VabsY = 29;
-      case 29:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 237)) {
-          _Internal::set_has_f_vabsy(&_has_bits_);
-          f_vabsy_ = ::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<float>(ptr);
-          ptr += sizeof(float);
-        } else
+      case 29: {
+        if (static_cast< ::google::protobuf::uint8>(tag) ==
+            static_cast< ::google::protobuf::uint8>(237u /* 237 & 0xFF */)) {
+          set_has_f_vabsy();
+          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
+                   float, ::google::protobuf::internal::WireFormatLite::TYPE_FLOAT>(
+                 input, &f_vabsy_)));
+        } else {
           goto handle_unusual;
-        continue;
+        }
+        break;
+      }
+
       // optional float f_AabsX = 30;
-      case 30:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 245)) {
-          _Internal::set_has_f_aabsx(&_has_bits_);
-          f_aabsx_ = ::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<float>(ptr);
-          ptr += sizeof(float);
-        } else
+      case 30: {
+        if (static_cast< ::google::protobuf::uint8>(tag) ==
+            static_cast< ::google::protobuf::uint8>(245u /* 245 & 0xFF */)) {
+          set_has_f_aabsx();
+          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
+                   float, ::google::protobuf::internal::WireFormatLite::TYPE_FLOAT>(
+                 input, &f_aabsx_)));
+        } else {
           goto handle_unusual;
-        continue;
+        }
+        break;
+      }
+
       // optional float f_AabsY = 31;
-      case 31:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 253)) {
-          _Internal::set_has_f_aabsy(&_has_bits_);
-          f_aabsy_ = ::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<float>(ptr);
-          ptr += sizeof(float);
-        } else
+      case 31: {
+        if (static_cast< ::google::protobuf::uint8>(tag) ==
+            static_cast< ::google::protobuf::uint8>(253u /* 253 & 0xFF */)) {
+          set_has_f_aabsy();
+          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
+                   float, ::google::protobuf::internal::WireFormatLite::TYPE_FLOAT>(
+                 input, &f_aabsy_)));
+        } else {
           goto handle_unusual;
-        continue;
+        }
+        break;
+      }
+
       // optional float f_VabsXStd = 32;
-      case 32:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 5)) {
-          _Internal::set_has_f_vabsxstd(&_has_bits_);
-          f_vabsxstd_ = ::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<float>(ptr);
-          ptr += sizeof(float);
-        } else
+      case 32: {
+        if (static_cast< ::google::protobuf::uint8>(tag) ==
+            static_cast< ::google::protobuf::uint8>(5u /* 261 & 0xFF */)) {
+          set_has_f_vabsxstd();
+          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
+                   float, ::google::protobuf::internal::WireFormatLite::TYPE_FLOAT>(
+                 input, &f_vabsxstd_)));
+        } else {
           goto handle_unusual;
-        continue;
+        }
+        break;
+      }
+
       // optional float f_VabsYStd = 33;
-      case 33:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 13)) {
-          _Internal::set_has_f_vabsystd(&_has_bits_);
-          f_vabsystd_ = ::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<float>(ptr);
-          ptr += sizeof(float);
-        } else
+      case 33: {
+        if (static_cast< ::google::protobuf::uint8>(tag) ==
+            static_cast< ::google::protobuf::uint8>(13u /* 269 & 0xFF */)) {
+          set_has_f_vabsystd();
+          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
+                   float, ::google::protobuf::internal::WireFormatLite::TYPE_FLOAT>(
+                 input, &f_vabsystd_)));
+        } else {
           goto handle_unusual;
-        continue;
+        }
+        break;
+      }
+
       // optional float f_AabsXStd = 34;
-      case 34:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 21)) {
-          _Internal::set_has_f_aabsxstd(&_has_bits_);
-          f_aabsxstd_ = ::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<float>(ptr);
-          ptr += sizeof(float);
-        } else
+      case 34: {
+        if (static_cast< ::google::protobuf::uint8>(tag) ==
+            static_cast< ::google::protobuf::uint8>(21u /* 277 & 0xFF */)) {
+          set_has_f_aabsxstd();
+          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
+                   float, ::google::protobuf::internal::WireFormatLite::TYPE_FLOAT>(
+                 input, &f_aabsxstd_)));
+        } else {
           goto handle_unusual;
-        continue;
+        }
+        break;
+      }
+
       // optional float f_AabsYStd = 35;
-      case 35:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 29)) {
-          _Internal::set_has_f_aabsystd(&_has_bits_);
-          f_aabsystd_ = ::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<float>(ptr);
-          ptr += sizeof(float);
-        } else
+      case 35: {
+        if (static_cast< ::google::protobuf::uint8>(tag) ==
+            static_cast< ::google::protobuf::uint8>(29u /* 285 & 0xFF */)) {
+          set_has_f_aabsystd();
+          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
+                   float, ::google::protobuf::internal::WireFormatLite::TYPE_FLOAT>(
+                 input, &f_aabsystd_)));
+        } else {
           goto handle_unusual;
-        continue;
+        }
+        break;
+      }
+
       // optional float f_Orientation = 36;
-      case 36:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 37)) {
-          _Internal::set_has_f_orientation(&_has_bits_);
-          f_orientation_ = ::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<float>(ptr);
-          ptr += sizeof(float);
-        } else
+      case 36: {
+        if (static_cast< ::google::protobuf::uint8>(tag) ==
+            static_cast< ::google::protobuf::uint8>(37u /* 293 & 0xFF */)) {
+          set_has_f_orientation();
+          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
+                   float, ::google::protobuf::internal::WireFormatLite::TYPE_FLOAT>(
+                 input, &f_orientation_)));
+        } else {
           goto handle_unusual;
-        continue;
+        }
+        break;
+      }
+
       // optional float f_OrientationStd = 37;
-      case 37:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 45)) {
-          _Internal::set_has_f_orientationstd(&_has_bits_);
-          f_orientationstd_ = ::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<float>(ptr);
-          ptr += sizeof(float);
-        } else
+      case 37: {
+        if (static_cast< ::google::protobuf::uint8>(tag) ==
+            static_cast< ::google::protobuf::uint8>(45u /* 301 & 0xFF */)) {
+          set_has_f_orientationstd();
+          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
+                   float, ::google::protobuf::internal::WireFormatLite::TYPE_FLOAT>(
+                 input, &f_orientationstd_)));
+        } else {
           goto handle_unusual;
-        continue;
+        }
+        break;
+      }
+
       // optional float f_DistZ = 38;
-      case 38:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 53)) {
-          _Internal::set_has_f_distz(&_has_bits_);
-          f_distz_ = ::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<float>(ptr);
-          ptr += sizeof(float);
-        } else
+      case 38: {
+        if (static_cast< ::google::protobuf::uint8>(tag) ==
+            static_cast< ::google::protobuf::uint8>(53u /* 309 & 0xFF */)) {
+          set_has_f_distz();
+          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
+                   float, ::google::protobuf::internal::WireFormatLite::TYPE_FLOAT>(
+                 input, &f_distz_)));
+        } else {
           goto handle_unusual;
-        continue;
+        }
+        break;
+      }
+
       // optional float f_DistZStd = 39;
-      case 39:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 61)) {
-          _Internal::set_has_f_distzstd(&_has_bits_);
-          f_distzstd_ = ::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<float>(ptr);
-          ptr += sizeof(float);
-        } else
+      case 39: {
+        if (static_cast< ::google::protobuf::uint8>(tag) ==
+            static_cast< ::google::protobuf::uint8>(61u /* 317 & 0xFF */)) {
+          set_has_f_distzstd();
+          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
+                   float, ::google::protobuf::internal::WireFormatLite::TYPE_FLOAT>(
+                 input, &f_distzstd_)));
+        } else {
           goto handle_unusual;
-        continue;
+        }
+        break;
+      }
+
       // repeated float a_Classification = 40;
-      case 40:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 69)) {
-          ptr -= 2;
-          do {
-            ptr += 2;
-            _internal_add_a_classification(::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<float>(ptr));
-            ptr += sizeof(float);
-            if (!ctx->DataAvailable(ptr)) break;
-          } while (::PROTOBUF_NAMESPACE_ID::internal::ExpectTag<325>(ptr));
-        } else if (static_cast<uint8_t>(tag) == 66) {
-          ptr = ::PROTOBUF_NAMESPACE_ID::internal::PackedFloatParser(_internal_mutable_a_classification(), ptr, ctx);
-          CHK_(ptr);
-        } else
+      case 40: {
+        if (static_cast< ::google::protobuf::uint8>(tag) ==
+            static_cast< ::google::protobuf::uint8>(69u /* 325 & 0xFF */)) {
+          DO_((::google::protobuf::internal::WireFormatLite::ReadRepeatedPrimitive<
+                   float, ::google::protobuf::internal::WireFormatLite::TYPE_FLOAT>(
+                 2, 325u, input, this->mutable_a_classification())));
+        } else if (
+            static_cast< ::google::protobuf::uint8>(tag) ==
+            static_cast< ::google::protobuf::uint8>(66u /* 322 & 0xFF */)) {
+          DO_((::google::protobuf::internal::WireFormatLite::ReadPackedPrimitiveNoInline<
+                   float, ::google::protobuf::internal::WireFormatLite::TYPE_FLOAT>(
+                 input, this->mutable_a_classification())));
+        } else {
           goto handle_unusual;
-        continue;
-      default:
-        goto handle_unusual;
-    }  // switch
-  handle_unusual:
-    if ((tag == 0) || ((tag & 7) == 4)) {
-      CHK_(ptr);
-      ctx->SetLastTag(tag);
-      goto message_done;
+        }
+        break;
+      }
+
+      default: {
+      handle_unusual:
+        if (tag == 0) {
+          goto success;
+        }
+        DO_(::google::protobuf::internal::WireFormat::SkipField(
+              input, tag, _internal_metadata_.mutable_unknown_fields()));
+        break;
+      }
     }
-    ptr = UnknownFieldParse(
-        tag,
-        _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
-        ptr, ctx);
-    CHK_(ptr != nullptr);
-  }  // while
-message_done:
-  return ptr;
+  }
+success:
+  // @@protoc_insertion_point(parse_success:pb.PDK.RadarObjectList.RadarObject)
+  return true;
 failure:
-  ptr = nullptr;
-  goto message_done;
-#undef CHK_
+  // @@protoc_insertion_point(parse_failure:pb.PDK.RadarObjectList.RadarObject)
+  return false;
+#undef DO_
 }
 
-uint8_t* RadarObjectList_RadarObject::_InternalSerialize(
-    uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
-  // @@protoc_insertion_point(serialize_to_array_start:pb.PDK.RadarObjectList.RadarObject)
-  uint32_t cached_has_bits = 0;
+void RadarObjectList_RadarObject::SerializeWithCachedSizes(
+    ::google::protobuf::io::CodedOutputStream* output) const {
+  // @@protoc_insertion_point(serialize_start:pb.PDK.RadarObjectList.RadarObject)
+  ::google::protobuf::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
   cached_has_bits = _has_bits_[0];
   // optional uint32 u_ObjId = 1;
   if (cached_has_bits & 0x00000001u) {
-    target = stream->EnsureSpace(target);
-    target = ::_pbi::WireFormatLite::WriteUInt32ToArray(1, this->_internal_u_objid(), target);
+    ::google::protobuf::internal::WireFormatLite::WriteUInt32(1, this->u_objid(), output);
   }
 
   // optional float f_DistX = 3;
   if (cached_has_bits & 0x00000002u) {
-    target = stream->EnsureSpace(target);
-    target = ::_pbi::WireFormatLite::WriteFloatToArray(3, this->_internal_f_distx(), target);
+    ::google::protobuf::internal::WireFormatLite::WriteFloat(3, this->f_distx(), output);
   }
 
   // optional float f_DistY = 4;
   if (cached_has_bits & 0x00000004u) {
-    target = stream->EnsureSpace(target);
-    target = ::_pbi::WireFormatLite::WriteFloatToArray(4, this->_internal_f_disty(), target);
+    ::google::protobuf::internal::WireFormatLite::WriteFloat(4, this->f_disty(), output);
   }
 
   // optional float f_VrelX = 5;
   if (cached_has_bits & 0x00000008u) {
-    target = stream->EnsureSpace(target);
-    target = ::_pbi::WireFormatLite::WriteFloatToArray(5, this->_internal_f_vrelx(), target);
+    ::google::protobuf::internal::WireFormatLite::WriteFloat(5, this->f_vrelx(), output);
   }
 
   // optional float f_VrelY = 6;
   if (cached_has_bits & 0x00000010u) {
-    target = stream->EnsureSpace(target);
-    target = ::_pbi::WireFormatLite::WriteFloatToArray(6, this->_internal_f_vrely(), target);
+    ::google::protobuf::internal::WireFormatLite::WriteFloat(6, this->f_vrely(), output);
   }
 
   // optional float f_ArelX = 7;
   if (cached_has_bits & 0x00000020u) {
-    target = stream->EnsureSpace(target);
-    target = ::_pbi::WireFormatLite::WriteFloatToArray(7, this->_internal_f_arelx(), target);
+    ::google::protobuf::internal::WireFormatLite::WriteFloat(7, this->f_arelx(), output);
   }
 
   // optional float f_ArelY = 8;
   if (cached_has_bits & 0x00000040u) {
-    target = stream->EnsureSpace(target);
-    target = ::_pbi::WireFormatLite::WriteFloatToArray(8, this->_internal_f_arely(), target);
+    ::google::protobuf::internal::WireFormatLite::WriteFloat(8, this->f_arely(), output);
   }
 
   // optional float f_DistXStd = 9;
   if (cached_has_bits & 0x00000080u) {
-    target = stream->EnsureSpace(target);
-    target = ::_pbi::WireFormatLite::WriteFloatToArray(9, this->_internal_f_distxstd(), target);
+    ::google::protobuf::internal::WireFormatLite::WriteFloat(9, this->f_distxstd(), output);
   }
 
   // optional float f_DistYStd = 10;
   if (cached_has_bits & 0x00000100u) {
-    target = stream->EnsureSpace(target);
-    target = ::_pbi::WireFormatLite::WriteFloatToArray(10, this->_internal_f_distystd(), target);
+    ::google::protobuf::internal::WireFormatLite::WriteFloat(10, this->f_distystd(), output);
   }
 
   // optional float f_VrelXStd = 11;
   if (cached_has_bits & 0x00000200u) {
-    target = stream->EnsureSpace(target);
-    target = ::_pbi::WireFormatLite::WriteFloatToArray(11, this->_internal_f_vrelxstd(), target);
+    ::google::protobuf::internal::WireFormatLite::WriteFloat(11, this->f_vrelxstd(), output);
   }
 
   // optional float f_VrelYStd = 12;
   if (cached_has_bits & 0x00000400u) {
-    target = stream->EnsureSpace(target);
-    target = ::_pbi::WireFormatLite::WriteFloatToArray(12, this->_internal_f_vrelystd(), target);
+    ::google::protobuf::internal::WireFormatLite::WriteFloat(12, this->f_vrelystd(), output);
   }
 
   // optional float f_ArelXStd = 13;
   if (cached_has_bits & 0x00000800u) {
-    target = stream->EnsureSpace(target);
-    target = ::_pbi::WireFormatLite::WriteFloatToArray(13, this->_internal_f_arelxstd(), target);
+    ::google::protobuf::internal::WireFormatLite::WriteFloat(13, this->f_arelxstd(), output);
   }
 
   // optional float f_ArelYStd = 14;
   if (cached_has_bits & 0x00001000u) {
-    target = stream->EnsureSpace(target);
-    target = ::_pbi::WireFormatLite::WriteFloatToArray(14, this->_internal_f_arelystd(), target);
+    ::google::protobuf::internal::WireFormatLite::WriteFloat(14, this->f_arelystd(), output);
   }
 
   // optional float f_LDeltaX_left = 15;
   if (cached_has_bits & 0x00002000u) {
-    target = stream->EnsureSpace(target);
-    target = ::_pbi::WireFormatLite::WriteFloatToArray(15, this->_internal_f_ldeltax_left(), target);
+    ::google::protobuf::internal::WireFormatLite::WriteFloat(15, this->f_ldeltax_left(), output);
   }
 
   // optional float f_LDeltaX_mid = 16;
   if (cached_has_bits & 0x00004000u) {
-    target = stream->EnsureSpace(target);
-    target = ::_pbi::WireFormatLite::WriteFloatToArray(16, this->_internal_f_ldeltax_mid(), target);
+    ::google::protobuf::internal::WireFormatLite::WriteFloat(16, this->f_ldeltax_mid(), output);
   }
 
   // optional float f_LDeltaX_right = 17;
   if (cached_has_bits & 0x00008000u) {
-    target = stream->EnsureSpace(target);
-    target = ::_pbi::WireFormatLite::WriteFloatToArray(17, this->_internal_f_ldeltax_right(), target);
+    ::google::protobuf::internal::WireFormatLite::WriteFloat(17, this->f_ldeltax_right(), output);
   }
 
   // optional float f_LDeltaY_left = 18;
   if (cached_has_bits & 0x00010000u) {
-    target = stream->EnsureSpace(target);
-    target = ::_pbi::WireFormatLite::WriteFloatToArray(18, this->_internal_f_ldeltay_left(), target);
+    ::google::protobuf::internal::WireFormatLite::WriteFloat(18, this->f_ldeltay_left(), output);
   }
 
   // optional float f_LDeltaY_mid = 19;
   if (cached_has_bits & 0x00020000u) {
-    target = stream->EnsureSpace(target);
-    target = ::_pbi::WireFormatLite::WriteFloatToArray(19, this->_internal_f_ldeltay_mid(), target);
+    ::google::protobuf::internal::WireFormatLite::WriteFloat(19, this->f_ldeltay_mid(), output);
   }
 
   // optional float f_LDeltaY_right = 20;
   if (cached_has_bits & 0x00040000u) {
-    target = stream->EnsureSpace(target);
-    target = ::_pbi::WireFormatLite::WriteFloatToArray(20, this->_internal_f_ldeltay_right(), target);
+    ::google::protobuf::internal::WireFormatLite::WriteFloat(20, this->f_ldeltay_right(), output);
   }
 
   // optional .pb.PDK.RadarObjectList.RadarObject.LDeltaQual e_LDeltaQual = 21;
   if (cached_has_bits & 0x00080000u) {
-    target = stream->EnsureSpace(target);
-    target = ::_pbi::WireFormatLite::WriteEnumToArray(
-      21, this->_internal_e_ldeltaqual(), target);
+    ::google::protobuf::internal::WireFormatLite::WriteEnum(
+      21, this->e_ldeltaqual(), output);
   }
 
   // optional float f_RCS = 22;
   if (cached_has_bits & 0x00100000u) {
-    target = stream->EnsureSpace(target);
-    target = ::_pbi::WireFormatLite::WriteFloatToArray(22, this->_internal_f_rcs(), target);
+    ::google::protobuf::internal::WireFormatLite::WriteFloat(22, this->f_rcs(), output);
   }
 
   // optional float f_ObjectScore = 23;
   if (cached_has_bits & 0x00200000u) {
-    target = stream->EnsureSpace(target);
-    target = ::_pbi::WireFormatLite::WriteFloatToArray(23, this->_internal_f_objectscore(), target);
+    ::google::protobuf::internal::WireFormatLite::WriteFloat(23, this->f_objectscore(), output);
   }
 
   // optional uint32 u_LifeCycles = 24;
   if (cached_has_bits & 0x00400000u) {
-    target = stream->EnsureSpace(target);
-    target = ::_pbi::WireFormatLite::WriteUInt32ToArray(24, this->_internal_u_lifecycles(), target);
+    ::google::protobuf::internal::WireFormatLite::WriteUInt32(24, this->u_lifecycles(), output);
   }
 
   // optional .pb.PDK.RadarObjectList.RadarObject.DynamicProperty e_DynamicProperty = 25;
   if (cached_has_bits & 0x00800000u) {
-    target = stream->EnsureSpace(target);
-    target = ::_pbi::WireFormatLite::WriteEnumToArray(
-      25, this->_internal_e_dynamicproperty(), target);
+    ::google::protobuf::internal::WireFormatLite::WriteEnum(
+      25, this->e_dynamicproperty(), output);
   }
 
   // optional .pb.PDK.RadarObjectList.RadarObject.ObjState e_ObjState = 26;
   if (cached_has_bits & 0x01000000u) {
-    target = stream->EnsureSpace(target);
-    target = ::_pbi::WireFormatLite::WriteEnumToArray(
-      26, this->_internal_e_objstate(), target);
+    ::google::protobuf::internal::WireFormatLite::WriteEnum(
+      26, this->e_objstate(), output);
   }
 
   // optional float f_VabsX = 28;
   if (cached_has_bits & 0x02000000u) {
-    target = stream->EnsureSpace(target);
-    target = ::_pbi::WireFormatLite::WriteFloatToArray(28, this->_internal_f_vabsx(), target);
+    ::google::protobuf::internal::WireFormatLite::WriteFloat(28, this->f_vabsx(), output);
   }
 
   // optional float f_VabsY = 29;
   if (cached_has_bits & 0x04000000u) {
-    target = stream->EnsureSpace(target);
-    target = ::_pbi::WireFormatLite::WriteFloatToArray(29, this->_internal_f_vabsy(), target);
+    ::google::protobuf::internal::WireFormatLite::WriteFloat(29, this->f_vabsy(), output);
   }
 
   // optional float f_AabsX = 30;
   if (cached_has_bits & 0x08000000u) {
-    target = stream->EnsureSpace(target);
-    target = ::_pbi::WireFormatLite::WriteFloatToArray(30, this->_internal_f_aabsx(), target);
+    ::google::protobuf::internal::WireFormatLite::WriteFloat(30, this->f_aabsx(), output);
   }
 
   // optional float f_AabsY = 31;
   if (cached_has_bits & 0x10000000u) {
-    target = stream->EnsureSpace(target);
-    target = ::_pbi::WireFormatLite::WriteFloatToArray(31, this->_internal_f_aabsy(), target);
+    ::google::protobuf::internal::WireFormatLite::WriteFloat(31, this->f_aabsy(), output);
   }
 
   // optional float f_VabsXStd = 32;
   if (cached_has_bits & 0x20000000u) {
-    target = stream->EnsureSpace(target);
-    target = ::_pbi::WireFormatLite::WriteFloatToArray(32, this->_internal_f_vabsxstd(), target);
+    ::google::protobuf::internal::WireFormatLite::WriteFloat(32, this->f_vabsxstd(), output);
   }
 
   // optional float f_VabsYStd = 33;
   if (cached_has_bits & 0x40000000u) {
-    target = stream->EnsureSpace(target);
-    target = ::_pbi::WireFormatLite::WriteFloatToArray(33, this->_internal_f_vabsystd(), target);
+    ::google::protobuf::internal::WireFormatLite::WriteFloat(33, this->f_vabsystd(), output);
   }
 
   // optional float f_AabsXStd = 34;
   if (cached_has_bits & 0x80000000u) {
-    target = stream->EnsureSpace(target);
-    target = ::_pbi::WireFormatLite::WriteFloatToArray(34, this->_internal_f_aabsxstd(), target);
+    ::google::protobuf::internal::WireFormatLite::WriteFloat(34, this->f_aabsxstd(), output);
   }
 
   cached_has_bits = _has_bits_[1];
   // optional float f_AabsYStd = 35;
   if (cached_has_bits & 0x00000001u) {
-    target = stream->EnsureSpace(target);
-    target = ::_pbi::WireFormatLite::WriteFloatToArray(35, this->_internal_f_aabsystd(), target);
+    ::google::protobuf::internal::WireFormatLite::WriteFloat(35, this->f_aabsystd(), output);
   }
 
   // optional float f_Orientation = 36;
   if (cached_has_bits & 0x00000002u) {
-    target = stream->EnsureSpace(target);
-    target = ::_pbi::WireFormatLite::WriteFloatToArray(36, this->_internal_f_orientation(), target);
+    ::google::protobuf::internal::WireFormatLite::WriteFloat(36, this->f_orientation(), output);
   }
 
   // optional float f_OrientationStd = 37;
   if (cached_has_bits & 0x00000004u) {
-    target = stream->EnsureSpace(target);
-    target = ::_pbi::WireFormatLite::WriteFloatToArray(37, this->_internal_f_orientationstd(), target);
+    ::google::protobuf::internal::WireFormatLite::WriteFloat(37, this->f_orientationstd(), output);
   }
 
   // optional float f_DistZ = 38;
   if (cached_has_bits & 0x00000008u) {
-    target = stream->EnsureSpace(target);
-    target = ::_pbi::WireFormatLite::WriteFloatToArray(38, this->_internal_f_distz(), target);
+    ::google::protobuf::internal::WireFormatLite::WriteFloat(38, this->f_distz(), output);
   }
 
   // optional float f_DistZStd = 39;
   if (cached_has_bits & 0x00000010u) {
-    target = stream->EnsureSpace(target);
-    target = ::_pbi::WireFormatLite::WriteFloatToArray(39, this->_internal_f_distzstd(), target);
+    ::google::protobuf::internal::WireFormatLite::WriteFloat(39, this->f_distzstd(), output);
   }
 
   // repeated float a_Classification = 40;
-  for (int i = 0, n = this->_internal_a_classification_size(); i < n; i++) {
-    target = stream->EnsureSpace(target);
-    target = ::_pbi::WireFormatLite::WriteFloatToArray(40, this->_internal_a_classification(i), target);
+  for (int i = 0, n = this->a_classification_size(); i < n; i++) {
+    ::google::protobuf::internal::WireFormatLite::WriteFloat(
+      40, this->a_classification(i), output);
   }
 
-  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
-    target = ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
-        _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
+  if (_internal_metadata_.have_unknown_fields()) {
+    ::google::protobuf::internal::WireFormat::SerializeUnknownFields(
+        _internal_metadata_.unknown_fields(), output);
+  }
+  // @@protoc_insertion_point(serialize_end:pb.PDK.RadarObjectList.RadarObject)
+}
+
+::google::protobuf::uint8* RadarObjectList_RadarObject::InternalSerializeWithCachedSizesToArray(
+    bool deterministic, ::google::protobuf::uint8* target) const {
+  (void)deterministic; // Unused
+  // @@protoc_insertion_point(serialize_to_array_start:pb.PDK.RadarObjectList.RadarObject)
+  ::google::protobuf::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  cached_has_bits = _has_bits_[0];
+  // optional uint32 u_ObjId = 1;
+  if (cached_has_bits & 0x00000001u) {
+    target = ::google::protobuf::internal::WireFormatLite::WriteUInt32ToArray(1, this->u_objid(), target);
+  }
+
+  // optional float f_DistX = 3;
+  if (cached_has_bits & 0x00000002u) {
+    target = ::google::protobuf::internal::WireFormatLite::WriteFloatToArray(3, this->f_distx(), target);
+  }
+
+  // optional float f_DistY = 4;
+  if (cached_has_bits & 0x00000004u) {
+    target = ::google::protobuf::internal::WireFormatLite::WriteFloatToArray(4, this->f_disty(), target);
+  }
+
+  // optional float f_VrelX = 5;
+  if (cached_has_bits & 0x00000008u) {
+    target = ::google::protobuf::internal::WireFormatLite::WriteFloatToArray(5, this->f_vrelx(), target);
+  }
+
+  // optional float f_VrelY = 6;
+  if (cached_has_bits & 0x00000010u) {
+    target = ::google::protobuf::internal::WireFormatLite::WriteFloatToArray(6, this->f_vrely(), target);
+  }
+
+  // optional float f_ArelX = 7;
+  if (cached_has_bits & 0x00000020u) {
+    target = ::google::protobuf::internal::WireFormatLite::WriteFloatToArray(7, this->f_arelx(), target);
+  }
+
+  // optional float f_ArelY = 8;
+  if (cached_has_bits & 0x00000040u) {
+    target = ::google::protobuf::internal::WireFormatLite::WriteFloatToArray(8, this->f_arely(), target);
+  }
+
+  // optional float f_DistXStd = 9;
+  if (cached_has_bits & 0x00000080u) {
+    target = ::google::protobuf::internal::WireFormatLite::WriteFloatToArray(9, this->f_distxstd(), target);
+  }
+
+  // optional float f_DistYStd = 10;
+  if (cached_has_bits & 0x00000100u) {
+    target = ::google::protobuf::internal::WireFormatLite::WriteFloatToArray(10, this->f_distystd(), target);
+  }
+
+  // optional float f_VrelXStd = 11;
+  if (cached_has_bits & 0x00000200u) {
+    target = ::google::protobuf::internal::WireFormatLite::WriteFloatToArray(11, this->f_vrelxstd(), target);
+  }
+
+  // optional float f_VrelYStd = 12;
+  if (cached_has_bits & 0x00000400u) {
+    target = ::google::protobuf::internal::WireFormatLite::WriteFloatToArray(12, this->f_vrelystd(), target);
+  }
+
+  // optional float f_ArelXStd = 13;
+  if (cached_has_bits & 0x00000800u) {
+    target = ::google::protobuf::internal::WireFormatLite::WriteFloatToArray(13, this->f_arelxstd(), target);
+  }
+
+  // optional float f_ArelYStd = 14;
+  if (cached_has_bits & 0x00001000u) {
+    target = ::google::protobuf::internal::WireFormatLite::WriteFloatToArray(14, this->f_arelystd(), target);
+  }
+
+  // optional float f_LDeltaX_left = 15;
+  if (cached_has_bits & 0x00002000u) {
+    target = ::google::protobuf::internal::WireFormatLite::WriteFloatToArray(15, this->f_ldeltax_left(), target);
+  }
+
+  // optional float f_LDeltaX_mid = 16;
+  if (cached_has_bits & 0x00004000u) {
+    target = ::google::protobuf::internal::WireFormatLite::WriteFloatToArray(16, this->f_ldeltax_mid(), target);
+  }
+
+  // optional float f_LDeltaX_right = 17;
+  if (cached_has_bits & 0x00008000u) {
+    target = ::google::protobuf::internal::WireFormatLite::WriteFloatToArray(17, this->f_ldeltax_right(), target);
+  }
+
+  // optional float f_LDeltaY_left = 18;
+  if (cached_has_bits & 0x00010000u) {
+    target = ::google::protobuf::internal::WireFormatLite::WriteFloatToArray(18, this->f_ldeltay_left(), target);
+  }
+
+  // optional float f_LDeltaY_mid = 19;
+  if (cached_has_bits & 0x00020000u) {
+    target = ::google::protobuf::internal::WireFormatLite::WriteFloatToArray(19, this->f_ldeltay_mid(), target);
+  }
+
+  // optional float f_LDeltaY_right = 20;
+  if (cached_has_bits & 0x00040000u) {
+    target = ::google::protobuf::internal::WireFormatLite::WriteFloatToArray(20, this->f_ldeltay_right(), target);
+  }
+
+  // optional .pb.PDK.RadarObjectList.RadarObject.LDeltaQual e_LDeltaQual = 21;
+  if (cached_has_bits & 0x00080000u) {
+    target = ::google::protobuf::internal::WireFormatLite::WriteEnumToArray(
+      21, this->e_ldeltaqual(), target);
+  }
+
+  // optional float f_RCS = 22;
+  if (cached_has_bits & 0x00100000u) {
+    target = ::google::protobuf::internal::WireFormatLite::WriteFloatToArray(22, this->f_rcs(), target);
+  }
+
+  // optional float f_ObjectScore = 23;
+  if (cached_has_bits & 0x00200000u) {
+    target = ::google::protobuf::internal::WireFormatLite::WriteFloatToArray(23, this->f_objectscore(), target);
+  }
+
+  // optional uint32 u_LifeCycles = 24;
+  if (cached_has_bits & 0x00400000u) {
+    target = ::google::protobuf::internal::WireFormatLite::WriteUInt32ToArray(24, this->u_lifecycles(), target);
+  }
+
+  // optional .pb.PDK.RadarObjectList.RadarObject.DynamicProperty e_DynamicProperty = 25;
+  if (cached_has_bits & 0x00800000u) {
+    target = ::google::protobuf::internal::WireFormatLite::WriteEnumToArray(
+      25, this->e_dynamicproperty(), target);
+  }
+
+  // optional .pb.PDK.RadarObjectList.RadarObject.ObjState e_ObjState = 26;
+  if (cached_has_bits & 0x01000000u) {
+    target = ::google::protobuf::internal::WireFormatLite::WriteEnumToArray(
+      26, this->e_objstate(), target);
+  }
+
+  // optional float f_VabsX = 28;
+  if (cached_has_bits & 0x02000000u) {
+    target = ::google::protobuf::internal::WireFormatLite::WriteFloatToArray(28, this->f_vabsx(), target);
+  }
+
+  // optional float f_VabsY = 29;
+  if (cached_has_bits & 0x04000000u) {
+    target = ::google::protobuf::internal::WireFormatLite::WriteFloatToArray(29, this->f_vabsy(), target);
+  }
+
+  // optional float f_AabsX = 30;
+  if (cached_has_bits & 0x08000000u) {
+    target = ::google::protobuf::internal::WireFormatLite::WriteFloatToArray(30, this->f_aabsx(), target);
+  }
+
+  // optional float f_AabsY = 31;
+  if (cached_has_bits & 0x10000000u) {
+    target = ::google::protobuf::internal::WireFormatLite::WriteFloatToArray(31, this->f_aabsy(), target);
+  }
+
+  // optional float f_VabsXStd = 32;
+  if (cached_has_bits & 0x20000000u) {
+    target = ::google::protobuf::internal::WireFormatLite::WriteFloatToArray(32, this->f_vabsxstd(), target);
+  }
+
+  // optional float f_VabsYStd = 33;
+  if (cached_has_bits & 0x40000000u) {
+    target = ::google::protobuf::internal::WireFormatLite::WriteFloatToArray(33, this->f_vabsystd(), target);
+  }
+
+  // optional float f_AabsXStd = 34;
+  if (cached_has_bits & 0x80000000u) {
+    target = ::google::protobuf::internal::WireFormatLite::WriteFloatToArray(34, this->f_aabsxstd(), target);
+  }
+
+  cached_has_bits = _has_bits_[1];
+  // optional float f_AabsYStd = 35;
+  if (cached_has_bits & 0x00000001u) {
+    target = ::google::protobuf::internal::WireFormatLite::WriteFloatToArray(35, this->f_aabsystd(), target);
+  }
+
+  // optional float f_Orientation = 36;
+  if (cached_has_bits & 0x00000002u) {
+    target = ::google::protobuf::internal::WireFormatLite::WriteFloatToArray(36, this->f_orientation(), target);
+  }
+
+  // optional float f_OrientationStd = 37;
+  if (cached_has_bits & 0x00000004u) {
+    target = ::google::protobuf::internal::WireFormatLite::WriteFloatToArray(37, this->f_orientationstd(), target);
+  }
+
+  // optional float f_DistZ = 38;
+  if (cached_has_bits & 0x00000008u) {
+    target = ::google::protobuf::internal::WireFormatLite::WriteFloatToArray(38, this->f_distz(), target);
+  }
+
+  // optional float f_DistZStd = 39;
+  if (cached_has_bits & 0x00000010u) {
+    target = ::google::protobuf::internal::WireFormatLite::WriteFloatToArray(39, this->f_distzstd(), target);
+  }
+
+  // repeated float a_Classification = 40;
+  target = ::google::protobuf::internal::WireFormatLite::
+    WriteFloatToArray(40, this->a_classification_, target);
+
+  if (_internal_metadata_.have_unknown_fields()) {
+    target = ::google::protobuf::internal::WireFormat::SerializeUnknownFieldsToArray(
+        _internal_metadata_.unknown_fields(), target);
   }
   // @@protoc_insertion_point(serialize_to_array_end:pb.PDK.RadarObjectList.RadarObject)
   return target;
@@ -1228,246 +1523,252 @@ size_t RadarObjectList_RadarObject::ByteSizeLong() const {
 // @@protoc_insertion_point(message_byte_size_start:pb.PDK.RadarObjectList.RadarObject)
   size_t total_size = 0;
 
-  uint32_t cached_has_bits = 0;
-  // Prevent compiler warnings about cached_has_bits being unused
-  (void) cached_has_bits;
-
+  if (_internal_metadata_.have_unknown_fields()) {
+    total_size +=
+      ::google::protobuf::internal::WireFormat::ComputeUnknownFieldsSize(
+        _internal_metadata_.unknown_fields());
+  }
   // repeated float a_Classification = 40;
   {
-    unsigned int count = static_cast<unsigned int>(this->_internal_a_classification_size());
+    unsigned int count = static_cast<unsigned int>(this->a_classification_size());
     size_t data_size = 4UL * count;
     total_size += 2 *
-                  ::_pbi::FromIntSize(this->_internal_a_classification_size());
+                  ::google::protobuf::internal::FromIntSize(this->a_classification_size());
     total_size += data_size;
   }
 
-  cached_has_bits = _has_bits_[0];
-  if (cached_has_bits & 0x000000ffu) {
+  if (_has_bits_[0 / 32] & 255u) {
     // optional uint32 u_ObjId = 1;
-    if (cached_has_bits & 0x00000001u) {
-      total_size += ::_pbi::WireFormatLite::UInt32SizePlusOne(this->_internal_u_objid());
+    if (has_u_objid()) {
+      total_size += 1 +
+        ::google::protobuf::internal::WireFormatLite::UInt32Size(
+          this->u_objid());
     }
 
     // optional float f_DistX = 3;
-    if (cached_has_bits & 0x00000002u) {
+    if (has_f_distx()) {
       total_size += 1 + 4;
     }
 
     // optional float f_DistY = 4;
-    if (cached_has_bits & 0x00000004u) {
+    if (has_f_disty()) {
       total_size += 1 + 4;
     }
 
     // optional float f_VrelX = 5;
-    if (cached_has_bits & 0x00000008u) {
+    if (has_f_vrelx()) {
       total_size += 1 + 4;
     }
 
     // optional float f_VrelY = 6;
-    if (cached_has_bits & 0x00000010u) {
+    if (has_f_vrely()) {
       total_size += 1 + 4;
     }
 
     // optional float f_ArelX = 7;
-    if (cached_has_bits & 0x00000020u) {
+    if (has_f_arelx()) {
       total_size += 1 + 4;
     }
 
     // optional float f_ArelY = 8;
-    if (cached_has_bits & 0x00000040u) {
+    if (has_f_arely()) {
       total_size += 1 + 4;
     }
 
     // optional float f_DistXStd = 9;
-    if (cached_has_bits & 0x00000080u) {
+    if (has_f_distxstd()) {
       total_size += 1 + 4;
     }
 
   }
-  if (cached_has_bits & 0x0000ff00u) {
+  if (_has_bits_[8 / 32] & 65280u) {
     // optional float f_DistYStd = 10;
-    if (cached_has_bits & 0x00000100u) {
+    if (has_f_distystd()) {
       total_size += 1 + 4;
     }
 
     // optional float f_VrelXStd = 11;
-    if (cached_has_bits & 0x00000200u) {
+    if (has_f_vrelxstd()) {
       total_size += 1 + 4;
     }
 
     // optional float f_VrelYStd = 12;
-    if (cached_has_bits & 0x00000400u) {
+    if (has_f_vrelystd()) {
       total_size += 1 + 4;
     }
 
     // optional float f_ArelXStd = 13;
-    if (cached_has_bits & 0x00000800u) {
+    if (has_f_arelxstd()) {
       total_size += 1 + 4;
     }
 
     // optional float f_ArelYStd = 14;
-    if (cached_has_bits & 0x00001000u) {
+    if (has_f_arelystd()) {
       total_size += 1 + 4;
     }
 
     // optional float f_LDeltaX_left = 15;
-    if (cached_has_bits & 0x00002000u) {
+    if (has_f_ldeltax_left()) {
       total_size += 1 + 4;
     }
 
     // optional float f_LDeltaX_mid = 16;
-    if (cached_has_bits & 0x00004000u) {
+    if (has_f_ldeltax_mid()) {
       total_size += 2 + 4;
     }
 
     // optional float f_LDeltaX_right = 17;
-    if (cached_has_bits & 0x00008000u) {
+    if (has_f_ldeltax_right()) {
       total_size += 2 + 4;
     }
 
   }
-  if (cached_has_bits & 0x00ff0000u) {
+  if (_has_bits_[16 / 32] & 16711680u) {
     // optional float f_LDeltaY_left = 18;
-    if (cached_has_bits & 0x00010000u) {
+    if (has_f_ldeltay_left()) {
       total_size += 2 + 4;
     }
 
     // optional float f_LDeltaY_mid = 19;
-    if (cached_has_bits & 0x00020000u) {
+    if (has_f_ldeltay_mid()) {
       total_size += 2 + 4;
     }
 
     // optional float f_LDeltaY_right = 20;
-    if (cached_has_bits & 0x00040000u) {
+    if (has_f_ldeltay_right()) {
       total_size += 2 + 4;
     }
 
     // optional .pb.PDK.RadarObjectList.RadarObject.LDeltaQual e_LDeltaQual = 21;
-    if (cached_has_bits & 0x00080000u) {
+    if (has_e_ldeltaqual()) {
       total_size += 2 +
-        ::_pbi::WireFormatLite::EnumSize(this->_internal_e_ldeltaqual());
+        ::google::protobuf::internal::WireFormatLite::EnumSize(this->e_ldeltaqual());
     }
 
     // optional float f_RCS = 22;
-    if (cached_has_bits & 0x00100000u) {
+    if (has_f_rcs()) {
       total_size += 2 + 4;
     }
 
     // optional float f_ObjectScore = 23;
-    if (cached_has_bits & 0x00200000u) {
+    if (has_f_objectscore()) {
       total_size += 2 + 4;
     }
 
     // optional uint32 u_LifeCycles = 24;
-    if (cached_has_bits & 0x00400000u) {
+    if (has_u_lifecycles()) {
       total_size += 2 +
-        ::_pbi::WireFormatLite::UInt32Size(
-          this->_internal_u_lifecycles());
+        ::google::protobuf::internal::WireFormatLite::UInt32Size(
+          this->u_lifecycles());
     }
 
     // optional .pb.PDK.RadarObjectList.RadarObject.DynamicProperty e_DynamicProperty = 25;
-    if (cached_has_bits & 0x00800000u) {
+    if (has_e_dynamicproperty()) {
       total_size += 2 +
-        ::_pbi::WireFormatLite::EnumSize(this->_internal_e_dynamicproperty());
+        ::google::protobuf::internal::WireFormatLite::EnumSize(this->e_dynamicproperty());
     }
 
   }
-  if (cached_has_bits & 0xff000000u) {
+  if (_has_bits_[24 / 32] & 4278190080u) {
     // optional .pb.PDK.RadarObjectList.RadarObject.ObjState e_ObjState = 26;
-    if (cached_has_bits & 0x01000000u) {
+    if (has_e_objstate()) {
       total_size += 2 +
-        ::_pbi::WireFormatLite::EnumSize(this->_internal_e_objstate());
+        ::google::protobuf::internal::WireFormatLite::EnumSize(this->e_objstate());
     }
 
     // optional float f_VabsX = 28;
-    if (cached_has_bits & 0x02000000u) {
+    if (has_f_vabsx()) {
       total_size += 2 + 4;
     }
 
     // optional float f_VabsY = 29;
-    if (cached_has_bits & 0x04000000u) {
+    if (has_f_vabsy()) {
       total_size += 2 + 4;
     }
 
     // optional float f_AabsX = 30;
-    if (cached_has_bits & 0x08000000u) {
+    if (has_f_aabsx()) {
       total_size += 2 + 4;
     }
 
     // optional float f_AabsY = 31;
-    if (cached_has_bits & 0x10000000u) {
+    if (has_f_aabsy()) {
       total_size += 2 + 4;
     }
 
     // optional float f_VabsXStd = 32;
-    if (cached_has_bits & 0x20000000u) {
+    if (has_f_vabsxstd()) {
       total_size += 2 + 4;
     }
 
     // optional float f_VabsYStd = 33;
-    if (cached_has_bits & 0x40000000u) {
+    if (has_f_vabsystd()) {
       total_size += 2 + 4;
     }
 
     // optional float f_AabsXStd = 34;
-    if (cached_has_bits & 0x80000000u) {
+    if (has_f_aabsxstd()) {
       total_size += 2 + 4;
     }
 
   }
-  cached_has_bits = _has_bits_[1];
-  if (cached_has_bits & 0x0000001fu) {
+  if (_has_bits_[32 / 32] & 31u) {
     // optional float f_AabsYStd = 35;
-    if (cached_has_bits & 0x00000001u) {
+    if (has_f_aabsystd()) {
       total_size += 2 + 4;
     }
 
     // optional float f_Orientation = 36;
-    if (cached_has_bits & 0x00000002u) {
+    if (has_f_orientation()) {
       total_size += 2 + 4;
     }
 
     // optional float f_OrientationStd = 37;
-    if (cached_has_bits & 0x00000004u) {
+    if (has_f_orientationstd()) {
       total_size += 2 + 4;
     }
 
     // optional float f_DistZ = 38;
-    if (cached_has_bits & 0x00000008u) {
+    if (has_f_distz()) {
       total_size += 2 + 4;
     }
 
     // optional float f_DistZStd = 39;
-    if (cached_has_bits & 0x00000010u) {
+    if (has_f_distzstd()) {
       total_size += 2 + 4;
     }
 
   }
-  return MaybeComputeUnknownFieldsSize(total_size, &_cached_size_);
+  int cached_size = ::google::protobuf::internal::ToCachedSize(total_size);
+  SetCachedSize(cached_size);
+  return total_size;
 }
 
-const ::PROTOBUF_NAMESPACE_ID::Message::ClassData RadarObjectList_RadarObject::_class_data_ = {
-    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSizeCheck,
-    RadarObjectList_RadarObject::MergeImpl
-};
-const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*RadarObjectList_RadarObject::GetClassData() const { return &_class_data_; }
-
-void RadarObjectList_RadarObject::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message* to,
-                      const ::PROTOBUF_NAMESPACE_ID::Message& from) {
-  static_cast<RadarObjectList_RadarObject *>(to)->MergeFrom(
-      static_cast<const RadarObjectList_RadarObject &>(from));
+void RadarObjectList_RadarObject::MergeFrom(const ::google::protobuf::Message& from) {
+// @@protoc_insertion_point(generalized_merge_from_start:pb.PDK.RadarObjectList.RadarObject)
+  GOOGLE_DCHECK_NE(&from, this);
+  const RadarObjectList_RadarObject* source =
+      ::google::protobuf::internal::DynamicCastToGenerated<const RadarObjectList_RadarObject>(
+          &from);
+  if (source == NULL) {
+  // @@protoc_insertion_point(generalized_merge_from_cast_fail:pb.PDK.RadarObjectList.RadarObject)
+    ::google::protobuf::internal::ReflectionOps::Merge(from, this);
+  } else {
+  // @@protoc_insertion_point(generalized_merge_from_cast_success:pb.PDK.RadarObjectList.RadarObject)
+    MergeFrom(*source);
+  }
 }
-
 
 void RadarObjectList_RadarObject::MergeFrom(const RadarObjectList_RadarObject& from) {
 // @@protoc_insertion_point(class_specific_merge_from_start:pb.PDK.RadarObjectList.RadarObject)
   GOOGLE_DCHECK_NE(&from, this);
-  uint32_t cached_has_bits = 0;
+  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  ::google::protobuf::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
   a_classification_.MergeFrom(from.a_classification_);
   cached_has_bits = from._has_bits_[0];
-  if (cached_has_bits & 0x000000ffu) {
+  if (cached_has_bits & 255u) {
     if (cached_has_bits & 0x00000001u) {
       u_objid_ = from.u_objid_;
     }
@@ -1494,7 +1795,7 @@ void RadarObjectList_RadarObject::MergeFrom(const RadarObjectList_RadarObject& f
     }
     _has_bits_[0] |= cached_has_bits;
   }
-  if (cached_has_bits & 0x0000ff00u) {
+  if (cached_has_bits & 65280u) {
     if (cached_has_bits & 0x00000100u) {
       f_distystd_ = from.f_distystd_;
     }
@@ -1521,7 +1822,7 @@ void RadarObjectList_RadarObject::MergeFrom(const RadarObjectList_RadarObject& f
     }
     _has_bits_[0] |= cached_has_bits;
   }
-  if (cached_has_bits & 0x00ff0000u) {
+  if (cached_has_bits & 16711680u) {
     if (cached_has_bits & 0x00010000u) {
       f_ldeltay_left_ = from.f_ldeltay_left_;
     }
@@ -1548,7 +1849,7 @@ void RadarObjectList_RadarObject::MergeFrom(const RadarObjectList_RadarObject& f
     }
     _has_bits_[0] |= cached_has_bits;
   }
-  if (cached_has_bits & 0xff000000u) {
+  if (cached_has_bits & 4278190080u) {
     if (cached_has_bits & 0x01000000u) {
       e_objstate_ = from.e_objstate_;
     }
@@ -1576,7 +1877,7 @@ void RadarObjectList_RadarObject::MergeFrom(const RadarObjectList_RadarObject& f
     _has_bits_[0] |= cached_has_bits;
   }
   cached_has_bits = from._has_bits_[1];
-  if (cached_has_bits & 0x0000001fu) {
+  if (cached_has_bits & 31u) {
     if (cached_has_bits & 0x00000001u) {
       f_aabsystd_ = from.f_aabsystd_;
     }
@@ -1594,7 +1895,13 @@ void RadarObjectList_RadarObject::MergeFrom(const RadarObjectList_RadarObject& f
     }
     _has_bits_[1] |= cached_has_bits;
   }
-  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+}
+
+void RadarObjectList_RadarObject::CopyFrom(const ::google::protobuf::Message& from) {
+// @@protoc_insertion_point(generalized_copy_from_start:pb.PDK.RadarObjectList.RadarObject)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
 }
 
 void RadarObjectList_RadarObject::CopyFrom(const RadarObjectList_RadarObject& from) {
@@ -1608,75 +1915,99 @@ bool RadarObjectList_RadarObject::IsInitialized() const {
   return true;
 }
 
+void RadarObjectList_RadarObject::Swap(RadarObjectList_RadarObject* other) {
+  if (other == this) return;
+  InternalSwap(other);
+}
 void RadarObjectList_RadarObject::InternalSwap(RadarObjectList_RadarObject* other) {
   using std::swap;
-  _internal_metadata_.InternalSwap(&other->_internal_metadata_);
+  a_classification_.InternalSwap(&other->a_classification_);
+  swap(u_objid_, other->u_objid_);
+  swap(f_distx_, other->f_distx_);
+  swap(f_disty_, other->f_disty_);
+  swap(f_vrelx_, other->f_vrelx_);
+  swap(f_vrely_, other->f_vrely_);
+  swap(f_arelx_, other->f_arelx_);
+  swap(f_arely_, other->f_arely_);
+  swap(f_distxstd_, other->f_distxstd_);
+  swap(f_distystd_, other->f_distystd_);
+  swap(f_vrelxstd_, other->f_vrelxstd_);
+  swap(f_vrelystd_, other->f_vrelystd_);
+  swap(f_arelxstd_, other->f_arelxstd_);
+  swap(f_arelystd_, other->f_arelystd_);
+  swap(f_ldeltax_left_, other->f_ldeltax_left_);
+  swap(f_ldeltax_mid_, other->f_ldeltax_mid_);
+  swap(f_ldeltax_right_, other->f_ldeltax_right_);
+  swap(f_ldeltay_left_, other->f_ldeltay_left_);
+  swap(f_ldeltay_mid_, other->f_ldeltay_mid_);
+  swap(f_ldeltay_right_, other->f_ldeltay_right_);
+  swap(e_ldeltaqual_, other->e_ldeltaqual_);
+  swap(f_rcs_, other->f_rcs_);
+  swap(f_objectscore_, other->f_objectscore_);
+  swap(u_lifecycles_, other->u_lifecycles_);
+  swap(e_dynamicproperty_, other->e_dynamicproperty_);
+  swap(e_objstate_, other->e_objstate_);
+  swap(f_vabsx_, other->f_vabsx_);
+  swap(f_vabsy_, other->f_vabsy_);
+  swap(f_aabsx_, other->f_aabsx_);
+  swap(f_aabsy_, other->f_aabsy_);
+  swap(f_vabsxstd_, other->f_vabsxstd_);
+  swap(f_vabsystd_, other->f_vabsystd_);
+  swap(f_aabsxstd_, other->f_aabsxstd_);
+  swap(f_aabsystd_, other->f_aabsystd_);
+  swap(f_orientation_, other->f_orientation_);
+  swap(f_orientationstd_, other->f_orientationstd_);
+  swap(f_distz_, other->f_distz_);
+  swap(f_distzstd_, other->f_distzstd_);
   swap(_has_bits_[0], other->_has_bits_[0]);
   swap(_has_bits_[1], other->_has_bits_[1]);
-  a_classification_.InternalSwap(&other->a_classification_);
-  ::PROTOBUF_NAMESPACE_ID::internal::memswap<
-      PROTOBUF_FIELD_OFFSET(RadarObjectList_RadarObject, f_distzstd_)
-      + sizeof(RadarObjectList_RadarObject::f_distzstd_)
-      - PROTOBUF_FIELD_OFFSET(RadarObjectList_RadarObject, u_objid_)>(
-          reinterpret_cast<char*>(&u_objid_),
-          reinterpret_cast<char*>(&other->u_objid_));
+  _internal_metadata_.Swap(&other->_internal_metadata_);
 }
 
-::PROTOBUF_NAMESPACE_ID::Metadata RadarObjectList_RadarObject::GetMetadata() const {
-  return ::_pbi::AssignDescriptors(
-      &descriptor_table_pdk_5fRadarObjectList_2eproto_getter, &descriptor_table_pdk_5fRadarObjectList_2eproto_once,
-      file_level_metadata_pdk_5fRadarObjectList_2eproto[0]);
+::google::protobuf::Metadata RadarObjectList_RadarObject::GetMetadata() const {
+  protobuf_pdk_5fRadarObjectList_2eproto::protobuf_AssignDescriptorsOnce();
+  return ::protobuf_pdk_5fRadarObjectList_2eproto::file_level_metadata[kIndexInFileMessages];
 }
+
 
 // ===================================================================
 
-class RadarObjectList::_Internal {
- public:
-  using HasBits = decltype(std::declval<RadarObjectList>()._has_bits_);
-  static const ::pb::PDK::SensorMsgHeader& t_header(const RadarObjectList* msg);
-  static void set_has_t_header(HasBits* has_bits) {
-    (*has_bits)[0] |= 1u;
-  }
-  static void set_has_f_egovelocity(HasBits* has_bits) {
-    (*has_bits)[0] |= 2u;
-  }
-  static void set_has_f_egoyawrate(HasBits* has_bits) {
-    (*has_bits)[0] |= 4u;
-  }
-  static void set_has_u_nofusedobjects(HasBits* has_bits) {
-    (*has_bits)[0] |= 8u;
-  }
-  static void set_has_e_providedkinematics(HasBits* has_bits) {
-    (*has_bits)[0] |= 16u;
-  }
-};
-
-const ::pb::PDK::SensorMsgHeader&
-RadarObjectList::_Internal::t_header(const RadarObjectList* msg) {
-  return *msg->t_header_;
+void RadarObjectList::InitAsDefaultInstance() {
+  ::pb::PDK::_RadarObjectList_default_instance_._instance.get_mutable()->t_header_ = const_cast< ::pb::PDK::SensorMsgHeader*>(
+      ::pb::PDK::SensorMsgHeader::internal_default_instance());
 }
 void RadarObjectList::clear_t_header() {
-  if (t_header_ != nullptr) t_header_->Clear();
-  _has_bits_[0] &= ~0x00000001u;
+  if (t_header_ != NULL) t_header_->Clear();
+  clear_has_t_header();
 }
-RadarObjectList::RadarObjectList(::PROTOBUF_NAMESPACE_ID::Arena* arena,
-                         bool is_message_owned)
-  : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned),
-  a_radarobjectlist_(arena),
-  a_classificationlabels_(arena) {
+#if !defined(_MSC_VER) || _MSC_VER >= 1900
+const int RadarObjectList::kTHeaderFieldNumber;
+const int RadarObjectList::kFEgoVelocityFieldNumber;
+const int RadarObjectList::kFEgoYawRateFieldNumber;
+const int RadarObjectList::kUNofUsedObjectsFieldNumber;
+const int RadarObjectList::kARadarObjectListFieldNumber;
+const int RadarObjectList::kEProvidedKinematicsFieldNumber;
+const int RadarObjectList::kAClassificationLabelsFieldNumber;
+#endif  // !defined(_MSC_VER) || _MSC_VER >= 1900
+
+RadarObjectList::RadarObjectList()
+  : ::google::protobuf::Message(), _internal_metadata_(NULL) {
+  ::google::protobuf::internal::InitSCC(
+      &protobuf_pdk_5fRadarObjectList_2eproto::scc_info_RadarObjectList.base);
   SharedCtor();
-  // @@protoc_insertion_point(arena_constructor:pb.PDK.RadarObjectList)
+  // @@protoc_insertion_point(constructor:pb.PDK.RadarObjectList)
 }
 RadarObjectList::RadarObjectList(const RadarObjectList& from)
-  : ::PROTOBUF_NAMESPACE_ID::Message(),
+  : ::google::protobuf::Message(),
+      _internal_metadata_(NULL),
       _has_bits_(from._has_bits_),
       a_radarobjectlist_(from.a_radarobjectlist_),
       a_classificationlabels_(from.a_classificationlabels_) {
-  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
-  if (from._internal_has_t_header()) {
+  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  if (from.has_t_header()) {
     t_header_ = new ::pb::PDK::SensorMsgHeader(*from.t_header_);
   } else {
-    t_header_ = nullptr;
+    t_header_ = NULL;
   }
   ::memcpy(&f_egovelocity_, &from.f_egovelocity_,
     static_cast<size_t>(reinterpret_cast<char*>(&e_providedkinematics_) -
@@ -1684,34 +2015,38 @@ RadarObjectList::RadarObjectList(const RadarObjectList& from)
   // @@protoc_insertion_point(copy_constructor:pb.PDK.RadarObjectList)
 }
 
-inline void RadarObjectList::SharedCtor() {
-::memset(reinterpret_cast<char*>(this) + static_cast<size_t>(
-    reinterpret_cast<char*>(&t_header_) - reinterpret_cast<char*>(this)),
-    0, static_cast<size_t>(reinterpret_cast<char*>(&e_providedkinematics_) -
-    reinterpret_cast<char*>(&t_header_)) + sizeof(e_providedkinematics_));
+void RadarObjectList::SharedCtor() {
+  ::memset(&t_header_, 0, static_cast<size_t>(
+      reinterpret_cast<char*>(&e_providedkinematics_) -
+      reinterpret_cast<char*>(&t_header_)) + sizeof(e_providedkinematics_));
 }
 
 RadarObjectList::~RadarObjectList() {
   // @@protoc_insertion_point(destructor:pb.PDK.RadarObjectList)
-  if (auto *arena = _internal_metadata_.DeleteReturnArena<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>()) {
-  (void)arena;
-    return;
-  }
   SharedDtor();
 }
 
-inline void RadarObjectList::SharedDtor() {
-  GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
+void RadarObjectList::SharedDtor() {
   if (this != internal_default_instance()) delete t_header_;
 }
 
 void RadarObjectList::SetCachedSize(int size) const {
   _cached_size_.Set(size);
 }
+const ::google::protobuf::Descriptor* RadarObjectList::descriptor() {
+  ::protobuf_pdk_5fRadarObjectList_2eproto::protobuf_AssignDescriptorsOnce();
+  return ::protobuf_pdk_5fRadarObjectList_2eproto::file_level_metadata[kIndexInFileMessages].descriptor;
+}
+
+const RadarObjectList& RadarObjectList::default_instance() {
+  ::google::protobuf::internal::InitSCC(&protobuf_pdk_5fRadarObjectList_2eproto::scc_info_RadarObjectList.base);
+  return *internal_default_instance();
+}
+
 
 void RadarObjectList::Clear() {
 // @@protoc_insertion_point(message_clear_start:pb.PDK.RadarObjectList)
-  uint32_t cached_has_bits = 0;
+  ::google::protobuf::uint32 cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
@@ -1719,187 +2054,268 @@ void RadarObjectList::Clear() {
   a_classificationlabels_.Clear();
   cached_has_bits = _has_bits_[0];
   if (cached_has_bits & 0x00000001u) {
-    GOOGLE_DCHECK(t_header_ != nullptr);
+    GOOGLE_DCHECK(t_header_ != NULL);
     t_header_->Clear();
   }
-  if (cached_has_bits & 0x0000001eu) {
+  if (cached_has_bits & 30u) {
     ::memset(&f_egovelocity_, 0, static_cast<size_t>(
         reinterpret_cast<char*>(&e_providedkinematics_) -
         reinterpret_cast<char*>(&f_egovelocity_)) + sizeof(e_providedkinematics_));
   }
   _has_bits_.Clear();
-  _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
+  _internal_metadata_.Clear();
 }
 
-const char* RadarObjectList::_InternalParse(const char* ptr, ::_pbi::ParseContext* ctx) {
-#define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
-  _Internal::HasBits has_bits{};
-  while (!ctx->Done(&ptr)) {
-    uint32_t tag;
-    ptr = ::_pbi::ReadTag(ptr, &tag);
-    switch (tag >> 3) {
+bool RadarObjectList::MergePartialFromCodedStream(
+    ::google::protobuf::io::CodedInputStream* input) {
+#define DO_(EXPRESSION) if (!GOOGLE_PREDICT_TRUE(EXPRESSION)) goto failure
+  ::google::protobuf::uint32 tag;
+  // @@protoc_insertion_point(parse_start:pb.PDK.RadarObjectList)
+  for (;;) {
+    ::std::pair<::google::protobuf::uint32, bool> p = input->ReadTagWithCutoffNoLastTag(127u);
+    tag = p.first;
+    if (!p.second) goto handle_unusual;
+    switch (::google::protobuf::internal::WireFormatLite::GetTagFieldNumber(tag)) {
       // optional .pb.PDK.SensorMsgHeader t_Header = 1;
-      case 1:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 10)) {
-          ptr = ctx->ParseMessage(_internal_mutable_t_header(), ptr);
-          CHK_(ptr);
-        } else
+      case 1: {
+        if (static_cast< ::google::protobuf::uint8>(tag) ==
+            static_cast< ::google::protobuf::uint8>(10u /* 10 & 0xFF */)) {
+          DO_(::google::protobuf::internal::WireFormatLite::ReadMessage(
+               input, mutable_t_header()));
+        } else {
           goto handle_unusual;
-        continue;
+        }
+        break;
+      }
+
       // optional float f_EgoVelocity = 3;
-      case 3:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 29)) {
-          _Internal::set_has_f_egovelocity(&has_bits);
-          f_egovelocity_ = ::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<float>(ptr);
-          ptr += sizeof(float);
-        } else
+      case 3: {
+        if (static_cast< ::google::protobuf::uint8>(tag) ==
+            static_cast< ::google::protobuf::uint8>(29u /* 29 & 0xFF */)) {
+          set_has_f_egovelocity();
+          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
+                   float, ::google::protobuf::internal::WireFormatLite::TYPE_FLOAT>(
+                 input, &f_egovelocity_)));
+        } else {
           goto handle_unusual;
-        continue;
+        }
+        break;
+      }
+
       // optional float f_EgoYawRate = 4;
-      case 4:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 37)) {
-          _Internal::set_has_f_egoyawrate(&has_bits);
-          f_egoyawrate_ = ::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<float>(ptr);
-          ptr += sizeof(float);
-        } else
+      case 4: {
+        if (static_cast< ::google::protobuf::uint8>(tag) ==
+            static_cast< ::google::protobuf::uint8>(37u /* 37 & 0xFF */)) {
+          set_has_f_egoyawrate();
+          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
+                   float, ::google::protobuf::internal::WireFormatLite::TYPE_FLOAT>(
+                 input, &f_egoyawrate_)));
+        } else {
           goto handle_unusual;
-        continue;
+        }
+        break;
+      }
+
       // optional uint32 u_NofUsedObjects = 5;
-      case 5:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 40)) {
-          _Internal::set_has_u_nofusedobjects(&has_bits);
-          u_nofusedobjects_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
-          CHK_(ptr);
-        } else
+      case 5: {
+        if (static_cast< ::google::protobuf::uint8>(tag) ==
+            static_cast< ::google::protobuf::uint8>(40u /* 40 & 0xFF */)) {
+          set_has_u_nofusedobjects();
+          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
+                   ::google::protobuf::uint32, ::google::protobuf::internal::WireFormatLite::TYPE_UINT32>(
+                 input, &u_nofusedobjects_)));
+        } else {
           goto handle_unusual;
-        continue;
+        }
+        break;
+      }
+
       // repeated .pb.PDK.RadarObjectList.RadarObject a_RadarObjectList = 6;
-      case 6:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 50)) {
-          ptr -= 1;
-          do {
-            ptr += 1;
-            ptr = ctx->ParseMessage(_internal_add_a_radarobjectlist(), ptr);
-            CHK_(ptr);
-            if (!ctx->DataAvailable(ptr)) break;
-          } while (::PROTOBUF_NAMESPACE_ID::internal::ExpectTag<50>(ptr));
-        } else
+      case 6: {
+        if (static_cast< ::google::protobuf::uint8>(tag) ==
+            static_cast< ::google::protobuf::uint8>(50u /* 50 & 0xFF */)) {
+          DO_(::google::protobuf::internal::WireFormatLite::ReadMessage(
+                input, add_a_radarobjectlist()));
+        } else {
           goto handle_unusual;
-        continue;
+        }
+        break;
+      }
+
       // optional .pb.PDK.RadarObjectList.KinematicsProvided e_ProvidedKinematics = 8;
-      case 8:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 64)) {
-          uint64_t val = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
-          CHK_(ptr);
-          if (PROTOBUF_PREDICT_TRUE(::pb::PDK::RadarObjectList_KinematicsProvided_IsValid(val))) {
-            _internal_set_e_providedkinematics(static_cast<::pb::PDK::RadarObjectList_KinematicsProvided>(val));
+      case 8: {
+        if (static_cast< ::google::protobuf::uint8>(tag) ==
+            static_cast< ::google::protobuf::uint8>(64u /* 64 & 0xFF */)) {
+          int value;
+          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
+                   int, ::google::protobuf::internal::WireFormatLite::TYPE_ENUM>(
+                 input, &value)));
+          if (::pb::PDK::RadarObjectList_KinematicsProvided_IsValid(value)) {
+            set_e_providedkinematics(static_cast< ::pb::PDK::RadarObjectList_KinematicsProvided >(value));
           } else {
-            ::PROTOBUF_NAMESPACE_ID::internal::WriteVarint(8, val, mutable_unknown_fields());
+            mutable_unknown_fields()->AddVarint(
+                8, static_cast< ::google::protobuf::uint64>(value));
           }
-        } else
+        } else {
           goto handle_unusual;
-        continue;
+        }
+        break;
+      }
+
       // repeated string a_ClassificationLabels = 9;
-      case 9:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 74)) {
-          ptr -= 1;
-          do {
-            ptr += 1;
-            auto str = _internal_add_a_classificationlabels();
-            ptr = ::_pbi::InlineGreedyStringParser(str, ptr, ctx);
-            CHK_(ptr);
-            #ifndef NDEBUG
-            ::_pbi::VerifyUTF8(str, "pb.PDK.RadarObjectList.a_ClassificationLabels");
-            #endif  // !NDEBUG
-            if (!ctx->DataAvailable(ptr)) break;
-          } while (::PROTOBUF_NAMESPACE_ID::internal::ExpectTag<74>(ptr));
-        } else
+      case 9: {
+        if (static_cast< ::google::protobuf::uint8>(tag) ==
+            static_cast< ::google::protobuf::uint8>(74u /* 74 & 0xFF */)) {
+          DO_(::google::protobuf::internal::WireFormatLite::ReadString(
+                input, this->add_a_classificationlabels()));
+          ::google::protobuf::internal::WireFormat::VerifyUTF8StringNamedField(
+            this->a_classificationlabels(this->a_classificationlabels_size() - 1).data(),
+            static_cast<int>(this->a_classificationlabels(this->a_classificationlabels_size() - 1).length()),
+            ::google::protobuf::internal::WireFormat::PARSE,
+            "pb.PDK.RadarObjectList.a_ClassificationLabels");
+        } else {
           goto handle_unusual;
-        continue;
-      default:
-        goto handle_unusual;
-    }  // switch
-  handle_unusual:
-    if ((tag == 0) || ((tag & 7) == 4)) {
-      CHK_(ptr);
-      ctx->SetLastTag(tag);
-      goto message_done;
+        }
+        break;
+      }
+
+      default: {
+      handle_unusual:
+        if (tag == 0) {
+          goto success;
+        }
+        DO_(::google::protobuf::internal::WireFormat::SkipField(
+              input, tag, _internal_metadata_.mutable_unknown_fields()));
+        break;
+      }
     }
-    ptr = UnknownFieldParse(
-        tag,
-        _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
-        ptr, ctx);
-    CHK_(ptr != nullptr);
-  }  // while
-message_done:
-  _has_bits_.Or(has_bits);
-  return ptr;
+  }
+success:
+  // @@protoc_insertion_point(parse_success:pb.PDK.RadarObjectList)
+  return true;
 failure:
-  ptr = nullptr;
-  goto message_done;
-#undef CHK_
+  // @@protoc_insertion_point(parse_failure:pb.PDK.RadarObjectList)
+  return false;
+#undef DO_
 }
 
-uint8_t* RadarObjectList::_InternalSerialize(
-    uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
-  // @@protoc_insertion_point(serialize_to_array_start:pb.PDK.RadarObjectList)
-  uint32_t cached_has_bits = 0;
+void RadarObjectList::SerializeWithCachedSizes(
+    ::google::protobuf::io::CodedOutputStream* output) const {
+  // @@protoc_insertion_point(serialize_start:pb.PDK.RadarObjectList)
+  ::google::protobuf::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
   cached_has_bits = _has_bits_[0];
   // optional .pb.PDK.SensorMsgHeader t_Header = 1;
   if (cached_has_bits & 0x00000001u) {
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
-      InternalWriteMessage(1, _Internal::t_header(this),
-        _Internal::t_header(this).GetCachedSize(), target, stream);
+    ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
+      1, this->_internal_t_header(), output);
   }
 
   // optional float f_EgoVelocity = 3;
   if (cached_has_bits & 0x00000002u) {
-    target = stream->EnsureSpace(target);
-    target = ::_pbi::WireFormatLite::WriteFloatToArray(3, this->_internal_f_egovelocity(), target);
+    ::google::protobuf::internal::WireFormatLite::WriteFloat(3, this->f_egovelocity(), output);
   }
 
   // optional float f_EgoYawRate = 4;
   if (cached_has_bits & 0x00000004u) {
-    target = stream->EnsureSpace(target);
-    target = ::_pbi::WireFormatLite::WriteFloatToArray(4, this->_internal_f_egoyawrate(), target);
+    ::google::protobuf::internal::WireFormatLite::WriteFloat(4, this->f_egoyawrate(), output);
   }
 
   // optional uint32 u_NofUsedObjects = 5;
   if (cached_has_bits & 0x00000008u) {
-    target = stream->EnsureSpace(target);
-    target = ::_pbi::WireFormatLite::WriteUInt32ToArray(5, this->_internal_u_nofusedobjects(), target);
+    ::google::protobuf::internal::WireFormatLite::WriteUInt32(5, this->u_nofusedobjects(), output);
   }
 
   // repeated .pb.PDK.RadarObjectList.RadarObject a_RadarObjectList = 6;
-  for (unsigned i = 0,
-      n = static_cast<unsigned>(this->_internal_a_radarobjectlist_size()); i < n; i++) {
-    const auto& repfield = this->_internal_a_radarobjectlist(i);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
-        InternalWriteMessage(6, repfield, repfield.GetCachedSize(), target, stream);
+  for (unsigned int i = 0,
+      n = static_cast<unsigned int>(this->a_radarobjectlist_size()); i < n; i++) {
+    ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
+      6,
+      this->a_radarobjectlist(static_cast<int>(i)),
+      output);
   }
 
   // optional .pb.PDK.RadarObjectList.KinematicsProvided e_ProvidedKinematics = 8;
   if (cached_has_bits & 0x00000010u) {
-    target = stream->EnsureSpace(target);
-    target = ::_pbi::WireFormatLite::WriteEnumToArray(
-      8, this->_internal_e_providedkinematics(), target);
+    ::google::protobuf::internal::WireFormatLite::WriteEnum(
+      8, this->e_providedkinematics(), output);
   }
 
   // repeated string a_ClassificationLabels = 9;
-  for (int i = 0, n = this->_internal_a_classificationlabels_size(); i < n; i++) {
-    const auto& s = this->_internal_a_classificationlabels(i);
-    ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::VerifyUTF8StringNamedField(
-      s.data(), static_cast<int>(s.length()),
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::SERIALIZE,
+  for (int i = 0, n = this->a_classificationlabels_size(); i < n; i++) {
+    ::google::protobuf::internal::WireFormat::VerifyUTF8StringNamedField(
+      this->a_classificationlabels(i).data(), static_cast<int>(this->a_classificationlabels(i).length()),
+      ::google::protobuf::internal::WireFormat::SERIALIZE,
       "pb.PDK.RadarObjectList.a_ClassificationLabels");
-    target = stream->WriteString(9, s, target);
+    ::google::protobuf::internal::WireFormatLite::WriteString(
+      9, this->a_classificationlabels(i), output);
   }
 
-  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
-    target = ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
-        _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
+  if (_internal_metadata_.have_unknown_fields()) {
+    ::google::protobuf::internal::WireFormat::SerializeUnknownFields(
+        _internal_metadata_.unknown_fields(), output);
+  }
+  // @@protoc_insertion_point(serialize_end:pb.PDK.RadarObjectList)
+}
+
+::google::protobuf::uint8* RadarObjectList::InternalSerializeWithCachedSizesToArray(
+    bool deterministic, ::google::protobuf::uint8* target) const {
+  (void)deterministic; // Unused
+  // @@protoc_insertion_point(serialize_to_array_start:pb.PDK.RadarObjectList)
+  ::google::protobuf::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  cached_has_bits = _has_bits_[0];
+  // optional .pb.PDK.SensorMsgHeader t_Header = 1;
+  if (cached_has_bits & 0x00000001u) {
+    target = ::google::protobuf::internal::WireFormatLite::
+      InternalWriteMessageToArray(
+        1, this->_internal_t_header(), deterministic, target);
+  }
+
+  // optional float f_EgoVelocity = 3;
+  if (cached_has_bits & 0x00000002u) {
+    target = ::google::protobuf::internal::WireFormatLite::WriteFloatToArray(3, this->f_egovelocity(), target);
+  }
+
+  // optional float f_EgoYawRate = 4;
+  if (cached_has_bits & 0x00000004u) {
+    target = ::google::protobuf::internal::WireFormatLite::WriteFloatToArray(4, this->f_egoyawrate(), target);
+  }
+
+  // optional uint32 u_NofUsedObjects = 5;
+  if (cached_has_bits & 0x00000008u) {
+    target = ::google::protobuf::internal::WireFormatLite::WriteUInt32ToArray(5, this->u_nofusedobjects(), target);
+  }
+
+  // repeated .pb.PDK.RadarObjectList.RadarObject a_RadarObjectList = 6;
+  for (unsigned int i = 0,
+      n = static_cast<unsigned int>(this->a_radarobjectlist_size()); i < n; i++) {
+    target = ::google::protobuf::internal::WireFormatLite::
+      InternalWriteMessageToArray(
+        6, this->a_radarobjectlist(static_cast<int>(i)), deterministic, target);
+  }
+
+  // optional .pb.PDK.RadarObjectList.KinematicsProvided e_ProvidedKinematics = 8;
+  if (cached_has_bits & 0x00000010u) {
+    target = ::google::protobuf::internal::WireFormatLite::WriteEnumToArray(
+      8, this->e_providedkinematics(), target);
+  }
+
+  // repeated string a_ClassificationLabels = 9;
+  for (int i = 0, n = this->a_classificationlabels_size(); i < n; i++) {
+    ::google::protobuf::internal::WireFormat::VerifyUTF8StringNamedField(
+      this->a_classificationlabels(i).data(), static_cast<int>(this->a_classificationlabels(i).length()),
+      ::google::protobuf::internal::WireFormat::SERIALIZE,
+      "pb.PDK.RadarObjectList.a_ClassificationLabels");
+    target = ::google::protobuf::internal::WireFormatLite::
+      WriteStringToArray(9, this->a_classificationlabels(i), target);
+  }
+
+  if (_internal_metadata_.have_unknown_fields()) {
+    target = ::google::protobuf::internal::WireFormat::SerializeUnknownFieldsToArray(
+        _internal_metadata_.unknown_fields(), target);
   }
   // @@protoc_insertion_point(serialize_to_array_end:pb.PDK.RadarObjectList)
   return target;
@@ -1909,84 +2325,95 @@ size_t RadarObjectList::ByteSizeLong() const {
 // @@protoc_insertion_point(message_byte_size_start:pb.PDK.RadarObjectList)
   size_t total_size = 0;
 
-  uint32_t cached_has_bits = 0;
-  // Prevent compiler warnings about cached_has_bits being unused
-  (void) cached_has_bits;
-
-  // repeated .pb.PDK.RadarObjectList.RadarObject a_RadarObjectList = 6;
-  total_size += 1UL * this->_internal_a_radarobjectlist_size();
-  for (const auto& msg : this->a_radarobjectlist_) {
+  if (_internal_metadata_.have_unknown_fields()) {
     total_size +=
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(msg);
+      ::google::protobuf::internal::WireFormat::ComputeUnknownFieldsSize(
+        _internal_metadata_.unknown_fields());
+  }
+  // repeated .pb.PDK.RadarObjectList.RadarObject a_RadarObjectList = 6;
+  {
+    unsigned int count = static_cast<unsigned int>(this->a_radarobjectlist_size());
+    total_size += 1UL * count;
+    for (unsigned int i = 0; i < count; i++) {
+      total_size +=
+        ::google::protobuf::internal::WireFormatLite::MessageSize(
+          this->a_radarobjectlist(static_cast<int>(i)));
+    }
   }
 
   // repeated string a_ClassificationLabels = 9;
   total_size += 1 *
-      ::PROTOBUF_NAMESPACE_ID::internal::FromIntSize(a_classificationlabels_.size());
-  for (int i = 0, n = a_classificationlabels_.size(); i < n; i++) {
-    total_size += ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
-      a_classificationlabels_.Get(i));
+      ::google::protobuf::internal::FromIntSize(this->a_classificationlabels_size());
+  for (int i = 0, n = this->a_classificationlabels_size(); i < n; i++) {
+    total_size += ::google::protobuf::internal::WireFormatLite::StringSize(
+      this->a_classificationlabels(i));
   }
 
-  cached_has_bits = _has_bits_[0];
-  if (cached_has_bits & 0x0000001fu) {
+  if (_has_bits_[0 / 32] & 31u) {
     // optional .pb.PDK.SensorMsgHeader t_Header = 1;
-    if (cached_has_bits & 0x00000001u) {
+    if (has_t_header()) {
       total_size += 1 +
-        ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
+        ::google::protobuf::internal::WireFormatLite::MessageSize(
           *t_header_);
     }
 
     // optional float f_EgoVelocity = 3;
-    if (cached_has_bits & 0x00000002u) {
+    if (has_f_egovelocity()) {
       total_size += 1 + 4;
     }
 
     // optional float f_EgoYawRate = 4;
-    if (cached_has_bits & 0x00000004u) {
+    if (has_f_egoyawrate()) {
       total_size += 1 + 4;
     }
 
     // optional uint32 u_NofUsedObjects = 5;
-    if (cached_has_bits & 0x00000008u) {
-      total_size += ::_pbi::WireFormatLite::UInt32SizePlusOne(this->_internal_u_nofusedobjects());
+    if (has_u_nofusedobjects()) {
+      total_size += 1 +
+        ::google::protobuf::internal::WireFormatLite::UInt32Size(
+          this->u_nofusedobjects());
     }
 
     // optional .pb.PDK.RadarObjectList.KinematicsProvided e_ProvidedKinematics = 8;
-    if (cached_has_bits & 0x00000010u) {
+    if (has_e_providedkinematics()) {
       total_size += 1 +
-        ::_pbi::WireFormatLite::EnumSize(this->_internal_e_providedkinematics());
+        ::google::protobuf::internal::WireFormatLite::EnumSize(this->e_providedkinematics());
     }
 
   }
-  return MaybeComputeUnknownFieldsSize(total_size, &_cached_size_);
+  int cached_size = ::google::protobuf::internal::ToCachedSize(total_size);
+  SetCachedSize(cached_size);
+  return total_size;
 }
 
-const ::PROTOBUF_NAMESPACE_ID::Message::ClassData RadarObjectList::_class_data_ = {
-    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSizeCheck,
-    RadarObjectList::MergeImpl
-};
-const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*RadarObjectList::GetClassData() const { return &_class_data_; }
-
-void RadarObjectList::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message* to,
-                      const ::PROTOBUF_NAMESPACE_ID::Message& from) {
-  static_cast<RadarObjectList *>(to)->MergeFrom(
-      static_cast<const RadarObjectList &>(from));
+void RadarObjectList::MergeFrom(const ::google::protobuf::Message& from) {
+// @@protoc_insertion_point(generalized_merge_from_start:pb.PDK.RadarObjectList)
+  GOOGLE_DCHECK_NE(&from, this);
+  const RadarObjectList* source =
+      ::google::protobuf::internal::DynamicCastToGenerated<const RadarObjectList>(
+          &from);
+  if (source == NULL) {
+  // @@protoc_insertion_point(generalized_merge_from_cast_fail:pb.PDK.RadarObjectList)
+    ::google::protobuf::internal::ReflectionOps::Merge(from, this);
+  } else {
+  // @@protoc_insertion_point(generalized_merge_from_cast_success:pb.PDK.RadarObjectList)
+    MergeFrom(*source);
+  }
 }
-
 
 void RadarObjectList::MergeFrom(const RadarObjectList& from) {
 // @@protoc_insertion_point(class_specific_merge_from_start:pb.PDK.RadarObjectList)
   GOOGLE_DCHECK_NE(&from, this);
-  uint32_t cached_has_bits = 0;
+  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  ::google::protobuf::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
   a_radarobjectlist_.MergeFrom(from.a_radarobjectlist_);
   a_classificationlabels_.MergeFrom(from.a_classificationlabels_);
   cached_has_bits = from._has_bits_[0];
-  if (cached_has_bits & 0x0000001fu) {
+  if (cached_has_bits & 31u) {
     if (cached_has_bits & 0x00000001u) {
-      _internal_mutable_t_header()->::pb::PDK::SensorMsgHeader::MergeFrom(from._internal_t_header());
+      mutable_t_header()->::pb::PDK::SensorMsgHeader::MergeFrom(from.t_header());
     }
     if (cached_has_bits & 0x00000002u) {
       f_egovelocity_ = from.f_egovelocity_;
@@ -2002,7 +2429,13 @@ void RadarObjectList::MergeFrom(const RadarObjectList& from) {
     }
     _has_bits_[0] |= cached_has_bits;
   }
-  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+}
+
+void RadarObjectList::CopyFrom(const ::google::protobuf::Message& from) {
+// @@protoc_insertion_point(generalized_copy_from_start:pb.PDK.RadarObjectList)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
 }
 
 void RadarObjectList::CopyFrom(const RadarObjectList& from) {
@@ -2016,39 +2449,41 @@ bool RadarObjectList::IsInitialized() const {
   return true;
 }
 
+void RadarObjectList::Swap(RadarObjectList* other) {
+  if (other == this) return;
+  InternalSwap(other);
+}
 void RadarObjectList::InternalSwap(RadarObjectList* other) {
   using std::swap;
-  _internal_metadata_.InternalSwap(&other->_internal_metadata_);
+  CastToBase(&a_radarobjectlist_)->InternalSwap(CastToBase(&other->a_radarobjectlist_));
+  a_classificationlabels_.InternalSwap(CastToBase(&other->a_classificationlabels_));
+  swap(t_header_, other->t_header_);
+  swap(f_egovelocity_, other->f_egovelocity_);
+  swap(f_egoyawrate_, other->f_egoyawrate_);
+  swap(u_nofusedobjects_, other->u_nofusedobjects_);
+  swap(e_providedkinematics_, other->e_providedkinematics_);
   swap(_has_bits_[0], other->_has_bits_[0]);
-  a_radarobjectlist_.InternalSwap(&other->a_radarobjectlist_);
-  a_classificationlabels_.InternalSwap(&other->a_classificationlabels_);
-  ::PROTOBUF_NAMESPACE_ID::internal::memswap<
-      PROTOBUF_FIELD_OFFSET(RadarObjectList, e_providedkinematics_)
-      + sizeof(RadarObjectList::e_providedkinematics_)
-      - PROTOBUF_FIELD_OFFSET(RadarObjectList, t_header_)>(
-          reinterpret_cast<char*>(&t_header_),
-          reinterpret_cast<char*>(&other->t_header_));
+  _internal_metadata_.Swap(&other->_internal_metadata_);
 }
 
-::PROTOBUF_NAMESPACE_ID::Metadata RadarObjectList::GetMetadata() const {
-  return ::_pbi::AssignDescriptors(
-      &descriptor_table_pdk_5fRadarObjectList_2eproto_getter, &descriptor_table_pdk_5fRadarObjectList_2eproto_once,
-      file_level_metadata_pdk_5fRadarObjectList_2eproto[1]);
+::google::protobuf::Metadata RadarObjectList::GetMetadata() const {
+  protobuf_pdk_5fRadarObjectList_2eproto::protobuf_AssignDescriptorsOnce();
+  return ::protobuf_pdk_5fRadarObjectList_2eproto::file_level_metadata[kIndexInFileMessages];
 }
+
 
 // @@protoc_insertion_point(namespace_scope)
 }  // namespace PDK
 }  // namespace pb
-PROTOBUF_NAMESPACE_OPEN
-template<> PROTOBUF_NOINLINE ::pb::PDK::RadarObjectList_RadarObject*
-Arena::CreateMaybeMessage< ::pb::PDK::RadarObjectList_RadarObject >(Arena* arena) {
-  return Arena::CreateMessageInternal< ::pb::PDK::RadarObjectList_RadarObject >(arena);
+namespace google {
+namespace protobuf {
+template<> GOOGLE_PROTOBUF_ATTRIBUTE_NOINLINE ::pb::PDK::RadarObjectList_RadarObject* Arena::CreateMaybeMessage< ::pb::PDK::RadarObjectList_RadarObject >(Arena* arena) {
+  return Arena::CreateInternal< ::pb::PDK::RadarObjectList_RadarObject >(arena);
 }
-template<> PROTOBUF_NOINLINE ::pb::PDK::RadarObjectList*
-Arena::CreateMaybeMessage< ::pb::PDK::RadarObjectList >(Arena* arena) {
-  return Arena::CreateMessageInternal< ::pb::PDK::RadarObjectList >(arena);
+template<> GOOGLE_PROTOBUF_ATTRIBUTE_NOINLINE ::pb::PDK::RadarObjectList* Arena::CreateMaybeMessage< ::pb::PDK::RadarObjectList >(Arena* arena) {
+  return Arena::CreateInternal< ::pb::PDK::RadarObjectList >(arena);
 }
-PROTOBUF_NAMESPACE_CLOSE
+}  // namespace protobuf
+}  // namespace google
 
 // @@protoc_insertion_point(global_scope)
-#include <google/protobuf/port_undef.inc>

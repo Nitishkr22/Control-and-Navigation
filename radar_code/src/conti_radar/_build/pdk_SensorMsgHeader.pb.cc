@@ -5,108 +5,136 @@
 
 #include <algorithm>
 
+#include <google/protobuf/stubs/common.h>
+#include <google/protobuf/stubs/port.h>
 #include <google/protobuf/io/coded_stream.h>
-#include <google/protobuf/extension_set.h>
-#include <google/protobuf/wire_format_lite.h>
+#include <google/protobuf/wire_format_lite_inl.h>
 #include <google/protobuf/descriptor.h>
 #include <google/protobuf/generated_message_reflection.h>
 #include <google/protobuf/reflection_ops.h>
 #include <google/protobuf/wire_format.h>
+// This is a temporary google only hack
+#ifdef GOOGLE_PROTOBUF_ENFORCE_UNIQUENESS
+#include "third_party/protobuf/version.h"
+#endif
 // @@protoc_insertion_point(includes)
-#include <google/protobuf/port_def.inc>
 
-PROTOBUF_PRAGMA_INIT_SEG
-
-namespace _pb = ::PROTOBUF_NAMESPACE_ID;
-namespace _pbi = _pb::internal;
-
+namespace protobuf_pdk_5fMsgHeader_2eproto {
+extern PROTOBUF_INTERNAL_EXPORT_protobuf_pdk_5fMsgHeader_2eproto ::google::protobuf::internal::SCCInfo<1> scc_info_MsgHeader;
+}  // namespace protobuf_pdk_5fMsgHeader_2eproto
 namespace pb {
 namespace PDK {
-PROTOBUF_CONSTEXPR SensorMsgHeader::SensorMsgHeader(
-    ::_pbi::ConstantInitialized)
-  : t_commonheader_(nullptr)
-  , u_sensorid_(0u)
-  , e_signalstatus_(2)
-
-  , e_sensortype_(99)
-{}
-struct SensorMsgHeaderDefaultTypeInternal {
-  PROTOBUF_CONSTEXPR SensorMsgHeaderDefaultTypeInternal()
-      : _instance(::_pbi::ConstantInitialized{}) {}
-  ~SensorMsgHeaderDefaultTypeInternal() {}
-  union {
-    SensorMsgHeader _instance;
-  };
-};
-PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 SensorMsgHeaderDefaultTypeInternal _SensorMsgHeader_default_instance_;
+class SensorMsgHeaderDefaultTypeInternal {
+ public:
+  ::google::protobuf::internal::ExplicitlyConstructed<SensorMsgHeader>
+      _instance;
+} _SensorMsgHeader_default_instance_;
 }  // namespace PDK
 }  // namespace pb
-static ::_pb::Metadata file_level_metadata_pdk_5fSensorMsgHeader_2eproto[1];
-static const ::_pb::EnumDescriptor* file_level_enum_descriptors_pdk_5fSensorMsgHeader_2eproto[2];
-static constexpr ::_pb::ServiceDescriptor const** file_level_service_descriptors_pdk_5fSensorMsgHeader_2eproto = nullptr;
+namespace protobuf_pdk_5fSensorMsgHeader_2eproto {
+static void InitDefaultsSensorMsgHeader() {
+  GOOGLE_PROTOBUF_VERIFY_VERSION;
 
-const uint32_t TableStruct_pdk_5fSensorMsgHeader_2eproto::offsets[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
-  PROTOBUF_FIELD_OFFSET(::pb::PDK::SensorMsgHeader, _has_bits_),
-  PROTOBUF_FIELD_OFFSET(::pb::PDK::SensorMsgHeader, _internal_metadata_),
+  {
+    void* ptr = &::pb::PDK::_SensorMsgHeader_default_instance_;
+    new (ptr) ::pb::PDK::SensorMsgHeader();
+    ::google::protobuf::internal::OnShutdownDestroyMessage(ptr);
+  }
+  ::pb::PDK::SensorMsgHeader::InitAsDefaultInstance();
+}
+
+::google::protobuf::internal::SCCInfo<1> scc_info_SensorMsgHeader =
+    {{ATOMIC_VAR_INIT(::google::protobuf::internal::SCCInfoBase::kUninitialized), 1, InitDefaultsSensorMsgHeader}, {
+      &protobuf_pdk_5fMsgHeader_2eproto::scc_info_MsgHeader.base,}};
+
+void InitDefaults() {
+  ::google::protobuf::internal::InitSCC(&scc_info_SensorMsgHeader.base);
+}
+
+::google::protobuf::Metadata file_level_metadata[1];
+const ::google::protobuf::EnumDescriptor* file_level_enum_descriptors[2];
+
+const ::google::protobuf::uint32 TableStruct::offsets[] GOOGLE_PROTOBUF_ATTRIBUTE_SECTION_VARIABLE(protodesc_cold) = {
+  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::pb::PDK::SensorMsgHeader, _has_bits_),
+  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::pb::PDK::SensorMsgHeader, _internal_metadata_),
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
-  ~0u,  // no _inlined_string_donated_
-  PROTOBUF_FIELD_OFFSET(::pb::PDK::SensorMsgHeader, t_commonheader_),
-  PROTOBUF_FIELD_OFFSET(::pb::PDK::SensorMsgHeader, u_sensorid_),
-  PROTOBUF_FIELD_OFFSET(::pb::PDK::SensorMsgHeader, e_signalstatus_),
-  PROTOBUF_FIELD_OFFSET(::pb::PDK::SensorMsgHeader, e_sensortype_),
+  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::pb::PDK::SensorMsgHeader, t_commonheader_),
+  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::pb::PDK::SensorMsgHeader, u_sensorid_),
+  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::pb::PDK::SensorMsgHeader, e_signalstatus_),
+  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::pb::PDK::SensorMsgHeader, e_sensortype_),
   0,
   1,
   2,
   3,
 };
-static const ::_pbi::MigrationSchema schemas[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
-  { 0, 10, -1, sizeof(::pb::PDK::SensorMsgHeader)},
+static const ::google::protobuf::internal::MigrationSchema schemas[] GOOGLE_PROTOBUF_ATTRIBUTE_SECTION_VARIABLE(protodesc_cold) = {
+  { 0, 9, sizeof(::pb::PDK::SensorMsgHeader)},
 };
 
-static const ::_pb::Message* const file_default_instances[] = {
-  &::pb::PDK::_SensorMsgHeader_default_instance_._instance,
+static ::google::protobuf::Message const * const file_default_instances[] = {
+  reinterpret_cast<const ::google::protobuf::Message*>(&::pb::PDK::_SensorMsgHeader_default_instance_),
 };
 
-const char descriptor_table_protodef_pdk_5fSensorMsgHeader_2eproto[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) =
-  "\n\031pdk_SensorMsgHeader.proto\022\006pb.PDK\032\023pdk"
-  "_MsgHeader.proto\"\250\003\n\017SensorMsgHeader\022)\n\016"
-  "t_CommonHeader\030\001 \001(\0132\021.pb.PDK.MsgHeader\022"
-  "\022\n\nu_SensorId\030\002 \001(\r\022Q\n\016e_SignalStatus\030\003 "
-  "\001(\0162$.pb.PDK.SensorMsgHeader.SignalStatu"
-  "s:\023EM_SIGSTATE_INVALID\022A\n\014e_SensorType\030\004"
-  " \001(\0162\".pb.PDK.SensorMsgHeader.SensorType"
-  ":\007UNKNOWN\"Q\n\014SignalStatus\022\024\n\020EM_SIGSTATE"
-  "_INIT\020\000\022\022\n\016EM_SIGSTATE_OK\020\001\022\027\n\023EM_SIGSTA"
-  "TE_INVALID\020\002\"m\n\nSensorType\022\014\n\010ARS430EO\020\000"
-  "\022\014\n\010ARS430DI\020\001\022\014\n\010SRR520CO\020\003\022\016\n\nARS540DE"
-  "MO\020\004\022\014\n\010SRR520DI\020\005\022\n\n\006ARS548\020\006\022\013\n\007UNKNOW"
-  "N\020c"
-  ;
-static const ::_pbi::DescriptorTable* const descriptor_table_pdk_5fSensorMsgHeader_2eproto_deps[1] = {
-  &::descriptor_table_pdk_5fMsgHeader_2eproto,
-};
-static ::_pbi::once_flag descriptor_table_pdk_5fSensorMsgHeader_2eproto_once;
-const ::_pbi::DescriptorTable descriptor_table_pdk_5fSensorMsgHeader_2eproto = {
-    false, false, 483, descriptor_table_protodef_pdk_5fSensorMsgHeader_2eproto,
-    "pdk_SensorMsgHeader.proto",
-    &descriptor_table_pdk_5fSensorMsgHeader_2eproto_once, descriptor_table_pdk_5fSensorMsgHeader_2eproto_deps, 1, 1,
-    schemas, file_default_instances, TableStruct_pdk_5fSensorMsgHeader_2eproto::offsets,
-    file_level_metadata_pdk_5fSensorMsgHeader_2eproto, file_level_enum_descriptors_pdk_5fSensorMsgHeader_2eproto,
-    file_level_service_descriptors_pdk_5fSensorMsgHeader_2eproto,
-};
-PROTOBUF_ATTRIBUTE_WEAK const ::_pbi::DescriptorTable* descriptor_table_pdk_5fSensorMsgHeader_2eproto_getter() {
-  return &descriptor_table_pdk_5fSensorMsgHeader_2eproto;
+void protobuf_AssignDescriptors() {
+  AddDescriptors();
+  AssignDescriptors(
+      "pdk_SensorMsgHeader.proto", schemas, file_default_instances, TableStruct::offsets,
+      file_level_metadata, file_level_enum_descriptors, NULL);
 }
 
-// Force running AddDescriptors() at dynamic initialization time.
-PROTOBUF_ATTRIBUTE_INIT_PRIORITY2 static ::_pbi::AddDescriptorsRunner dynamic_init_dummy_pdk_5fSensorMsgHeader_2eproto(&descriptor_table_pdk_5fSensorMsgHeader_2eproto);
+void protobuf_AssignDescriptorsOnce() {
+  static ::google::protobuf::internal::once_flag once;
+  ::google::protobuf::internal::call_once(once, protobuf_AssignDescriptors);
+}
+
+void protobuf_RegisterTypes(const ::std::string&) GOOGLE_PROTOBUF_ATTRIBUTE_COLD;
+void protobuf_RegisterTypes(const ::std::string&) {
+  protobuf_AssignDescriptorsOnce();
+  ::google::protobuf::internal::RegisterAllTypes(file_level_metadata, 1);
+}
+
+void AddDescriptorsImpl() {
+  InitDefaults();
+  static const char descriptor[] GOOGLE_PROTOBUF_ATTRIBUTE_SECTION_VARIABLE(protodesc_cold) = {
+      "\n\031pdk_SensorMsgHeader.proto\022\006pb.PDK\032\023pdk"
+      "_MsgHeader.proto\"\250\003\n\017SensorMsgHeader\022)\n\016"
+      "t_CommonHeader\030\001 \001(\0132\021.pb.PDK.MsgHeader\022"
+      "\022\n\nu_SensorId\030\002 \001(\r\022Q\n\016e_SignalStatus\030\003 "
+      "\001(\0162$.pb.PDK.SensorMsgHeader.SignalStatu"
+      "s:\023EM_SIGSTATE_INVALID\022A\n\014e_SensorType\030\004"
+      " \001(\0162\".pb.PDK.SensorMsgHeader.SensorType"
+      ":\007UNKNOWN\"Q\n\014SignalStatus\022\024\n\020EM_SIGSTATE"
+      "_INIT\020\000\022\022\n\016EM_SIGSTATE_OK\020\001\022\027\n\023EM_SIGSTA"
+      "TE_INVALID\020\002\"m\n\nSensorType\022\014\n\010ARS430EO\020\000"
+      "\022\014\n\010ARS430DI\020\001\022\014\n\010SRR520CO\020\003\022\016\n\nARS540DE"
+      "MO\020\004\022\014\n\010SRR520DI\020\005\022\n\n\006ARS548\020\006\022\013\n\007UNKNOW"
+      "N\020c"
+  };
+  ::google::protobuf::DescriptorPool::InternalAddGeneratedFile(
+      descriptor, 483);
+  ::google::protobuf::MessageFactory::InternalRegisterGeneratedFile(
+    "pdk_SensorMsgHeader.proto", &protobuf_RegisterTypes);
+  ::protobuf_pdk_5fMsgHeader_2eproto::AddDescriptors();
+}
+
+void AddDescriptors() {
+  static ::google::protobuf::internal::once_flag once;
+  ::google::protobuf::internal::call_once(once, AddDescriptorsImpl);
+}
+// Force AddDescriptors() to be called at dynamic initialization time.
+struct StaticDescriptorInitializer {
+  StaticDescriptorInitializer() {
+    AddDescriptors();
+  }
+} static_descriptor_initializer;
+}  // namespace protobuf_pdk_5fSensorMsgHeader_2eproto
 namespace pb {
 namespace PDK {
-const ::PROTOBUF_NAMESPACE_ID::EnumDescriptor* SensorMsgHeader_SignalStatus_descriptor() {
-  ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(&descriptor_table_pdk_5fSensorMsgHeader_2eproto);
-  return file_level_enum_descriptors_pdk_5fSensorMsgHeader_2eproto[0];
+const ::google::protobuf::EnumDescriptor* SensorMsgHeader_SignalStatus_descriptor() {
+  protobuf_pdk_5fSensorMsgHeader_2eproto::protobuf_AssignDescriptorsOnce();
+  return protobuf_pdk_5fSensorMsgHeader_2eproto::file_level_enum_descriptors[0];
 }
 bool SensorMsgHeader_SignalStatus_IsValid(int value) {
   switch (value) {
@@ -119,17 +147,17 @@ bool SensorMsgHeader_SignalStatus_IsValid(int value) {
   }
 }
 
-#if (__cplusplus < 201703) && (!defined(_MSC_VER) || (_MSC_VER >= 1900 && _MSC_VER < 1912))
-constexpr SensorMsgHeader_SignalStatus SensorMsgHeader::EM_SIGSTATE_INIT;
-constexpr SensorMsgHeader_SignalStatus SensorMsgHeader::EM_SIGSTATE_OK;
-constexpr SensorMsgHeader_SignalStatus SensorMsgHeader::EM_SIGSTATE_INVALID;
-constexpr SensorMsgHeader_SignalStatus SensorMsgHeader::SignalStatus_MIN;
-constexpr SensorMsgHeader_SignalStatus SensorMsgHeader::SignalStatus_MAX;
-constexpr int SensorMsgHeader::SignalStatus_ARRAYSIZE;
-#endif  // (__cplusplus < 201703) && (!defined(_MSC_VER) || (_MSC_VER >= 1900 && _MSC_VER < 1912))
-const ::PROTOBUF_NAMESPACE_ID::EnumDescriptor* SensorMsgHeader_SensorType_descriptor() {
-  ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(&descriptor_table_pdk_5fSensorMsgHeader_2eproto);
-  return file_level_enum_descriptors_pdk_5fSensorMsgHeader_2eproto[1];
+#if !defined(_MSC_VER) || _MSC_VER >= 1900
+const SensorMsgHeader_SignalStatus SensorMsgHeader::EM_SIGSTATE_INIT;
+const SensorMsgHeader_SignalStatus SensorMsgHeader::EM_SIGSTATE_OK;
+const SensorMsgHeader_SignalStatus SensorMsgHeader::EM_SIGSTATE_INVALID;
+const SensorMsgHeader_SignalStatus SensorMsgHeader::SignalStatus_MIN;
+const SensorMsgHeader_SignalStatus SensorMsgHeader::SignalStatus_MAX;
+const int SensorMsgHeader::SignalStatus_ARRAYSIZE;
+#endif  // !defined(_MSC_VER) || _MSC_VER >= 1900
+const ::google::protobuf::EnumDescriptor* SensorMsgHeader_SensorType_descriptor() {
+  protobuf_pdk_5fSensorMsgHeader_2eproto::protobuf_AssignDescriptorsOnce();
+  return protobuf_pdk_5fSensorMsgHeader_2eproto::file_level_enum_descriptors[1];
 }
 bool SensorMsgHeader_SensorType_IsValid(int value) {
   switch (value) {
@@ -146,61 +174,52 @@ bool SensorMsgHeader_SensorType_IsValid(int value) {
   }
 }
 
-#if (__cplusplus < 201703) && (!defined(_MSC_VER) || (_MSC_VER >= 1900 && _MSC_VER < 1912))
-constexpr SensorMsgHeader_SensorType SensorMsgHeader::ARS430EO;
-constexpr SensorMsgHeader_SensorType SensorMsgHeader::ARS430DI;
-constexpr SensorMsgHeader_SensorType SensorMsgHeader::SRR520CO;
-constexpr SensorMsgHeader_SensorType SensorMsgHeader::ARS540DEMO;
-constexpr SensorMsgHeader_SensorType SensorMsgHeader::SRR520DI;
-constexpr SensorMsgHeader_SensorType SensorMsgHeader::ARS548;
-constexpr SensorMsgHeader_SensorType SensorMsgHeader::UNKNOWN;
-constexpr SensorMsgHeader_SensorType SensorMsgHeader::SensorType_MIN;
-constexpr SensorMsgHeader_SensorType SensorMsgHeader::SensorType_MAX;
-constexpr int SensorMsgHeader::SensorType_ARRAYSIZE;
-#endif  // (__cplusplus < 201703) && (!defined(_MSC_VER) || (_MSC_VER >= 1900 && _MSC_VER < 1912))
+#if !defined(_MSC_VER) || _MSC_VER >= 1900
+const SensorMsgHeader_SensorType SensorMsgHeader::ARS430EO;
+const SensorMsgHeader_SensorType SensorMsgHeader::ARS430DI;
+const SensorMsgHeader_SensorType SensorMsgHeader::SRR520CO;
+const SensorMsgHeader_SensorType SensorMsgHeader::ARS540DEMO;
+const SensorMsgHeader_SensorType SensorMsgHeader::SRR520DI;
+const SensorMsgHeader_SensorType SensorMsgHeader::ARS548;
+const SensorMsgHeader_SensorType SensorMsgHeader::UNKNOWN;
+const SensorMsgHeader_SensorType SensorMsgHeader::SensorType_MIN;
+const SensorMsgHeader_SensorType SensorMsgHeader::SensorType_MAX;
+const int SensorMsgHeader::SensorType_ARRAYSIZE;
+#endif  // !defined(_MSC_VER) || _MSC_VER >= 1900
 
 // ===================================================================
 
-class SensorMsgHeader::_Internal {
- public:
-  using HasBits = decltype(std::declval<SensorMsgHeader>()._has_bits_);
-  static const ::pb::PDK::MsgHeader& t_commonheader(const SensorMsgHeader* msg);
-  static void set_has_t_commonheader(HasBits* has_bits) {
-    (*has_bits)[0] |= 1u;
-  }
-  static void set_has_u_sensorid(HasBits* has_bits) {
-    (*has_bits)[0] |= 2u;
-  }
-  static void set_has_e_signalstatus(HasBits* has_bits) {
-    (*has_bits)[0] |= 4u;
-  }
-  static void set_has_e_sensortype(HasBits* has_bits) {
-    (*has_bits)[0] |= 8u;
-  }
-};
-
-const ::pb::PDK::MsgHeader&
-SensorMsgHeader::_Internal::t_commonheader(const SensorMsgHeader* msg) {
-  return *msg->t_commonheader_;
+void SensorMsgHeader::InitAsDefaultInstance() {
+  ::pb::PDK::_SensorMsgHeader_default_instance_._instance.get_mutable()->t_commonheader_ = const_cast< ::pb::PDK::MsgHeader*>(
+      ::pb::PDK::MsgHeader::internal_default_instance());
 }
 void SensorMsgHeader::clear_t_commonheader() {
-  if (t_commonheader_ != nullptr) t_commonheader_->Clear();
-  _has_bits_[0] &= ~0x00000001u;
+  if (t_commonheader_ != NULL) t_commonheader_->Clear();
+  clear_has_t_commonheader();
 }
-SensorMsgHeader::SensorMsgHeader(::PROTOBUF_NAMESPACE_ID::Arena* arena,
-                         bool is_message_owned)
-  : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
+#if !defined(_MSC_VER) || _MSC_VER >= 1900
+const int SensorMsgHeader::kTCommonHeaderFieldNumber;
+const int SensorMsgHeader::kUSensorIdFieldNumber;
+const int SensorMsgHeader::kESignalStatusFieldNumber;
+const int SensorMsgHeader::kESensorTypeFieldNumber;
+#endif  // !defined(_MSC_VER) || _MSC_VER >= 1900
+
+SensorMsgHeader::SensorMsgHeader()
+  : ::google::protobuf::Message(), _internal_metadata_(NULL) {
+  ::google::protobuf::internal::InitSCC(
+      &protobuf_pdk_5fSensorMsgHeader_2eproto::scc_info_SensorMsgHeader.base);
   SharedCtor();
-  // @@protoc_insertion_point(arena_constructor:pb.PDK.SensorMsgHeader)
+  // @@protoc_insertion_point(constructor:pb.PDK.SensorMsgHeader)
 }
 SensorMsgHeader::SensorMsgHeader(const SensorMsgHeader& from)
-  : ::PROTOBUF_NAMESPACE_ID::Message(),
+  : ::google::protobuf::Message(),
+      _internal_metadata_(NULL),
       _has_bits_(from._has_bits_) {
-  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
-  if (from._internal_has_t_commonheader()) {
+  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  if (from.has_t_commonheader()) {
     t_commonheader_ = new ::pb::PDK::MsgHeader(*from.t_commonheader_);
   } else {
-    t_commonheader_ = nullptr;
+    t_commonheader_ = NULL;
   }
   ::memcpy(&u_sensorid_, &from.u_sensorid_,
     static_cast<size_t>(reinterpret_cast<char*>(&e_sensortype_) -
@@ -208,164 +227,225 @@ SensorMsgHeader::SensorMsgHeader(const SensorMsgHeader& from)
   // @@protoc_insertion_point(copy_constructor:pb.PDK.SensorMsgHeader)
 }
 
-inline void SensorMsgHeader::SharedCtor() {
-::memset(reinterpret_cast<char*>(this) + static_cast<size_t>(
-    reinterpret_cast<char*>(&t_commonheader_) - reinterpret_cast<char*>(this)),
-    0, static_cast<size_t>(reinterpret_cast<char*>(&u_sensorid_) -
-    reinterpret_cast<char*>(&t_commonheader_)) + sizeof(u_sensorid_));
-e_signalstatus_ = 2;
-e_sensortype_ = 99;
+void SensorMsgHeader::SharedCtor() {
+  ::memset(&t_commonheader_, 0, static_cast<size_t>(
+      reinterpret_cast<char*>(&u_sensorid_) -
+      reinterpret_cast<char*>(&t_commonheader_)) + sizeof(u_sensorid_));
+  e_signalstatus_ = 2;
+  e_sensortype_ = 99;
 }
 
 SensorMsgHeader::~SensorMsgHeader() {
   // @@protoc_insertion_point(destructor:pb.PDK.SensorMsgHeader)
-  if (auto *arena = _internal_metadata_.DeleteReturnArena<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>()) {
-  (void)arena;
-    return;
-  }
   SharedDtor();
 }
 
-inline void SensorMsgHeader::SharedDtor() {
-  GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
+void SensorMsgHeader::SharedDtor() {
   if (this != internal_default_instance()) delete t_commonheader_;
 }
 
 void SensorMsgHeader::SetCachedSize(int size) const {
   _cached_size_.Set(size);
 }
+const ::google::protobuf::Descriptor* SensorMsgHeader::descriptor() {
+  ::protobuf_pdk_5fSensorMsgHeader_2eproto::protobuf_AssignDescriptorsOnce();
+  return ::protobuf_pdk_5fSensorMsgHeader_2eproto::file_level_metadata[kIndexInFileMessages].descriptor;
+}
+
+const SensorMsgHeader& SensorMsgHeader::default_instance() {
+  ::google::protobuf::internal::InitSCC(&protobuf_pdk_5fSensorMsgHeader_2eproto::scc_info_SensorMsgHeader.base);
+  return *internal_default_instance();
+}
+
 
 void SensorMsgHeader::Clear() {
 // @@protoc_insertion_point(message_clear_start:pb.PDK.SensorMsgHeader)
-  uint32_t cached_has_bits = 0;
+  ::google::protobuf::uint32 cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
   cached_has_bits = _has_bits_[0];
   if (cached_has_bits & 0x00000001u) {
-    GOOGLE_DCHECK(t_commonheader_ != nullptr);
+    GOOGLE_DCHECK(t_commonheader_ != NULL);
     t_commonheader_->Clear();
   }
-  if (cached_has_bits & 0x0000000eu) {
+  if (cached_has_bits & 14u) {
     u_sensorid_ = 0u;
     e_signalstatus_ = 2;
     e_sensortype_ = 99;
   }
   _has_bits_.Clear();
-  _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
+  _internal_metadata_.Clear();
 }
 
-const char* SensorMsgHeader::_InternalParse(const char* ptr, ::_pbi::ParseContext* ctx) {
-#define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
-  _Internal::HasBits has_bits{};
-  while (!ctx->Done(&ptr)) {
-    uint32_t tag;
-    ptr = ::_pbi::ReadTag(ptr, &tag);
-    switch (tag >> 3) {
+bool SensorMsgHeader::MergePartialFromCodedStream(
+    ::google::protobuf::io::CodedInputStream* input) {
+#define DO_(EXPRESSION) if (!GOOGLE_PREDICT_TRUE(EXPRESSION)) goto failure
+  ::google::protobuf::uint32 tag;
+  // @@protoc_insertion_point(parse_start:pb.PDK.SensorMsgHeader)
+  for (;;) {
+    ::std::pair<::google::protobuf::uint32, bool> p = input->ReadTagWithCutoffNoLastTag(127u);
+    tag = p.first;
+    if (!p.second) goto handle_unusual;
+    switch (::google::protobuf::internal::WireFormatLite::GetTagFieldNumber(tag)) {
       // optional .pb.PDK.MsgHeader t_CommonHeader = 1;
-      case 1:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 10)) {
-          ptr = ctx->ParseMessage(_internal_mutable_t_commonheader(), ptr);
-          CHK_(ptr);
-        } else
+      case 1: {
+        if (static_cast< ::google::protobuf::uint8>(tag) ==
+            static_cast< ::google::protobuf::uint8>(10u /* 10 & 0xFF */)) {
+          DO_(::google::protobuf::internal::WireFormatLite::ReadMessage(
+               input, mutable_t_commonheader()));
+        } else {
           goto handle_unusual;
-        continue;
+        }
+        break;
+      }
+
       // optional uint32 u_SensorId = 2;
-      case 2:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 16)) {
-          _Internal::set_has_u_sensorid(&has_bits);
-          u_sensorid_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
-          CHK_(ptr);
-        } else
+      case 2: {
+        if (static_cast< ::google::protobuf::uint8>(tag) ==
+            static_cast< ::google::protobuf::uint8>(16u /* 16 & 0xFF */)) {
+          set_has_u_sensorid();
+          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
+                   ::google::protobuf::uint32, ::google::protobuf::internal::WireFormatLite::TYPE_UINT32>(
+                 input, &u_sensorid_)));
+        } else {
           goto handle_unusual;
-        continue;
+        }
+        break;
+      }
+
       // optional .pb.PDK.SensorMsgHeader.SignalStatus e_SignalStatus = 3 [default = EM_SIGSTATE_INVALID];
-      case 3:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 24)) {
-          uint64_t val = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
-          CHK_(ptr);
-          if (PROTOBUF_PREDICT_TRUE(::pb::PDK::SensorMsgHeader_SignalStatus_IsValid(val))) {
-            _internal_set_e_signalstatus(static_cast<::pb::PDK::SensorMsgHeader_SignalStatus>(val));
+      case 3: {
+        if (static_cast< ::google::protobuf::uint8>(tag) ==
+            static_cast< ::google::protobuf::uint8>(24u /* 24 & 0xFF */)) {
+          int value;
+          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
+                   int, ::google::protobuf::internal::WireFormatLite::TYPE_ENUM>(
+                 input, &value)));
+          if (::pb::PDK::SensorMsgHeader_SignalStatus_IsValid(value)) {
+            set_e_signalstatus(static_cast< ::pb::PDK::SensorMsgHeader_SignalStatus >(value));
           } else {
-            ::PROTOBUF_NAMESPACE_ID::internal::WriteVarint(3, val, mutable_unknown_fields());
+            mutable_unknown_fields()->AddVarint(
+                3, static_cast< ::google::protobuf::uint64>(value));
           }
-        } else
+        } else {
           goto handle_unusual;
-        continue;
+        }
+        break;
+      }
+
       // optional .pb.PDK.SensorMsgHeader.SensorType e_SensorType = 4 [default = UNKNOWN];
-      case 4:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 32)) {
-          uint64_t val = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
-          CHK_(ptr);
-          if (PROTOBUF_PREDICT_TRUE(::pb::PDK::SensorMsgHeader_SensorType_IsValid(val))) {
-            _internal_set_e_sensortype(static_cast<::pb::PDK::SensorMsgHeader_SensorType>(val));
+      case 4: {
+        if (static_cast< ::google::protobuf::uint8>(tag) ==
+            static_cast< ::google::protobuf::uint8>(32u /* 32 & 0xFF */)) {
+          int value;
+          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
+                   int, ::google::protobuf::internal::WireFormatLite::TYPE_ENUM>(
+                 input, &value)));
+          if (::pb::PDK::SensorMsgHeader_SensorType_IsValid(value)) {
+            set_e_sensortype(static_cast< ::pb::PDK::SensorMsgHeader_SensorType >(value));
           } else {
-            ::PROTOBUF_NAMESPACE_ID::internal::WriteVarint(4, val, mutable_unknown_fields());
+            mutable_unknown_fields()->AddVarint(
+                4, static_cast< ::google::protobuf::uint64>(value));
           }
-        } else
+        } else {
           goto handle_unusual;
-        continue;
-      default:
-        goto handle_unusual;
-    }  // switch
-  handle_unusual:
-    if ((tag == 0) || ((tag & 7) == 4)) {
-      CHK_(ptr);
-      ctx->SetLastTag(tag);
-      goto message_done;
+        }
+        break;
+      }
+
+      default: {
+      handle_unusual:
+        if (tag == 0) {
+          goto success;
+        }
+        DO_(::google::protobuf::internal::WireFormat::SkipField(
+              input, tag, _internal_metadata_.mutable_unknown_fields()));
+        break;
+      }
     }
-    ptr = UnknownFieldParse(
-        tag,
-        _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
-        ptr, ctx);
-    CHK_(ptr != nullptr);
-  }  // while
-message_done:
-  _has_bits_.Or(has_bits);
-  return ptr;
+  }
+success:
+  // @@protoc_insertion_point(parse_success:pb.PDK.SensorMsgHeader)
+  return true;
 failure:
-  ptr = nullptr;
-  goto message_done;
-#undef CHK_
+  // @@protoc_insertion_point(parse_failure:pb.PDK.SensorMsgHeader)
+  return false;
+#undef DO_
 }
 
-uint8_t* SensorMsgHeader::_InternalSerialize(
-    uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
-  // @@protoc_insertion_point(serialize_to_array_start:pb.PDK.SensorMsgHeader)
-  uint32_t cached_has_bits = 0;
+void SensorMsgHeader::SerializeWithCachedSizes(
+    ::google::protobuf::io::CodedOutputStream* output) const {
+  // @@protoc_insertion_point(serialize_start:pb.PDK.SensorMsgHeader)
+  ::google::protobuf::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
   cached_has_bits = _has_bits_[0];
   // optional .pb.PDK.MsgHeader t_CommonHeader = 1;
   if (cached_has_bits & 0x00000001u) {
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
-      InternalWriteMessage(1, _Internal::t_commonheader(this),
-        _Internal::t_commonheader(this).GetCachedSize(), target, stream);
+    ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
+      1, this->_internal_t_commonheader(), output);
   }
 
   // optional uint32 u_SensorId = 2;
   if (cached_has_bits & 0x00000002u) {
-    target = stream->EnsureSpace(target);
-    target = ::_pbi::WireFormatLite::WriteUInt32ToArray(2, this->_internal_u_sensorid(), target);
+    ::google::protobuf::internal::WireFormatLite::WriteUInt32(2, this->u_sensorid(), output);
   }
 
   // optional .pb.PDK.SensorMsgHeader.SignalStatus e_SignalStatus = 3 [default = EM_SIGSTATE_INVALID];
   if (cached_has_bits & 0x00000004u) {
-    target = stream->EnsureSpace(target);
-    target = ::_pbi::WireFormatLite::WriteEnumToArray(
-      3, this->_internal_e_signalstatus(), target);
+    ::google::protobuf::internal::WireFormatLite::WriteEnum(
+      3, this->e_signalstatus(), output);
   }
 
   // optional .pb.PDK.SensorMsgHeader.SensorType e_SensorType = 4 [default = UNKNOWN];
   if (cached_has_bits & 0x00000008u) {
-    target = stream->EnsureSpace(target);
-    target = ::_pbi::WireFormatLite::WriteEnumToArray(
-      4, this->_internal_e_sensortype(), target);
+    ::google::protobuf::internal::WireFormatLite::WriteEnum(
+      4, this->e_sensortype(), output);
   }
 
-  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
-    target = ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
-        _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
+  if (_internal_metadata_.have_unknown_fields()) {
+    ::google::protobuf::internal::WireFormat::SerializeUnknownFields(
+        _internal_metadata_.unknown_fields(), output);
+  }
+  // @@protoc_insertion_point(serialize_end:pb.PDK.SensorMsgHeader)
+}
+
+::google::protobuf::uint8* SensorMsgHeader::InternalSerializeWithCachedSizesToArray(
+    bool deterministic, ::google::protobuf::uint8* target) const {
+  (void)deterministic; // Unused
+  // @@protoc_insertion_point(serialize_to_array_start:pb.PDK.SensorMsgHeader)
+  ::google::protobuf::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  cached_has_bits = _has_bits_[0];
+  // optional .pb.PDK.MsgHeader t_CommonHeader = 1;
+  if (cached_has_bits & 0x00000001u) {
+    target = ::google::protobuf::internal::WireFormatLite::
+      InternalWriteMessageToArray(
+        1, this->_internal_t_commonheader(), deterministic, target);
+  }
+
+  // optional uint32 u_SensorId = 2;
+  if (cached_has_bits & 0x00000002u) {
+    target = ::google::protobuf::internal::WireFormatLite::WriteUInt32ToArray(2, this->u_sensorid(), target);
+  }
+
+  // optional .pb.PDK.SensorMsgHeader.SignalStatus e_SignalStatus = 3 [default = EM_SIGSTATE_INVALID];
+  if (cached_has_bits & 0x00000004u) {
+    target = ::google::protobuf::internal::WireFormatLite::WriteEnumToArray(
+      3, this->e_signalstatus(), target);
+  }
+
+  // optional .pb.PDK.SensorMsgHeader.SensorType e_SensorType = 4 [default = UNKNOWN];
+  if (cached_has_bits & 0x00000008u) {
+    target = ::google::protobuf::internal::WireFormatLite::WriteEnumToArray(
+      4, this->e_sensortype(), target);
+  }
+
+  if (_internal_metadata_.have_unknown_fields()) {
+    target = ::google::protobuf::internal::WireFormat::SerializeUnknownFieldsToArray(
+        _internal_metadata_.unknown_fields(), target);
   }
   // @@protoc_insertion_point(serialize_to_array_end:pb.PDK.SensorMsgHeader)
   return target;
@@ -375,63 +455,70 @@ size_t SensorMsgHeader::ByteSizeLong() const {
 // @@protoc_insertion_point(message_byte_size_start:pb.PDK.SensorMsgHeader)
   size_t total_size = 0;
 
-  uint32_t cached_has_bits = 0;
-  // Prevent compiler warnings about cached_has_bits being unused
-  (void) cached_has_bits;
-
-  cached_has_bits = _has_bits_[0];
-  if (cached_has_bits & 0x0000000fu) {
+  if (_internal_metadata_.have_unknown_fields()) {
+    total_size +=
+      ::google::protobuf::internal::WireFormat::ComputeUnknownFieldsSize(
+        _internal_metadata_.unknown_fields());
+  }
+  if (_has_bits_[0 / 32] & 15u) {
     // optional .pb.PDK.MsgHeader t_CommonHeader = 1;
-    if (cached_has_bits & 0x00000001u) {
+    if (has_t_commonheader()) {
       total_size += 1 +
-        ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
+        ::google::protobuf::internal::WireFormatLite::MessageSize(
           *t_commonheader_);
     }
 
     // optional uint32 u_SensorId = 2;
-    if (cached_has_bits & 0x00000002u) {
-      total_size += ::_pbi::WireFormatLite::UInt32SizePlusOne(this->_internal_u_sensorid());
+    if (has_u_sensorid()) {
+      total_size += 1 +
+        ::google::protobuf::internal::WireFormatLite::UInt32Size(
+          this->u_sensorid());
     }
 
     // optional .pb.PDK.SensorMsgHeader.SignalStatus e_SignalStatus = 3 [default = EM_SIGSTATE_INVALID];
-    if (cached_has_bits & 0x00000004u) {
+    if (has_e_signalstatus()) {
       total_size += 1 +
-        ::_pbi::WireFormatLite::EnumSize(this->_internal_e_signalstatus());
+        ::google::protobuf::internal::WireFormatLite::EnumSize(this->e_signalstatus());
     }
 
     // optional .pb.PDK.SensorMsgHeader.SensorType e_SensorType = 4 [default = UNKNOWN];
-    if (cached_has_bits & 0x00000008u) {
+    if (has_e_sensortype()) {
       total_size += 1 +
-        ::_pbi::WireFormatLite::EnumSize(this->_internal_e_sensortype());
+        ::google::protobuf::internal::WireFormatLite::EnumSize(this->e_sensortype());
     }
 
   }
-  return MaybeComputeUnknownFieldsSize(total_size, &_cached_size_);
+  int cached_size = ::google::protobuf::internal::ToCachedSize(total_size);
+  SetCachedSize(cached_size);
+  return total_size;
 }
 
-const ::PROTOBUF_NAMESPACE_ID::Message::ClassData SensorMsgHeader::_class_data_ = {
-    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSizeCheck,
-    SensorMsgHeader::MergeImpl
-};
-const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*SensorMsgHeader::GetClassData() const { return &_class_data_; }
-
-void SensorMsgHeader::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message* to,
-                      const ::PROTOBUF_NAMESPACE_ID::Message& from) {
-  static_cast<SensorMsgHeader *>(to)->MergeFrom(
-      static_cast<const SensorMsgHeader &>(from));
+void SensorMsgHeader::MergeFrom(const ::google::protobuf::Message& from) {
+// @@protoc_insertion_point(generalized_merge_from_start:pb.PDK.SensorMsgHeader)
+  GOOGLE_DCHECK_NE(&from, this);
+  const SensorMsgHeader* source =
+      ::google::protobuf::internal::DynamicCastToGenerated<const SensorMsgHeader>(
+          &from);
+  if (source == NULL) {
+  // @@protoc_insertion_point(generalized_merge_from_cast_fail:pb.PDK.SensorMsgHeader)
+    ::google::protobuf::internal::ReflectionOps::Merge(from, this);
+  } else {
+  // @@protoc_insertion_point(generalized_merge_from_cast_success:pb.PDK.SensorMsgHeader)
+    MergeFrom(*source);
+  }
 }
-
 
 void SensorMsgHeader::MergeFrom(const SensorMsgHeader& from) {
 // @@protoc_insertion_point(class_specific_merge_from_start:pb.PDK.SensorMsgHeader)
   GOOGLE_DCHECK_NE(&from, this);
-  uint32_t cached_has_bits = 0;
+  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  ::google::protobuf::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
   cached_has_bits = from._has_bits_[0];
-  if (cached_has_bits & 0x0000000fu) {
+  if (cached_has_bits & 15u) {
     if (cached_has_bits & 0x00000001u) {
-      _internal_mutable_t_commonheader()->::pb::PDK::MsgHeader::MergeFrom(from._internal_t_commonheader());
+      mutable_t_commonheader()->::pb::PDK::MsgHeader::MergeFrom(from.t_commonheader());
     }
     if (cached_has_bits & 0x00000002u) {
       u_sensorid_ = from.u_sensorid_;
@@ -444,7 +531,13 @@ void SensorMsgHeader::MergeFrom(const SensorMsgHeader& from) {
     }
     _has_bits_[0] |= cached_has_bits;
   }
-  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+}
+
+void SensorMsgHeader::CopyFrom(const ::google::protobuf::Message& from) {
+// @@protoc_insertion_point(generalized_copy_from_start:pb.PDK.SensorMsgHeader)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
 }
 
 void SensorMsgHeader::CopyFrom(const SensorMsgHeader& from) {
@@ -458,35 +551,35 @@ bool SensorMsgHeader::IsInitialized() const {
   return true;
 }
 
+void SensorMsgHeader::Swap(SensorMsgHeader* other) {
+  if (other == this) return;
+  InternalSwap(other);
+}
 void SensorMsgHeader::InternalSwap(SensorMsgHeader* other) {
   using std::swap;
-  _internal_metadata_.InternalSwap(&other->_internal_metadata_);
-  swap(_has_bits_[0], other->_has_bits_[0]);
-  ::PROTOBUF_NAMESPACE_ID::internal::memswap<
-      PROTOBUF_FIELD_OFFSET(SensorMsgHeader, u_sensorid_)
-      + sizeof(SensorMsgHeader::u_sensorid_)
-      - PROTOBUF_FIELD_OFFSET(SensorMsgHeader, t_commonheader_)>(
-          reinterpret_cast<char*>(&t_commonheader_),
-          reinterpret_cast<char*>(&other->t_commonheader_));
+  swap(t_commonheader_, other->t_commonheader_);
+  swap(u_sensorid_, other->u_sensorid_);
   swap(e_signalstatus_, other->e_signalstatus_);
   swap(e_sensortype_, other->e_sensortype_);
+  swap(_has_bits_[0], other->_has_bits_[0]);
+  _internal_metadata_.Swap(&other->_internal_metadata_);
 }
 
-::PROTOBUF_NAMESPACE_ID::Metadata SensorMsgHeader::GetMetadata() const {
-  return ::_pbi::AssignDescriptors(
-      &descriptor_table_pdk_5fSensorMsgHeader_2eproto_getter, &descriptor_table_pdk_5fSensorMsgHeader_2eproto_once,
-      file_level_metadata_pdk_5fSensorMsgHeader_2eproto[0]);
+::google::protobuf::Metadata SensorMsgHeader::GetMetadata() const {
+  protobuf_pdk_5fSensorMsgHeader_2eproto::protobuf_AssignDescriptorsOnce();
+  return ::protobuf_pdk_5fSensorMsgHeader_2eproto::file_level_metadata[kIndexInFileMessages];
 }
+
 
 // @@protoc_insertion_point(namespace_scope)
 }  // namespace PDK
 }  // namespace pb
-PROTOBUF_NAMESPACE_OPEN
-template<> PROTOBUF_NOINLINE ::pb::PDK::SensorMsgHeader*
-Arena::CreateMaybeMessage< ::pb::PDK::SensorMsgHeader >(Arena* arena) {
-  return Arena::CreateMessageInternal< ::pb::PDK::SensorMsgHeader >(arena);
+namespace google {
+namespace protobuf {
+template<> GOOGLE_PROTOBUF_ATTRIBUTE_NOINLINE ::pb::PDK::SensorMsgHeader* Arena::CreateMaybeMessage< ::pb::PDK::SensorMsgHeader >(Arena* arena) {
+  return Arena::CreateInternal< ::pb::PDK::SensorMsgHeader >(arena);
 }
-PROTOBUF_NAMESPACE_CLOSE
+}  // namespace protobuf
+}  // namespace google
 
 // @@protoc_insertion_point(global_scope)
-#include <google/protobuf/port_undef.inc>
