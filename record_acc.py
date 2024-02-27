@@ -26,6 +26,8 @@ acc_switch = False
 brake_switch = False
 abs_vel = 0.0
 range_rel = 0.0
+x_pos = 0.0
+y_pos = 0.0
 
 def timeout():
     global abs_vel, acc_switch, brake_switch, range_rel
@@ -35,8 +37,10 @@ def timeout():
     range_rel = 0.0
 
 def timeoutr():
-    global range_rel
+    global range_rel,x_pos,y_pos
     range_rel = 0.0
+    x_pos = 0.0
+    y_pos = 0.0
 
 
 def callback_vel(data):
@@ -84,6 +88,22 @@ def callback_range_rel(data):
     timer2 = threading.Timer(1.5, timeoutr)
     timer2.start()
 
+def callback_x_pos(data):
+    global x_pos
+    x_pos = data.data
+    if timer2 is not None:
+        timer2.cancel()
+    timer2 = threading.Timer(1.5, timeoutr)
+    timer2.start()
+
+def callback_y_pos(data):
+    global y_pos
+    y_pos = data.data
+    if timer2 is not None:
+        timer2.cancel()
+    timer2 = threading.Timer(1.5, timeoutr)
+    timer2.start()
+
 
 rospy.init_node('Navigation', anonymous=True)
 #ROS subscription
@@ -92,7 +112,9 @@ rospy.Subscriber("/user_value",Float32, callback_vsub)
 rospy.Subscriber("/acc_switch_topic",Bool, callback_acc_switch)
 rospy.Subscriber("/brake_action_topic",Bool, callback_brake_switch)
 rospy.Subscriber("/f_vabsx_topic",Float64, callback_abs_velx)
-# rospy.Subscriber("/range_topic",Float64, callback_range_rel)
+rospy.Subscriber("/range_topic",Float64, callback_range_rel)
+rospy.Subscriber("/x_pos_topic",Float64, callback_x_pos)
+rospy.Subscriber("/y_pos_topic",Float64, callback_y_pos)
 timer = threading.Timer(3, timeout)
 timer2 = threading.Timer(3, timeoutr)
 

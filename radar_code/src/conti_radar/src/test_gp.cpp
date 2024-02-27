@@ -26,11 +26,15 @@ ros::Publisher acc_switch_pub;
 ros::Publisher brake_action_pub;
 ros::Publisher f_vabsx_pub;
 ros::Publisher range_pub;
+ros::Publisher x_pos_pub;
+ros::Publisher y_pos_pub;
 
 std_msgs::Bool acc_switch_msg;
 std_msgs::Bool brake_action_msg;
 std_msgs::Float64 f_vabsx_msg;
 std_msgs::Float64 range_msg;
+std_msgs::Float64 x_pos_msg;
+std_msgs::Float64 y_pos_msg;
 
 void CORRIMU_callback(const novatel_oem7_msgs::CORRIMU msg){
     f_YawRate = msg.yaw_rate;
@@ -235,6 +239,12 @@ void OnReceiveObjects(const std::string &buffer)
                 range_msg.data = rangeA;
                 range_pub.publish(range_msg);
 
+                x_pos_msg.data = minRangeObject.f_distx();
+                y_pos_msg.data = minRangeObject.f_disty();
+
+                x_pos_pub.publish(x_pos_msg);
+                y_pos_pub.publish(y_pos_msg);
+
                 double brake_point = (max_range + min_range) / 2;
                 if (rangeA < brake_point) {
                     brake_action = true;
@@ -256,6 +266,12 @@ void OnReceiveObjects(const std::string &buffer)
                 if (rangeA !=0){
                     range_msg.data = rangeA;
                     range_pub.publish(range_msg);
+
+                    x_pos_msg.data = minRangeObject.f_distx();
+                    y_pos_msg.data = minRangeObject.f_disty();
+
+                    x_pos_pub.publish(x_pos_msg);
+                    y_pos_pub.publish(y_pos_msg);
                 }
                 
             }
@@ -319,6 +335,8 @@ int main(int argc, char *argv[])
     brake_action_pub = node.advertise<std_msgs::Bool>("brake_action_topic", 1000);
     f_vabsx_pub = node.advertise<std_msgs::Float64>("f_vabsx_topic", 1000);
     range_pub = node.advertise<std_msgs::Float64>("range_topic", 1000);
+    x_pos = node.advertise<std_msgs::Float64>("x_pos_topic", 1000);
+    y_pos = node.advertise<std_msgs::Float64>("y_pos_topic", 1000);
 
    // Initialization and other setup code...
     std::string config{};

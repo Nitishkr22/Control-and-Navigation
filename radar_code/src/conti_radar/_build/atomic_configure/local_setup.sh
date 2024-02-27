@@ -3,7 +3,7 @@
 
 # since this file is sourced either use the provided _CATKIN_SETUP_DIR
 # or fall back to the destination set at configure time
-: ${_CATKIN_SETUP_DIR:=/home/orin/Documents/Nitish_Nexon/Navigation/radar_code/src/conti_radar/_build/devel}
+: ${_CATKIN_SETUP_DIR:=/home/radar/Documents/Nexon_acc/Navigation/Control-and-Navigation/radar_code/src/conti_radar/_build/devel}
 CATKIN_SETUP_UTIL_ARGS="--extend --local"
 . "$_CATKIN_SETUP_DIR/setup.sh"
 unset CATKIN_SETUP_UTIL_ARGS

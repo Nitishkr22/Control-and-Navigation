@@ -80,6 +80,7 @@ def callback_abs_velx(data):
     # timer.start()
 
 
+
 rospy.init_node('Navigation', anonymous=True)
 #ROS subscription
 rospy.Subscriber("/novatel/oem7/bestvel",BESTVEL, callback_vel)
@@ -87,6 +88,7 @@ rospy.Subscriber("/user_value",Float32, callback_vsub)
 rospy.Subscriber("/acc_switch_topic",Bool, callback_acc_switch)
 rospy.Subscriber("/brake_action_topic",Bool, callback_brake_switch)
 rospy.Subscriber("/f_vabsx_topic",Float64, callback_abs_velx)
+
 timer = threading.Timer(3, timeout)
 
 def calculate_steer_angle(currentLocation, wp, heading):
@@ -806,11 +808,11 @@ while not rospy.is_shutdown():
                 throttle = throttle_input1
             
         
-        # if(vel_gnss>setpoint):
-        #     # obj.send_data("A1,D,2,0,0,0,0,0,0,0,0\r\n")
-        #     throttle_input = 2
-        # else:
-        #     throttle_input = throttle_input1
+        if(vel_gnss>setpoint):
+            # obj.send_data("A1,D,2,0,0,0,0,0,0,0,0\r\n")
+            throttle_input = 2
+        else:
+            throttle_input = throttle_input1
             
             # obj.send_data("A1,D,"+str(throttle_input)+",0,0,0,0,0,0,0,0\r\n")
                 # obj.send_data("A,D,4,1,30,1,"+str(steer_rate)+",0,0,0,0\r\n")

@@ -67,8 +67,8 @@ set(conti_radar_CONFIG_INCLUDED TRUE)
 
 # set variables for source/devel/install prefixes
 if("TRUE" STREQUAL "TRUE")
-  set(conti_radar_SOURCE_PREFIX /home/orin/Documents/Nitish_Nexon/Navigation/radar_code/src/conti_radar)
-  set(conti_radar_DEVEL_PREFIX /home/orin/Documents/Nitish_Nexon/Navigation/radar_code/src/conti_radar/_build/devel)
+  set(conti_radar_SOURCE_PREFIX /home/radar/Documents/Nexon_acc/Navigation/Control-and-Navigation/radar_code/src/conti_radar)
+  set(conti_radar_DEVEL_PREFIX /home/radar/Documents/Nexon_acc/Navigation/Control-and-Navigation/radar_code/src/conti_radar/_build/devel)
   set(conti_radar_INSTALL_PREFIX "")
   set(conti_radar_PREFIX ${conti_radar_DEVEL_PREFIX})
 else()
@@ -91,9 +91,9 @@ endif()
 # flag project as catkin-based to distinguish if a find_package()-ed project is a catkin project
 set(conti_radar_FOUND_CATKIN_PROJECT TRUE)
 
-if(NOT "/home/orin/Documents/Nitish_Nexon/Navigation/radar_code/src/conti_radar/_build/devel/include;/home/orin/Documents/Nitish_Nexon/Navigation/radar_code/src/conti_radar/include " STREQUAL " ")
+if(NOT "/home/radar/Documents/Nexon_acc/Navigation/Control-and-Navigation/radar_code/src/conti_radar/_build/devel/include;/home/radar/Documents/Nexon_acc/Navigation/Control-and-Navigation/radar_code/src/conti_radar/include " STREQUAL " ")
   set(conti_radar_INCLUDE_DIRS "")
-  set(_include_dirs "/home/orin/Documents/Nitish_Nexon/Navigation/radar_code/src/conti_radar/_build/devel/include;/home/orin/Documents/Nitish_Nexon/Navigation/radar_code/src/conti_radar/include")
+  set(_include_dirs "/home/radar/Documents/Nexon_acc/Navigation/Control-and-Navigation/radar_code/src/conti_radar/_build/devel/include;/home/radar/Documents/Nexon_acc/Navigation/Control-and-Navigation/radar_code/src/conti_radar/include")
   if(NOT " " STREQUAL " ")
     set(_report "Check the issue tracker '' and consider creating a ticket if the problem has not been reported yet.")
   elseif(NOT " " STREQUAL " ")
@@ -110,7 +110,7 @@ if(NOT "/home/orin/Documents/Nitish_Nexon/Navigation/radar_code/src/conti_radar/
         message(FATAL_ERROR "Project 'conti_radar' specifies '${idir}' as an include dir, which is not found.  It does not exist in '${include}'.  ${_report}")
       endif()
     else()
-      message(FATAL_ERROR "Project 'conti_radar' specifies '${idir}' as an include dir, which is not found.  It does neither exist as an absolute directory nor in '/home/orin/Documents/Nitish_Nexon/Navigation/radar_code/src/conti_radar/${idir}'.  ${_report}")
+      message(FATAL_ERROR "Project 'conti_radar' specifies '${idir}' as an include dir, which is not found.  It does neither exist as an absolute directory nor in '/home/radar/Documents/Nexon_acc/Navigation/Control-and-Navigation/radar_code/src/conti_radar/${idir}'.  ${_report}")
     endif()
     _list_append_unique(conti_radar_INCLUDE_DIRS ${include})
   endforeach()
@@ -154,7 +154,7 @@ foreach(library ${libraries})
     set(lib_path "")
     set(lib "${library}-NOTFOUND")
     # since the path where the library is found is returned we have to iterate over the paths manually
-    foreach(path /home/orin/Documents/Nitish_Nexon/Navigation/radar_code/src/conti_radar/_build/devel/lib;/opt/ros/noetic/lib)
+    foreach(path /home/radar/Documents/Nexon_acc/Navigation/Control-and-Navigation/radar_code/src/conti_radar/_build/devel/lib;/opt/ros/melodic/lib)
       find_library(lib ${library}
         PATHS ${path}
         NO_DEFAULT_PATH NO_CMAKE_FIND_ROOT_PATH)
@@ -211,7 +211,7 @@ foreach(depend ${depends})
   _unpack_libraries_with_build_configuration(conti_radar_LIBRARIES ${conti_radar_LIBRARIES})
 
   _list_append_unique(conti_radar_LIBRARY_DIRS ${${conti_radar_dep}_LIBRARY_DIRS})
-  _list_append_deduplicate(conti_radar_EXPORTED_TARGETS ${${conti_radar_dep}_EXPORTED_TARGETS})
+  list(APPEND conti_radar_EXPORTED_TARGETS ${${conti_radar_dep}_EXPORTED_TARGETS})
 endforeach()
 
 set(pkg_cfg_extras "conti_radar-msg-extras.cmake")

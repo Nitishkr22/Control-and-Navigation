@@ -279,16 +279,6 @@ namespace message_traits
 
 
 template <class ContainerAllocator>
-struct IsMessage< ::conti_radar::radar_obj_<ContainerAllocator> >
-  : TrueType
-  { };
-
-template <class ContainerAllocator>
-struct IsMessage< ::conti_radar::radar_obj_<ContainerAllocator> const>
-  : TrueType
-  { };
-
-template <class ContainerAllocator>
 struct IsFixedSize< ::conti_radar::radar_obj_<ContainerAllocator> >
   : FalseType
   { };
@@ -296,6 +286,16 @@ struct IsFixedSize< ::conti_radar::radar_obj_<ContainerAllocator> >
 template <class ContainerAllocator>
 struct IsFixedSize< ::conti_radar::radar_obj_<ContainerAllocator> const>
   : FalseType
+  { };
+
+template <class ContainerAllocator>
+struct IsMessage< ::conti_radar::radar_obj_<ContainerAllocator> >
+  : TrueType
+  { };
+
+template <class ContainerAllocator>
+struct IsMessage< ::conti_radar::radar_obj_<ContainerAllocator> const>
+  : TrueType
   { };
 
 template <class ContainerAllocator>

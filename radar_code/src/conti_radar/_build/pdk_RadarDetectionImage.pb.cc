@@ -5,99 +5,94 @@
 
 #include <algorithm>
 
-#include <google/protobuf/stubs/common.h>
-#include <google/protobuf/stubs/port.h>
 #include <google/protobuf/io/coded_stream.h>
-#include <google/protobuf/wire_format_lite_inl.h>
+#include <google/protobuf/extension_set.h>
+#include <google/protobuf/wire_format_lite.h>
 #include <google/protobuf/descriptor.h>
 #include <google/protobuf/generated_message_reflection.h>
 #include <google/protobuf/reflection_ops.h>
 #include <google/protobuf/wire_format.h>
-// This is a temporary google only hack
-#ifdef GOOGLE_PROTOBUF_ENFORCE_UNIQUENESS
-#include "third_party/protobuf/version.h"
-#endif
 // @@protoc_insertion_point(includes)
+#include <google/protobuf/port_def.inc>
 
-namespace protobuf_pdk_5fRadarDetectionImage_2eproto {
-extern PROTOBUF_INTERNAL_EXPORT_protobuf_pdk_5fRadarDetectionImage_2eproto ::google::protobuf::internal::SCCInfo<0> scc_info_RadarDetectionImage_RadarDetection;
-}  // namespace protobuf_pdk_5fRadarDetectionImage_2eproto
-namespace protobuf_pdk_5fSensorMsgHeader_2eproto {
-extern PROTOBUF_INTERNAL_EXPORT_protobuf_pdk_5fSensorMsgHeader_2eproto ::google::protobuf::internal::SCCInfo<1> scc_info_SensorMsgHeader;
-}  // namespace protobuf_pdk_5fSensorMsgHeader_2eproto
+PROTOBUF_PRAGMA_INIT_SEG
+
+namespace _pb = ::PROTOBUF_NAMESPACE_ID;
+namespace _pbi = _pb::internal;
+
 namespace pb {
 namespace PDK {
-class RadarDetectionImage_RadarDetectionDefaultTypeInternal {
- public:
-  ::google::protobuf::internal::ExplicitlyConstructed<RadarDetectionImage_RadarDetection>
-      _instance;
-} _RadarDetectionImage_RadarDetection_default_instance_;
-class RadarDetectionImageDefaultTypeInternal {
- public:
-  ::google::protobuf::internal::ExplicitlyConstructed<RadarDetectionImage>
-      _instance;
-} _RadarDetectionImage_default_instance_;
+PROTOBUF_CONSTEXPR RadarDetectionImage_RadarDetection::RadarDetectionImage_RadarDetection(
+    ::_pbi::ConstantInitialized)
+  : a_azang_hyp_()
+  , a_elang_hyp_()
+  , a_rcs_hyp_()
+  , f_range_(0)
+  , f_vrelrad_(0)
+  , f_rangevar_(0)
+  , f_vrelradvar_(0)
+  , f_azangvar_(0)
+  , f_pdh0_(0)
+  , f_elangvar_(0)
+  , e_elevationstate_(0)
+
+  , u_pdh0flags_(0u)
+  , f_snr_(0)
+  , f_vrelradresolved_(0){}
+struct RadarDetectionImage_RadarDetectionDefaultTypeInternal {
+  PROTOBUF_CONSTEXPR RadarDetectionImage_RadarDetectionDefaultTypeInternal()
+      : _instance(::_pbi::ConstantInitialized{}) {}
+  ~RadarDetectionImage_RadarDetectionDefaultTypeInternal() {}
+  union {
+    RadarDetectionImage_RadarDetection _instance;
+  };
+};
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 RadarDetectionImage_RadarDetectionDefaultTypeInternal _RadarDetectionImage_RadarDetection_default_instance_;
+PROTOBUF_CONSTEXPR RadarDetectionImage::RadarDetectionImage(
+    ::_pbi::ConstantInitialized)
+  : a_radardetectionlist_()
+  , t_header_(nullptr)
+  , f_vambig_(0)
+  , u_nofdetections_(0u)
+  , u_nofanglehypothesis_(0u)
+  , e_scantype_(0)
+{}
+struct RadarDetectionImageDefaultTypeInternal {
+  PROTOBUF_CONSTEXPR RadarDetectionImageDefaultTypeInternal()
+      : _instance(::_pbi::ConstantInitialized{}) {}
+  ~RadarDetectionImageDefaultTypeInternal() {}
+  union {
+    RadarDetectionImage _instance;
+  };
+};
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 RadarDetectionImageDefaultTypeInternal _RadarDetectionImage_default_instance_;
 }  // namespace PDK
 }  // namespace pb
-namespace protobuf_pdk_5fRadarDetectionImage_2eproto {
-static void InitDefaultsRadarDetectionImage_RadarDetection() {
-  GOOGLE_PROTOBUF_VERIFY_VERSION;
+static ::_pb::Metadata file_level_metadata_pdk_5fRadarDetectionImage_2eproto[2];
+static const ::_pb::EnumDescriptor* file_level_enum_descriptors_pdk_5fRadarDetectionImage_2eproto[2];
+static constexpr ::_pb::ServiceDescriptor const** file_level_service_descriptors_pdk_5fRadarDetectionImage_2eproto = nullptr;
 
-  {
-    void* ptr = &::pb::PDK::_RadarDetectionImage_RadarDetection_default_instance_;
-    new (ptr) ::pb::PDK::RadarDetectionImage_RadarDetection();
-    ::google::protobuf::internal::OnShutdownDestroyMessage(ptr);
-  }
-  ::pb::PDK::RadarDetectionImage_RadarDetection::InitAsDefaultInstance();
-}
-
-::google::protobuf::internal::SCCInfo<0> scc_info_RadarDetectionImage_RadarDetection =
-    {{ATOMIC_VAR_INIT(::google::protobuf::internal::SCCInfoBase::kUninitialized), 0, InitDefaultsRadarDetectionImage_RadarDetection}, {}};
-
-static void InitDefaultsRadarDetectionImage() {
-  GOOGLE_PROTOBUF_VERIFY_VERSION;
-
-  {
-    void* ptr = &::pb::PDK::_RadarDetectionImage_default_instance_;
-    new (ptr) ::pb::PDK::RadarDetectionImage();
-    ::google::protobuf::internal::OnShutdownDestroyMessage(ptr);
-  }
-  ::pb::PDK::RadarDetectionImage::InitAsDefaultInstance();
-}
-
-::google::protobuf::internal::SCCInfo<2> scc_info_RadarDetectionImage =
-    {{ATOMIC_VAR_INIT(::google::protobuf::internal::SCCInfoBase::kUninitialized), 2, InitDefaultsRadarDetectionImage}, {
-      &protobuf_pdk_5fSensorMsgHeader_2eproto::scc_info_SensorMsgHeader.base,
-      &protobuf_pdk_5fRadarDetectionImage_2eproto::scc_info_RadarDetectionImage_RadarDetection.base,}};
-
-void InitDefaults() {
-  ::google::protobuf::internal::InitSCC(&scc_info_RadarDetectionImage_RadarDetection.base);
-  ::google::protobuf::internal::InitSCC(&scc_info_RadarDetectionImage.base);
-}
-
-::google::protobuf::Metadata file_level_metadata[2];
-const ::google::protobuf::EnumDescriptor* file_level_enum_descriptors[2];
-
-const ::google::protobuf::uint32 TableStruct::offsets[] GOOGLE_PROTOBUF_ATTRIBUTE_SECTION_VARIABLE(protodesc_cold) = {
-  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::pb::PDK::RadarDetectionImage_RadarDetection, _has_bits_),
-  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::pb::PDK::RadarDetectionImage_RadarDetection, _internal_metadata_),
+const uint32_t TableStruct_pdk_5fRadarDetectionImage_2eproto::offsets[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
+  PROTOBUF_FIELD_OFFSET(::pb::PDK::RadarDetectionImage_RadarDetection, _has_bits_),
+  PROTOBUF_FIELD_OFFSET(::pb::PDK::RadarDetectionImage_RadarDetection, _internal_metadata_),
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
-  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::pb::PDK::RadarDetectionImage_RadarDetection, f_range_),
-  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::pb::PDK::RadarDetectionImage_RadarDetection, f_vrelrad_),
-  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::pb::PDK::RadarDetectionImage_RadarDetection, a_azang_hyp_),
-  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::pb::PDK::RadarDetectionImage_RadarDetection, a_elang_hyp_),
-  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::pb::PDK::RadarDetectionImage_RadarDetection, a_rcs_hyp_),
-  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::pb::PDK::RadarDetectionImage_RadarDetection, f_rangevar_),
-  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::pb::PDK::RadarDetectionImage_RadarDetection, f_vrelradvar_),
-  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::pb::PDK::RadarDetectionImage_RadarDetection, f_azangvar_),
-  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::pb::PDK::RadarDetectionImage_RadarDetection, f_pdh0_),
-  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::pb::PDK::RadarDetectionImage_RadarDetection, f_elangvar_),
-  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::pb::PDK::RadarDetectionImage_RadarDetection, e_elevationstate_),
-  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::pb::PDK::RadarDetectionImage_RadarDetection, u_pdh0flags_),
-  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::pb::PDK::RadarDetectionImage_RadarDetection, f_snr_),
-  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::pb::PDK::RadarDetectionImage_RadarDetection, f_vrelradresolved_),
+  ~0u,  // no _inlined_string_donated_
+  PROTOBUF_FIELD_OFFSET(::pb::PDK::RadarDetectionImage_RadarDetection, f_range_),
+  PROTOBUF_FIELD_OFFSET(::pb::PDK::RadarDetectionImage_RadarDetection, f_vrelrad_),
+  PROTOBUF_FIELD_OFFSET(::pb::PDK::RadarDetectionImage_RadarDetection, a_azang_hyp_),
+  PROTOBUF_FIELD_OFFSET(::pb::PDK::RadarDetectionImage_RadarDetection, a_elang_hyp_),
+  PROTOBUF_FIELD_OFFSET(::pb::PDK::RadarDetectionImage_RadarDetection, a_rcs_hyp_),
+  PROTOBUF_FIELD_OFFSET(::pb::PDK::RadarDetectionImage_RadarDetection, f_rangevar_),
+  PROTOBUF_FIELD_OFFSET(::pb::PDK::RadarDetectionImage_RadarDetection, f_vrelradvar_),
+  PROTOBUF_FIELD_OFFSET(::pb::PDK::RadarDetectionImage_RadarDetection, f_azangvar_),
+  PROTOBUF_FIELD_OFFSET(::pb::PDK::RadarDetectionImage_RadarDetection, f_pdh0_),
+  PROTOBUF_FIELD_OFFSET(::pb::PDK::RadarDetectionImage_RadarDetection, f_elangvar_),
+  PROTOBUF_FIELD_OFFSET(::pb::PDK::RadarDetectionImage_RadarDetection, e_elevationstate_),
+  PROTOBUF_FIELD_OFFSET(::pb::PDK::RadarDetectionImage_RadarDetection, u_pdh0flags_),
+  PROTOBUF_FIELD_OFFSET(::pb::PDK::RadarDetectionImage_RadarDetection, f_snr_),
+  PROTOBUF_FIELD_OFFSET(::pb::PDK::RadarDetectionImage_RadarDetection, f_vrelradresolved_),
   0,
   1,
   ~0u,
@@ -112,17 +107,18 @@ const ::google::protobuf::uint32 TableStruct::offsets[] GOOGLE_PROTOBUF_ATTRIBUT
   8,
   9,
   10,
-  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::pb::PDK::RadarDetectionImage, _has_bits_),
-  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::pb::PDK::RadarDetectionImage, _internal_metadata_),
+  PROTOBUF_FIELD_OFFSET(::pb::PDK::RadarDetectionImage, _has_bits_),
+  PROTOBUF_FIELD_OFFSET(::pb::PDK::RadarDetectionImage, _internal_metadata_),
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
-  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::pb::PDK::RadarDetectionImage, t_header_),
-  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::pb::PDK::RadarDetectionImage, f_vambig_),
-  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::pb::PDK::RadarDetectionImage, u_nofdetections_),
-  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::pb::PDK::RadarDetectionImage, u_nofanglehypothesis_),
-  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::pb::PDK::RadarDetectionImage, e_scantype_),
-  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::pb::PDK::RadarDetectionImage, a_radardetectionlist_),
+  ~0u,  // no _inlined_string_donated_
+  PROTOBUF_FIELD_OFFSET(::pb::PDK::RadarDetectionImage, t_header_),
+  PROTOBUF_FIELD_OFFSET(::pb::PDK::RadarDetectionImage, f_vambig_),
+  PROTOBUF_FIELD_OFFSET(::pb::PDK::RadarDetectionImage, u_nofdetections_),
+  PROTOBUF_FIELD_OFFSET(::pb::PDK::RadarDetectionImage, u_nofanglehypothesis_),
+  PROTOBUF_FIELD_OFFSET(::pb::PDK::RadarDetectionImage, e_scantype_),
+  PROTOBUF_FIELD_OFFSET(::pb::PDK::RadarDetectionImage, a_radardetectionlist_),
   0,
   1,
   2,
@@ -130,83 +126,63 @@ const ::google::protobuf::uint32 TableStruct::offsets[] GOOGLE_PROTOBUF_ATTRIBUT
   4,
   ~0u,
 };
-static const ::google::protobuf::internal::MigrationSchema schemas[] GOOGLE_PROTOBUF_ATTRIBUTE_SECTION_VARIABLE(protodesc_cold) = {
-  { 0, 19, sizeof(::pb::PDK::RadarDetectionImage_RadarDetection)},
-  { 33, 44, sizeof(::pb::PDK::RadarDetectionImage)},
+static const ::_pbi::MigrationSchema schemas[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
+  { 0, 20, -1, sizeof(::pb::PDK::RadarDetectionImage_RadarDetection)},
+  { 34, 46, -1, sizeof(::pb::PDK::RadarDetectionImage)},
 };
 
-static ::google::protobuf::Message const * const file_default_instances[] = {
-  reinterpret_cast<const ::google::protobuf::Message*>(&::pb::PDK::_RadarDetectionImage_RadarDetection_default_instance_),
-  reinterpret_cast<const ::google::protobuf::Message*>(&::pb::PDK::_RadarDetectionImage_default_instance_),
+static const ::_pb::Message* const file_default_instances[] = {
+  &::pb::PDK::_RadarDetectionImage_RadarDetection_default_instance_._instance,
+  &::pb::PDK::_RadarDetectionImage_default_instance_._instance,
 };
 
-void protobuf_AssignDescriptors() {
-  AddDescriptors();
-  AssignDescriptors(
-      "pdk_RadarDetectionImage.proto", schemas, file_default_instances, TableStruct::offsets,
-      file_level_metadata, file_level_enum_descriptors, NULL);
+const char descriptor_table_protodef_pdk_5fRadarDetectionImage_2eproto[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) =
+  "\n\035pdk_RadarDetectionImage.proto\022\006pb.PDK\032"
+  "\031pdk_SensorMsgHeader.proto\"\233\006\n\023RadarDete"
+  "ctionImage\022)\n\010t_Header\030\001 \001(\0132\027.pb.PDK.Se"
+  "nsorMsgHeader\022\020\n\010f_Vambig\030\002 \001(\002\022\027\n\017u_Nof"
+  "Detections\030\005 \001(\r\022\034\n\024u_NofAngleHypothesis"
+  "\030\006 \001(\r\0228\n\ne_ScanType\030\007 \001(\0162$.pb.PDK.Rada"
+  "rDetectionImage.ScanType\022H\n\024a_RadarDetec"
+  "tionList\030\010 \003(\0132*.pb.PDK.RadarDetectionIm"
+  "age.RadarDetection\032\330\002\n\016RadarDetection\022\017\n"
+  "\007f_Range\030\001 \001(\002\022\021\n\tf_VrelRad\030\002 \001(\002\022\023\n\013a_A"
+  "zAng_hyp\030\003 \003(\002\022\023\n\013a_ElAng_hyp\030\004 \003(\002\022\021\n\ta"
+  "_RCS_hyp\030\005 \003(\002\022\022\n\nf_RangeVar\030\007 \001(\002\022\024\n\014f_"
+  "VrelRadVar\030\010 \001(\002\022\022\n\nf_AzAngVar\030\t \001(\002\022\016\n\006"
+  "f_Pdh0\030\n \001(\002\022\022\n\nf_ElAngVar\030\013 \001(\002\022D\n\020e_El"
+  "evationState\030\014 \001(\0162*.pb.PDK.RadarDetecti"
+  "onImage.ElevationState\022\023\n\013u_Pdh0Flags\030\r "
+  "\001(\r\022\r\n\005f_SNR\030\017 \001(\002\022\031\n\021f_VrelRadResolved\030"
+  "\021 \001(\002\">\n\016ElevationState\022\026\n\022EM_ELSTATE_IN"
+  "VALID\020\000\022\024\n\020EM_ELSTATE_VALID\020\001\"q\n\010ScanTyp"
+  "e\022\024\n\020ARS430_NEAR_SCAN\020\000\022\023\n\017ARS430_FAR_SC"
+  "AN\020\001\022\024\n\020SRR520_NEAR_SCAN\020\002\022\023\n\017SRR520_HRR"
+  "_SCAN\020\003\022\017\n\013ARS540_SCAN\020\005"
+  ;
+static const ::_pbi::DescriptorTable* const descriptor_table_pdk_5fRadarDetectionImage_2eproto_deps[1] = {
+  &::descriptor_table_pdk_5fSensorMsgHeader_2eproto,
+};
+static ::_pbi::once_flag descriptor_table_pdk_5fRadarDetectionImage_2eproto_once;
+const ::_pbi::DescriptorTable descriptor_table_pdk_5fRadarDetectionImage_2eproto = {
+    false, false, 864, descriptor_table_protodef_pdk_5fRadarDetectionImage_2eproto,
+    "pdk_RadarDetectionImage.proto",
+    &descriptor_table_pdk_5fRadarDetectionImage_2eproto_once, descriptor_table_pdk_5fRadarDetectionImage_2eproto_deps, 1, 2,
+    schemas, file_default_instances, TableStruct_pdk_5fRadarDetectionImage_2eproto::offsets,
+    file_level_metadata_pdk_5fRadarDetectionImage_2eproto, file_level_enum_descriptors_pdk_5fRadarDetectionImage_2eproto,
+    file_level_service_descriptors_pdk_5fRadarDetectionImage_2eproto,
+};
+PROTOBUF_ATTRIBUTE_WEAK const ::_pbi::DescriptorTable* descriptor_table_pdk_5fRadarDetectionImage_2eproto_getter() {
+  return &descriptor_table_pdk_5fRadarDetectionImage_2eproto;
 }
 
-void protobuf_AssignDescriptorsOnce() {
-  static ::google::protobuf::internal::once_flag once;
-  ::google::protobuf::internal::call_once(once, protobuf_AssignDescriptors);
-}
-
-void protobuf_RegisterTypes(const ::std::string&) GOOGLE_PROTOBUF_ATTRIBUTE_COLD;
-void protobuf_RegisterTypes(const ::std::string&) {
-  protobuf_AssignDescriptorsOnce();
-  ::google::protobuf::internal::RegisterAllTypes(file_level_metadata, 2);
-}
-
-void AddDescriptorsImpl() {
-  InitDefaults();
-  static const char descriptor[] GOOGLE_PROTOBUF_ATTRIBUTE_SECTION_VARIABLE(protodesc_cold) = {
-      "\n\035pdk_RadarDetectionImage.proto\022\006pb.PDK\032"
-      "\031pdk_SensorMsgHeader.proto\"\233\006\n\023RadarDete"
-      "ctionImage\022)\n\010t_Header\030\001 \001(\0132\027.pb.PDK.Se"
-      "nsorMsgHeader\022\020\n\010f_Vambig\030\002 \001(\002\022\027\n\017u_Nof"
-      "Detections\030\005 \001(\r\022\034\n\024u_NofAngleHypothesis"
-      "\030\006 \001(\r\0228\n\ne_ScanType\030\007 \001(\0162$.pb.PDK.Rada"
-      "rDetectionImage.ScanType\022H\n\024a_RadarDetec"
-      "tionList\030\010 \003(\0132*.pb.PDK.RadarDetectionIm"
-      "age.RadarDetection\032\330\002\n\016RadarDetection\022\017\n"
-      "\007f_Range\030\001 \001(\002\022\021\n\tf_VrelRad\030\002 \001(\002\022\023\n\013a_A"
-      "zAng_hyp\030\003 \003(\002\022\023\n\013a_ElAng_hyp\030\004 \003(\002\022\021\n\ta"
-      "_RCS_hyp\030\005 \003(\002\022\022\n\nf_RangeVar\030\007 \001(\002\022\024\n\014f_"
-      "VrelRadVar\030\010 \001(\002\022\022\n\nf_AzAngVar\030\t \001(\002\022\016\n\006"
-      "f_Pdh0\030\n \001(\002\022\022\n\nf_ElAngVar\030\013 \001(\002\022D\n\020e_El"
-      "evationState\030\014 \001(\0162*.pb.PDK.RadarDetecti"
-      "onImage.ElevationState\022\023\n\013u_Pdh0Flags\030\r "
-      "\001(\r\022\r\n\005f_SNR\030\017 \001(\002\022\031\n\021f_VrelRadResolved\030"
-      "\021 \001(\002\">\n\016ElevationState\022\026\n\022EM_ELSTATE_IN"
-      "VALID\020\000\022\024\n\020EM_ELSTATE_VALID\020\001\"q\n\010ScanTyp"
-      "e\022\024\n\020ARS430_NEAR_SCAN\020\000\022\023\n\017ARS430_FAR_SC"
-      "AN\020\001\022\024\n\020SRR520_NEAR_SCAN\020\002\022\023\n\017SRR520_HRR"
-      "_SCAN\020\003\022\017\n\013ARS540_SCAN\020\005"
-  };
-  ::google::protobuf::DescriptorPool::InternalAddGeneratedFile(
-      descriptor, 864);
-  ::google::protobuf::MessageFactory::InternalRegisterGeneratedFile(
-    "pdk_RadarDetectionImage.proto", &protobuf_RegisterTypes);
-  ::protobuf_pdk_5fSensorMsgHeader_2eproto::AddDescriptors();
-}
-
-void AddDescriptors() {
-  static ::google::protobuf::internal::once_flag once;
-  ::google::protobuf::internal::call_once(once, AddDescriptorsImpl);
-}
-// Force AddDescriptors() to be called at dynamic initialization time.
-struct StaticDescriptorInitializer {
-  StaticDescriptorInitializer() {
-    AddDescriptors();
-  }
-} static_descriptor_initializer;
-}  // namespace protobuf_pdk_5fRadarDetectionImage_2eproto
+// Force running AddDescriptors() at dynamic initialization time.
+PROTOBUF_ATTRIBUTE_INIT_PRIORITY2 static ::_pbi::AddDescriptorsRunner dynamic_init_dummy_pdk_5fRadarDetectionImage_2eproto(&descriptor_table_pdk_5fRadarDetectionImage_2eproto);
 namespace pb {
 namespace PDK {
-const ::google::protobuf::EnumDescriptor* RadarDetectionImage_ElevationState_descriptor() {
-  protobuf_pdk_5fRadarDetectionImage_2eproto::protobuf_AssignDescriptorsOnce();
-  return protobuf_pdk_5fRadarDetectionImage_2eproto::file_level_enum_descriptors[0];
+const ::PROTOBUF_NAMESPACE_ID::EnumDescriptor* RadarDetectionImage_ElevationState_descriptor() {
+  ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(&descriptor_table_pdk_5fRadarDetectionImage_2eproto);
+  return file_level_enum_descriptors_pdk_5fRadarDetectionImage_2eproto[0];
 }
 bool RadarDetectionImage_ElevationState_IsValid(int value) {
   switch (value) {
@@ -218,16 +194,16 @@ bool RadarDetectionImage_ElevationState_IsValid(int value) {
   }
 }
 
-#if !defined(_MSC_VER) || _MSC_VER >= 1900
-const RadarDetectionImage_ElevationState RadarDetectionImage::EM_ELSTATE_INVALID;
-const RadarDetectionImage_ElevationState RadarDetectionImage::EM_ELSTATE_VALID;
-const RadarDetectionImage_ElevationState RadarDetectionImage::ElevationState_MIN;
-const RadarDetectionImage_ElevationState RadarDetectionImage::ElevationState_MAX;
-const int RadarDetectionImage::ElevationState_ARRAYSIZE;
-#endif  // !defined(_MSC_VER) || _MSC_VER >= 1900
-const ::google::protobuf::EnumDescriptor* RadarDetectionImage_ScanType_descriptor() {
-  protobuf_pdk_5fRadarDetectionImage_2eproto::protobuf_AssignDescriptorsOnce();
-  return protobuf_pdk_5fRadarDetectionImage_2eproto::file_level_enum_descriptors[1];
+#if (__cplusplus < 201703) && (!defined(_MSC_VER) || (_MSC_VER >= 1900 && _MSC_VER < 1912))
+constexpr RadarDetectionImage_ElevationState RadarDetectionImage::EM_ELSTATE_INVALID;
+constexpr RadarDetectionImage_ElevationState RadarDetectionImage::EM_ELSTATE_VALID;
+constexpr RadarDetectionImage_ElevationState RadarDetectionImage::ElevationState_MIN;
+constexpr RadarDetectionImage_ElevationState RadarDetectionImage::ElevationState_MAX;
+constexpr int RadarDetectionImage::ElevationState_ARRAYSIZE;
+#endif  // (__cplusplus < 201703) && (!defined(_MSC_VER) || (_MSC_VER >= 1900 && _MSC_VER < 1912))
+const ::PROTOBUF_NAMESPACE_ID::EnumDescriptor* RadarDetectionImage_ScanType_descriptor() {
+  ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(&descriptor_table_pdk_5fRadarDetectionImage_2eproto);
+  return file_level_enum_descriptors_pdk_5fRadarDetectionImage_2eproto[1];
 }
 bool RadarDetectionImage_ScanType_IsValid(int value) {
   switch (value) {
@@ -242,90 +218,106 @@ bool RadarDetectionImage_ScanType_IsValid(int value) {
   }
 }
 
-#if !defined(_MSC_VER) || _MSC_VER >= 1900
-const RadarDetectionImage_ScanType RadarDetectionImage::ARS430_NEAR_SCAN;
-const RadarDetectionImage_ScanType RadarDetectionImage::ARS430_FAR_SCAN;
-const RadarDetectionImage_ScanType RadarDetectionImage::SRR520_NEAR_SCAN;
-const RadarDetectionImage_ScanType RadarDetectionImage::SRR520_HRR_SCAN;
-const RadarDetectionImage_ScanType RadarDetectionImage::ARS540_SCAN;
-const RadarDetectionImage_ScanType RadarDetectionImage::ScanType_MIN;
-const RadarDetectionImage_ScanType RadarDetectionImage::ScanType_MAX;
-const int RadarDetectionImage::ScanType_ARRAYSIZE;
-#endif  // !defined(_MSC_VER) || _MSC_VER >= 1900
+#if (__cplusplus < 201703) && (!defined(_MSC_VER) || (_MSC_VER >= 1900 && _MSC_VER < 1912))
+constexpr RadarDetectionImage_ScanType RadarDetectionImage::ARS430_NEAR_SCAN;
+constexpr RadarDetectionImage_ScanType RadarDetectionImage::ARS430_FAR_SCAN;
+constexpr RadarDetectionImage_ScanType RadarDetectionImage::SRR520_NEAR_SCAN;
+constexpr RadarDetectionImage_ScanType RadarDetectionImage::SRR520_HRR_SCAN;
+constexpr RadarDetectionImage_ScanType RadarDetectionImage::ARS540_SCAN;
+constexpr RadarDetectionImage_ScanType RadarDetectionImage::ScanType_MIN;
+constexpr RadarDetectionImage_ScanType RadarDetectionImage::ScanType_MAX;
+constexpr int RadarDetectionImage::ScanType_ARRAYSIZE;
+#endif  // (__cplusplus < 201703) && (!defined(_MSC_VER) || (_MSC_VER >= 1900 && _MSC_VER < 1912))
 
 // ===================================================================
 
-void RadarDetectionImage_RadarDetection::InitAsDefaultInstance() {
-}
-#if !defined(_MSC_VER) || _MSC_VER >= 1900
-const int RadarDetectionImage_RadarDetection::kFRangeFieldNumber;
-const int RadarDetectionImage_RadarDetection::kFVrelRadFieldNumber;
-const int RadarDetectionImage_RadarDetection::kAAzAngHypFieldNumber;
-const int RadarDetectionImage_RadarDetection::kAElAngHypFieldNumber;
-const int RadarDetectionImage_RadarDetection::kARCSHypFieldNumber;
-const int RadarDetectionImage_RadarDetection::kFRangeVarFieldNumber;
-const int RadarDetectionImage_RadarDetection::kFVrelRadVarFieldNumber;
-const int RadarDetectionImage_RadarDetection::kFAzAngVarFieldNumber;
-const int RadarDetectionImage_RadarDetection::kFPdh0FieldNumber;
-const int RadarDetectionImage_RadarDetection::kFElAngVarFieldNumber;
-const int RadarDetectionImage_RadarDetection::kEElevationStateFieldNumber;
-const int RadarDetectionImage_RadarDetection::kUPdh0FlagsFieldNumber;
-const int RadarDetectionImage_RadarDetection::kFSNRFieldNumber;
-const int RadarDetectionImage_RadarDetection::kFVrelRadResolvedFieldNumber;
-#endif  // !defined(_MSC_VER) || _MSC_VER >= 1900
+class RadarDetectionImage_RadarDetection::_Internal {
+ public:
+  using HasBits = decltype(std::declval<RadarDetectionImage_RadarDetection>()._has_bits_);
+  static void set_has_f_range(HasBits* has_bits) {
+    (*has_bits)[0] |= 1u;
+  }
+  static void set_has_f_vrelrad(HasBits* has_bits) {
+    (*has_bits)[0] |= 2u;
+  }
+  static void set_has_f_rangevar(HasBits* has_bits) {
+    (*has_bits)[0] |= 4u;
+  }
+  static void set_has_f_vrelradvar(HasBits* has_bits) {
+    (*has_bits)[0] |= 8u;
+  }
+  static void set_has_f_azangvar(HasBits* has_bits) {
+    (*has_bits)[0] |= 16u;
+  }
+  static void set_has_f_pdh0(HasBits* has_bits) {
+    (*has_bits)[0] |= 32u;
+  }
+  static void set_has_f_elangvar(HasBits* has_bits) {
+    (*has_bits)[0] |= 64u;
+  }
+  static void set_has_e_elevationstate(HasBits* has_bits) {
+    (*has_bits)[0] |= 128u;
+  }
+  static void set_has_u_pdh0flags(HasBits* has_bits) {
+    (*has_bits)[0] |= 256u;
+  }
+  static void set_has_f_snr(HasBits* has_bits) {
+    (*has_bits)[0] |= 512u;
+  }
+  static void set_has_f_vrelradresolved(HasBits* has_bits) {
+    (*has_bits)[0] |= 1024u;
+  }
+};
 
-RadarDetectionImage_RadarDetection::RadarDetectionImage_RadarDetection()
-  : ::google::protobuf::Message(), _internal_metadata_(NULL) {
-  ::google::protobuf::internal::InitSCC(
-      &protobuf_pdk_5fRadarDetectionImage_2eproto::scc_info_RadarDetectionImage_RadarDetection.base);
+RadarDetectionImage_RadarDetection::RadarDetectionImage_RadarDetection(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                         bool is_message_owned)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned),
+  a_azang_hyp_(arena),
+  a_elang_hyp_(arena),
+  a_rcs_hyp_(arena) {
   SharedCtor();
-  // @@protoc_insertion_point(constructor:pb.PDK.RadarDetectionImage.RadarDetection)
+  // @@protoc_insertion_point(arena_constructor:pb.PDK.RadarDetectionImage.RadarDetection)
 }
 RadarDetectionImage_RadarDetection::RadarDetectionImage_RadarDetection(const RadarDetectionImage_RadarDetection& from)
-  : ::google::protobuf::Message(),
-      _internal_metadata_(NULL),
+  : ::PROTOBUF_NAMESPACE_ID::Message(),
       _has_bits_(from._has_bits_),
       a_azang_hyp_(from.a_azang_hyp_),
       a_elang_hyp_(from.a_elang_hyp_),
       a_rcs_hyp_(from.a_rcs_hyp_) {
-  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
   ::memcpy(&f_range_, &from.f_range_,
     static_cast<size_t>(reinterpret_cast<char*>(&f_vrelradresolved_) -
     reinterpret_cast<char*>(&f_range_)) + sizeof(f_vrelradresolved_));
   // @@protoc_insertion_point(copy_constructor:pb.PDK.RadarDetectionImage.RadarDetection)
 }
 
-void RadarDetectionImage_RadarDetection::SharedCtor() {
-  ::memset(&f_range_, 0, static_cast<size_t>(
-      reinterpret_cast<char*>(&f_vrelradresolved_) -
-      reinterpret_cast<char*>(&f_range_)) + sizeof(f_vrelradresolved_));
+inline void RadarDetectionImage_RadarDetection::SharedCtor() {
+::memset(reinterpret_cast<char*>(this) + static_cast<size_t>(
+    reinterpret_cast<char*>(&f_range_) - reinterpret_cast<char*>(this)),
+    0, static_cast<size_t>(reinterpret_cast<char*>(&f_vrelradresolved_) -
+    reinterpret_cast<char*>(&f_range_)) + sizeof(f_vrelradresolved_));
 }
 
 RadarDetectionImage_RadarDetection::~RadarDetectionImage_RadarDetection() {
   // @@protoc_insertion_point(destructor:pb.PDK.RadarDetectionImage.RadarDetection)
+  if (auto *arena = _internal_metadata_.DeleteReturnArena<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>()) {
+  (void)arena;
+    return;
+  }
   SharedDtor();
 }
 
-void RadarDetectionImage_RadarDetection::SharedDtor() {
+inline void RadarDetectionImage_RadarDetection::SharedDtor() {
+  GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
 }
 
 void RadarDetectionImage_RadarDetection::SetCachedSize(int size) const {
   _cached_size_.Set(size);
 }
-const ::google::protobuf::Descriptor* RadarDetectionImage_RadarDetection::descriptor() {
-  ::protobuf_pdk_5fRadarDetectionImage_2eproto::protobuf_AssignDescriptorsOnce();
-  return ::protobuf_pdk_5fRadarDetectionImage_2eproto::file_level_metadata[kIndexInFileMessages].descriptor;
-}
-
-const RadarDetectionImage_RadarDetection& RadarDetectionImage_RadarDetection::default_instance() {
-  ::google::protobuf::internal::InitSCC(&protobuf_pdk_5fRadarDetectionImage_2eproto::scc_info_RadarDetectionImage_RadarDetection.base);
-  return *internal_default_instance();
-}
-
 
 void RadarDetectionImage_RadarDetection::Clear() {
 // @@protoc_insertion_point(message_clear_start:pb.PDK.RadarDetectionImage.RadarDetection)
-  ::google::protobuf::uint32 cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
@@ -333,434 +325,297 @@ void RadarDetectionImage_RadarDetection::Clear() {
   a_elang_hyp_.Clear();
   a_rcs_hyp_.Clear();
   cached_has_bits = _has_bits_[0];
-  if (cached_has_bits & 255u) {
+  if (cached_has_bits & 0x000000ffu) {
     ::memset(&f_range_, 0, static_cast<size_t>(
         reinterpret_cast<char*>(&e_elevationstate_) -
         reinterpret_cast<char*>(&f_range_)) + sizeof(e_elevationstate_));
   }
-  if (cached_has_bits & 1792u) {
+  if (cached_has_bits & 0x00000700u) {
     ::memset(&u_pdh0flags_, 0, static_cast<size_t>(
         reinterpret_cast<char*>(&f_vrelradresolved_) -
         reinterpret_cast<char*>(&u_pdh0flags_)) + sizeof(f_vrelradresolved_));
   }
   _has_bits_.Clear();
-  _internal_metadata_.Clear();
+  _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
-bool RadarDetectionImage_RadarDetection::MergePartialFromCodedStream(
-    ::google::protobuf::io::CodedInputStream* input) {
-#define DO_(EXPRESSION) if (!GOOGLE_PREDICT_TRUE(EXPRESSION)) goto failure
-  ::google::protobuf::uint32 tag;
-  // @@protoc_insertion_point(parse_start:pb.PDK.RadarDetectionImage.RadarDetection)
-  for (;;) {
-    ::std::pair<::google::protobuf::uint32, bool> p = input->ReadTagWithCutoffNoLastTag(16383u);
-    tag = p.first;
-    if (!p.second) goto handle_unusual;
-    switch (::google::protobuf::internal::WireFormatLite::GetTagFieldNumber(tag)) {
+const char* RadarDetectionImage_RadarDetection::_InternalParse(const char* ptr, ::_pbi::ParseContext* ctx) {
+#define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
+  _Internal::HasBits has_bits{};
+  while (!ctx->Done(&ptr)) {
+    uint32_t tag;
+    ptr = ::_pbi::ReadTag(ptr, &tag);
+    switch (tag >> 3) {
       // optional float f_Range = 1;
-      case 1: {
-        if (static_cast< ::google::protobuf::uint8>(tag) ==
-            static_cast< ::google::protobuf::uint8>(13u /* 13 & 0xFF */)) {
-          set_has_f_range();
-          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
-                   float, ::google::protobuf::internal::WireFormatLite::TYPE_FLOAT>(
-                 input, &f_range_)));
-        } else {
+      case 1:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 13)) {
+          _Internal::set_has_f_range(&has_bits);
+          f_range_ = ::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<float>(ptr);
+          ptr += sizeof(float);
+        } else
           goto handle_unusual;
-        }
-        break;
-      }
-
+        continue;
       // optional float f_VrelRad = 2;
-      case 2: {
-        if (static_cast< ::google::protobuf::uint8>(tag) ==
-            static_cast< ::google::protobuf::uint8>(21u /* 21 & 0xFF */)) {
-          set_has_f_vrelrad();
-          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
-                   float, ::google::protobuf::internal::WireFormatLite::TYPE_FLOAT>(
-                 input, &f_vrelrad_)));
-        } else {
+      case 2:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 21)) {
+          _Internal::set_has_f_vrelrad(&has_bits);
+          f_vrelrad_ = ::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<float>(ptr);
+          ptr += sizeof(float);
+        } else
           goto handle_unusual;
-        }
-        break;
-      }
-
+        continue;
       // repeated float a_AzAng_hyp = 3;
-      case 3: {
-        if (static_cast< ::google::protobuf::uint8>(tag) ==
-            static_cast< ::google::protobuf::uint8>(29u /* 29 & 0xFF */)) {
-          DO_((::google::protobuf::internal::WireFormatLite::ReadRepeatedPrimitive<
-                   float, ::google::protobuf::internal::WireFormatLite::TYPE_FLOAT>(
-                 1, 29u, input, this->mutable_a_azang_hyp())));
-        } else if (
-            static_cast< ::google::protobuf::uint8>(tag) ==
-            static_cast< ::google::protobuf::uint8>(26u /* 26 & 0xFF */)) {
-          DO_((::google::protobuf::internal::WireFormatLite::ReadPackedPrimitiveNoInline<
-                   float, ::google::protobuf::internal::WireFormatLite::TYPE_FLOAT>(
-                 input, this->mutable_a_azang_hyp())));
-        } else {
+      case 3:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 29)) {
+          ptr -= 1;
+          do {
+            ptr += 1;
+            _internal_add_a_azang_hyp(::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<float>(ptr));
+            ptr += sizeof(float);
+            if (!ctx->DataAvailable(ptr)) break;
+          } while (::PROTOBUF_NAMESPACE_ID::internal::ExpectTag<29>(ptr));
+        } else if (static_cast<uint8_t>(tag) == 26) {
+          ptr = ::PROTOBUF_NAMESPACE_ID::internal::PackedFloatParser(_internal_mutable_a_azang_hyp(), ptr, ctx);
+          CHK_(ptr);
+        } else
           goto handle_unusual;
-        }
-        break;
-      }
-
+        continue;
       // repeated float a_ElAng_hyp = 4;
-      case 4: {
-        if (static_cast< ::google::protobuf::uint8>(tag) ==
-            static_cast< ::google::protobuf::uint8>(37u /* 37 & 0xFF */)) {
-          DO_((::google::protobuf::internal::WireFormatLite::ReadRepeatedPrimitive<
-                   float, ::google::protobuf::internal::WireFormatLite::TYPE_FLOAT>(
-                 1, 37u, input, this->mutable_a_elang_hyp())));
-        } else if (
-            static_cast< ::google::protobuf::uint8>(tag) ==
-            static_cast< ::google::protobuf::uint8>(34u /* 34 & 0xFF */)) {
-          DO_((::google::protobuf::internal::WireFormatLite::ReadPackedPrimitiveNoInline<
-                   float, ::google::protobuf::internal::WireFormatLite::TYPE_FLOAT>(
-                 input, this->mutable_a_elang_hyp())));
-        } else {
+      case 4:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 37)) {
+          ptr -= 1;
+          do {
+            ptr += 1;
+            _internal_add_a_elang_hyp(::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<float>(ptr));
+            ptr += sizeof(float);
+            if (!ctx->DataAvailable(ptr)) break;
+          } while (::PROTOBUF_NAMESPACE_ID::internal::ExpectTag<37>(ptr));
+        } else if (static_cast<uint8_t>(tag) == 34) {
+          ptr = ::PROTOBUF_NAMESPACE_ID::internal::PackedFloatParser(_internal_mutable_a_elang_hyp(), ptr, ctx);
+          CHK_(ptr);
+        } else
           goto handle_unusual;
-        }
-        break;
-      }
-
+        continue;
       // repeated float a_RCS_hyp = 5;
-      case 5: {
-        if (static_cast< ::google::protobuf::uint8>(tag) ==
-            static_cast< ::google::protobuf::uint8>(45u /* 45 & 0xFF */)) {
-          DO_((::google::protobuf::internal::WireFormatLite::ReadRepeatedPrimitive<
-                   float, ::google::protobuf::internal::WireFormatLite::TYPE_FLOAT>(
-                 1, 45u, input, this->mutable_a_rcs_hyp())));
-        } else if (
-            static_cast< ::google::protobuf::uint8>(tag) ==
-            static_cast< ::google::protobuf::uint8>(42u /* 42 & 0xFF */)) {
-          DO_((::google::protobuf::internal::WireFormatLite::ReadPackedPrimitiveNoInline<
-                   float, ::google::protobuf::internal::WireFormatLite::TYPE_FLOAT>(
-                 input, this->mutable_a_rcs_hyp())));
-        } else {
+      case 5:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 45)) {
+          ptr -= 1;
+          do {
+            ptr += 1;
+            _internal_add_a_rcs_hyp(::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<float>(ptr));
+            ptr += sizeof(float);
+            if (!ctx->DataAvailable(ptr)) break;
+          } while (::PROTOBUF_NAMESPACE_ID::internal::ExpectTag<45>(ptr));
+        } else if (static_cast<uint8_t>(tag) == 42) {
+          ptr = ::PROTOBUF_NAMESPACE_ID::internal::PackedFloatParser(_internal_mutable_a_rcs_hyp(), ptr, ctx);
+          CHK_(ptr);
+        } else
           goto handle_unusual;
-        }
-        break;
-      }
-
+        continue;
       // optional float f_RangeVar = 7;
-      case 7: {
-        if (static_cast< ::google::protobuf::uint8>(tag) ==
-            static_cast< ::google::protobuf::uint8>(61u /* 61 & 0xFF */)) {
-          set_has_f_rangevar();
-          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
-                   float, ::google::protobuf::internal::WireFormatLite::TYPE_FLOAT>(
-                 input, &f_rangevar_)));
-        } else {
+      case 7:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 61)) {
+          _Internal::set_has_f_rangevar(&has_bits);
+          f_rangevar_ = ::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<float>(ptr);
+          ptr += sizeof(float);
+        } else
           goto handle_unusual;
-        }
-        break;
-      }
-
+        continue;
       // optional float f_VrelRadVar = 8;
-      case 8: {
-        if (static_cast< ::google::protobuf::uint8>(tag) ==
-            static_cast< ::google::protobuf::uint8>(69u /* 69 & 0xFF */)) {
-          set_has_f_vrelradvar();
-          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
-                   float, ::google::protobuf::internal::WireFormatLite::TYPE_FLOAT>(
-                 input, &f_vrelradvar_)));
-        } else {
+      case 8:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 69)) {
+          _Internal::set_has_f_vrelradvar(&has_bits);
+          f_vrelradvar_ = ::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<float>(ptr);
+          ptr += sizeof(float);
+        } else
           goto handle_unusual;
-        }
-        break;
-      }
-
+        continue;
       // optional float f_AzAngVar = 9;
-      case 9: {
-        if (static_cast< ::google::protobuf::uint8>(tag) ==
-            static_cast< ::google::protobuf::uint8>(77u /* 77 & 0xFF */)) {
-          set_has_f_azangvar();
-          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
-                   float, ::google::protobuf::internal::WireFormatLite::TYPE_FLOAT>(
-                 input, &f_azangvar_)));
-        } else {
+      case 9:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 77)) {
+          _Internal::set_has_f_azangvar(&has_bits);
+          f_azangvar_ = ::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<float>(ptr);
+          ptr += sizeof(float);
+        } else
           goto handle_unusual;
-        }
-        break;
-      }
-
+        continue;
       // optional float f_Pdh0 = 10;
-      case 10: {
-        if (static_cast< ::google::protobuf::uint8>(tag) ==
-            static_cast< ::google::protobuf::uint8>(85u /* 85 & 0xFF */)) {
-          set_has_f_pdh0();
-          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
-                   float, ::google::protobuf::internal::WireFormatLite::TYPE_FLOAT>(
-                 input, &f_pdh0_)));
-        } else {
+      case 10:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 85)) {
+          _Internal::set_has_f_pdh0(&has_bits);
+          f_pdh0_ = ::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<float>(ptr);
+          ptr += sizeof(float);
+        } else
           goto handle_unusual;
-        }
-        break;
-      }
-
+        continue;
       // optional float f_ElAngVar = 11;
-      case 11: {
-        if (static_cast< ::google::protobuf::uint8>(tag) ==
-            static_cast< ::google::protobuf::uint8>(93u /* 93 & 0xFF */)) {
-          set_has_f_elangvar();
-          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
-                   float, ::google::protobuf::internal::WireFormatLite::TYPE_FLOAT>(
-                 input, &f_elangvar_)));
-        } else {
+      case 11:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 93)) {
+          _Internal::set_has_f_elangvar(&has_bits);
+          f_elangvar_ = ::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<float>(ptr);
+          ptr += sizeof(float);
+        } else
           goto handle_unusual;
-        }
-        break;
-      }
-
+        continue;
       // optional .pb.PDK.RadarDetectionImage.ElevationState e_ElevationState = 12;
-      case 12: {
-        if (static_cast< ::google::protobuf::uint8>(tag) ==
-            static_cast< ::google::protobuf::uint8>(96u /* 96 & 0xFF */)) {
-          int value;
-          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
-                   int, ::google::protobuf::internal::WireFormatLite::TYPE_ENUM>(
-                 input, &value)));
-          if (::pb::PDK::RadarDetectionImage_ElevationState_IsValid(value)) {
-            set_e_elevationstate(static_cast< ::pb::PDK::RadarDetectionImage_ElevationState >(value));
+      case 12:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 96)) {
+          uint64_t val = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
+          CHK_(ptr);
+          if (PROTOBUF_PREDICT_TRUE(::pb::PDK::RadarDetectionImage_ElevationState_IsValid(val))) {
+            _internal_set_e_elevationstate(static_cast<::pb::PDK::RadarDetectionImage_ElevationState>(val));
           } else {
-            mutable_unknown_fields()->AddVarint(
-                12, static_cast< ::google::protobuf::uint64>(value));
+            ::PROTOBUF_NAMESPACE_ID::internal::WriteVarint(12, val, mutable_unknown_fields());
           }
-        } else {
+        } else
           goto handle_unusual;
-        }
-        break;
-      }
-
+        continue;
       // optional uint32 u_Pdh0Flags = 13;
-      case 13: {
-        if (static_cast< ::google::protobuf::uint8>(tag) ==
-            static_cast< ::google::protobuf::uint8>(104u /* 104 & 0xFF */)) {
-          set_has_u_pdh0flags();
-          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
-                   ::google::protobuf::uint32, ::google::protobuf::internal::WireFormatLite::TYPE_UINT32>(
-                 input, &u_pdh0flags_)));
-        } else {
+      case 13:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 104)) {
+          _Internal::set_has_u_pdh0flags(&has_bits);
+          u_pdh0flags_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
+          CHK_(ptr);
+        } else
           goto handle_unusual;
-        }
-        break;
-      }
-
+        continue;
       // optional float f_SNR = 15;
-      case 15: {
-        if (static_cast< ::google::protobuf::uint8>(tag) ==
-            static_cast< ::google::protobuf::uint8>(125u /* 125 & 0xFF */)) {
-          set_has_f_snr();
-          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
-                   float, ::google::protobuf::internal::WireFormatLite::TYPE_FLOAT>(
-                 input, &f_snr_)));
-        } else {
+      case 15:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 125)) {
+          _Internal::set_has_f_snr(&has_bits);
+          f_snr_ = ::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<float>(ptr);
+          ptr += sizeof(float);
+        } else
           goto handle_unusual;
-        }
-        break;
-      }
-
+        continue;
       // optional float f_VrelRadResolved = 17;
-      case 17: {
-        if (static_cast< ::google::protobuf::uint8>(tag) ==
-            static_cast< ::google::protobuf::uint8>(141u /* 141 & 0xFF */)) {
-          set_has_f_vrelradresolved();
-          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
-                   float, ::google::protobuf::internal::WireFormatLite::TYPE_FLOAT>(
-                 input, &f_vrelradresolved_)));
-        } else {
+      case 17:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 141)) {
+          _Internal::set_has_f_vrelradresolved(&has_bits);
+          f_vrelradresolved_ = ::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<float>(ptr);
+          ptr += sizeof(float);
+        } else
           goto handle_unusual;
-        }
-        break;
-      }
-
-      default: {
-      handle_unusual:
-        if (tag == 0) {
-          goto success;
-        }
-        DO_(::google::protobuf::internal::WireFormat::SkipField(
-              input, tag, _internal_metadata_.mutable_unknown_fields()));
-        break;
-      }
+        continue;
+      default:
+        goto handle_unusual;
+    }  // switch
+  handle_unusual:
+    if ((tag == 0) || ((tag & 7) == 4)) {
+      CHK_(ptr);
+      ctx->SetLastTag(tag);
+      goto message_done;
     }
-  }
-success:
-  // @@protoc_insertion_point(parse_success:pb.PDK.RadarDetectionImage.RadarDetection)
-  return true;
+    ptr = UnknownFieldParse(
+        tag,
+        _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
+        ptr, ctx);
+    CHK_(ptr != nullptr);
+  }  // while
+message_done:
+  _has_bits_.Or(has_bits);
+  return ptr;
 failure:
-  // @@protoc_insertion_point(parse_failure:pb.PDK.RadarDetectionImage.RadarDetection)
-  return false;
-#undef DO_
+  ptr = nullptr;
+  goto message_done;
+#undef CHK_
 }
 
-void RadarDetectionImage_RadarDetection::SerializeWithCachedSizes(
-    ::google::protobuf::io::CodedOutputStream* output) const {
-  // @@protoc_insertion_point(serialize_start:pb.PDK.RadarDetectionImage.RadarDetection)
-  ::google::protobuf::uint32 cached_has_bits = 0;
-  (void) cached_has_bits;
-
-  cached_has_bits = _has_bits_[0];
-  // optional float f_Range = 1;
-  if (cached_has_bits & 0x00000001u) {
-    ::google::protobuf::internal::WireFormatLite::WriteFloat(1, this->f_range(), output);
-  }
-
-  // optional float f_VrelRad = 2;
-  if (cached_has_bits & 0x00000002u) {
-    ::google::protobuf::internal::WireFormatLite::WriteFloat(2, this->f_vrelrad(), output);
-  }
-
-  // repeated float a_AzAng_hyp = 3;
-  for (int i = 0, n = this->a_azang_hyp_size(); i < n; i++) {
-    ::google::protobuf::internal::WireFormatLite::WriteFloat(
-      3, this->a_azang_hyp(i), output);
-  }
-
-  // repeated float a_ElAng_hyp = 4;
-  for (int i = 0, n = this->a_elang_hyp_size(); i < n; i++) {
-    ::google::protobuf::internal::WireFormatLite::WriteFloat(
-      4, this->a_elang_hyp(i), output);
-  }
-
-  // repeated float a_RCS_hyp = 5;
-  for (int i = 0, n = this->a_rcs_hyp_size(); i < n; i++) {
-    ::google::protobuf::internal::WireFormatLite::WriteFloat(
-      5, this->a_rcs_hyp(i), output);
-  }
-
-  // optional float f_RangeVar = 7;
-  if (cached_has_bits & 0x00000004u) {
-    ::google::protobuf::internal::WireFormatLite::WriteFloat(7, this->f_rangevar(), output);
-  }
-
-  // optional float f_VrelRadVar = 8;
-  if (cached_has_bits & 0x00000008u) {
-    ::google::protobuf::internal::WireFormatLite::WriteFloat(8, this->f_vrelradvar(), output);
-  }
-
-  // optional float f_AzAngVar = 9;
-  if (cached_has_bits & 0x00000010u) {
-    ::google::protobuf::internal::WireFormatLite::WriteFloat(9, this->f_azangvar(), output);
-  }
-
-  // optional float f_Pdh0 = 10;
-  if (cached_has_bits & 0x00000020u) {
-    ::google::protobuf::internal::WireFormatLite::WriteFloat(10, this->f_pdh0(), output);
-  }
-
-  // optional float f_ElAngVar = 11;
-  if (cached_has_bits & 0x00000040u) {
-    ::google::protobuf::internal::WireFormatLite::WriteFloat(11, this->f_elangvar(), output);
-  }
-
-  // optional .pb.PDK.RadarDetectionImage.ElevationState e_ElevationState = 12;
-  if (cached_has_bits & 0x00000080u) {
-    ::google::protobuf::internal::WireFormatLite::WriteEnum(
-      12, this->e_elevationstate(), output);
-  }
-
-  // optional uint32 u_Pdh0Flags = 13;
-  if (cached_has_bits & 0x00000100u) {
-    ::google::protobuf::internal::WireFormatLite::WriteUInt32(13, this->u_pdh0flags(), output);
-  }
-
-  // optional float f_SNR = 15;
-  if (cached_has_bits & 0x00000200u) {
-    ::google::protobuf::internal::WireFormatLite::WriteFloat(15, this->f_snr(), output);
-  }
-
-  // optional float f_VrelRadResolved = 17;
-  if (cached_has_bits & 0x00000400u) {
-    ::google::protobuf::internal::WireFormatLite::WriteFloat(17, this->f_vrelradresolved(), output);
-  }
-
-  if (_internal_metadata_.have_unknown_fields()) {
-    ::google::protobuf::internal::WireFormat::SerializeUnknownFields(
-        _internal_metadata_.unknown_fields(), output);
-  }
-  // @@protoc_insertion_point(serialize_end:pb.PDK.RadarDetectionImage.RadarDetection)
-}
-
-::google::protobuf::uint8* RadarDetectionImage_RadarDetection::InternalSerializeWithCachedSizesToArray(
-    bool deterministic, ::google::protobuf::uint8* target) const {
-  (void)deterministic; // Unused
+uint8_t* RadarDetectionImage_RadarDetection::_InternalSerialize(
+    uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
   // @@protoc_insertion_point(serialize_to_array_start:pb.PDK.RadarDetectionImage.RadarDetection)
-  ::google::protobuf::uint32 cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
   cached_has_bits = _has_bits_[0];
   // optional float f_Range = 1;
   if (cached_has_bits & 0x00000001u) {
-    target = ::google::protobuf::internal::WireFormatLite::WriteFloatToArray(1, this->f_range(), target);
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteFloatToArray(1, this->_internal_f_range(), target);
   }
 
   // optional float f_VrelRad = 2;
   if (cached_has_bits & 0x00000002u) {
-    target = ::google::protobuf::internal::WireFormatLite::WriteFloatToArray(2, this->f_vrelrad(), target);
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteFloatToArray(2, this->_internal_f_vrelrad(), target);
   }
 
   // repeated float a_AzAng_hyp = 3;
-  target = ::google::protobuf::internal::WireFormatLite::
-    WriteFloatToArray(3, this->a_azang_hyp_, target);
+  for (int i = 0, n = this->_internal_a_azang_hyp_size(); i < n; i++) {
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteFloatToArray(3, this->_internal_a_azang_hyp(i), target);
+  }
 
   // repeated float a_ElAng_hyp = 4;
-  target = ::google::protobuf::internal::WireFormatLite::
-    WriteFloatToArray(4, this->a_elang_hyp_, target);
+  for (int i = 0, n = this->_internal_a_elang_hyp_size(); i < n; i++) {
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteFloatToArray(4, this->_internal_a_elang_hyp(i), target);
+  }
 
   // repeated float a_RCS_hyp = 5;
-  target = ::google::protobuf::internal::WireFormatLite::
-    WriteFloatToArray(5, this->a_rcs_hyp_, target);
+  for (int i = 0, n = this->_internal_a_rcs_hyp_size(); i < n; i++) {
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteFloatToArray(5, this->_internal_a_rcs_hyp(i), target);
+  }
 
   // optional float f_RangeVar = 7;
   if (cached_has_bits & 0x00000004u) {
-    target = ::google::protobuf::internal::WireFormatLite::WriteFloatToArray(7, this->f_rangevar(), target);
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteFloatToArray(7, this->_internal_f_rangevar(), target);
   }
 
   // optional float f_VrelRadVar = 8;
   if (cached_has_bits & 0x00000008u) {
-    target = ::google::protobuf::internal::WireFormatLite::WriteFloatToArray(8, this->f_vrelradvar(), target);
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteFloatToArray(8, this->_internal_f_vrelradvar(), target);
   }
 
   // optional float f_AzAngVar = 9;
   if (cached_has_bits & 0x00000010u) {
-    target = ::google::protobuf::internal::WireFormatLite::WriteFloatToArray(9, this->f_azangvar(), target);
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteFloatToArray(9, this->_internal_f_azangvar(), target);
   }
 
   // optional float f_Pdh0 = 10;
   if (cached_has_bits & 0x00000020u) {
-    target = ::google::protobuf::internal::WireFormatLite::WriteFloatToArray(10, this->f_pdh0(), target);
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteFloatToArray(10, this->_internal_f_pdh0(), target);
   }
 
   // optional float f_ElAngVar = 11;
   if (cached_has_bits & 0x00000040u) {
-    target = ::google::protobuf::internal::WireFormatLite::WriteFloatToArray(11, this->f_elangvar(), target);
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteFloatToArray(11, this->_internal_f_elangvar(), target);
   }
 
   // optional .pb.PDK.RadarDetectionImage.ElevationState e_ElevationState = 12;
   if (cached_has_bits & 0x00000080u) {
-    target = ::google::protobuf::internal::WireFormatLite::WriteEnumToArray(
-      12, this->e_elevationstate(), target);
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteEnumToArray(
+      12, this->_internal_e_elevationstate(), target);
   }
 
   // optional uint32 u_Pdh0Flags = 13;
   if (cached_has_bits & 0x00000100u) {
-    target = ::google::protobuf::internal::WireFormatLite::WriteUInt32ToArray(13, this->u_pdh0flags(), target);
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteUInt32ToArray(13, this->_internal_u_pdh0flags(), target);
   }
 
   // optional float f_SNR = 15;
   if (cached_has_bits & 0x00000200u) {
-    target = ::google::protobuf::internal::WireFormatLite::WriteFloatToArray(15, this->f_snr(), target);
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteFloatToArray(15, this->_internal_f_snr(), target);
   }
 
   // optional float f_VrelRadResolved = 17;
   if (cached_has_bits & 0x00000400u) {
-    target = ::google::protobuf::internal::WireFormatLite::WriteFloatToArray(17, this->f_vrelradresolved(), target);
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteFloatToArray(17, this->_internal_f_vrelradresolved(), target);
   }
 
-  if (_internal_metadata_.have_unknown_fields()) {
-    target = ::google::protobuf::internal::WireFormat::SerializeUnknownFieldsToArray(
-        _internal_metadata_.unknown_fields(), target);
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    target = ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
+        _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
   }
   // @@protoc_insertion_point(serialize_to_array_end:pb.PDK.RadarDetectionImage.RadarDetection)
   return target;
@@ -770,132 +625,125 @@ size_t RadarDetectionImage_RadarDetection::ByteSizeLong() const {
 // @@protoc_insertion_point(message_byte_size_start:pb.PDK.RadarDetectionImage.RadarDetection)
   size_t total_size = 0;
 
-  if (_internal_metadata_.have_unknown_fields()) {
-    total_size +=
-      ::google::protobuf::internal::WireFormat::ComputeUnknownFieldsSize(
-        _internal_metadata_.unknown_fields());
-  }
+  uint32_t cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
   // repeated float a_AzAng_hyp = 3;
   {
-    unsigned int count = static_cast<unsigned int>(this->a_azang_hyp_size());
+    unsigned int count = static_cast<unsigned int>(this->_internal_a_azang_hyp_size());
     size_t data_size = 4UL * count;
     total_size += 1 *
-                  ::google::protobuf::internal::FromIntSize(this->a_azang_hyp_size());
+                  ::_pbi::FromIntSize(this->_internal_a_azang_hyp_size());
     total_size += data_size;
   }
 
   // repeated float a_ElAng_hyp = 4;
   {
-    unsigned int count = static_cast<unsigned int>(this->a_elang_hyp_size());
+    unsigned int count = static_cast<unsigned int>(this->_internal_a_elang_hyp_size());
     size_t data_size = 4UL * count;
     total_size += 1 *
-                  ::google::protobuf::internal::FromIntSize(this->a_elang_hyp_size());
+                  ::_pbi::FromIntSize(this->_internal_a_elang_hyp_size());
     total_size += data_size;
   }
 
   // repeated float a_RCS_hyp = 5;
   {
-    unsigned int count = static_cast<unsigned int>(this->a_rcs_hyp_size());
+    unsigned int count = static_cast<unsigned int>(this->_internal_a_rcs_hyp_size());
     size_t data_size = 4UL * count;
     total_size += 1 *
-                  ::google::protobuf::internal::FromIntSize(this->a_rcs_hyp_size());
+                  ::_pbi::FromIntSize(this->_internal_a_rcs_hyp_size());
     total_size += data_size;
   }
 
-  if (_has_bits_[0 / 32] & 255u) {
+  cached_has_bits = _has_bits_[0];
+  if (cached_has_bits & 0x000000ffu) {
     // optional float f_Range = 1;
-    if (has_f_range()) {
+    if (cached_has_bits & 0x00000001u) {
       total_size += 1 + 4;
     }
 
     // optional float f_VrelRad = 2;
-    if (has_f_vrelrad()) {
+    if (cached_has_bits & 0x00000002u) {
       total_size += 1 + 4;
     }
 
     // optional float f_RangeVar = 7;
-    if (has_f_rangevar()) {
+    if (cached_has_bits & 0x00000004u) {
       total_size += 1 + 4;
     }
 
     // optional float f_VrelRadVar = 8;
-    if (has_f_vrelradvar()) {
+    if (cached_has_bits & 0x00000008u) {
       total_size += 1 + 4;
     }
 
     // optional float f_AzAngVar = 9;
-    if (has_f_azangvar()) {
+    if (cached_has_bits & 0x00000010u) {
       total_size += 1 + 4;
     }
 
     // optional float f_Pdh0 = 10;
-    if (has_f_pdh0()) {
+    if (cached_has_bits & 0x00000020u) {
       total_size += 1 + 4;
     }
 
     // optional float f_ElAngVar = 11;
-    if (has_f_elangvar()) {
+    if (cached_has_bits & 0x00000040u) {
       total_size += 1 + 4;
     }
 
     // optional .pb.PDK.RadarDetectionImage.ElevationState e_ElevationState = 12;
-    if (has_e_elevationstate()) {
+    if (cached_has_bits & 0x00000080u) {
       total_size += 1 +
-        ::google::protobuf::internal::WireFormatLite::EnumSize(this->e_elevationstate());
+        ::_pbi::WireFormatLite::EnumSize(this->_internal_e_elevationstate());
     }
 
   }
-  if (_has_bits_[8 / 32] & 1792u) {
+  if (cached_has_bits & 0x00000700u) {
     // optional uint32 u_Pdh0Flags = 13;
-    if (has_u_pdh0flags()) {
-      total_size += 1 +
-        ::google::protobuf::internal::WireFormatLite::UInt32Size(
-          this->u_pdh0flags());
+    if (cached_has_bits & 0x00000100u) {
+      total_size += ::_pbi::WireFormatLite::UInt32SizePlusOne(this->_internal_u_pdh0flags());
     }
 
     // optional float f_SNR = 15;
-    if (has_f_snr()) {
+    if (cached_has_bits & 0x00000200u) {
       total_size += 1 + 4;
     }
 
     // optional float f_VrelRadResolved = 17;
-    if (has_f_vrelradresolved()) {
+    if (cached_has_bits & 0x00000400u) {
       total_size += 2 + 4;
     }
 
   }
-  int cached_size = ::google::protobuf::internal::ToCachedSize(total_size);
-  SetCachedSize(cached_size);
-  return total_size;
+  return MaybeComputeUnknownFieldsSize(total_size, &_cached_size_);
 }
 
-void RadarDetectionImage_RadarDetection::MergeFrom(const ::google::protobuf::Message& from) {
-// @@protoc_insertion_point(generalized_merge_from_start:pb.PDK.RadarDetectionImage.RadarDetection)
-  GOOGLE_DCHECK_NE(&from, this);
-  const RadarDetectionImage_RadarDetection* source =
-      ::google::protobuf::internal::DynamicCastToGenerated<const RadarDetectionImage_RadarDetection>(
-          &from);
-  if (source == NULL) {
-  // @@protoc_insertion_point(generalized_merge_from_cast_fail:pb.PDK.RadarDetectionImage.RadarDetection)
-    ::google::protobuf::internal::ReflectionOps::Merge(from, this);
-  } else {
-  // @@protoc_insertion_point(generalized_merge_from_cast_success:pb.PDK.RadarDetectionImage.RadarDetection)
-    MergeFrom(*source);
-  }
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData RadarDetectionImage_RadarDetection::_class_data_ = {
+    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSizeCheck,
+    RadarDetectionImage_RadarDetection::MergeImpl
+};
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*RadarDetectionImage_RadarDetection::GetClassData() const { return &_class_data_; }
+
+void RadarDetectionImage_RadarDetection::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message* to,
+                      const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+  static_cast<RadarDetectionImage_RadarDetection *>(to)->MergeFrom(
+      static_cast<const RadarDetectionImage_RadarDetection &>(from));
 }
+
 
 void RadarDetectionImage_RadarDetection::MergeFrom(const RadarDetectionImage_RadarDetection& from) {
 // @@protoc_insertion_point(class_specific_merge_from_start:pb.PDK.RadarDetectionImage.RadarDetection)
   GOOGLE_DCHECK_NE(&from, this);
-  _internal_metadata_.MergeFrom(from._internal_metadata_);
-  ::google::protobuf::uint32 cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
   a_azang_hyp_.MergeFrom(from.a_azang_hyp_);
   a_elang_hyp_.MergeFrom(from.a_elang_hyp_);
   a_rcs_hyp_.MergeFrom(from.a_rcs_hyp_);
   cached_has_bits = from._has_bits_[0];
-  if (cached_has_bits & 255u) {
+  if (cached_has_bits & 0x000000ffu) {
     if (cached_has_bits & 0x00000001u) {
       f_range_ = from.f_range_;
     }
@@ -922,7 +770,7 @@ void RadarDetectionImage_RadarDetection::MergeFrom(const RadarDetectionImage_Rad
     }
     _has_bits_[0] |= cached_has_bits;
   }
-  if (cached_has_bits & 1792u) {
+  if (cached_has_bits & 0x00000700u) {
     if (cached_has_bits & 0x00000100u) {
       u_pdh0flags_ = from.u_pdh0flags_;
     }
@@ -934,13 +782,7 @@ void RadarDetectionImage_RadarDetection::MergeFrom(const RadarDetectionImage_Rad
     }
     _has_bits_[0] |= cached_has_bits;
   }
-}
-
-void RadarDetectionImage_RadarDetection::CopyFrom(const ::google::protobuf::Message& from) {
-// @@protoc_insertion_point(generalized_copy_from_start:pb.PDK.RadarDetectionImage.RadarDetection)
-  if (&from == this) return;
-  Clear();
-  MergeFrom(from);
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
 }
 
 void RadarDetectionImage_RadarDetection::CopyFrom(const RadarDetectionImage_RadarDetection& from) {
@@ -954,72 +796,74 @@ bool RadarDetectionImage_RadarDetection::IsInitialized() const {
   return true;
 }
 
-void RadarDetectionImage_RadarDetection::Swap(RadarDetectionImage_RadarDetection* other) {
-  if (other == this) return;
-  InternalSwap(other);
-}
 void RadarDetectionImage_RadarDetection::InternalSwap(RadarDetectionImage_RadarDetection* other) {
   using std::swap;
+  _internal_metadata_.InternalSwap(&other->_internal_metadata_);
+  swap(_has_bits_[0], other->_has_bits_[0]);
   a_azang_hyp_.InternalSwap(&other->a_azang_hyp_);
   a_elang_hyp_.InternalSwap(&other->a_elang_hyp_);
   a_rcs_hyp_.InternalSwap(&other->a_rcs_hyp_);
-  swap(f_range_, other->f_range_);
-  swap(f_vrelrad_, other->f_vrelrad_);
-  swap(f_rangevar_, other->f_rangevar_);
-  swap(f_vrelradvar_, other->f_vrelradvar_);
-  swap(f_azangvar_, other->f_azangvar_);
-  swap(f_pdh0_, other->f_pdh0_);
-  swap(f_elangvar_, other->f_elangvar_);
-  swap(e_elevationstate_, other->e_elevationstate_);
-  swap(u_pdh0flags_, other->u_pdh0flags_);
-  swap(f_snr_, other->f_snr_);
-  swap(f_vrelradresolved_, other->f_vrelradresolved_);
-  swap(_has_bits_[0], other->_has_bits_[0]);
-  _internal_metadata_.Swap(&other->_internal_metadata_);
+  ::PROTOBUF_NAMESPACE_ID::internal::memswap<
+      PROTOBUF_FIELD_OFFSET(RadarDetectionImage_RadarDetection, f_vrelradresolved_)
+      + sizeof(RadarDetectionImage_RadarDetection::f_vrelradresolved_)
+      - PROTOBUF_FIELD_OFFSET(RadarDetectionImage_RadarDetection, f_range_)>(
+          reinterpret_cast<char*>(&f_range_),
+          reinterpret_cast<char*>(&other->f_range_));
 }
 
-::google::protobuf::Metadata RadarDetectionImage_RadarDetection::GetMetadata() const {
-  protobuf_pdk_5fRadarDetectionImage_2eproto::protobuf_AssignDescriptorsOnce();
-  return ::protobuf_pdk_5fRadarDetectionImage_2eproto::file_level_metadata[kIndexInFileMessages];
+::PROTOBUF_NAMESPACE_ID::Metadata RadarDetectionImage_RadarDetection::GetMetadata() const {
+  return ::_pbi::AssignDescriptors(
+      &descriptor_table_pdk_5fRadarDetectionImage_2eproto_getter, &descriptor_table_pdk_5fRadarDetectionImage_2eproto_once,
+      file_level_metadata_pdk_5fRadarDetectionImage_2eproto[0]);
 }
-
 
 // ===================================================================
 
-void RadarDetectionImage::InitAsDefaultInstance() {
-  ::pb::PDK::_RadarDetectionImage_default_instance_._instance.get_mutable()->t_header_ = const_cast< ::pb::PDK::SensorMsgHeader*>(
-      ::pb::PDK::SensorMsgHeader::internal_default_instance());
+class RadarDetectionImage::_Internal {
+ public:
+  using HasBits = decltype(std::declval<RadarDetectionImage>()._has_bits_);
+  static const ::pb::PDK::SensorMsgHeader& t_header(const RadarDetectionImage* msg);
+  static void set_has_t_header(HasBits* has_bits) {
+    (*has_bits)[0] |= 1u;
+  }
+  static void set_has_f_vambig(HasBits* has_bits) {
+    (*has_bits)[0] |= 2u;
+  }
+  static void set_has_u_nofdetections(HasBits* has_bits) {
+    (*has_bits)[0] |= 4u;
+  }
+  static void set_has_u_nofanglehypothesis(HasBits* has_bits) {
+    (*has_bits)[0] |= 8u;
+  }
+  static void set_has_e_scantype(HasBits* has_bits) {
+    (*has_bits)[0] |= 16u;
+  }
+};
+
+const ::pb::PDK::SensorMsgHeader&
+RadarDetectionImage::_Internal::t_header(const RadarDetectionImage* msg) {
+  return *msg->t_header_;
 }
 void RadarDetectionImage::clear_t_header() {
-  if (t_header_ != NULL) t_header_->Clear();
-  clear_has_t_header();
+  if (t_header_ != nullptr) t_header_->Clear();
+  _has_bits_[0] &= ~0x00000001u;
 }
-#if !defined(_MSC_VER) || _MSC_VER >= 1900
-const int RadarDetectionImage::kTHeaderFieldNumber;
-const int RadarDetectionImage::kFVambigFieldNumber;
-const int RadarDetectionImage::kUNofDetectionsFieldNumber;
-const int RadarDetectionImage::kUNofAngleHypothesisFieldNumber;
-const int RadarDetectionImage::kEScanTypeFieldNumber;
-const int RadarDetectionImage::kARadarDetectionListFieldNumber;
-#endif  // !defined(_MSC_VER) || _MSC_VER >= 1900
-
-RadarDetectionImage::RadarDetectionImage()
-  : ::google::protobuf::Message(), _internal_metadata_(NULL) {
-  ::google::protobuf::internal::InitSCC(
-      &protobuf_pdk_5fRadarDetectionImage_2eproto::scc_info_RadarDetectionImage.base);
+RadarDetectionImage::RadarDetectionImage(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                         bool is_message_owned)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned),
+  a_radardetectionlist_(arena) {
   SharedCtor();
-  // @@protoc_insertion_point(constructor:pb.PDK.RadarDetectionImage)
+  // @@protoc_insertion_point(arena_constructor:pb.PDK.RadarDetectionImage)
 }
 RadarDetectionImage::RadarDetectionImage(const RadarDetectionImage& from)
-  : ::google::protobuf::Message(),
-      _internal_metadata_(NULL),
+  : ::PROTOBUF_NAMESPACE_ID::Message(),
       _has_bits_(from._has_bits_),
       a_radardetectionlist_(from.a_radardetectionlist_) {
-  _internal_metadata_.MergeFrom(from._internal_metadata_);
-  if (from.has_t_header()) {
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  if (from._internal_has_t_header()) {
     t_header_ = new ::pb::PDK::SensorMsgHeader(*from.t_header_);
   } else {
-    t_header_ = NULL;
+    t_header_ = nullptr;
   }
   ::memcpy(&f_vambig_, &from.f_vambig_,
     static_cast<size_t>(reinterpret_cast<char*>(&e_scantype_) -
@@ -1027,269 +871,194 @@ RadarDetectionImage::RadarDetectionImage(const RadarDetectionImage& from)
   // @@protoc_insertion_point(copy_constructor:pb.PDK.RadarDetectionImage)
 }
 
-void RadarDetectionImage::SharedCtor() {
-  ::memset(&t_header_, 0, static_cast<size_t>(
-      reinterpret_cast<char*>(&e_scantype_) -
-      reinterpret_cast<char*>(&t_header_)) + sizeof(e_scantype_));
+inline void RadarDetectionImage::SharedCtor() {
+::memset(reinterpret_cast<char*>(this) + static_cast<size_t>(
+    reinterpret_cast<char*>(&t_header_) - reinterpret_cast<char*>(this)),
+    0, static_cast<size_t>(reinterpret_cast<char*>(&e_scantype_) -
+    reinterpret_cast<char*>(&t_header_)) + sizeof(e_scantype_));
 }
 
 RadarDetectionImage::~RadarDetectionImage() {
   // @@protoc_insertion_point(destructor:pb.PDK.RadarDetectionImage)
+  if (auto *arena = _internal_metadata_.DeleteReturnArena<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>()) {
+  (void)arena;
+    return;
+  }
   SharedDtor();
 }
 
-void RadarDetectionImage::SharedDtor() {
+inline void RadarDetectionImage::SharedDtor() {
+  GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
   if (this != internal_default_instance()) delete t_header_;
 }
 
 void RadarDetectionImage::SetCachedSize(int size) const {
   _cached_size_.Set(size);
 }
-const ::google::protobuf::Descriptor* RadarDetectionImage::descriptor() {
-  ::protobuf_pdk_5fRadarDetectionImage_2eproto::protobuf_AssignDescriptorsOnce();
-  return ::protobuf_pdk_5fRadarDetectionImage_2eproto::file_level_metadata[kIndexInFileMessages].descriptor;
-}
-
-const RadarDetectionImage& RadarDetectionImage::default_instance() {
-  ::google::protobuf::internal::InitSCC(&protobuf_pdk_5fRadarDetectionImage_2eproto::scc_info_RadarDetectionImage.base);
-  return *internal_default_instance();
-}
-
 
 void RadarDetectionImage::Clear() {
 // @@protoc_insertion_point(message_clear_start:pb.PDK.RadarDetectionImage)
-  ::google::protobuf::uint32 cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
   a_radardetectionlist_.Clear();
   cached_has_bits = _has_bits_[0];
   if (cached_has_bits & 0x00000001u) {
-    GOOGLE_DCHECK(t_header_ != NULL);
+    GOOGLE_DCHECK(t_header_ != nullptr);
     t_header_->Clear();
   }
-  if (cached_has_bits & 30u) {
+  if (cached_has_bits & 0x0000001eu) {
     ::memset(&f_vambig_, 0, static_cast<size_t>(
         reinterpret_cast<char*>(&e_scantype_) -
         reinterpret_cast<char*>(&f_vambig_)) + sizeof(e_scantype_));
   }
   _has_bits_.Clear();
-  _internal_metadata_.Clear();
+  _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
-bool RadarDetectionImage::MergePartialFromCodedStream(
-    ::google::protobuf::io::CodedInputStream* input) {
-#define DO_(EXPRESSION) if (!GOOGLE_PREDICT_TRUE(EXPRESSION)) goto failure
-  ::google::protobuf::uint32 tag;
-  // @@protoc_insertion_point(parse_start:pb.PDK.RadarDetectionImage)
-  for (;;) {
-    ::std::pair<::google::protobuf::uint32, bool> p = input->ReadTagWithCutoffNoLastTag(127u);
-    tag = p.first;
-    if (!p.second) goto handle_unusual;
-    switch (::google::protobuf::internal::WireFormatLite::GetTagFieldNumber(tag)) {
+const char* RadarDetectionImage::_InternalParse(const char* ptr, ::_pbi::ParseContext* ctx) {
+#define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
+  _Internal::HasBits has_bits{};
+  while (!ctx->Done(&ptr)) {
+    uint32_t tag;
+    ptr = ::_pbi::ReadTag(ptr, &tag);
+    switch (tag >> 3) {
       // optional .pb.PDK.SensorMsgHeader t_Header = 1;
-      case 1: {
-        if (static_cast< ::google::protobuf::uint8>(tag) ==
-            static_cast< ::google::protobuf::uint8>(10u /* 10 & 0xFF */)) {
-          DO_(::google::protobuf::internal::WireFormatLite::ReadMessage(
-               input, mutable_t_header()));
-        } else {
+      case 1:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 10)) {
+          ptr = ctx->ParseMessage(_internal_mutable_t_header(), ptr);
+          CHK_(ptr);
+        } else
           goto handle_unusual;
-        }
-        break;
-      }
-
+        continue;
       // optional float f_Vambig = 2;
-      case 2: {
-        if (static_cast< ::google::protobuf::uint8>(tag) ==
-            static_cast< ::google::protobuf::uint8>(21u /* 21 & 0xFF */)) {
-          set_has_f_vambig();
-          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
-                   float, ::google::protobuf::internal::WireFormatLite::TYPE_FLOAT>(
-                 input, &f_vambig_)));
-        } else {
+      case 2:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 21)) {
+          _Internal::set_has_f_vambig(&has_bits);
+          f_vambig_ = ::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<float>(ptr);
+          ptr += sizeof(float);
+        } else
           goto handle_unusual;
-        }
-        break;
-      }
-
+        continue;
       // optional uint32 u_NofDetections = 5;
-      case 5: {
-        if (static_cast< ::google::protobuf::uint8>(tag) ==
-            static_cast< ::google::protobuf::uint8>(40u /* 40 & 0xFF */)) {
-          set_has_u_nofdetections();
-          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
-                   ::google::protobuf::uint32, ::google::protobuf::internal::WireFormatLite::TYPE_UINT32>(
-                 input, &u_nofdetections_)));
-        } else {
+      case 5:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 40)) {
+          _Internal::set_has_u_nofdetections(&has_bits);
+          u_nofdetections_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
+          CHK_(ptr);
+        } else
           goto handle_unusual;
-        }
-        break;
-      }
-
+        continue;
       // optional uint32 u_NofAngleHypothesis = 6;
-      case 6: {
-        if (static_cast< ::google::protobuf::uint8>(tag) ==
-            static_cast< ::google::protobuf::uint8>(48u /* 48 & 0xFF */)) {
-          set_has_u_nofanglehypothesis();
-          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
-                   ::google::protobuf::uint32, ::google::protobuf::internal::WireFormatLite::TYPE_UINT32>(
-                 input, &u_nofanglehypothesis_)));
-        } else {
+      case 6:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 48)) {
+          _Internal::set_has_u_nofanglehypothesis(&has_bits);
+          u_nofanglehypothesis_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
+          CHK_(ptr);
+        } else
           goto handle_unusual;
-        }
-        break;
-      }
-
+        continue;
       // optional .pb.PDK.RadarDetectionImage.ScanType e_ScanType = 7;
-      case 7: {
-        if (static_cast< ::google::protobuf::uint8>(tag) ==
-            static_cast< ::google::protobuf::uint8>(56u /* 56 & 0xFF */)) {
-          int value;
-          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
-                   int, ::google::protobuf::internal::WireFormatLite::TYPE_ENUM>(
-                 input, &value)));
-          if (::pb::PDK::RadarDetectionImage_ScanType_IsValid(value)) {
-            set_e_scantype(static_cast< ::pb::PDK::RadarDetectionImage_ScanType >(value));
+      case 7:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 56)) {
+          uint64_t val = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
+          CHK_(ptr);
+          if (PROTOBUF_PREDICT_TRUE(::pb::PDK::RadarDetectionImage_ScanType_IsValid(val))) {
+            _internal_set_e_scantype(static_cast<::pb::PDK::RadarDetectionImage_ScanType>(val));
           } else {
-            mutable_unknown_fields()->AddVarint(
-                7, static_cast< ::google::protobuf::uint64>(value));
+            ::PROTOBUF_NAMESPACE_ID::internal::WriteVarint(7, val, mutable_unknown_fields());
           }
-        } else {
+        } else
           goto handle_unusual;
-        }
-        break;
-      }
-
+        continue;
       // repeated .pb.PDK.RadarDetectionImage.RadarDetection a_RadarDetectionList = 8;
-      case 8: {
-        if (static_cast< ::google::protobuf::uint8>(tag) ==
-            static_cast< ::google::protobuf::uint8>(66u /* 66 & 0xFF */)) {
-          DO_(::google::protobuf::internal::WireFormatLite::ReadMessage(
-                input, add_a_radardetectionlist()));
-        } else {
+      case 8:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 66)) {
+          ptr -= 1;
+          do {
+            ptr += 1;
+            ptr = ctx->ParseMessage(_internal_add_a_radardetectionlist(), ptr);
+            CHK_(ptr);
+            if (!ctx->DataAvailable(ptr)) break;
+          } while (::PROTOBUF_NAMESPACE_ID::internal::ExpectTag<66>(ptr));
+        } else
           goto handle_unusual;
-        }
-        break;
-      }
-
-      default: {
-      handle_unusual:
-        if (tag == 0) {
-          goto success;
-        }
-        DO_(::google::protobuf::internal::WireFormat::SkipField(
-              input, tag, _internal_metadata_.mutable_unknown_fields()));
-        break;
-      }
+        continue;
+      default:
+        goto handle_unusual;
+    }  // switch
+  handle_unusual:
+    if ((tag == 0) || ((tag & 7) == 4)) {
+      CHK_(ptr);
+      ctx->SetLastTag(tag);
+      goto message_done;
     }
-  }
-success:
-  // @@protoc_insertion_point(parse_success:pb.PDK.RadarDetectionImage)
-  return true;
+    ptr = UnknownFieldParse(
+        tag,
+        _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
+        ptr, ctx);
+    CHK_(ptr != nullptr);
+  }  // while
+message_done:
+  _has_bits_.Or(has_bits);
+  return ptr;
 failure:
-  // @@protoc_insertion_point(parse_failure:pb.PDK.RadarDetectionImage)
-  return false;
-#undef DO_
+  ptr = nullptr;
+  goto message_done;
+#undef CHK_
 }
 
-void RadarDetectionImage::SerializeWithCachedSizes(
-    ::google::protobuf::io::CodedOutputStream* output) const {
-  // @@protoc_insertion_point(serialize_start:pb.PDK.RadarDetectionImage)
-  ::google::protobuf::uint32 cached_has_bits = 0;
-  (void) cached_has_bits;
-
-  cached_has_bits = _has_bits_[0];
-  // optional .pb.PDK.SensorMsgHeader t_Header = 1;
-  if (cached_has_bits & 0x00000001u) {
-    ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
-      1, this->_internal_t_header(), output);
-  }
-
-  // optional float f_Vambig = 2;
-  if (cached_has_bits & 0x00000002u) {
-    ::google::protobuf::internal::WireFormatLite::WriteFloat(2, this->f_vambig(), output);
-  }
-
-  // optional uint32 u_NofDetections = 5;
-  if (cached_has_bits & 0x00000004u) {
-    ::google::protobuf::internal::WireFormatLite::WriteUInt32(5, this->u_nofdetections(), output);
-  }
-
-  // optional uint32 u_NofAngleHypothesis = 6;
-  if (cached_has_bits & 0x00000008u) {
-    ::google::protobuf::internal::WireFormatLite::WriteUInt32(6, this->u_nofanglehypothesis(), output);
-  }
-
-  // optional .pb.PDK.RadarDetectionImage.ScanType e_ScanType = 7;
-  if (cached_has_bits & 0x00000010u) {
-    ::google::protobuf::internal::WireFormatLite::WriteEnum(
-      7, this->e_scantype(), output);
-  }
-
-  // repeated .pb.PDK.RadarDetectionImage.RadarDetection a_RadarDetectionList = 8;
-  for (unsigned int i = 0,
-      n = static_cast<unsigned int>(this->a_radardetectionlist_size()); i < n; i++) {
-    ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
-      8,
-      this->a_radardetectionlist(static_cast<int>(i)),
-      output);
-  }
-
-  if (_internal_metadata_.have_unknown_fields()) {
-    ::google::protobuf::internal::WireFormat::SerializeUnknownFields(
-        _internal_metadata_.unknown_fields(), output);
-  }
-  // @@protoc_insertion_point(serialize_end:pb.PDK.RadarDetectionImage)
-}
-
-::google::protobuf::uint8* RadarDetectionImage::InternalSerializeWithCachedSizesToArray(
-    bool deterministic, ::google::protobuf::uint8* target) const {
-  (void)deterministic; // Unused
+uint8_t* RadarDetectionImage::_InternalSerialize(
+    uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
   // @@protoc_insertion_point(serialize_to_array_start:pb.PDK.RadarDetectionImage)
-  ::google::protobuf::uint32 cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
   cached_has_bits = _has_bits_[0];
   // optional .pb.PDK.SensorMsgHeader t_Header = 1;
   if (cached_has_bits & 0x00000001u) {
-    target = ::google::protobuf::internal::WireFormatLite::
-      InternalWriteMessageToArray(
-        1, this->_internal_t_header(), deterministic, target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
+      InternalWriteMessage(1, _Internal::t_header(this),
+        _Internal::t_header(this).GetCachedSize(), target, stream);
   }
 
   // optional float f_Vambig = 2;
   if (cached_has_bits & 0x00000002u) {
-    target = ::google::protobuf::internal::WireFormatLite::WriteFloatToArray(2, this->f_vambig(), target);
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteFloatToArray(2, this->_internal_f_vambig(), target);
   }
 
   // optional uint32 u_NofDetections = 5;
   if (cached_has_bits & 0x00000004u) {
-    target = ::google::protobuf::internal::WireFormatLite::WriteUInt32ToArray(5, this->u_nofdetections(), target);
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteUInt32ToArray(5, this->_internal_u_nofdetections(), target);
   }
 
   // optional uint32 u_NofAngleHypothesis = 6;
   if (cached_has_bits & 0x00000008u) {
-    target = ::google::protobuf::internal::WireFormatLite::WriteUInt32ToArray(6, this->u_nofanglehypothesis(), target);
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteUInt32ToArray(6, this->_internal_u_nofanglehypothesis(), target);
   }
 
   // optional .pb.PDK.RadarDetectionImage.ScanType e_ScanType = 7;
   if (cached_has_bits & 0x00000010u) {
-    target = ::google::protobuf::internal::WireFormatLite::WriteEnumToArray(
-      7, this->e_scantype(), target);
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteEnumToArray(
+      7, this->_internal_e_scantype(), target);
   }
 
   // repeated .pb.PDK.RadarDetectionImage.RadarDetection a_RadarDetectionList = 8;
-  for (unsigned int i = 0,
-      n = static_cast<unsigned int>(this->a_radardetectionlist_size()); i < n; i++) {
-    target = ::google::protobuf::internal::WireFormatLite::
-      InternalWriteMessageToArray(
-        8, this->a_radardetectionlist(static_cast<int>(i)), deterministic, target);
+  for (unsigned i = 0,
+      n = static_cast<unsigned>(this->_internal_a_radardetectionlist_size()); i < n; i++) {
+    const auto& repfield = this->_internal_a_radardetectionlist(i);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
+        InternalWriteMessage(8, repfield, repfield.GetCachedSize(), target, stream);
   }
 
-  if (_internal_metadata_.have_unknown_fields()) {
-    target = ::google::protobuf::internal::WireFormat::SerializeUnknownFieldsToArray(
-        _internal_metadata_.unknown_fields(), target);
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    target = ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
+        _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
   }
   // @@protoc_insertion_point(serialize_to_array_end:pb.PDK.RadarDetectionImage)
   return target;
@@ -1299,88 +1068,75 @@ size_t RadarDetectionImage::ByteSizeLong() const {
 // @@protoc_insertion_point(message_byte_size_start:pb.PDK.RadarDetectionImage)
   size_t total_size = 0;
 
-  if (_internal_metadata_.have_unknown_fields()) {
-    total_size +=
-      ::google::protobuf::internal::WireFormat::ComputeUnknownFieldsSize(
-        _internal_metadata_.unknown_fields());
-  }
+  uint32_t cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
   // repeated .pb.PDK.RadarDetectionImage.RadarDetection a_RadarDetectionList = 8;
-  {
-    unsigned int count = static_cast<unsigned int>(this->a_radardetectionlist_size());
-    total_size += 1UL * count;
-    for (unsigned int i = 0; i < count; i++) {
-      total_size +=
-        ::google::protobuf::internal::WireFormatLite::MessageSize(
-          this->a_radardetectionlist(static_cast<int>(i)));
-    }
+  total_size += 1UL * this->_internal_a_radardetectionlist_size();
+  for (const auto& msg : this->a_radardetectionlist_) {
+    total_size +=
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(msg);
   }
 
-  if (_has_bits_[0 / 32] & 31u) {
+  cached_has_bits = _has_bits_[0];
+  if (cached_has_bits & 0x0000001fu) {
     // optional .pb.PDK.SensorMsgHeader t_Header = 1;
-    if (has_t_header()) {
+    if (cached_has_bits & 0x00000001u) {
       total_size += 1 +
-        ::google::protobuf::internal::WireFormatLite::MessageSize(
+        ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
           *t_header_);
     }
 
     // optional float f_Vambig = 2;
-    if (has_f_vambig()) {
+    if (cached_has_bits & 0x00000002u) {
       total_size += 1 + 4;
     }
 
     // optional uint32 u_NofDetections = 5;
-    if (has_u_nofdetections()) {
-      total_size += 1 +
-        ::google::protobuf::internal::WireFormatLite::UInt32Size(
-          this->u_nofdetections());
+    if (cached_has_bits & 0x00000004u) {
+      total_size += ::_pbi::WireFormatLite::UInt32SizePlusOne(this->_internal_u_nofdetections());
     }
 
     // optional uint32 u_NofAngleHypothesis = 6;
-    if (has_u_nofanglehypothesis()) {
-      total_size += 1 +
-        ::google::protobuf::internal::WireFormatLite::UInt32Size(
-          this->u_nofanglehypothesis());
+    if (cached_has_bits & 0x00000008u) {
+      total_size += ::_pbi::WireFormatLite::UInt32SizePlusOne(this->_internal_u_nofanglehypothesis());
     }
 
     // optional .pb.PDK.RadarDetectionImage.ScanType e_ScanType = 7;
-    if (has_e_scantype()) {
+    if (cached_has_bits & 0x00000010u) {
       total_size += 1 +
-        ::google::protobuf::internal::WireFormatLite::EnumSize(this->e_scantype());
+        ::_pbi::WireFormatLite::EnumSize(this->_internal_e_scantype());
     }
 
   }
-  int cached_size = ::google::protobuf::internal::ToCachedSize(total_size);
-  SetCachedSize(cached_size);
-  return total_size;
+  return MaybeComputeUnknownFieldsSize(total_size, &_cached_size_);
 }
 
-void RadarDetectionImage::MergeFrom(const ::google::protobuf::Message& from) {
-// @@protoc_insertion_point(generalized_merge_from_start:pb.PDK.RadarDetectionImage)
-  GOOGLE_DCHECK_NE(&from, this);
-  const RadarDetectionImage* source =
-      ::google::protobuf::internal::DynamicCastToGenerated<const RadarDetectionImage>(
-          &from);
-  if (source == NULL) {
-  // @@protoc_insertion_point(generalized_merge_from_cast_fail:pb.PDK.RadarDetectionImage)
-    ::google::protobuf::internal::ReflectionOps::Merge(from, this);
-  } else {
-  // @@protoc_insertion_point(generalized_merge_from_cast_success:pb.PDK.RadarDetectionImage)
-    MergeFrom(*source);
-  }
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData RadarDetectionImage::_class_data_ = {
+    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSizeCheck,
+    RadarDetectionImage::MergeImpl
+};
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*RadarDetectionImage::GetClassData() const { return &_class_data_; }
+
+void RadarDetectionImage::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message* to,
+                      const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+  static_cast<RadarDetectionImage *>(to)->MergeFrom(
+      static_cast<const RadarDetectionImage &>(from));
 }
+
 
 void RadarDetectionImage::MergeFrom(const RadarDetectionImage& from) {
 // @@protoc_insertion_point(class_specific_merge_from_start:pb.PDK.RadarDetectionImage)
   GOOGLE_DCHECK_NE(&from, this);
-  _internal_metadata_.MergeFrom(from._internal_metadata_);
-  ::google::protobuf::uint32 cached_has_bits = 0;
+  uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
   a_radardetectionlist_.MergeFrom(from.a_radardetectionlist_);
   cached_has_bits = from._has_bits_[0];
-  if (cached_has_bits & 31u) {
+  if (cached_has_bits & 0x0000001fu) {
     if (cached_has_bits & 0x00000001u) {
-      mutable_t_header()->::pb::PDK::SensorMsgHeader::MergeFrom(from.t_header());
+      _internal_mutable_t_header()->::pb::PDK::SensorMsgHeader::MergeFrom(from._internal_t_header());
     }
     if (cached_has_bits & 0x00000002u) {
       f_vambig_ = from.f_vambig_;
@@ -1396,13 +1152,7 @@ void RadarDetectionImage::MergeFrom(const RadarDetectionImage& from) {
     }
     _has_bits_[0] |= cached_has_bits;
   }
-}
-
-void RadarDetectionImage::CopyFrom(const ::google::protobuf::Message& from) {
-// @@protoc_insertion_point(generalized_copy_from_start:pb.PDK.RadarDetectionImage)
-  if (&from == this) return;
-  Clear();
-  MergeFrom(from);
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
 }
 
 void RadarDetectionImage::CopyFrom(const RadarDetectionImage& from) {
@@ -1416,40 +1166,38 @@ bool RadarDetectionImage::IsInitialized() const {
   return true;
 }
 
-void RadarDetectionImage::Swap(RadarDetectionImage* other) {
-  if (other == this) return;
-  InternalSwap(other);
-}
 void RadarDetectionImage::InternalSwap(RadarDetectionImage* other) {
   using std::swap;
-  CastToBase(&a_radardetectionlist_)->InternalSwap(CastToBase(&other->a_radardetectionlist_));
-  swap(t_header_, other->t_header_);
-  swap(f_vambig_, other->f_vambig_);
-  swap(u_nofdetections_, other->u_nofdetections_);
-  swap(u_nofanglehypothesis_, other->u_nofanglehypothesis_);
-  swap(e_scantype_, other->e_scantype_);
+  _internal_metadata_.InternalSwap(&other->_internal_metadata_);
   swap(_has_bits_[0], other->_has_bits_[0]);
-  _internal_metadata_.Swap(&other->_internal_metadata_);
+  a_radardetectionlist_.InternalSwap(&other->a_radardetectionlist_);
+  ::PROTOBUF_NAMESPACE_ID::internal::memswap<
+      PROTOBUF_FIELD_OFFSET(RadarDetectionImage, e_scantype_)
+      + sizeof(RadarDetectionImage::e_scantype_)
+      - PROTOBUF_FIELD_OFFSET(RadarDetectionImage, t_header_)>(
+          reinterpret_cast<char*>(&t_header_),
+          reinterpret_cast<char*>(&other->t_header_));
 }
 
-::google::protobuf::Metadata RadarDetectionImage::GetMetadata() const {
-  protobuf_pdk_5fRadarDetectionImage_2eproto::protobuf_AssignDescriptorsOnce();
-  return ::protobuf_pdk_5fRadarDetectionImage_2eproto::file_level_metadata[kIndexInFileMessages];
+::PROTOBUF_NAMESPACE_ID::Metadata RadarDetectionImage::GetMetadata() const {
+  return ::_pbi::AssignDescriptors(
+      &descriptor_table_pdk_5fRadarDetectionImage_2eproto_getter, &descriptor_table_pdk_5fRadarDetectionImage_2eproto_once,
+      file_level_metadata_pdk_5fRadarDetectionImage_2eproto[1]);
 }
-
 
 // @@protoc_insertion_point(namespace_scope)
 }  // namespace PDK
 }  // namespace pb
-namespace google {
-namespace protobuf {
-template<> GOOGLE_PROTOBUF_ATTRIBUTE_NOINLINE ::pb::PDK::RadarDetectionImage_RadarDetection* Arena::CreateMaybeMessage< ::pb::PDK::RadarDetectionImage_RadarDetection >(Arena* arena) {
-  return Arena::CreateInternal< ::pb::PDK::RadarDetectionImage_RadarDetection >(arena);
+PROTOBUF_NAMESPACE_OPEN
+template<> PROTOBUF_NOINLINE ::pb::PDK::RadarDetectionImage_RadarDetection*
+Arena::CreateMaybeMessage< ::pb::PDK::RadarDetectionImage_RadarDetection >(Arena* arena) {
+  return Arena::CreateMessageInternal< ::pb::PDK::RadarDetectionImage_RadarDetection >(arena);
 }
-template<> GOOGLE_PROTOBUF_ATTRIBUTE_NOINLINE ::pb::PDK::RadarDetectionImage* Arena::CreateMaybeMessage< ::pb::PDK::RadarDetectionImage >(Arena* arena) {
-  return Arena::CreateInternal< ::pb::PDK::RadarDetectionImage >(arena);
+template<> PROTOBUF_NOINLINE ::pb::PDK::RadarDetectionImage*
+Arena::CreateMaybeMessage< ::pb::PDK::RadarDetectionImage >(Arena* arena) {
+  return Arena::CreateMessageInternal< ::pb::PDK::RadarDetectionImage >(arena);
 }
-}  // namespace protobuf
-}  // namespace google
+PROTOBUF_NAMESPACE_CLOSE
 
 // @@protoc_insertion_point(global_scope)
+#include <google/protobuf/port_undef.inc>
