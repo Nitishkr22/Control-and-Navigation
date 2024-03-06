@@ -2,6 +2,9 @@ import numpy as np
 from novatel_oem7_msgs.msg import BESTPOS
 from novatel_oem7_msgs.msg import BESTVEL
 from novatel_oem7_msgs.msg import INSPVA
+from novatel_oem7_msgs.msg import CORRIMU
+
+
 import rospy
 # from std_msgs.msg import String
 from std_msgs.msg import Float32
@@ -28,7 +31,14 @@ abs_vel = 0.0
 range_rel = 0.0
 x_pos = 0.0
 y_pos = 0.0
-
+lat = 0
+lng = 0
+heading = 0
+lat_acc = 0.0
+long_acc = 0.0 
+vert_acc = 0.0
+abs_accx = 0.0
+abs_accy = 0.0
 
 def timeout():
     global abs_vel, acc_switch, brake_switch, range_rel
@@ -105,6 +115,31 @@ def callback_y_pos(data):
     timer2 = threading.Timer(1.5, timeoutr)
     timer2.start()
 
+#GNSS position
+def callback_latlong(data):
+    global lat,lng
+    lat = data.lat
+    lng = data.lon
+
+#GNSS heading
+def callback_heading(data):
+    global heading
+    heading=data.azimuth 
+
+def callback_imu(data):
+    global lat_acc, long_acc, vert_acc
+    lat_acc = data.longitudinal_acc
+    long_acc = data.lateral_acc
+    vert_acc = data.vertical_acc
+
+def callback_abs_accx(data):
+    global abs_accx
+    abs_accx = data.data
+
+def callback_abs_accy(data):
+    global abs_accy
+    abs_accy = data.data 
+
 
 rospy.init_node('Navigation', anonymous=True)
 #ROS subscription
@@ -116,6 +151,12 @@ rospy.Subscriber("/f_vabsx_topic",Float64, callback_abs_velx)
 rospy.Subscriber("/range_topic",Float64, callback_range_rel)
 rospy.Subscriber("/x_pos_topic",Float64, callback_x_pos)
 rospy.Subscriber("/y_pos_topic",Float64, callback_y_pos)
+rospy.Subscriber("/novatel/oem7/bestpos",BESTPOS, callback_latlong)
+rospy.Subscriber("/novatel/oem7/inspva",INSPVA, callback_heading)
+rospy.Subscriber("/novatel/oem7/corrimu",INSPVA, callback_imu)
+rospy.Subscriber("/f_aabsx_topic",Float64, callback_abs_accx)
+rospy.Subscriber("/f_aabsy_topic",Float64, callback_abs_accy)
+
 timer = threading.Timer(3, timeout)
 timer2 = threading.Timer(3, timeoutr)
 
@@ -809,9 +850,18 @@ if __name__=="__main__":
         'ACC_state': False,
         'Range': 10.0,        # Example acceleration
         'x_pos': 2.0,
-        'y_pos': 2.0
+        'y_pos': 2.0,
+        'ego_lat': 1.0,
+        'ego_long': 1.0,
+        'ego_heading':1.0,
+        'ego_lat_acc': 1.0,
+        'ego_long_acc': 1.0,
+        'ego_vert_acc': 1.0,
+        'target_accx': 1.0,
+        'target_accy': 1.0
+
     }
-    headers = ['timestamp', 'acceleration', 'Ego_velocity', 'target_velocity', 'ACC_state', 'Range', 'x_pos','y_pos']
+    headers = ['timestamp', 'acceleration', 'Ego_velocity', 'target_velocity', 'ACC_state', 'Range', 'x_pos','y_pos', 'ego_lat','ego_long','ego_heading','ego_lat_acc','ego_long_acc','ego_vert_acc','target_accx','target_accy']
     kp = 0.00008
     ki = 0.0006
     kd = 0.28
@@ -879,6 +929,14 @@ if __name__=="__main__":
             data['Range'] = range_rel
             data['x_pos'] = x_pos
             data['y_pos'] = y_pos
+            data['ego_lat'] = lat
+            data['ego_long']= lng
+            data['ego_heading'] = heading
+            data['ego_lat_acc'] = lat_acc
+            data['ego_long_acc'] = long_acc
+            data['ego_vert_acc'] = vert_acc
+            data['target_accx'] = abs_accx
+            data['target_accy'] = abs_accy
                 
             
             # if(vel_gnss>setpoint):
