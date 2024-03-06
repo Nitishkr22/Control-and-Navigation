@@ -153,7 +153,7 @@ rospy.Subscriber("/x_pos_topic",Float64, callback_x_pos)
 rospy.Subscriber("/y_pos_topic",Float64, callback_y_pos)
 rospy.Subscriber("/novatel/oem7/bestpos",BESTPOS, callback_latlong)
 rospy.Subscriber("/novatel/oem7/inspva",INSPVA, callback_heading)
-rospy.Subscriber("/novatel/oem7/corrimu",INSPVA, callback_imu)
+rospy.Subscriber("/novatel/oem7/corrimu",CORRIMU, callback_imu)
 rospy.Subscriber("/f_aabsx_topic",Float64, callback_abs_accx)
 rospy.Subscriber("/f_aabsy_topic",Float64, callback_abs_accy)
 
@@ -949,7 +949,7 @@ if __name__=="__main__":
                     # obj.send_data("A,D,4,1,30,1,"+str(steer_rate)+",0,0,0,0\r\n")
 
             # obj.send_data("A1,D,"+str(throttle)+",1,"+str(brake_rate)+",0,0,0,0,0,0\r\n")
-            write_to_csv(data, 'abhi_data_4.csv', headers)
+            write_to_csv(data, 'exp3.csv', headers)
             ########################
 
             
