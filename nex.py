@@ -71,10 +71,10 @@ def calculate_steer_angle(currentLocation, wp, heading):
     if bearing_diff > 180:
         bearing_diff = bearing_diff - 360
 
-    steer_output =  np.arctan(-1 * 2 * 3.5 * np.sin(np.pi * bearing_diff / 180) / 8)
+    steer_output =  np.arctan(-1 * 2 * 3.5 * np.sin(np.pi * bearing_diff / 180) / 8)*(180/np.pi)
 
     steer_output = np.clip(steer_output, a_min = -30, a_max = 30)
-    steer_output = (50/3)*steer_output*(180/np.pi)
+    steer_output = (50/3)*steer_output
     steer_output = np.clip(steer_output, a_min = -500, a_max = 500)
     return steer_output
 
