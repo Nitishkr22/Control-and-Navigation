@@ -55,7 +55,7 @@ def calculate_steer_angle(currentLocation, wp, heading):
     off_x = - currentLocation[1] + float(waypoints[wp][1])
 
     # calculate bearing based on position error
-    bearing_ppc = 90.00 + math.atan2(-off_y, off_x) * 57.2957795 
+    bearing_ppc =90.00 + math.atan2(-off_y, off_x) * 57.2957795  # Adding 90.00 is a common adjustment to align the bearing with cardinal directions (e.g., north as 0 degrees).
 
     # convert negative bearings to positive by adding 360 degrees
     if bearing_ppc < 0:
@@ -71,8 +71,11 @@ def calculate_steer_angle(currentLocation, wp, heading):
     if bearing_diff > 180:
         bearing_diff = bearing_diff - 360
 
-    steer_output = 750 * np.arctan(-1 * 2 * 3.5 * np.sin(np.pi * bearing_diff / 180) / 8)
-    
+    steer_output =  np.arctan(-1 * 2 * 3.5 * np.sin(np.pi * bearing_diff / 180) / 8)
+
+    steer_output = np.clip(steer_output, a_min = -30, a_max = 30)
+    steer_output = (50/3)*steer_output*(180/np.pi)
+    steer_output = np.clip(steer_output, a_min = -500, a_max = 500)
     return steer_output
 
 #Load waypoints
