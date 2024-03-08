@@ -877,6 +877,7 @@ if __name__=="__main__":
         try:
             ########################
             velocity_feedback = float(obj.receive_data().split(',')[3]) #velocity feedback from controller
+            print("ffffffffff: ",obj.receive_data())
 
             print("Ego_velocity: ",velg*(18/5))  # velg is the velocity from gnss 
             vel_gnss = velg*(18/5)
