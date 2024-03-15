@@ -44,6 +44,6 @@ while not rospy.is_shutdown():
     time.sleep(0.45)
     file = open(str(new_file), "a")
     print("done")
-    file.writelines("["+str(x_pos)+","+str(y_pos)+"],\n")
+    file.writelines("["str(time.time())+","+str(x_pos)+","+str(y_pos)+"],\n")
     file.close()
     # print(x_pos,y_pos)
