@@ -8,9 +8,9 @@ class PIDController:
         self.Kd = Kd
         self.rate_min = rate_min
         self.rate_max = rate_max
-        self.error =  0
-        self.previous_error = 0
-        self.integral = 0
+        self.error =  0.0
+        self.previous_error = 0.0
+        self.integral = 0.0
 
     def update(self, desired_position, current_position):
         desired_position = np.array([desired_position])  # if needed

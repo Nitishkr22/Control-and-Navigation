@@ -388,7 +388,7 @@ while not rospy.is_shutdown():
             velocity_feedback= obj.receive_data().split(',')[3]
             print("velocity_feedback: ",velocity_feedback)
             steer_rate = pid_controller.update(steer_angle, float(steering_feedback))
-            # print("Steer Rate: ",steer_rate)
+            print("Steer Rate: ",type(steer_rate))
             # if int(velocity_feedback)> 11:
             #     obj.send_data("A,D,0,1,10,1,"+str(steer_rate)+",0,0,0,0\r\n")
                 
