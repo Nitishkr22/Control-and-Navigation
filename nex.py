@@ -20,6 +20,7 @@ x_pos = 0.0
 y_pos = 0.0
 wp_threshold = 1.111395e5
 #GNSS position
+
 def callback_latlong(data):
     global lat,lng
     lat = data.lat
