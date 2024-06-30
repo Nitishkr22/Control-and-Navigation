@@ -1,0 +1,8 @@
+prefix=/home/orin/Documents/Nitish_Nexon/Navigation/radar_code/src/conti_radar/_build/devel
+
+Name: conti_radar
+Description: Description of conti_radar
+Version: 0.0.0
+Cflags: -I/home/orin/Documents/Nitish_Nexon/Navigation/radar_code/src/conti_radar/_build/devel/include -I/home/orin/Documents/Nitish_Nexon/Navigation/radar_code/src/conti_radar/include
+Libs: -L${prefix}/lib -lconti_radar
+Requires: roscpp rospy std_msgs message_runtime

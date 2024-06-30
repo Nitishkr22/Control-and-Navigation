@@ -1,0 +1,8 @@
+prefix=/home/nitish/radar_ros/devel
+
+Name: conti_radar
+Description: Description of conti_radar
+Version: 0.0.0
+Cflags: -I/home/nitish/radar_ros/devel/include -I/home/nitish/radar_ros/src/conti_radar/include
+Libs: -L${prefix}/lib -lconti_radar
+Requires: roscpp rospy std_msgs message_runtime
