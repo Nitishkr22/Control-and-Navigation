@@ -301,11 +301,11 @@ void OnReceiveObjects(const std::string &buffer)
                       // Include other relevant information
                       << std::endl;
                       
-            outputFile1 << timestamp.u_sec() << "," << timestamp.u_nsec() << ","<<radar_time_std << ","<<radar_time_epoch << ","
-                       << ro.u_objid() << "," << ro.f_distx() << "," << ro.f_disty() << ","
-                       << ro.f_rcs() << "," << range << ","<<ro.e_dynamicproperty()<<","<<ro.f_orientation()<<","<<obj_size<<","<<ro.f_objectscore()
-                       // Include other relevant information
-                       << std::endl;
+            // outputFile1 << timestamp.u_sec() << "," << timestamp.u_nsec() << ","<<radar_time_std << ","<<radar_time_epoch << ","
+            //            << ro.u_objid() << "," << ro.f_distx() << "," << ro.f_disty() << ","
+            //            << ro.f_rcs() << "," << range << ","<<ro.e_dynamicproperty()<<","<<ro.f_orientation()<<","<<obj_size<<","<<ro.f_objectscore()
+            //            // Include other relevant information
+            //            << std::endl;
                       
         }
 

@@ -43,10 +43,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/orin/Documents/Nitish_Nexon/Navigation/radar_code/src/conti_radar
+CMAKE_SOURCE_DIR = /home/nitish/Documents/Control-and-Navigation/radar_code/src/conti_radar
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/orin/Documents/Nitish_Nexon/Navigation/radar_code/src/conti_radar/_build
+CMAKE_BINARY_DIR = /home/nitish/Documents/Control-and-Navigation/radar_code/src/conti_radar/_build
 
 # Utility rule file for std_msgs_generate_messages_py.
 
@@ -67,6 +67,6 @@ CMakeFiles/std_msgs_generate_messages_py.dir/clean:
 .PHONY : CMakeFiles/std_msgs_generate_messages_py.dir/clean
 
 CMakeFiles/std_msgs_generate_messages_py.dir/depend:
-	cd /home/orin/Documents/Nitish_Nexon/Navigation/radar_code/src/conti_radar/_build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/orin/Documents/Nitish_Nexon/Navigation/radar_code/src/conti_radar /home/orin/Documents/Nitish_Nexon/Navigation/radar_code/src/conti_radar /home/orin/Documents/Nitish_Nexon/Navigation/radar_code/src/conti_radar/_build /home/orin/Documents/Nitish_Nexon/Navigation/radar_code/src/conti_radar/_build /home/orin/Documents/Nitish_Nexon/Navigation/radar_code/src/conti_radar/_build/CMakeFiles/std_msgs_generate_messages_py.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/nitish/Documents/Control-and-Navigation/radar_code/src/conti_radar/_build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/nitish/Documents/Control-and-Navigation/radar_code/src/conti_radar /home/nitish/Documents/Control-and-Navigation/radar_code/src/conti_radar /home/nitish/Documents/Control-and-Navigation/radar_code/src/conti_radar/_build /home/nitish/Documents/Control-and-Navigation/radar_code/src/conti_radar/_build /home/nitish/Documents/Control-and-Navigation/radar_code/src/conti_radar/_build/CMakeFiles/std_msgs_generate_messages_py.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : CMakeFiles/std_msgs_generate_messages_py.dir/depend
 

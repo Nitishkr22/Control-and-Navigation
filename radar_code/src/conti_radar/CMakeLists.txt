@@ -257,6 +257,14 @@ add_executable(test_gp
     src/test_gp.cpp
     ${PROTO_SRCS}
     )
+add_executable(pcl_cp 
+    src/pcl_data.cpp
+    ${PROTO_SRCS}
+    )
+add_executable(dist_pub 
+    src/short_dist_pub.cpp
+    ${PROTO_SRCS}
+    )
 target_include_directories(radar_obj
    PRIVATE ${CMAKE_CURRENT_BINARY_DIR} 
    PRIVATE ${PDK_IMPORT_DIR}
@@ -275,6 +283,16 @@ target_include_directories(radar_aeb
     )
 
 target_include_directories(test_gp
+    PRIVATE ${CMAKE_CURRENT_BINARY_DIR} 
+    PRIVATE ${PDK_IMPORT_DIR}
+    PRIVATE ${PCL_LIBRARIES}
+    )
+target_include_directories(pcl_cp
+    PRIVATE ${CMAKE_CURRENT_BINARY_DIR} 
+    PRIVATE ${PDK_IMPORT_DIR}
+    PRIVATE ${PCL_LIBRARIES}
+    )
+target_include_directories(dist_pub
     PRIVATE ${CMAKE_CURRENT_BINARY_DIR} 
     PRIVATE ${PDK_IMPORT_DIR}
     PRIVATE ${PCL_LIBRARIES}
@@ -302,6 +320,17 @@ target_link_libraries(radar_vdy
     protobuf::libprotobuf
     )
 target_link_libraries(radar_aeb 
+    ${catkin_LIBRARIES} 
+    ${PDK_INTERFACE_LIB}
+    protobuf::libprotobuf
+    )
+target_link_libraries(pcl_cp 
+    ${catkin_LIBRARIES} 
+    ${PDK_INTERFACE_LIB}
+    protobuf::libprotobuf
+    )
+
+target_link_libraries(dist_pub 
     ${catkin_LIBRARIES} 
     ${PDK_INTERFACE_LIB}
     protobuf::libprotobuf

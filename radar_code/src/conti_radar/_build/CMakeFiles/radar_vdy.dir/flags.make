@@ -6,5 +6,5 @@ CXX_FLAGS =     -std=gnu++11
 
 CXX_DEFINES = -DROSCONSOLE_BACKEND_LOG4CXX -DROS_BUILD_SHARED_LIBS=1 -DROS_PACKAGE_NAME=\"conti_radar\" -DvtkRenderingContext2D_AUTOINIT="1(vtkRenderingContextOpenGL2)" -DvtkRenderingCore_AUTOINIT="3(vtkInteractionStyle,vtkRenderingFreeType,vtkRenderingOpenGL2)"
 
-CXX_INCLUDES = -I/home/orin/Documents/Nitish_Nexon/Navigation/radar_code/src/conti_radar/_build/devel/include -I/usr/include/vtk-7.1 -I/usr/include/freetype2 -I/usr/include/pcl-1.10 -I/usr/include/eigen3 -I/opt/ros/noetic/include -I/opt/ros/noetic/share/xmlrpcpp/cmake/../../../include/xmlrpcpp -I/home/orin/Documents/Nitish_Nexon/Navigation/radar_code/src/conti_radar/_build -I/opt/pdk/include 
+CXX_INCLUDES = -I/home/nitish/Documents/Control-and-Navigation/radar_code/src/conti_radar/_build/devel/include -I/usr/include/vtk-7.1 -I/usr/include/freetype2 -I/usr/include/pcl-1.10 -I/usr/include/eigen3 -I/opt/ros/noetic/include -I/opt/ros/noetic/share/xmlrpcpp/cmake/../../../include/xmlrpcpp -I/home/nitish/Documents/Control-and-Navigation/radar_code/src/conti_radar/_build -I/opt/pdk/include 
 

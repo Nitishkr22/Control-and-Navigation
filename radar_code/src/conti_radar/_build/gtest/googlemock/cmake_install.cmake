@@ -39,7 +39,7 @@ endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for each subdirectory.
-  include("/home/orin/Documents/Nitish_Nexon/Navigation/radar_code/src/conti_radar/_build/gtest/googletest/cmake_install.cmake")
+  include("/home/nitish/Documents/Control-and-Navigation/radar_code/src/conti_radar/_build/gtest/googletest/cmake_install.cmake")
 
 endif()
 
